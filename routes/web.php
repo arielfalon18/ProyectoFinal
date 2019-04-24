@@ -34,3 +34,7 @@ Route::post('nuevoR', 'Auth\ConsultasController@nuevoR');
 Route::get('Nosotros', function () {
     return view('datos.nosotros');
 });
+//Contactos
+Route::get('Contactos', function () {
+    return view('datos.contactos');
+});
