@@ -17,12 +17,11 @@ class DatosEmpresa extends Migration
         Schema::create('Datos_Empresa', function (Blueprint  $table){
             $table->string('nombre');
             $table->string('cif');
-            $table->string('dirrecion');
-            $table->string('Cif');
-            $table->string('nombre');
-            $table->string('Cif');
-            $table->string('nombre');
-            $table->string('Cif');
+            $table->string('direcion');
+            $table->string('telefono');
+            $table->string('poblacion');
+            $table->string('correo_electronico');
+            $table->string('password');
         });
     }
 
