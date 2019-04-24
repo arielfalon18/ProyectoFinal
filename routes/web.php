@@ -28,3 +28,9 @@ Route::get('crear', 'Auth\LoginController@create');
 
 
 Route::post('nuevoR', 'Auth\ConsultasController@nuevoR');
+
+//Nosotros
+
+Route::get('Nosotros', function () {
+    return view('datos.nosotros');
+});

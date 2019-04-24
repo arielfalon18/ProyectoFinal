@@ -8,7 +8,7 @@
             <nav>
                 <ul>
                     <li><a href="/inicio">Inicio</a></li>
-                    <li><a href="#">Acerca de nosotros</a></li>
+                    <li><a href="/Nosotros">Acerca de nosotros</a></li>
                     <li><a href="#">Contacto</a></li>
                     <li><a href="/registrarse">Iniciar/Registrase</a></li>
                 </ul>
