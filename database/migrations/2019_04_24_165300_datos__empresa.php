@@ -19,8 +19,10 @@ class DatosEmpresa extends Migration
             $table->string('nombre');
             $table->string('cif');
             $table->string('direccion');
-            $table->string('telefono');
-            $table->string('poblacion');
+            $table->string('ciudad');
+            $table->string('pais');
+            $table->number('codigoP');
+            $table->number('telefono');
             $table->string('email');
             $table->string('password');
         });

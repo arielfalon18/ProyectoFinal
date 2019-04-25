@@ -158,6 +158,9 @@ input:focus{
 .registro{
 	padding-top: 125px;
 }
+#letra{
+	letter-spacing: 4px;
+}
 /* HASTA AQUi */
 
 input:focus, input[type]:focus {

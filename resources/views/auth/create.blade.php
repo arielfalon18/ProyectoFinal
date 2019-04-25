@@ -3,7 +3,7 @@
 
 <div class="registro">
     <div class="container container-form">
-        <h1 class="align-center">Registro</h1>
+        <h1 class="align-center" id="letra">REGISTRO</h1>
         <form action="{{url('nuevoR')}}" method="POST">
         {{csrf_field()}}
         <div class="form-row">
@@ -19,13 +19,13 @@
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="poblacion" name="poblacion" placeholder="Ciudad">
+                <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="Ciudad">
             </div>
             <div class="form-group col-md-3">
                 <input type="text" class="form-control" id="pais" name="pais" placeholder="Pais">
             </div>
             <div class="form-group col-md-3">
-                <input type="text" class="form-control" id="codigoP" name="codigoP" placeholder="Codigo Postal">
+                <input type="number" class="form-control disableN" id="codigoP" name="codigoP" placeholder="Codigo Postal">
             </div>
         </div>
         <div class="form-row">
@@ -33,7 +33,7 @@
                 <input type="text" class="form-control" id="email" name="email" placeholder="Correo electronico">
             </div>
             <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono">
+                <input  type="number" class="form-control disableN"  class="form-control" id="telefono" name="telefono" placeholder="Telefono">
             </div>
         </div>
         <div class="form-row">

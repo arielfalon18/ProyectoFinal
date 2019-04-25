@@ -17,7 +17,9 @@ class ConsultasController extends Controller
         $Datos_Empresa->cif = request('cif');
         $Datos_Empresa->direccion = request('direccion');
         $Datos_Empresa->telefono = request('telefono');
-        $Datos_Empresa->poblacion = request('poblacion');
+        $Datos_Empresa->ciudad = request('ciudad');
+        $Datos_Empresa->pais = request('pais');
+        $Datos_Empresa->codigoP = request('codigoP');
         $Datos_Empresa->email = request('email');
         $Datos_Empresa->password = Hash::make(request('password'));
         $Datos_Empresa->save();
