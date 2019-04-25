@@ -139,14 +139,16 @@ Mi comentario Aqui..
 /* CSS para CONTACTO */
 #contactanos{
 	letter-spacing: 4px;
+	margin-top: 130px;
+	font-size: 45px;
 }
-#llamanos{
+#info{
 	text-align: center;
-	
-
-
-
-
-
-	
+}
+.styloRow{
+	margin-top: 50px;
+}
+input:focus{
+    border-color: none !important;
+    outline: 0 none !important;
 }
