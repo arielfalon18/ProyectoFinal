@@ -20,8 +20,9 @@ class DatosEmpresa extends Migration
             $table->string('direcion');
             $table->string('telefono');
             $table->string('poblacion');
-            $table->string('correo_electronico');
+            $table->string('email');
             $table->string('password');
+            $table->timestamps();
         });
     }
 
