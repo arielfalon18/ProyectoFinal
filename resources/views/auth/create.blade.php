@@ -1,59 +1,51 @@
 @extends('layouts.master')
 @section('content')
 
-
-<div class="">
-    <div class="row "> 
-        <div class="col-md-2"></div>
-        <div class="col-md-8 col-md-offset-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h1 class="panel-title">Registrarse</h1>
-                    <p>Bienvenido para registrarse es nuestra base de datos por favor resgistrarse</p>
-                    <p>Bienvenido, para poder utilizar nuestro servicios, por favor registrase</p>
-                </div>
-                <div class="panel-body">
-                   <form action="{{url('nuevoR')}}" method="POST">
-                   {{csrf_field()}}
-                       <div class="form-group">
-                           <label for="nombre">Nombre empresa: </label>
-                           <input type="text" class="from-control" name="nombre" id="nombre">
-                       </div>
-                       <div class="form-group">
-                           <label for="cif">CIF: </label>
-                           <input type="text" class="from-control" name="cif" id="cif">
-                       </div>
-                       <div class="form-group">
-                           <label for="direccion">Dirección: </label>
-                           <input type="text" class="from-control" name="direccion" id="dirreccion">
-                       </div>
-                       <div class="form-group">
-                           <label for="telefono">Telefono: </label>
-                           <input type="number" class="from-control" name="telefono" id="telefono" maxlength="9">
-                       </div>
-                       <div class="form-group">
-                           <label for="telefono">Poblacion: </label>
-                           <input type="text" class="from-control" name="poblacion" id="poblacion">
-                       </div>
-                       <div class="form-group">
-                           <label for="email">Correo electronico: </label>
-                           <input type="email" class="from-control" name="email" id="email">
-                       </div>
-                       <div class="form-group">
-                           <label for="password">Password: </label>
-                           <input type="password" class="from-control" name="password">
-                       </div>
-                       <div class="form-group">
-                           <label for="Rpassword">Confirmar Password: </label>
-                           <input type="password" class="from-control" id="Rpassword">
-                       </div>
-                       <button class="btn btn-primary">Registrarse</button>
-                   </form>
-                </div>
+<div class="registro">
+    <div class="container container-form">
+        <h1 class="align-center">Registro</h1>
+        <form action="{{url('nuevoR')}}" method="POST">
+        {{csrf_field()}}
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre empresa">
+            </div>
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" id="cif"  name="cif" placeholder="CIF">
             </div>
         </div>
-        <div class="col-md-2"></div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Dirección">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" id="poblacion" name="poblacion" placeholder="Ciudad">
+            </div>
+            <div class="form-group col-md-3">
+                <input type="text" class="form-control" id="pais" name="pais" placeholder="Pais">
+            </div>
+            <div class="form-group col-md-3">
+                <input type="text" class="form-control" id="codigoP" name="codigoP" placeholder="Codigo Postal">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" id="email" name="email" placeholder="Correo electronico">
+            </div>
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
+            </div>
+            <div class="form-group col-md-6">
+                <input type="password" class="form-control" id="Cpassword"  name="Cpassword" placeholder="Confirmar Contraseña">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Registrarse</button>
+        </form>
     </div>
-
 </div>
 @stop

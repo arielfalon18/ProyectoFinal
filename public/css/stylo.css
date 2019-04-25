@@ -188,13 +188,41 @@ Mi comentario Aqui..
 #contactanos{
 	letter-spacing: 4px;
 }
-#llamanos{
+#info{
 	text-align: center;
-	
-
-
-
-
-
-	
 }
+/* Para quitar el azul de los input */
+input:focus{
+	box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Registro */
+/* Quitar luego este padding es por el menu */
+.registro{
+	padding-top: 125px;
+}
+/* HASTA AQUi */
+
+input:focus, input[type]:focus {
+    outline: none;
+}
+
+.container-form{
+	width:50% !important;
+}
+
+
+/* Input selector number  disable */
+.disableN::-webkit-inner-spin-button, 
+.disableN::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+
+/* media queries
+.container-form
+
+
+*/
