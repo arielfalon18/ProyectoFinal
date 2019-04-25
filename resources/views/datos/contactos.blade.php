@@ -5,8 +5,9 @@
 <div class="container container-form">
         <h1 id="contactanos">CONTÁCTANOS</h1>
         <div id="info">
-            <p><strong>Llamanos:</strong> 666 666 666</p>
-            <p><strong>Localízanos:</strong> Carrer de la Selva de Mar, 211, 08020 Barcelona</p>
+            <p><strong class="tipoL">Llamanos:</strong> 666 666 666</p>
+            <p><strong class="tipoL">Localízanos:</strong></p>
+            <p>Carrer de la Selva de Mar, 211, 08020 Barcelona</p>
             <p>Theincidence@incidence.org</p>
         </div>
         <form>
@@ -15,7 +16,7 @@
                 <input type="text" class="form-control" placeholder="Nombre">
             </div>
             <div class="form-group col-md-6">
-                <input type="number" class="form-control" placeholder="Telefono">
+                <input type="number" class="form-control disableN" placeholder="Telefono">
             </div>
         </div>
         <div class="row styloRow">
