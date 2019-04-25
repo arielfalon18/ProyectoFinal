@@ -21,10 +21,18 @@
             <div class="form-group col-md-6">
                 <input type="text" class="form-control" id="poblacion" name="poblacion" placeholder="Ciudad">
             </div>
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-3">
+                <input type="text" class="form-control" id="pais" name="pais" placeholder="Pais">
+            </div>
+            <div class="form-group col-md-3">
+                <input type="text" class="form-control" id="codigoP" name="codigoP" placeholder="Codigo Postal">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
                 <input type="text" class="form-control" id="email" name="email" placeholder="Correo electronico">
             </div>
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-6">
                 <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono">
             </div>
         </div>
