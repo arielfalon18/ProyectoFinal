@@ -13,7 +13,9 @@
             </header>
             <div class="container">
                <div class="row">
-                  <div class="col-6">a</div>
+                  <div class="col-6">
+                     <div class="div-img"></div>
+                  </div>
                   <div class="col-6">a</div>
                </div>
                <div class="row">
