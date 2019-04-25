@@ -41,13 +41,8 @@ h1 {
 /* Logo diseño */
 #logo-header {
 	float: left;
-
 	text-decoration: none;
 }
-
-	
-
-
 #logo-header .sitio-abajo {
     display: block;
     font-weight: 300;
@@ -78,9 +73,11 @@ nav ul li a {
 	padding: 0 10px;
 	text-decoration: none;
 	color: white;
+	margin-top: 20px;
 }
 nav ul li a:hover {
 	text-decoration: none;
+	background: #000;
 }
 #main-content {
 	background: white;
@@ -96,10 +93,13 @@ nav ul li a:hover {
 }
 
 #main-header {
-	background: black;
+	/* background: black; */
+	font-size: 25px;
+	margin-top: 2px;
+	justify-content: flex-end;
 	color: white;
-	height: 50px;
 	
+	text-decoration: transparent;
 	width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
 	left: 0; /* Posicionamos la cabecera al lado izquierdo */
 	top: 0; /* Posicionamos la cabecera pegada arriba */
@@ -108,16 +108,22 @@ nav ul li a:hover {
 
 .contenidoabajo{
     margin: 0;
-    padding-top: 61px;
+    padding-top: 1px;
 }
 #main-footer{
 	background-color: black;
 	color: white;
+	width: 100% !important;
 
 
 }
+.footer-row{
+	width: 100% !important;
+}
 #main-header-logo{
-widows: 45px;
-height: 45px;
+widows: 100px;
+height: 100px;
+margin-top: 2px;
+margin-left: 10px;
 
 }
