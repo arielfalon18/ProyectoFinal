@@ -149,8 +149,8 @@ Mi comentario Aqui..
 	margin-top: 50px;
 }
 input:focus{
-    border-color: none !important;
-    outline: 0 none !important;
+	box-shadow: none !important;
+    outline: none !important;
 }
 
 /* Registro */
