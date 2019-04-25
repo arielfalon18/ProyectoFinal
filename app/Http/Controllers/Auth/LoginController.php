@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 use Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
-use App\User;
+use App\Datos_empresa;
 
 class LoginController extends Controller
 {
