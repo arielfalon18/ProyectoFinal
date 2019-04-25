@@ -127,9 +127,20 @@ margin-top: 2px;
 margin-left: 10px;
 
 }
+<<<<<<< HEAD
 
 /* 
 
 Mi comentario Aqui..
 
 */
+=======
+/* CSS para CONTACTO */
+#contactanos{
+	letter-spacing: 4px;
+}
+#llamanos{
+	text-align: center;
+	
+}
+>>>>>>> 2b943a52c7497f9e3e7cb44b915bcc48e97e9db4

@@ -16,8 +16,8 @@
                    <form action="{{url('nuevoR')}}" method="POST">
                    {{csrf_field()}}
                        <div class="form-group">
-                           <label for="Nombre">Nombre empresa: </label>
-                           <input type="text" class="from-control" name="name" id="Nombre">
+                           <label for="nombre">Nombre empresa: </label>
+                           <input type="text" class="from-control" name="nombre" id="nombre">
                        </div>
                        <div class="form-group">
                            <label for="cif">CIF: </label>
@@ -36,8 +36,8 @@
                            <input type="text" class="from-control" name="poblacion" id="poblacion">
                        </div>
                        <div class="form-group">
-                           <label for="correoElectronico">Correo electronico: </label>
-                           <input type="email" class="from-control" name="correr" id="correoElectronico">
+                           <label for="email">Correo electronico: </label>
+                           <input type="email" class="from-control" name="email" id="email">
                        </div>
                        <div class="form-group">
                            <label for="password">Password: </label>
