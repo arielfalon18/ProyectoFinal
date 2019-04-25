@@ -1,5 +1,5 @@
 <header id="main-header" >
-            <a id="logo-header" href="#">
+            <a id="logo-header" href="inicio">
                 <!-- Nota poner el nombre de la aplicacion o un logo  -->
                 <img id="main-header-logo" src="media/logo/logo.png" alt="">
                 
