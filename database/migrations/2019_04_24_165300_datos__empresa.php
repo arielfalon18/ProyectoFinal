@@ -15,14 +15,14 @@ class DatosEmpresa extends Migration
     {
         Schema::defaultStringLength(191);
         Schema::create('Datos_Empresa', function (Blueprint  $table){
+            $table->increments('id');
             $table->string('nombre');
             $table->string('cif');
-            $table->string('direcion');
+            $table->string('direccion');
             $table->string('telefono');
             $table->string('poblacion');
             $table->string('email');
             $table->string('password');
-            $table->timestamps();
         });
     }
 
