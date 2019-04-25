@@ -21,8 +21,8 @@ class DatosEmpresa extends Migration
             $table->string('direccion');
             $table->string('ciudad');
             $table->string('pais');
-            $table->number('codigoP');
-            $table->number('telefono');
+            $table->string('codigoP');
+            $table->integer('telefono');
             $table->string('email');
             $table->string('password');
         });
