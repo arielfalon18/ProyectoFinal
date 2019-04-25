@@ -70,7 +70,7 @@ nav ul {
 	
 nav ul li {
 	display: inline-block;
-	line-height: 80px;
+	line-height: 70px;
 }
 			
 nav ul li a {
@@ -98,7 +98,7 @@ nav ul li a:hover {
 #main-header {
 	background: black;
 	color: white;
-	height: 61px;
+	height: 50px;
 	
 	width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
 	left: 0; /* Posicionamos la cabecera al lado izquierdo */
@@ -117,7 +117,7 @@ nav ul li a:hover {
 
 }
 #main-header-logo{
-widows: 60px;
-height: 60px;
+widows: 45px;
+height: 45px;
 
 }
