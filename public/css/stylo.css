@@ -157,3 +157,19 @@ Mi comentario Aqui..
 	padding-top: 125px;
 }
 /* HASTA AQUi */
+
+input:focus, input[type]:focus {
+    outline: none;
+}
+
+.container-form{
+	width:50% !important;
+}
+
+
+
+/* media queries
+.container-form
+
+
+*/

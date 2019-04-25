@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="registro">
-    <div class="container">
+    <div class="container container-form">
         <h1 class="align-center">Registro</h1>
         <form action="{{url('nuevoR')}}" method="POST">
         {{csrf_field()}}
@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Apartamento, estudio o piso">
+            <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Dirección">
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
@@ -40,5 +40,4 @@
         </form>
     </div>
 </div>
-
 @stop
