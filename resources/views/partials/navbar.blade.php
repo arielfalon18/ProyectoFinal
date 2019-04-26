@@ -1,4 +1,4 @@
-<header id="main-header" >
+<header id="main-header">
     <div class="div-logo">
         <a id="logo-header" href="inicio"><img id="main-header-logo" src="media/logo/logo-transparent.png" alt=""></a>
     </div> 
