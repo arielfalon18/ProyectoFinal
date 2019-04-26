@@ -31,7 +31,7 @@
                             {!! $errors->first('password','<span class="help-block">:message</span>')!!}
                         </div>
                         <button class="btn btn-primary"> Acceder</button>
-                        <button class="btn btn-primary " > <a  class="botonHiperenlace" href="/crear">Registrase</a></button>
+                        <button class="btn btn-primary" > <a  class="botonHiperenlace" href="/crear">Registrase</a></button>
                     </form>
                 </div>
             </div>

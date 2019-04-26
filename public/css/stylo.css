@@ -211,6 +211,7 @@ input:focus{
 #letra{
 	letter-spacing: 4px;
 }
+
 /* HASTA AQUi */
 
 input:focus, input[type]:focus {
@@ -229,10 +230,10 @@ input:focus, input[type]:focus {
   margin: 0; 
 }
 
-/* Boton hiperhenlace */
+/* Boton hiperhenlace y ocultar la linea del boton REGISTRARSE*/
 .botonHiperenlace{
 	color:white !important;
-
+	text-decoration:none !important;
 }
 /* media queries
 .container-form
