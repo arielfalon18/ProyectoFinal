@@ -9,6 +9,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h1>Bienevenido {{auth()->user()->nombre}}</h1>
+                    <h1 ng-controller="HelloWorldCtrl">@{{message}}</h1>
+                    <h1 ng-controller="HelloWorldCtrl2">@{{message}}</h1>
                 </div>
                 <div class="panel-body">
                     <div>
