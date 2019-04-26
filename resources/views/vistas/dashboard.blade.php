@@ -32,27 +32,40 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Agregar a un usuario</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Agregar a empleado</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <!-- Formulario para añadir un usuario a la base de datos  -->
-        <form>
-          <div class="form-group">
-            <label for="nombreE" class="col-form-label">Nombre</label>
-            <input type="text" class="form-control" name="nombreE" id="nombreE">
-          </div>
-          <div class="form-group">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
-          </div>
+        <form action="{{url('nuevoR')}}" method="POST">
+        {{csrf_field()}}
+        <div class="form-row">
+            <div class="form-group col-md-7">
+                <input type="text" class="form-control" id="nombreT" name="nombreT" placeholder="Introduce su nombre">
+            </div>
+            <div class="form-group col-md-5">
+                <input type="text" class="form-control" id="dniT"  name="dniT" placeholder="DNI">
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="emailT" id="emailT" placeholder="Introduce el email">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" id="telefonoT" name="telefonoT" placeholder="Telefono">
+            </div>
+            <div class="form-group col-md-6">
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option>Tecnico</option>
+                <option>Usuario</option>
+
+            </select>
+            </div>
+        </div>
+        <button id="AñadirEmpleado" class="btn btn-primary">Añadir</button>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send message</button>
       </div>
     </div>
   </div>
