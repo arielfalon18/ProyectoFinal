@@ -10,7 +10,9 @@ var app = new Vue({
       dniT:'',
       emailT:'',
       telefonoT:'',
-      TipoEmpleado:'',
+      id:'',
+      errors:[],
+      aceptadoE:false,
 
     },
     methods:{
@@ -22,19 +24,24 @@ var app = new Vue({
             }) 
         },
         // Creamos un nuevo empreado que tenemos en la base de datos 
-        nuevoEmpresados: function(){
+        nuevoEmpreados: function(){
             var urlNEWempleados='http://127.0.0.1:8000/NEWempleados';
-            axios.post(url,{
+            axios.post(urlNEWempleados,{
                 nombre:this.nombreT,
                 dni:this.dniT,
                 email:this.emailT,
                 telefono:this.telefonoT,
-                tipo_usuario:this.TipoEmpleado
+                tipo_usuario:$('#TipoEmpleado').val(),
+                IdEmpresa:this.id
             }).then(response=>{
-                
+                this.errors=[];
+                this.getEmpleados();
+                $('#añadirusuario').modal('hide');
             }).catch(error => {
-                this.errors=error.response.data;
-            })
+                // Errores
+                console.log("efecto shake");
+                $('#añadirusuario').effect('shake');
+            })           
         }
     }
 

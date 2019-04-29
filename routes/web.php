@@ -35,7 +35,7 @@ Route::get('Contactos', function () {
 //VER TODOS LOS DATOS 
 Route::get('empleados', 'DB\empleadosController@VerEmpreados');
 //INSERTAR DATOS DE EMPLEADOS 7
-Route::post('NEWempleados' , 'DB\empleadosController@newEmpleados');
+Route::post('NEWempleados' , 'DB\empleadosController@NEWempleados');
 
 //-------------------------------------------------
 

@@ -13,6 +13,7 @@
                     
                 </div>
                 <div class="panel-body">
+                    
                     <div>
                         <button class="btn btn-primary" data-toggle="modal" data-target="#añadirusuario">Añadir Usuario</button>
                     </div>
@@ -35,7 +36,7 @@
                                 <th scope="row">@{{empleadoD.id}}</th>
                                 <td>@{{empleadoD.nombre}}</td>
                                 <td>@{{empleadoD.dni}}</td>
-                                <td>@@{{empleadoD.email}}</td>
+                                <td>@{{empleadoD.email}}</td>
                                 <td>@{{empleadoD.telefono}}</td>
                                 <td>@{{empleadoD.tipo_usuario}}</td>
                                 <td>@{{empleadoD.IdEmpresa}}</td>
@@ -59,6 +60,7 @@
     </div>
 
 </div>
+
 <div class="modal fade" id="añadirusuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -70,30 +72,33 @@
       </div>
       <div class="modal-body">
         <!-- Formulario para añadir un usuario a la base de datos  -->
-        <form method="POST">
+        <form  method="post"   v-on:submit.prevent="nuevoEmpreados">
         
-        <div class="form-row">
+        <div class="form-row" v-model="id={{auth()->user()->id}}">
             <div class="form-group col-md-7">
-                <input type="text" class="form-control" id="nombreT" name="nombreT" placeholder="Introduce su nombre">
+            <!-- v-model="nombre" -->
+                <input type="text" class="form-control" id="nombreT"  v-model="nombreT" name="nombreT" placeholder="Introduce su nombre">
             </div>
             <div class="form-group col-md-5">
-                <input type="text" class="form-control" id="dniT"  name="dniT" placeholder="DNI">
+                <input type="text" class="form-control" id="dniT" v-model="dniT"   name="dniT" placeholder="DNI">
             </div>
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" name="emailT" id="emailT" placeholder="Introduce el email">
+            <input type="text" class="form-control" name="emailT" v-model="emailT"  id="emailT" placeholder="Introduce el email">
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="telefonoT" name="telefonoT" placeholder="Telefono">
+                <input type="text" class="form-control" id="telefonoT" v-model="telefonoT"  name="telefonoT" placeholder="Telefono">
             </div>
             <div class="form-group col-md-6">
-            <select class="form-control" name="TipoEmpleado" id="TipoEmpleado">
+            <select class="form-control" name="TipoEmpleado" id="TipoEmpleado" >
                 <option>Tecnico</option>
                 <option>Usuario</option>
             </select>
             </div>
+            <span v-for="error in errors" class="text-danger">@{{error}}</span>
         </div>
+
         <button id="AñadirEmpleado" class="btn btn-primary">Añadir</button>
         </form>
       </div>

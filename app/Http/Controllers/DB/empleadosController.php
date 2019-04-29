@@ -12,7 +12,14 @@ class empleadosController extends Controller
         $empleados=Empleados::all();
         return $empleados;
     }
-    public function newEmpleados(){
-        
+    public function newEmpleados(Request $resquest){
+        $this->validate($resquest,[
+            'nombre' =>'required',
+            'dni' =>'required',
+            'email' =>'required',
+            'telefono' =>'required'
+        ]);
+        Empleados::create($resquest->all());
+        return;
     }
 }
