@@ -67,7 +67,7 @@ nav {
 }
 
 nav ul {
-	margin: -12px;
+	/* margin: -12px; */
 	padding: 0;
 	list-style: none;
 	padding-right: 20px;
@@ -83,7 +83,7 @@ nav ul li a {
 	padding: 0 10px;
 	text-decoration: none;
 	color: white;
-	margin-top: 20px;
+	/* margin-top: 20px; */
 	position: relative;
 }
 nav ul li a:hover {
@@ -93,7 +93,7 @@ nav ul li a:hover {
 }
 #main-content {
 	background: white;
-	width: 90%;
+	width: 100%;
 	max-width: 1800px;
 	margin: 20px auto;
 	box-shadow: 0 0 10px rgba(41, 33, 32, 0.1);
@@ -110,8 +110,9 @@ nav ul li a:hover {
 #main-header {
 	background: black;
 	font-size: 20px;
-	padding-right: 40px;
+
 	margin-top: 2px;
+    height: 70px;
 
 	color: white;
 	text-decoration: transparent;
@@ -136,13 +137,12 @@ nav ul li a:hover {
 	width: 100% !important;
 }
 #main-header-logo{
-widows: 100px;
-height: 100px;
+	width: 80px;
+    height: 64px;
 margin-top: 2px;
 margin-left: 10px;
 }
 s
-
 .div-img{
 
 	/* width: 100%; */
@@ -264,6 +264,8 @@ input:focus, input[type]:focus {
 }
 /* media queries
 .container-form
+#main-content .content
+#footer-p
 
 
 */

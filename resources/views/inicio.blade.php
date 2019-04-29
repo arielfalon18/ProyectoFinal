@@ -36,12 +36,12 @@
                <h1>Servicio al cliente personalizado y simple</h1>
             </header>
             <div class="row">
-               <div class="col-6">
+               <div class="col-4">
                <div class="div-text">
                      <p>Hola</p>
                   </div>
                </div>
-               <div class="col-6">
+               <div class="col-8">
                      <img id="img-2 " src="media/help.png" alt="">
                </div>
             </div>
