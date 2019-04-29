@@ -3,60 +3,63 @@
 
 <!-- Quitar lo de registro  -->
 <div class="registro">
-    <div class="row "> 
-        <div class="col-md-2"></div>
-        <div class="col-md-8 col-md-offset-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h1>Bienevenido {{auth()->user()->nombre}}</h1>
-                    
-                    
-                </div>
-                <div class="panel-body">
-                    
-                    <div>
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#añadirusuario">Añadir Usuario</button>
-                    </div>
-                    <hr>
-                    <div >
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">DNI</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Telefono</th>
-                                <th scope="col">Tipo Usuario</th>
-                                <th scope="col">ID Empresa</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr v-for="empleadoD in empleados">
-                                <th scope="row">@{{empleadoD.id}}</th>
-                                <td>@{{empleadoD.nombre}}</td>
-                                <td>@{{empleadoD.dni}}</td>
-                                <td>@{{empleadoD.email}}</td>
-                                <td>@{{empleadoD.telefono}}</td>
-                                <td>@{{empleadoD.tipo_usuario}}</td>
-                                <td>@{{empleadoD.IdEmpresa}}</td>
-                            </tr>
-                        <tbody>
-                    </table>
+    <div class="container">
+        <div class="row"> 
+            <div class="col-md-2"></div>
+            <div class="col-md-8 col-md-offset-4">
+            <div class="alert alert-success" v-if="seBorro" role="alert">
+                Se elimino correctamente 
+            </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h1>Bienevenido {{auth()->user()->nombre}}</h1>
                         
-                       
+                        
                     </div>
-                    <hr>
+                    <div class="panel-body">
+                        
+                        <div>
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#añadirusuario">Añadir Usuario</button>
+                        </div>
+                        <hr>
+                        
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">DNI</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Telefono</th>
+                                    <th scope="col">Tipo Usuario</th>
+                                    <th scope="col">ID Empresa</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="empleadoD in empleados">
+                                    <th scope="row">@{{empleadoD.id}}</th>
+                                    <td>@{{empleadoD.nombre}}</td>
+                                    <td>@{{empleadoD.dni}}</td>
+                                    <td>@{{empleadoD.email}}</td>
+                                    <td>@{{empleadoD.telefono}}</td>
+                                    <td>@{{empleadoD.tipo_usuario}}</td>
+                                    <td><button class="btn btn-primary" v-on:click.prevent="deleteempleado(empleadoD)">Borrar</button><td>
+                                </tr>
+                            <tbody>
+                        </table>
+                       
+                        <hr>
 
 
-                    <form method="POST" action="{{ route('logout')}}">
-                        {{ csrf_field()}}
-                        <button class="btn btn-danger"> Cerrar sesion</button>
-                    </form>
+                        <form method="POST" action="{{ route('logout')}}">
+                            {{ csrf_field()}}
+                            <button class="btn btn-danger"> Cerrar sesion</button>
+                        </form>
+                    </div>
                 </div>
             </div>
+            <div class="col-md-2"></div>
         </div>
-        <div class="col-md-2"></div>
     </div>
 
 </div>

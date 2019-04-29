@@ -22,4 +22,8 @@ class empleadosController extends Controller
         Empleados::create($resquest->all());
         return;
     }
+    public function eliminarEmpleado($id){
+        $empleados = Empleados::findOrFail($id);
+        $empleados->delete();
+    }
 }

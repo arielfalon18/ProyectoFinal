@@ -37,5 +37,7 @@ Route::get('empleados', 'DB\empleadosController@VerEmpreados');
 //INSERTAR DATOS DE EMPLEADOS 7
 Route::post('NEWempleados' , 'DB\empleadosController@NEWempleados');
 
+//Eliminamos los datos de empleados
+Route::get('empreadoE/{id}','DB\empleadosController@eliminarEmpleado');
 //-------------------------------------------------
 

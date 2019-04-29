@@ -5,6 +5,7 @@ var app = new Vue({
         this.getEmpleados();
     },
     data: {
+      seBorro:false,
       empleados:[],
       nombreT:'',
       dniT:'',
@@ -21,6 +22,18 @@ var app = new Vue({
             var urleditorial='http://127.0.0.1:8000/empleados';
             axios.get(urleditorial).then(response =>{
                 this.empleados=response.data
+            }) 
+        },
+        // Eliminar un empreado con el ID
+        deleteempleado: function(EmpreadoID){
+            var UrlEliminar='http://127.0.0.1:8000/empreadoE/'+EmpreadoID.id;
+            axios.get(UrlEliminar).then(response =>{
+                this.getEmpleados();
+                this.seBorro=true;
+                setTimeout(() => {
+                    this.seBorro=false;
+                }, 4000);
+
             }) 
         },
         // Creamos un nuevo empreado que tenemos en la base de datos 
@@ -42,7 +55,8 @@ var app = new Vue({
                 console.log("efecto shake");
                 $('#añadirusuario').effect('shake');
             })           
-        }
+        },
+        
     }
 
   })
