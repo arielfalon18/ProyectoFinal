@@ -13,14 +13,15 @@
     <title>The incidence</title>
     <link rel="stylesheet" href="/css/stylo.css">
     <link rel="stylesheet" href="/css/app.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
-
-    
+   
+    <script src="https://unpkg.com/vue"></script>
+    <script src="/js/axios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <title>Hello, world!</title>
   </head>
-  <body ng-app="Mangular">
+  <body >
     @include('partials.navbar')
-    <div class="contenidoabajo">
+    <div  id="appV" class="contenidoabajo">
     @yield('content')
     </div>
     <!-- Optional JavaScript -->
@@ -29,6 +30,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <!-- <script src="/assets/bootstrap/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="/js/angular.js"></script>
+    <script src="/js/vueApp.js"></script>
   </body>
 </html>
