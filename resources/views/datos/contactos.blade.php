@@ -10,33 +10,48 @@
             <p>Carrer de la Selva de Mar, 211, 08020 Barcelona</p>
             <p>Theincidence@incidence.org</p>
         </div>
-        <form>
-        <div class="row styloRow">
+        <h1 class="align-center" id="letra">DATOS EMPRESARIALES</h1>
+        <form action="{{url('nuevoR')}}" method="POST">
+        {{csrf_field()}}
+        <div class="form-row">
             <div class="form-group col-md-6">
-                <input type="text" class="form-control" placeholder="Nombre">
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre empresa">
             </div>
             <div class="form-group col-md-6">
-                <input type="number" class="form-control disableN" placeholder="Telefono">
+                <input type="text" class="form-control" id="cif"  name="cif" placeholder="CIF">
             </div>
         </div>
-        <div class="row styloRow">
+        <div class="form-group">
+            <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Dirección">
+        </div>
+        <div class="form-row">
             <div class="form-group col-md-6">
-                <input type="text" class="form-control" placeholder="Email">
+                <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="Ciudad">
             </div>
-            <div class="form-group col-md-6">
-                <input type="text" class="form-control" placeholder="Repite Email">
+            <div class="form-group col-md-3">
+                <input type="text" class="form-control" id="pais" name="pais" placeholder="Pais">
+            </div>
+            <div class="form-group col-md-3">
+                <input type="number" class="form-control disableN" id="codigoP" name="codigoP" placeholder="Codigo Postal">
             </div>
         </div>
-        <div class="row">
-            <div class="form-group col-md-12">
-                <textarea class="form-control" id="mensaje" rows="3" placeholder="Mensaje.."></textarea>
-            </div>
-        </div>
-        <div class="row styloRow">
+        <div class="form-row">
             <div class="form-group col-md-6">
-                <button class="btn btn-primary">Enviar</button>
+                <input type="text" class="form-control" id="email" name="email" placeholder="Correo electronico">
+            </div>
+            <div class="form-group col-md-6">
+                <input  type="number" class="form-control disableN"  class="form-control" id="telefono" name="telefono" placeholder="Telefono">
             </div>
         </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña">
+            </div>
+            <div class="form-group col-md-6">
+                <input type="password" class="form-control" id="Cpassword"  name="Cpassword" placeholder="Confirmar Contraseña">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Registrarse</button>
         </form>     
     </div>
 </div>
