@@ -16,7 +16,7 @@ class Datos_empresa extends Authenticatable
      * @var array
      */
     protected $table = 'datos_empresa';
-    protected $fillable = ['id', 'nombre','cif', 'direccion','telefono', 'poblacion','	email' ,'password'];
+    protected $fillable = ['id', 'nombre','cif', 'direccion','ciudad','pais','codigoP','telefono','email' ,'password'];
     public $timestamps = false;
     /**
      * The attributes that should be hidden for arrays.

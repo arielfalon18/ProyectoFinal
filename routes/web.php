@@ -17,8 +17,8 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('crear', 'Auth\LoginController@create');
 
-
-Route::post('nuevoR', 'Auth\ConsultasController@nuevoR');
+// Añadir nueva empresa datos de empresa
+Route::post('NEWEmpresa', 'Auth\ConsultasController@nuevoR');
 
 //Nosotros
 

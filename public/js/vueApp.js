@@ -14,9 +14,53 @@ var app = new Vue({
       id:'',
       errors:[],
       aceptadoE:false,
-
+      nombre:'',
+      cif:'',
+      direccion:'',
+      ciudad:'',
+      pais:'',
+      codigoP:'',
+      email:'',
+      telefono:'',
+      respuestaEmpresa:false,
     },
     methods:{
+        //Añadimos los datos enpresariales
+        NuevaContratacion: function(){
+            var urlNEWEmpresa='http://127.0.0.1:8000/NEWEmpresa';
+            axios.post(urlNEWEmpresa,{
+                nombre:this.nombre,
+                cif:this.cif,
+                direccion:this.direccion,
+                ciudad:this.ciudad,
+                pais:this.pais,
+                codigoP:this.codigoP,
+                telefono:this.telefono,
+                email:this.email,
+                password:'12345'
+            }).then(response=>{
+                console.log("funciono");
+                this.nombre='';
+                this.direccion='';
+                this.cif='';
+                this.ciudad='';
+                this.pais='';
+                this.codigoP='';
+                this.telefono='';
+                this.email='';
+                this.respuestaEmpresa=true;
+                setTimeout(() => {
+                    this.respuestaEmpresa=false;
+                }, 4000);
+            }).catch(error => {
+                // // Errores
+                // console.log("efecto shake");
+                // $('#añadirusuario').effect('shake');
+                this.errors = error.response.data
+            })
+            
+            
+        },
         // Mostramos todos los empleados que tenemos en la base de datos e
         getEmpleados: function(){
             var urleditorial='http://127.0.0.1:8000/empleados';

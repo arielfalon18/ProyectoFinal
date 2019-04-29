@@ -32,7 +32,7 @@
                                     <th scope="col">Email</th>
                                     <th scope="col">Telefono</th>
                                     <th scope="col">Tipo Usuario</th>
-                                    <th scope="col">ID Empresa</th>
+                                    <th scope="col">Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
