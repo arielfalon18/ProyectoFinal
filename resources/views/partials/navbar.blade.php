@@ -11,7 +11,6 @@
             <li><a href="/registrarse">Acceso</a></li>
         </ul>
     </nav>
-    
 </header>
 
 <!-- <script>

@@ -2,7 +2,7 @@
 @section('content')
 
 
-<div class="">
+<div class="main-container-login">
     <div class="row "> 
         <div class="col-md-2"></div>
         <div class="col-md-8 col-md-offset-4">
