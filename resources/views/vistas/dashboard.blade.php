@@ -9,15 +9,44 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h1>Bienevenido {{auth()->user()->nombre}}</h1>
-                    <h1 ng-controller="HelloWorldCtrl">@{{message}}</h1>
-                    <h1 ng-controller="HelloWorldCtrl2">@{{message}}</h1>
+                    
+                    
                 </div>
                 <div class="panel-body">
                     <div>
                         <button class="btn btn-primary" data-toggle="modal" data-target="#añadirusuario">Añadir Usuario</button>
                     </div>
                     <hr>
-                    <form action="" method="post"></form>
+                    <div >
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">DNI</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Telefono</th>
+                                <th scope="col">Tipo Usuario</th>
+                                <th scope="col">ID Empresa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="empleadoD in empleados">
+                                <th scope="row">@{{empleadoD.id}}</th>
+                                <td>@{{empleadoD.nombre}}</td>
+                                <td>@{{empleadoD.dni}}</td>
+                                <td>@@{{empleadoD.email}}</td>
+                                <td>@{{empleadoD.telefono}}</td>
+                                <td>@{{empleadoD.tipo_usuario}}</td>
+                                <td>@{{empleadoD.IdEmpresa}}</td>
+                            </tr>
+                        <tbody>
+                    </table>
+                        
+                       
+                    </div>
+                    <hr>
+
 
                     <form method="POST" action="{{ route('logout')}}">
                         {{ csrf_field()}}
@@ -41,8 +70,8 @@
       </div>
       <div class="modal-body">
         <!-- Formulario para añadir un usuario a la base de datos  -->
-        <form action="{{url('nuevoR')}}" method="POST">
-        {{csrf_field()}}
+        <form method="POST">
+        
         <div class="form-row">
             <div class="form-group col-md-7">
                 <input type="text" class="form-control" id="nombreT" name="nombreT" placeholder="Introduce su nombre">
@@ -59,10 +88,9 @@
                 <input type="text" class="form-control" id="telefonoT" name="telefonoT" placeholder="Telefono">
             </div>
             <div class="form-group col-md-6">
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" name="TipoEmpleado" id="TipoEmpleado">
                 <option>Tecnico</option>
                 <option>Usuario</option>
-
             </select>
             </div>
         </div>
