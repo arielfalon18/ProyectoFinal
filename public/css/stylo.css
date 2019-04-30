@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Gugi');
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
 
 body {
 	margin: 0;
@@ -14,11 +22,20 @@ body {
 }
 
 h1 {
+	text-transform: uppercase;
 	font-size: 2.3em;
 	line-height: 1.3em;
 	margin: 15px 0;
 	text-align: center;
-	font-weight: 300;
+	font-weight: 300; color: white;
+}
+.title-main{
+    color: white;
+    margin-top: 35px;
+}
+p.text1 {
+	width: 200px;
+	color: white;
 }
 
 #content-p {
@@ -31,7 +48,7 @@ h1 {
 }
 .ImagePortada{
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 }
 
 .IMg {
@@ -59,11 +76,17 @@ nav {
 
 }
 
-.fixed-nav{
-	position: fixed;
-	top:0;
-	/* z-index: 1; */
-	background-color: black;
+.main-header-stycky{
+	background: black;
+	font-size: 20px;
+    height: 70px;
+	color: white;
+	text-decoration: transparent;
+	width: 100%;
+	left: 0; 
+	top: 0; 
+	position: -webkit-sticky;
+	position: sticky;
 }
 
 nav ul {
@@ -95,7 +118,7 @@ nav ul li a:hover {
 	background: white;
 	width: 100%;
 	max-width: 1800px;
-	margin: 20px auto;
+	margin: 0 auto;
 	box-shadow: 0 0 10px rgba(41, 33, 32, 0.1);
 }
 	
@@ -111,7 +134,7 @@ nav ul li a:hover {
 	background: black;
 	font-size: 20px;
 
-	margin-top: 2px;
+	
     height: 70px;
 
 	color: white;
@@ -147,15 +170,18 @@ s
 
 	/* width: 100%; */
 	/* height: 300px; */
-	width: 300px;
+	width: 250px;
+	background-color: black;
 	position: fixed !important;
 
 }
 #img-1{
+	width: 250px;
 	margin-bottom: 80px;
 	margin-left: 20%;
 	position: fixed;
 }
+
 #img-2{
 	margin-bottom: 80px;
 	margin-left: 20%;
@@ -196,11 +222,18 @@ s
 	position: absolute;
 	left: 5%;
 	top: 50%;
+	text-transform: uppercase;
+	
+}
+.article1{
+	background-color: black;
+	width: 100%;
+	height: 100vh;
 }
 .article2{
-	margin-top: 20px;
-	padding-top: 2px;
-	border-top: 1px solid black;
+	/* margin-top: 20px; */
+	width: 100%;
+	height: 100vh;
 }
 /* 
 
