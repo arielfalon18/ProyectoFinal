@@ -17,8 +17,8 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('crear', 'Auth\LoginController@create');
 
-
-Route::post('nuevoR', 'Auth\ConsultasController@nuevoR');
+// Añadir nueva empresa datos de empresa
+Route::post('NEWEmpresa', 'Auth\ConsultasController@nuevoR');
 
 //Nosotros
 
@@ -35,7 +35,9 @@ Route::get('Contactos', function () {
 //VER TODOS LOS DATOS 
 Route::get('empleados', 'DB\empleadosController@VerEmpreados');
 //INSERTAR DATOS DE EMPLEADOS 7
-Route::post('NEWempleados' , 'DB\empleadosController@newEmpleados');
+Route::post('NEWempleados' , 'DB\empleadosController@NEWempleados');
 
+//Eliminamos los datos de empleados
+Route::get('empreadoE/{id}','DB\empleadosController@eliminarEmpleado');
 //-------------------------------------------------
 
