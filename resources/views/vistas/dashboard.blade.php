@@ -13,7 +13,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h1>Bienevenido {{auth()->user()->nombre}}</h1>
-                        
+                        <!-- <h1>Bienevenido {{auth()->user()->id}}</h1> -->
                         
                     </div>
                     <div class="panel-body">
@@ -23,33 +23,40 @@
                         </div>
                         <hr>
                         
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th scope="col">ID</th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">DNI</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Telefono</th>
-                                    <th scope="col">Tipo Usuario</th>
-                                    <th scope="col">Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="empleadoD in empleados">
-                                    <th scope="row">@{{empleadoD.id}}</th>
-                                    <td>@{{empleadoD.nombre}}</td>
-                                    <td>@{{empleadoD.dni}}</td>
-                                    <td>@{{empleadoD.email}}</td>
-                                    <td>@{{empleadoD.telefono}}</td>
-                                    <td>@{{empleadoD.tipo_usuario}}</td>
-                                    <td><button class="btn btn-primary" v-on:click.prevent="deleteempleado(empleadoD)">Borrar</button><td>
-                                </tr>
-                            <tbody>
-                        </table>
-                       
-                        <hr>
+                                <table class="table table-striped" >
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">DNI</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Telefono</th>
+                                        <th scope="col">Tipo Usuario</th>
+                                        <th scope="col">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody v-for="empleadoD in empleados">
+                                    <tr v-if='empleadoD.IdEmpresa=={{auth()->user()->id}}'>
+                                        <th scope="row">@{{empleadoD.id}}</th>
+                                        <td>@{{empleadoD.nombre}}</td>
+                                        <td>@{{empleadoD.dni}}</td>
+                                        <td>@{{empleadoD.email}}</td>
+                                        <td>@{{empleadoD.telefono}}</td>
+                                        <td>@{{empleadoD.tipo_usuario}}</td>
+                                        <td><button class="btn btn-primary" v-on:click.prevent="deleteempleado(empleadoD)">Borrar</button><td>                                        
+                                    </tr>
+                                   
+                                    
+                                <tbody>
+                                </table>
 
+                                <div v-else class="alert alert-dark" role="alert">
+                                   
+                                    <span >No hay nada </span>
+                                </div>
+                               
+                           
+                        <hr>
 
                         <form method="POST" action="{{ route('logout')}}">
                             {{ csrf_field()}}
