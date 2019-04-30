@@ -2,7 +2,8 @@
     <!-- Navgador de la derecha lo podemos poner en el centro o dejarlo ahy  -->
     <nav>
         <ul>
-            <li><a href="/registrarse">Cerrar sessoion</a></li>
+            <li class="nombreUser">Nombre Usuario</li>
+            <li><a href="/inicio">Cerrar sesion</a></li>
         </ul>
     </nav>
 </header>
