@@ -22,7 +22,9 @@
     <title>Hello, world!</title>
   </head>
   <body >
-    @include('partials.navbar')
+    
+    <!-- Navbar para usuer -->
+    @include('partials.navbaruser')
     <div  id="appV" class="contenidoabajo">
     @yield('content')
     </div>

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 
-<div class="content">
+<div class="cointainer-fluid">
       
    <!--Hasta aqui solo el header -->
    <!-- Contenido que ofrecemos Aqui podemos enviar a cada ruta que queramos  -->
@@ -24,7 +24,7 @@
                   </div>
                   <div class="col-6">
                      <div class="div-text">
-                        <p class="text1">En TheIncidence puedes hacer que el servicio y soporte al cliente a la hora de gestionar las incidencias sea mas facil y prodictivo</p>
+                        <p class="text1">En TheIncidence puedes hacer que el servicio y soporte al cliente a la hora de gestionar las incidencias sea mas facil y productivo.</p>
                      </div>
                   </div>
                </div>
@@ -38,7 +38,10 @@
             <div class="row">
                <div class="col-6">
                <div class="div-text">
-                     <p>Hola</p>
+                     <p>Ofrecemos un gestor de 
+incidencias adaptable 
+para cualquier empresa que 
+lo desee.</p>
                   </div>
                </div>
                <div class="col-6 col6">
@@ -48,7 +51,8 @@
                </div>
             </div>
          </article>
-   
+         <article class="0 3">
+         </article>
    </section>
    <footer id="main-footer">
       <div class="row footer-row">

@@ -7,6 +7,8 @@ Route::get('/', 'HomeController@getHome');
 
 Route::get('inicio', 'inicio@getIndex');
 
+Route::get('user', 'UsuarioController@getIndex');
+
 Route::get('registrarse', 'Auth\LoginController@showLoginform')->middleware('guest');
 
 Route::post('login', 'Auth\LoginController@login')->name('login');

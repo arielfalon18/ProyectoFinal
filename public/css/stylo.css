@@ -1,12 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Gugi');
-html {
+/* html {
     overflow: scroll;
     overflow-x: hidden;
-}
-::-webkit-scrollbar {
-    width: 0px;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
-}
+} */
+
 
 body {
 	margin: 0;
@@ -36,6 +33,9 @@ h1 {
 p.text1 {
 	width: 200px;
 	color: white;
+    margin-bottom: 100px;
+    margin-left: 100px;
+
 }
 
 #content-p {
@@ -82,11 +82,8 @@ nav {
     height: 70px;
 	color: white;
 	text-decoration: transparent;
-	width: 100%;
-	left: 0; 
-	top: 0; 
-	position: -webkit-sticky;
-	position: sticky;
+	width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
+	position: absolute; /* Hacemos que la cabecera tenga una posición fija */
 }
 
 nav ul {
@@ -228,12 +225,17 @@ s
 .article1{
 	background-color: black;
 	width: 100%;
-	height: 100vh;
+	height: 110vh;
 }
 .article2{
 	/* margin-top: 20px; */
+	width: 98%;
+	height: 110vh;
+}
+.article3{
+	background-color: #586079;
 	width: 100%;
-	height: 100vh;
+	height: 110vh;
 }
 /* 
 
