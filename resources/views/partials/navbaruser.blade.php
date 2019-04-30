@@ -3,10 +3,30 @@
     <nav>
         <ul>
             <li class="nombreUser">Nombre Usuario</li>
-            <li><a href="/inicio">Cerrar sesion</a></li>
+            <li class="empresa">TITULO EMPRESA</li>
+            <li class="cerrarSesion"><a href="/inicio">Cerrar sesion</a></li>
         </ul>
     </nav>
 </header>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link nombreUser" href="#">Nombre Usuario <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">TITULO EMPRESA</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/inicio">Cerrar sesion</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
 <!-- <script>
 const nav = document.querySelector('#main-header');
