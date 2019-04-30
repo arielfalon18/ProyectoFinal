@@ -86,6 +86,7 @@ var app = new Vue({
         nuevoEmpreados: function(){
             var urlNEWempleados='http://127.0.0.1:8000/NEWempleados';
             axios.post(urlNEWempleados,{
+                id:2,
                 nombre:this.nombreT,
                 dni:this.dniT,
                 email:this.emailT,
@@ -101,6 +102,8 @@ var app = new Vue({
                 console.log("efecto shake");
                 $('#añadirusuario').effect('shake');
             })           
+            // console.log($('#datosIdEmpreado').val);
+            
         },
         
     }

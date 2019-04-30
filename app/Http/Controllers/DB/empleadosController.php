@@ -25,7 +25,7 @@ class empleadosController extends Controller
 
         if ($resquest['tipo_usuario']=='Tecnico') {
             Tecnicos::create([
-                "id"=>3,
+                "id"=>$resquest['id'],
                 "UsuarioLogin"=>$resquest['email'],
                 "Password"=>$resquest['nombre']
             ]);

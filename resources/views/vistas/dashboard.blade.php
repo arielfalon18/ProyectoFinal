@@ -83,7 +83,6 @@
       <div class="modal-body">
         <!-- Formulario para añadir un usuario a la base de datos  -->
         <form  method="post"   v-on:submit.prevent="nuevoEmpreados">
-        
         <div class="form-row" v-model="id={{auth()->user()->id}}">
             <div class="form-group col-md-7">
             <!-- v-model="nombre" -->
@@ -108,6 +107,7 @@
             </div>
             <span v-for="error in errors" class="text-danger">@{{error}}</span>
         </div>
+        
 
         <button id="AñadirEmpleado" class="btn btn-primary">Añadir</button>
         </form>
