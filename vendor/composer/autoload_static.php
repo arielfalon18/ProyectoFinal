@@ -362,10 +362,12 @@ class ComposerStaticInit997920de0a81946b49ff04449e94704a
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Datos_empresa' => __DIR__ . '/../..' . '/app/Datos_empresa.php',
+        'App\\Empleados' => __DIR__ . '/../..' . '/app/Empleados.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ConsultasController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConsultasController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\DB\\empleadosController' => __DIR__ . '/../..' . '/app/Http/Controllers/DB/empleadosController.php',
         'App\\Http\\Controllers\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/DashboardController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\inicio' => __DIR__ . '/../..' . '/app/Http/Controllers/inicio.php',
