@@ -77,7 +77,7 @@ var app = new Vue({
                 setTimeout(() => {
                     this.seBorro=false;
                 }, 4000);
-
+                
             }) 
         },
         // Creamos un nuevo empreado que tenemos en la base de datos 
