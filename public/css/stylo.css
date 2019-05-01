@@ -303,6 +303,10 @@ input:focus, input[type]:focus {
 	color:white !important;
 	text-decoration:none !important;
 }
+
+.colorNA{
+	background-color: red;
+}
 /* media queries
 .container-form
 #main-content .content

@@ -35,6 +35,11 @@ class Datos_empresa extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //Relacion de uno a muchos
+    public function empleado(){
+        return $this->belongTo(Empleados::class);
+    }
 }
 
 
