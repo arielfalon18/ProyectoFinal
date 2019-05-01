@@ -37,6 +37,12 @@ p.text1 {
     margin-left: 100px;
 
 }
+p.text2{
+	width: 200px;
+	color: black;
+    margin-bottom: 100px;
+    margin-left: 100px;
+}
 
 #content-p {
 	margin: 0 0 1.5em 0;
