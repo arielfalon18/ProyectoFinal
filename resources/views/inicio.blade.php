@@ -38,7 +38,7 @@
             <div class="row">
                <div class="col-6">
                <div class="div-text">
-                     <p>Ofrecemos un gestor de 
+                     <p class="text2">Ofrecemos un gestor de 
 incidencias adaptable 
 para cualquier empresa que 
 lo desee.</p>
@@ -51,7 +51,7 @@ lo desee.</p>
                </div>
             </div>
          </article>
-         <article class="0 3">
+         <article class="article3">
          </article>
    </section>
    <footer id="main-footer">
