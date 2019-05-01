@@ -1,4 +1,46 @@
 /* CSS para usuarios */
-.nombreUser{
-    
+#main-header {
+	background: black;
+	font-size: 20px;
+
+	
+    height: 40px;
+
+	color: white;
+	text-decoration: transparent;
+	width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
+	left: 0; /* Posicionamos la cabecera al lado izquierdo */
+	top: 0; /* Posicionamos la cabecera pegada arriba */
+	position: absolute; /* Hacemos que la cabecera tenga una posición fija */
+}
+
+nav ul {
+	margin: -15px;
+	padding: 0;
+	list-style: none;
+	padding-right: 20px;
+}
+	
+nav ul li {
+	display: inline-block;
+	line-height: 70px;
+}
+			
+nav ul li a {
+	display: block;
+	padding: 0 10px;
+	text-decoration: none;
+	color: white;
+	position: relative;
+}
+nav ul li a:hover {
+	text-decoration: none;
+	color: white;
+	
+}
+.empresa{
+    float: center;
+}
+.cerrarSesion{
+    float: right;
 }

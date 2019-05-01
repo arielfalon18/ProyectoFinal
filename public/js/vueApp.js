@@ -37,6 +37,8 @@ var app = new Vue({
                 codigoP:this.codigoP,
                 telefono:this.telefono,
                 email:this.email,
+                // nombre de la empresa - codigo postal;
+                // password:$('#nombre').val()+$('#codigoP').val()
                 password:'12345'
             }).then(response=>{
                 console.log("funciono");
@@ -58,7 +60,7 @@ var app = new Vue({
                 // $('#añadirusuario').effect('shake');
                 this.errors = error.response.data
             })
-            
+          
             
         },
         // Mostramos todos los empleados que tenemos en la base de datos e
@@ -84,6 +86,7 @@ var app = new Vue({
         nuevoEmpreados: function(){
             var urlNEWempleados='http://127.0.0.1:8000/NEWempleados';
             axios.post(urlNEWempleados,{
+                id:2,
                 nombre:this.nombreT,
                 dni:this.dniT,
                 email:this.emailT,
@@ -99,6 +102,8 @@ var app = new Vue({
                 console.log("efecto shake");
                 $('#añadirusuario').effect('shake');
             })           
+            // console.log($('#datosIdEmpreado').val);
+            
         },
         
     }

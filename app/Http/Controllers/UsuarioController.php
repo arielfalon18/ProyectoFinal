@@ -9,7 +9,7 @@ class UsuarioController extends Controller
 {
     public function getIndex(){
         
-        return view('user.user');
+        return view('user');
         
     }
 }
