@@ -21,17 +21,19 @@ class empleadosController extends Controller
             'email' =>'required',
             'telefono' =>'required'
         ]);
-        Empleados::create($resquest->all());
-
+        $empleados=Empleados::create($resquest->all());
+        $empleados->save();
         if ($resquest['tipo_usuario']=='Tecnico') {
+            // $datos= Empleados::find($resquest['nombre']);
+            
             Tecnicos::create([
-                "id"=>$resquest['id'],
+                "id"=>$empleados['id'],
                 "UsuarioLogin"=>$resquest['email'],
                 "Password"=>$resquest['nombre']
             ]);
         }else if($resquest['tipo_usuario']=='Usuario'){
             Usuarios::create([
-                "id"=>5,
+                "id"=>$empleados['id'],
                 "UsuarioLogin"=>$resquest['email'],
                 "Password"=>$resquest['nombre'].$resquest['dni']
             ]);
@@ -42,8 +44,8 @@ class empleadosController extends Controller
     }
     public function eliminarEmpleado($id){
         $empleados = Empleados::findOrFail($id);
-        $empleados = Tecnicos::findOrFail($id);
-        $empleados = Usuarios::findOrFail($id);
+        // $empleados = Tecnicos::findOrFail($id);
+        // $empleados = Usuarios::findOrFail($id);
         $empleados->delete();
     }
 }

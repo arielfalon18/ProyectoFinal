@@ -9,4 +9,8 @@ class Empleados extends Model
     protected $table = 'empleados';
     protected $fillable = ['id', 'nombre','dni', 'email','telefono', 'tipo_usuario','IdEmpresa'];
     public $timestamps = false;
+
+    public function tipo(){
+        
+    }
 }
