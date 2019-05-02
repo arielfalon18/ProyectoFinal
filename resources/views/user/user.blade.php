@@ -5,14 +5,15 @@
     <div class="cointainer">
 
     <div class="container-fluid border">
-    <button><p>Crear incidencia</p></button>
+    <button class="btn btn-primary">Crear incidencia</button>
         <div class="row">
-            <div class="col-4 to-do border">
+            <div class="col-3 to-do border">TO DO
                 <div class="card1">
                 </div>
             </div>
-            <div class="col-4 doing border">asd</div>
-            <div class="col-4 done border">asd</div>
+            <div class="col-3 doing border">IN PROGRES</div>
+            <div class="col-3 done border">DONE</div>
+            <div class="col-3 done border">NOT POSIBLE</div>
         </div>
     </div>
 </div>
