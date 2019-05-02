@@ -13,7 +13,7 @@
 // }
 // window.addEventListener('scroll', stickyNavigation);
 
-function chenceClass(){
-    var d = document.getElementById("main-header");
-d.className += "main-header-stycky";
-}
+// function chenceClass(){
+//     var d = document.getElementById("main-header");
+// d.className += "main-header-stycky";
+// }
