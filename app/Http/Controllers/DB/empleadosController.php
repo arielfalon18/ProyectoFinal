@@ -54,9 +54,14 @@ class empleadosController extends Controller
         return;
     }
     public function eliminarEmpleado($id){
-        $empleados = Empleados::findOrFail($id);
-        // $empleados = Tecnicos::findOrFail($id);
-        // $empleados = Usuarios::findOrFail($id);
+        // eliminamos un usuario en la base de datos
+        $usuario = Usuarios::findOrFail($id);
+        $usuario->delete();
+
+        // usuario tecnico de la base de datos 
+        // $Tecnico= Tecnicos::findOrFail($id);
+        // Eliminamos un empleado de la base de datos
+        $empleados =Empleados::findOrFail($id);
         $empleados->delete();
     }
 }
