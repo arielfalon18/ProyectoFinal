@@ -28,7 +28,7 @@
                          
                             <button class="btn btn-primary" data-toggle="modal" data-target="#añadirusuario">Añadir Usuario</button>
                         </div>
-                        <hr>
+                        
                             <table class="table table-striped" >
                                 <thead>
                                     <tr>
@@ -76,12 +76,8 @@
                                 <div v-else class="alert alert-dark" role="alert">
                                     <span >No hay nada </span>
                                 </div>
-                        <hr>
-                       
-                        <form method="POST" action="{{ route('logout')}}">
-                            {{ csrf_field()}}
-                            <button class="btn btn-danger"> Cerrar sesion</button>
-                        </form>
+                        
+                    
                     </div>
                 </div>
             </div>
