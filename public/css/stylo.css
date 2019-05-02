@@ -490,6 +490,7 @@ input:focus, input[type]:focus {
 	bottom:20px;
 	right:20px;
 }
+
 /* ------------------------------------- */
 
 
@@ -497,6 +498,25 @@ input:focus, input[type]:focus {
 .container-form
 #main-content .content
 #footer-p
-
-
 */
+/* Media QUERY */
+/* @media (max-width: 1024px) {
+	.text-center-main {
+    position: absolute;
+    top: 45%;
+    left: 67%;
+    transform: translate(-50%, -50%);
+    font-family: 'Gugi', cursive;
+    font-size: 44px;
+	}
+  .text-center-secondary {
+    position: absolute;
+    top: 447px;
+    left: 678px;
+    transform: translate(-50%, -50%);
+    line-height: 24px;
+    font-family: 'Gugi', cursive;
+    font-size: 12px;
+    text-decoration: none;
+	}
+} */
