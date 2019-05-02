@@ -41,23 +41,47 @@
                                         <th scope="col">Acciones</th>
                                     </tr>
                                 </thead>
-                                <tbody v-for="empleadoD in empleados">
-                                    <tr v-if='empleadoD.IdEmpresa=={{auth()->user()->id}}'>
-
-                                        <td>@{{empleadoD.id}}</td>
-                                        <td>@{{empleadoD.nombre}}</td>
-                                        <td>@{{empleadoD.dni}}</td>
-                                        <td>@{{empleadoD.email}}</td>
-                                        <td>@{{empleadoD.telefono}}</td>
-                                        <td>@{{empleadoD.tipo_usuario}}</td>
-                                        <td><button class="btn btn-primary" v-on:click.prevent="deleteempleado(empleadoD)">Borrar</button><td>                                        
-                                    </tr>
-                                <tbody>
-                            </table>
-                            <div v-else class="alert alert-dark" role="alert">
-                                <span >No hay nada </span>
-                            </div>
+                                    <tbody v-for="empleadoD in empleados">
+                                        <tr v-if='empleadoD.IdEmpresa=={{auth()->user()->id}}'>
+                                            <th scope="row">@{{empleadoD.id}}</th>
+                                            <td>@{{empleadoD.nombre}}</td>
+                                            <td>@{{empleadoD.dni}}</td>
+                                            <td>@{{empleadoD.email}}</td>
+                                            <td>@{{empleadoD.telefono}}</td>
+                                            <td>@{{empleadoD.tipo_usuario}}</td>
+                                            <td><button class="btn btn-primary" v-on:click.prevent="deleteempleado(empleadoD)">Borrar</button><td>                                        
+                                        </tr>
+                                    <tbody>
+                                </table>
+                                <!-- Paginacion con esto hace la paginacion de la tabla -->
+                                <nav class="colorNA" aria-label="Page navigation example">
+                                    <ul class="pagination">
+                                        <li v-if="pagination.current_page > 1">
+                                            <a href="#" @click.prevent="cambiodePagina(pagination.current_page - 1)">
+                                                <span>Atras</span>
+                                            </a>
+                                        </li>
+                                        <li v-for="page in pagesNumber" v-bind:class="[ page == isActived ? 'active' : '']">
+                                            <a href="#" @click.prevent="cambiodePagina(page)">
+                                                @{{page}}
+                                            </a>
+                                        </li>
+                                        <li v-if="pagination.current_page < pagination.last_page">
+                                            <a href="#" @click.prevent="cambiodePagina(pagination.current_page + 1)">
+                                                <span>Siguiente</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <div v-else class="alert alert-dark" role="alert">
+                                    <span >No hay nada </span>
+                                </div>
                         <hr>
+                       
+                        <form method="POST" action="{{ route('logout')}}">
+                            {{ csrf_field()}}
+                            <button class="btn btn-danger"> Cerrar sesion</button>
+                        </form>
                     </div>
                 </div>
             </div>

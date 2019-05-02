@@ -18,7 +18,9 @@ class Tecnico extends Migration
             $table->integer('id')->unsigned()->primary();
             $table->string('UsuarioLogin');
             $table->string('Password');
-            $table->foreign('id')->references('id')->on('empleados');
+            $table->foreign('id')->references('id')->on('empleados')
+                ->onDelete('cascade')
+                ->onDelete('cascade');
         });
     }
 

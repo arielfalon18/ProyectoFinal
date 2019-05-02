@@ -10,9 +10,20 @@ use App\Usuarios;
 
 class empleadosController extends Controller
 {
-    public function VerEmpreados(){
-        $empleados=Empleados::all();
-        return $empleados;
+    public function VerEmpreados(Request $request){
+        $empleados=Empleados::orderBy('id','ASC')->paginate(3);
+        //Paginacion de empleados de la tabla
+        return [
+            'pagination' =>[
+                'total'         =>$empleados->total(),
+                'current_page'  =>$empleados->currentPage(),
+                'per_page'      =>$empleados->perPage(),
+                'last_page'     =>$empleados->lastPage(),
+                'from'          =>$empleados->firstItem(),
+                'to'            =>$empleados->lastItem(),
+            ],
+            'empleados' =>$empleados
+        ];
     }
     public function newEmpleados(Request $resquest){
         $this->validate($resquest,[

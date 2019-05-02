@@ -22,7 +22,9 @@ class Empleado extends Migration
             $table->integer('telefono');
             $table->string('tipo_usuario');
             $table->integer('IdEmpresa')->unsigned();
-            $table->foreign('IdEmpresa')->references('id')->on('Datos_Empresa');
+            $table->foreign('IdEmpresa')->references('id')->on('Datos_Empresa')
+                ->onDelete('cascade')
+                ->onDelete('cascade');
         });
     }
 

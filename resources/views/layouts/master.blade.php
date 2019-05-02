@@ -13,12 +13,11 @@
     <title>The incidence</title>
     <link rel="stylesheet" href="/css/stylo.css">
     <link rel="stylesheet" href="/css/app.css">
-   
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">   
     <script src="https://unpkg.com/vue"></script>
     <script src="/js/axios.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-
     <title>Hello, world!</title>
   </head>
   <body >

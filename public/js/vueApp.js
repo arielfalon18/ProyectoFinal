@@ -14,6 +14,14 @@ var app = new Vue({
       id:'',
       errors:[],
       aceptadoE:false,
+      pagination: {
+        'total' :0,
+        'current_page':0,
+        'per_page' :0,
+        'last_page':0,
+        'from' :0,
+        'to':0,
+      },
       nombre:'',
       cif:'',
       direccion:'',
@@ -23,6 +31,32 @@ var app = new Vue({
       email:'',
       telefono:'',
       respuestaEmpresa:false,
+      offset:3,
+    },
+    computed:{
+        isActived: function(){
+            return this.pagination.current_page;
+        },
+        
+        pagesNumber: function(){
+            if(!this.pagination.to){
+                return[];
+            }
+            var from = this.pagination.current_page - this.offset;
+            if(from <1 ){
+                from =1;
+            }
+            var to = from + (this.offset * 2); 
+			if(to >= this.pagination.last_page){
+				to = this.pagination.last_page;
+			}
+            var pagesArray = [];
+			while(from <= to){
+				pagesArray.push(from);
+				from++;
+			}
+			return pagesArray;
+        }
     },
     methods:{
         //Añadimos los datos enpresariales
@@ -64,10 +98,11 @@ var app = new Vue({
             
         },
         // Mostramos todos los empleados que tenemos en la base de datos e
-        getEmpleados: function(){
-            var urleditorial='http://127.0.0.1:8000/empleados';
+        getEmpleados: function(page){
+            var urleditorial='http://127.0.0.1:8000/empleados?page='+page;
             axios.get(urleditorial).then(response =>{
-                this.empleados=response.data
+                this.empleados=response.data.empleados.data,
+                this.pagination = response.data.pagination
             }) 
         },
         // Eliminar un empreado con el ID
@@ -96,6 +131,10 @@ var app = new Vue({
                 this.errors=[];
                 this.getEmpleados();
                 $('#añadirusuario').modal('hide');
+                this.nombreT='';
+                this.dniT='';
+                this.emailT='';
+                this.telefonoT='';
             }).catch(error => {
                 // Errores
                 console.log("efecto shake");
@@ -104,7 +143,9 @@ var app = new Vue({
             // console.log($('#datosIdEmpreado').val);
             
         },
-        
+        cambiodePagina: function(page){
+            this.pagination.current_page = page;
+            this.getEmpleados(page);
+        }
     }
-
   })

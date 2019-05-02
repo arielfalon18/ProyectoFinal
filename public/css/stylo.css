@@ -293,8 +293,8 @@ input:focus{
 /* Registro */
 /* Quitar luego este padding es por el menu */
 .registro{
-	margin-top: 9%;
 	position: relative;
+  	top: 80px;
 }
 #letra{
 	letter-spacing: 4px;
@@ -323,6 +323,24 @@ input:focus, input[type]:focus {
 	color:white !important;
 	text-decoration:none !important;
 }
+/* Cosas de ariel luego quitar  o modificar no tocar solo puede tocar una vez que se hable conmigo*/
+.colorNA{
+	background-color: red;
+}
+.ir-arriba {
+	display:none;
+	padding:20px;
+	background:#024959;
+	font-size:20px;
+	color:#fff;
+	cursor:pointer;
+	position: fixed;
+	bottom:20px;
+	right:20px;
+}
+/* ------------------------------------- */
+
+
 /* media queries
 .container-form
 #main-content .content
