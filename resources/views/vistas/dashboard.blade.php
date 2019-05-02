@@ -3,13 +3,12 @@
 
 <!-- Quitar lo de registro  -->
 <div class="registro">
-    <div class="container-fluild">
+    <div class="container-fluid">
         <div class="row"> 
-            <!-- <div class="col-md-2"></div> -->
-            <div class="col-md-12 col-md-offset-4">
-            <div class="alert alert-success" v-if="seBorro" role="alert">
-                Se elimino correctamente 
-            </div>
+            <div class="col-12">
+                <div class="alert alert-success" v-if="seBorro" role="alert">
+                    Se elimino correctamente 
+                </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h1>Bienevenido {{auth()->user()->nombre}}</h1>
@@ -81,7 +80,6 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2"></div>
         </div>
     </div>
 
