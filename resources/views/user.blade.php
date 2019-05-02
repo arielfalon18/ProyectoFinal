@@ -1,9 +1,8 @@
 @extends('layouts.user')
-@section('content')
-<div class="usuario">
-    f
-    <div class="cointainer">
 
+@section('content')
+<div class="cointainer">
+    
     <div class="container-fluid border">
     <button><p>Crear incidencia</p></button>
         <div class="row">
