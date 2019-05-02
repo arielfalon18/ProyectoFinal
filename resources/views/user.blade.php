@@ -14,5 +14,4 @@
             <div class="col-4 done border">asd</div>
         </div>
     </div>
-
 </div>
