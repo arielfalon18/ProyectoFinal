@@ -273,8 +273,8 @@ input:focus{
 /* Registro */
 /* Quitar luego este padding es por el menu */
 .registro{
-	margin-top: 9%;
 	position: relative;
+  	top: 80px;
 }
 #letra{
 	letter-spacing: 4px;
