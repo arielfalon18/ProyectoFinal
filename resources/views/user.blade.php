@@ -1,7 +1,18 @@
 @extends('layouts.user')
+
 @section('content')
-<div class="container">
-    <h1>asdasdasdasd</h1>
-<div class="class">
-    <h1>Hola</h1>
+<div class="cointainer">
+    
+    <div class="container-fluid border">
+    <button><p>Crear incidencia</p></button>
+        <div class="row">
+            <div class="col-4 to-do border">
+                <div class="card1">
+                </div>
+            </div>
+            <div class="col-4 doing border">asd</div>
+            <div class="col-4 done border">asd</div>
+        </div>
+    </div>
+
 </div>

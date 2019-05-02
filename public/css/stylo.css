@@ -30,18 +30,21 @@ h1 {
     color: white;
     margin-top: 35px;
 }
-p.text1 {
-	width: 200px;
+.text1 {
+
+	text-align: center;
+	font-size: 35px;
 	color: white;
-    margin-bottom: 100px;
-    margin-left: 100px;
+	margin-top: 50px;
 
 }
-p.text2{
-	width: 200px;
+.text2{
+
+	text-align: center;
+	font-size: 35px;
 	color: black;
-    margin-bottom: 100px;
-    margin-left: 100px;
+	margin-top: 50px;
+
 }
 
 #content-p {
@@ -76,6 +79,13 @@ p.text2{
 }
 	
  
+/* DAsborad Styles*/
+
+.btn-logout{		
+    float: right;
+
+}
+
 /* Parte derecha de la seccion*/
 nav {
 	float: right;
@@ -90,6 +100,7 @@ nav {
 	text-decoration: transparent;
 	width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
 	position: absolute; /* Hacemos que la cabecera tenga una posición fija */
+	padding-bottom: 20px;
 }
 
 nav ul {
@@ -133,8 +144,9 @@ nav ul li a:hover {
 /* Efecto del header */
 
 /* --------------- */
+
 #main-header {
-	background: black;
+	background:black;
 	font-size: 20px;
 
 	
@@ -162,6 +174,13 @@ nav ul li a:hover {
 .footer-row{
 	width: 100% !important;
 }
+.row{
+	padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
 #main-header-logo{
 	width: 80px;
     height: 64px;
@@ -171,7 +190,7 @@ margin-left: 10px;
 s
 .div-img{
 
-	/* width: 100%; */
+	width: 100%;
 	/* height: 300px; */
 	width: 250px;
 	background-color: black;
@@ -234,14 +253,15 @@ s
 	height: 110vh;
 }
 .article2{
+	margin-top: 60px;
 	/* margin-top: 20px; */
 	width: 98%;
-	height: 110vh;
+	height: 100vh;
 }
 .article3{
 	background-color: #586079;
 	width: 100%;
-	height: 110vh;
+	height: 100vh;
 }
 /* 
 

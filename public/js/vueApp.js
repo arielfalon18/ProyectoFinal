@@ -36,7 +36,7 @@ var app = new Vue({
                 pais:this.pais,
                 codigoP:this.codigoP,
                 telefono:this.telefono,
-                email:this.email,
+                email:this.email,       
                 // nombre de la empresa - codigo postal;
                 // password:$('#nombre').val()+$('#codigoP').val()
                 password:'12345'

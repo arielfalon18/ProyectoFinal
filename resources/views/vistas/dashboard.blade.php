@@ -3,10 +3,10 @@
 
 <!-- Quitar lo de registro  -->
 <div class="registro">
-    <div class="container">
+    <div class="container-fluild">
         <div class="row"> 
-            <div class="col-md-2"></div>
-            <div class="col-md-8 col-md-offset-4">
+            <!-- <div class="col-md-2"></div> -->
+            <div class="col-md-12 col-md-offset-4">
             <div class="alert alert-success" v-if="seBorro" role="alert">
                 Se elimino correctamente 
             </div>
@@ -19,14 +19,20 @@
                     <div class="panel-body">
                         
                         <div>
+                            <div class="btn-logout">
+                                <form method="POST" action="{{ route('logout')}}">
+                                    {{ csrf_field()}}
+                                    <button class="btn btn-danger"> Cerrar sesion</button>
+                                </form>
+                            </div>
+                         
                             <button class="btn btn-primary" data-toggle="modal" data-target="#añadirusuario">Añadir Usuario</button>
                         </div>
                         <hr>
-                        
-                                <table class="table table-striped" >
+                            <table class="table table-striped" >
                                 <thead>
                                     <tr>
-                                        <th scope="col">ID</th>
+                                        <th scope="col">Id</th>
                                         <th scope="col">Nombre</th>
                                         <th scope="col">DNI</th>
                                         <th scope="col">Email</th>
@@ -37,7 +43,8 @@
                                 </thead>
                                 <tbody v-for="empleadoD in empleados">
                                     <tr v-if='empleadoD.IdEmpresa=={{auth()->user()->id}}'>
-                                        <th scope="row">@{{empleadoD.id}}</th>
+
+                                        <td>@{{empleadoD.id}}</td>
                                         <td>@{{empleadoD.nombre}}</td>
                                         <td>@{{empleadoD.dni}}</td>
                                         <td>@{{empleadoD.email}}</td>
@@ -45,23 +52,12 @@
                                         <td>@{{empleadoD.tipo_usuario}}</td>
                                         <td><button class="btn btn-primary" v-on:click.prevent="deleteempleado(empleadoD)">Borrar</button><td>                                        
                                     </tr>
-                                   
-                                    
                                 <tbody>
-                                </table>
-
-                                <div v-else class="alert alert-dark" role="alert">
-                                   
-                                    <span >No hay nada </span>
-                                </div>
-                               
-                           
+                            </table>
+                            <div v-else class="alert alert-dark" role="alert">
+                                <span >No hay nada </span>
+                            </div>
                         <hr>
-
-                        <form method="POST" action="{{ route('logout')}}">
-                            {{ csrf_field()}}
-                            <button class="btn btn-danger"> Cerrar sesion</button>
-                        </form>
                     </div>
                 </div>
             </div>
