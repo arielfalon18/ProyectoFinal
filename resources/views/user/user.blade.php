@@ -1,8 +1,9 @@
-<<<<<<< HEAD
 @extends('layouts.user')
 @section('content')
 <div class="container">
-    <div class=""><h1>asdas</h1></div>
-</div>6+
-=======
->>>>>>> 19b5b3fb8f01943f25279d9c8816c864a7703828
+    <h1>asdasdasdasd</h1>
+<div class="class">
+    <h1>Hola</h1>
+    <hr>
+    <h3>PRueba</h3>
+</div>
