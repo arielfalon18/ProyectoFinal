@@ -145,6 +145,12 @@ nav ul li a:hover {
 
 /* --------------- */
 
+.navbar{
+	padding-top: 8px !important;
+}
+.nav-item{
+height: 54px;
+}
 #main-header {
 	background:black;
 	font-size: 20px;
