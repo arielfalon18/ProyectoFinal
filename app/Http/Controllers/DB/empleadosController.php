@@ -11,7 +11,7 @@ use App\Usuarios;
 class empleadosController extends Controller
 {
     public function VerEmpreados(Request $request){
-        $empleados=Empleados::orderBy('id','ASC')->paginate(3);
+        $empleados=Empleados::orderBy('id','ASC')->paginate(5);
         //Paginacion de empleados de la tabla
         return [
             'pagination' =>[
