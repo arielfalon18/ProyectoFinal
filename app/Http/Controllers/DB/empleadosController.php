@@ -60,6 +60,7 @@ class empleadosController extends Controller
 
         // usuario tecnico de la base de datos 
         // $Tecnico= Tecnicos::findOrFail($id);
+        // $Tecnico ->delete();
         // Eliminamos un empleado de la base de datos
         $empleados =Empleados::findOrFail($id);
         $empleados->delete();

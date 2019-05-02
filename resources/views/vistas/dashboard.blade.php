@@ -11,7 +11,7 @@
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h1>Bienevenido {{auth()->user()->nombre}}</h1>
+                        <h1>Bienvenido {{auth()->user()->nombre}}</h1>
                         <!-- <h1>Bienevenido {{auth()->user()->id}}</h1> -->
                         
                     </div>
@@ -24,11 +24,12 @@
                                     <button class="btn btn-danger"> Cerrar sesion</button>
                                 </form>
                             </div>
-                         
+                            <button class="btn btn-primary">Añadir Departamentos</button>
+                            <button class="btn btn-primary">Añadir Inventario</button>
                             <button class="btn btn-primary" data-toggle="modal" data-target="#añadirusuario">Añadir Usuario</button>
                         </div>
-                        
-                            <table class="table table-striped" >
+                        <div class="table-responsive">
+                        <table class="table" >
                                 <thead>
                                     <tr>
                                         <th scope="col">Id</th>
@@ -40,18 +41,20 @@
                                         <th scope="col">Acciones</th>
                                     </tr>
                                 </thead>
-                                    <tbody v-for="empleadoD in empleados">
-                                        <tr v-if='empleadoD.IdEmpresa=={{auth()->user()->id}}'>
-                                            <th scope="row">@{{empleadoD.id}}</th>
-                                            <td>@{{empleadoD.nombre}}</td>
-                                            <td>@{{empleadoD.dni}}</td>
-                                            <td>@{{empleadoD.email}}</td>
-                                            <td>@{{empleadoD.telefono}}</td>
-                                            <td>@{{empleadoD.tipo_usuario}}</td>
-                                            <td><button class="btn btn-primary" v-on:click.prevent="deleteempleado(empleadoD)">Borrar</button><td>                                        
-                                        </tr>
-                                    <tbody>
-                                </table>
+                                <tbody v-for="empleadoD in empleados">
+                                    <tr v-if='empleadoD.IdEmpresa=={{auth()->user()->id}}'>
+                                        <th scope="row">@{{empleadoD.id}}</th>
+                                        <td>@{{empleadoD.nombre}}</td>
+                                        <td>@{{empleadoD.dni}}</td>
+                                        <td>@{{empleadoD.email}}</td>
+                                        <td>@{{empleadoD.telefono}}</td>
+                                        <td>@{{empleadoD.tipo_usuario}}</td>
+                                        <td><button class="btn btn-primary" v-on:click.prevent="deleteempleado(empleadoD)">Borrar</button><td>                                        
+                                    </tr>
+                                <tbody>
+                            </table>
+                        </div>
+                            
                                 <!-- Paginacion con esto hace la paginacion de la tabla -->
                                 <nav class="colorNA" aria-label="Page navigation example">
                                     <ul class="pagination">
