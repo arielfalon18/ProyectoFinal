@@ -24,7 +24,7 @@
                                     <button class="btn btn-danger"> Cerrar sesion</button>
                                 </form>
                             </div>
-                            <button class="btn btn-primary">Añadir Departamentos</button>
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#añadirdepartamento">Añadir Departamentos</button>
                             <button class="btn btn-primary">Añadir Inventario</button>
                             <button class="btn btn-primary" data-toggle="modal" data-target="#añadirusuario">Añadir Usuario</button>
                         </div>
@@ -126,12 +126,46 @@
             </div>
             <span v-for="error in errors" class="text-danger">@{{error}}</span>
         </div>
-        
-
         <button id="AñadirEmpleado" class="btn btn-primary">Añadir</button>
         </form>
       </div>
     </div>
   </div>
 </div>
+
+<!-- MODAL PARA AÑADIR DEPARTAMENTO -->
+<div class="modal fade" id="añadirdepartamento" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregar departamentos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Formulario para añadir un departamento a la base de datos  -->
+        <form  method="post">
+        
+        <div class="form-group">
+            <input type="text" class="form-control" id="nombreD" v-model="nombreD" name="nombreD" placeholder="Departamento">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-7">
+                <input type="text" class="form-control" name="Edificio" v-model="Edificio"  id="Edificio" placeholder="Edificio">
+            </div>
+            <div class="form-group col-md-5">
+                <input type="text" class="form-control" id="plantaD" v-model="plantaD" name="plantaD" placeholder="Planta">
+            </div>
+        </div>
+            <button id="AñadirEmpleado" class="btn btn-primary">Añadir</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 @stop
