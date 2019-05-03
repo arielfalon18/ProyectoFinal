@@ -54,17 +54,17 @@
       </div>
       <div class="modal-body">
         <!-- Formulario para añadir un departamento a la base de datos  -->
-        <form  method="post">
+        <form  method="post" v-on:submit.prevent="CreateDepartament">
         
-        <div class="form-group">
-            <input type="text" class="form-control" id="nombreD" name="nombreD" placeholder="Departamento">
+        <div class="form-group" v-model="id={{auth()->user()->id}}">
+            <input type="text" class="form-control" id="nombreD" v-model="nombreD" name="nombreD" placeholder="Departamento">
         </div>
         <div class="form-row">
             <div class="form-group col-md-7">
-                <input type="text" class="form-control" name="Edificio" id="Edificio" placeholder="Edificio">
+                <input type="text" class="form-control" name="EdificioD" v-model="EdificioD" id="EdificioD" placeholder="Edificio">
             </div>
             <div class="form-group col-md-5">
-                <input type="text" class="form-control" id="plantaD" name="plantaD" placeholder="Planta">
+                <input type="text" class="form-control"  id="plantaD" v-model="plantaD" name="plantaD" placeholder="Planta">
             </div>
         </div>
             <button id="AñadirEmpleado" class="btn btn-primary">Añadir</button>

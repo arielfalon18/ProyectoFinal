@@ -1,3 +1,4 @@
+
 var app = new Vue({
     el: '#appV',
     // Llamamos ala funcion de la base de datos 
@@ -5,6 +6,10 @@ var app = new Vue({
         this.getEmpleados();
     },
     data: {
+    //   Departamento:Departamento,
+      nombreD:'',
+      plantaD:'',
+      EdificioD:'',
       seBorro:false,
       empleados:[],
       nombreT:'',
@@ -59,6 +64,20 @@ var app = new Vue({
         }
     },
     methods:{
+        // Departamentos crear un departamento
+        CreateDepartament: function(){
+            var urlDepartament='http://127.0.0.1:8000/CreateDepar';
+            axios.post(urlDepartament,{
+                Nombre:this.nombreD,
+                Planta:this.plantaD,
+                Edificio:this.EdificioD,
+                IdEmpresa:this.id
+            }).then(response=>{
+                
+            }).catch(error => {
+                this.errors = error.response.data
+            })
+        },
         //Añadimos los datos enpresariales
         NuevaContratacion: function(){
             var urlNEWEmpresa='http://127.0.0.1:8000/NEWEmpresa';
