@@ -1,22 +1,33 @@
 @extends('layouts.user')
 @section('content')
 <div class="usuario">
-    f
-    <div class="cointainer">
+    <div class="container-fluid usuario">
 
-    <div class="container-fluid border">
-    <button class="btn btn-primary" data-toggle="modal" data-target="#crearincidencia">Crear incidencia</button>
-        <div class="row">
-            <div class="col-3 to-do border">TO DO
-                <div class="card1">
+        
+        <button id="incidencia" class="btn btn-primary" data-toggle="modal" data-target="#crearincidencia">Crear incidencia</button>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-xs-12 to-do border">TO DO
+                    <div class="card1"></div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-xs-12 doing border">IN PROGRES  
+                    <div class="card1"></div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-xs-12 done border">DONE  
+                    <div class="card1"></div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-xs-12 notposible border">NOT POSIBLE  
+                    <div class="card1"></div>
                 </div>
             </div>
-            <div class="col-3 doing border">IN PROGRES</div>
-            <div class="col-3 done border">DONE</div>
-            <div class="col-3 done border">NOT POSIBLE</div>
-        </div>
+        
     </div>
-</div>
+    <!-- <div class="container">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#crearincidencia">Crear incidencia></button>
+    </div> -->
+
+
+
+
 <!-- MODAL INCIDENCIA -->
 <div class="modal fade" id="crearincidencia" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">

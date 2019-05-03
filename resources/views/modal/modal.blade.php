@@ -64,7 +64,7 @@
                 <input type="text" class="form-control" name="Edificio" id="Edificio" placeholder="Edificio">
             </div>
             <div class="form-group col-md-5">
-                <input type="text" class="form-control" id="plantaD" name="plantaD" placeholder="Planta">
+                <input type="number" class="form-control" id="plantaD" name="plantaD" placeholder="Planta">
             </div>
         </div>
             <button id="AñadirEmpleado" class="btn btn-primary">Añadir</button>
@@ -90,16 +90,14 @@
         <form  method="post">
         
         <div class="form-group">
-            <input type="text" class="form-control" id="nombreI" name="nombreI" placeholder="Nombre Inventario">
+            <input type="text" class="form-control" id="nombreI" name="nombreI" placeholder="Nombre">
         </div>
-        <div class="form-row">
-            <div class="form-group col-md-7">
-                <input type="text" class="form-control" name="tipoI" id="tipoI" placeholder="Tipo">
-            </div>
-            <div class="form-group col-md-5">
-                <input type="text" class="form-control" id="descripcionI" name="descripcionI" placeholder="Descripcion">
-            </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="tipoI" id="tipoI" placeholder="Tipo">
         </div>
+        <div class="form-group">
+                <textarea class="form-control" name="DescripcionI" id="DescripcionI" cols="30" rows="10" placeholder="Descripcion"></textarea>
+            </div>
             <button id="AñadirEmpleado" class="btn btn-primary">Añadir</button>
         </div>
         </form>
