@@ -24,9 +24,11 @@
                                     <button class="btn btn-danger"> Cerrar sesion</button>
                                 </form>
                             </div>
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#añadirdepartamento">Añadir Departamentos</button>
-                            <button class="btn btn-primary">Añadir Inventario</button>
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#añadirusuario">Añadir Usuario</button>
+                            <div class="espacio">
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#añadirdepartamento">Añadir Departamentos</button>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#añadirinventario">Añadir Inventario</button>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#añadirusuario">Añadir Usuario</button>
+                            </div>
                         </div>
                         <div class="table-responsive">
                         <table class="table" >
@@ -88,83 +90,7 @@
     </div>
 
 </div>
-
-
-<div class="modal fade" id="añadirusuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Agregar a empleado</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <!-- Formulario para añadir un usuario a la base de datos  -->
-        <form  method="post"   v-on:submit.prevent="nuevoEmpreados">
-        <div class="form-row" v-model="id={{auth()->user()->id}}">
-            <div class="form-group col-md-7">
-            <!-- v-model="nombre" -->
-                <input type="text" class="form-control" id="nombreT"  v-model="nombreT" name="nombreT" placeholder="Introduce su nombre">
-            </div>
-            <div class="form-group col-md-5">
-                <input type="text" class="form-control" id="dniT" v-model="dniT"   name="dniT" placeholder="DNI">
-            </div>
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" name="emailT" v-model="emailT"  id="emailT" placeholder="Introduce el email">
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="telefonoT" v-model="telefonoT"  name="telefonoT" placeholder="Telefono">
-            </div>
-            <div class="form-group col-md-6">
-            <select class="form-control" name="TipoEmpleado" id="TipoEmpleado" >
-                <option>Tecnico</option>
-                <option>Usuario</option>
-            </select>
-            </div>
-            <span v-for="error in errors" class="text-danger">@{{error}}</span>
-        </div>
-        <button id="AñadirEmpleado" class="btn btn-primary">Añadir</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- MODAL PARA AÑADIR DEPARTAMENTO -->
-<div class="modal fade" id="añadirdepartamento" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Agregar departamentos</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <!-- Formulario para añadir un departamento a la base de datos  -->
-        <form  method="post">
-        
-        <div class="form-group">
-            <input type="text" class="form-control" id="nombreD" name="nombreD" placeholder="Departamento">
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-7">
-                <input type="text" class="form-control" name="Edificio" id="Edificio" placeholder="Edificio">
-            </div>
-            <div class="form-group col-md-5">
-                <input type="text" class="form-control" id="plantaD" name="plantaD" placeholder="Planta">
-            </div>
-        </div>
-            <button id="AñadirEmpleado" class="btn btn-primary">Añadir</button>
-        </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+@include('modal.modal')
 
 
 

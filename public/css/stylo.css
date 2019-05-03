@@ -441,7 +441,10 @@ input:focus{
 .main-container-login{
 	margin-top: 9%;
 }
-
+/* */
+.espacio{
+	padding-bottom: 25px;
+}
 /* Registro */
 /* Quitar luego este padding es por el menu */
 .registro{
