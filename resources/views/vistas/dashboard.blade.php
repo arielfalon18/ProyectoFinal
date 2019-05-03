@@ -50,13 +50,12 @@
                                         <td>@{{empleadoD.dni}}</td>
                                         <td>@{{empleadoD.email}}</td>
                                         <td>@{{empleadoD.telefono}}</td>
-                                        <td>@{{empleadoD.tipo_usuario}}</td>
+                                        <td>@{{empleadoD.rol_e.nombre}}</td>
                                         <td><button class="btn btn-primary" v-on:click.prevent="deleteempleado(empleadoD)">Borrar</button><td>                                        
                                     </tr>
                                 <tbody>
                             </table>
                         </div>
-                            
                                 <!-- Paginacion con esto hace la paginacion de la tabla -->
                                 <nav  aria-label="Page navigation example">
                                     <ul class="pagination">
@@ -77,8 +76,6 @@
                                         </li>
                                     </ul>
                                 </nav>
-                               
-
                                 <div v-else class="alert alert-dark" role="alert">
                                     <span >No hay nada </span>
                                 </div>
@@ -88,7 +85,6 @@
             </div>
         </div>
     </div>
-
 </div>
 @include('modal.modal')
 

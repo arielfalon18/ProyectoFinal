@@ -21,6 +21,11 @@ Route::get('Contactos', function () {
 
 //Creamos un departamento
 Route::post('CreateDepar', 'DB\departamentoController@NEWdepartamento');
+//Mostramos los datos de departamento
+Route::get('DepartamentosGET','DB\departamentoController@GetDepartamento');
+//Mostrar los ROl de empresa 
+Route::get('RolEmpleadoGET','DB\RolController@GetRol');
+//--------------------------------
 //VER TODOS LOS DATOS 
 Route::get('empleados', 'DB\empleadosController@VerEmpreados');
 //INSERTAR DATOS DE EMPLEADOS 7

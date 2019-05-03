@@ -3,40 +3,51 @@ var app = new Vue({
     el: '#appV',
     // Llamamos ala funcion de la base de datos 
     created:function(){
+        this.getDepartament();
         this.getEmpleados();
+        this.getRol();
+        
     },
     data: {
-    //   Departamento:Departamento,
-      nombreD:'',
-      plantaD:'',
-      EdificioD:'',
-      seBorro:false,
-      empleados:[],
-      nombreT:'',
-      dniT:'',
-      emailT:'',
-      telefonoT:'',
-      id:'',
-      errors:[],
-      aceptadoE:false,
-      pagination: {
-        'total' :0,
-        'current_page':0,
-        'per_page' :0,
-        'last_page':0,
-        'from' :0,
-        'to':0,
-      },
-      nombre:'',
-      cif:'',
-      direccion:'',
-      ciudad:'',
-      pais:'',
-      codigoP:'',
-      email:'',
-      telefono:'',
-      respuestaEmpresa:false,
-      offset:3,
+    //Departamento:Departamento,
+        nombreD:'',
+        plantaD:'',
+        EdificioD:'',
+        DepartamentosT:[],
+        //Mostrar los rol de empleado
+        RolEmpleado:[],
+        // -----------------------
+        seBorro:false,
+        empleados:[],
+        //Crear Empleado
+        nombreT:'',
+        dniT:'',
+        emailT:'',
+        telefonoT:'',
+        id:'',
+        idDepartamento:'',
+        idRol:'',
+        //-------------
+        errors:[],
+        aceptadoE:false,
+        pagination: {
+            'total' :0,
+            'current_page':0,
+            'per_page' :0,
+            'last_page':0,
+            'from' :0,
+            'to':0,
+        },
+        nombre:'',
+        cif:'',
+        direccion:'',
+        ciudad:'',
+        pais:'',
+        codigoP:'',
+        email:'',
+        telefono:'',
+        respuestaEmpresa:false,
+        offset:3,
     },
     computed:{
         isActived: function(){
@@ -77,6 +88,20 @@ var app = new Vue({
             }).catch(error => {
                 this.errors = error.response.data
             })
+        },
+        // Mostrar Departamentos 
+        getDepartament: function(){
+            var urldepartamento='http://127.0.0.1:8000/DepartamentosGET';
+            axios.get(urldepartamento).then(response =>{
+                this.DepartamentosT=response.data
+            }) 
+        },
+        //Mostrar los rol de empleado que tenemos 
+        getRol: function(){
+            var urlRolEmpleado='http://127.0.0.1:8000/RolEmpleadoGET';
+            axios.get(urlRolEmpleado).then(response =>{
+                this.RolEmpleado=response.data
+            }) 
         },
         //Añadimos los datos enpresariales
         NuevaContratacion: function(){
@@ -144,8 +169,9 @@ var app = new Vue({
                 dni:this.dniT,
                 email:this.emailT,
                 telefono:this.telefonoT,
-                tipo_usuario:$('#TipoEmpleado').val(),
-                IdEmpresa:this.id
+                IdEmpresa:this.id,
+                IdDepartamento:this.idDepartamento,
+                Idrol:this.idRol,
             }).then(response=>{
                 this.errors=[];
                 this.getEmpleados();

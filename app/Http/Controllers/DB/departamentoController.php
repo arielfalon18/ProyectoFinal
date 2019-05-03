@@ -17,4 +17,8 @@ class departamentoController extends Controller
         $Departamento=Departamento::create($resquest->all());
         $Departamento->save();
     }
+    public function GetDepartamento(){
+        $Departamento=Departamento::get();
+        return $Departamento;
+    }
 }

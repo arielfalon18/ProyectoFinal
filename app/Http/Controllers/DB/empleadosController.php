@@ -11,8 +11,10 @@ use App\Usuarios;
 class empleadosController extends Controller
 {
     public function VerEmpreados(Request $request){
-        $empleados=Empleados::orderBy('id','ASC')->paginate(5);
+        $empleados=Empleados::with('RolE')->paginate(5);
+      
         //Paginacion de empleados de la tabla
+       
         return [
             'pagination' =>[
                 'total'         =>$empleados->total(),
@@ -34,23 +36,21 @@ class empleadosController extends Controller
         ]);
         $empleados=Empleados::create($resquest->all());
         $empleados->save();
-        if ($resquest['tipo_usuario']=='Tecnico') {
-            // $datos= Empleados::find($resquest['nombre']);
+        // if ($resquest['tipo_usuario']=='Tecnico') {
+        //     // $datos= Empleados::find($resquest['nombre']);
             
-            Tecnicos::create([
-                "id"=>$empleados['id'],
-                "UsuarioLogin"=>$resquest['email'],
-                "Password"=>$resquest['nombre']
-            ]);
-        }else if($resquest['tipo_usuario']=='Usuario'){
-            Usuarios::create([
-                "id"=>$empleados['id'],
-                "UsuarioLogin"=>$resquest['email'],
-                "Password"=>$resquest['nombre'].$resquest['dni']
-            ]);
-        }
-
-
+        //     Tecnicos::create([
+        //         "id"=>$empleados['id'],
+        //         "UsuarioLogin"=>$resquest['email'],
+        //         "Password"=>$resquest['nombre']
+        //     ]);
+        // }else if($resquest['tipo_usuario']=='Usuario'){
+        //     Usuarios::create([
+        //         "id"=>$empleados['id'],
+        //         "UsuarioLogin"=>$resquest['email'],
+        //         "Password"=>$resquest['nombre'].$resquest['dni']
+        //     ]);
+        // }
         return;
     }
     public function eliminarEmpleado($id){
