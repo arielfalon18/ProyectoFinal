@@ -56,29 +56,30 @@
                         </div>
                             
                                 <!-- Paginacion con esto hace la paginacion de la tabla -->
-                                <nav class="colorNA" aria-label="Page navigation example">
+                                <nav  aria-label="Page navigation example">
                                     <ul class="pagination">
-                                        <li v-if="pagination.current_page > 1">
-                                            <a href="#" @click.prevent="cambiodePagina(pagination.current_page - 1)">
+                                        <li class="page-item" v-if="pagination.current_page > 1">
+                                            <a class="page-link" href="#" @click.prevent="cambiodePagina(pagination.current_page - 1)">
                                                 <span>Atras</span>
                                             </a>
                                         </li>
-                                        <li v-for="page in pagesNumber" v-bind:class="[ page == isActived ? 'active' : '']">
-                                            <a href="#" @click.prevent="cambiodePagina(page)">
+                                        <li class="page-item" v-for="page in pagesNumber" v-bind:class="[ page == isActived ? 'active' : '']">
+                                            <a class="page-link" href="#" @click.prevent="cambiodePagina(page)">
                                                 @{{page}}
                                             </a>
                                         </li>
-                                        <li v-if="pagination.current_page < pagination.last_page">
-                                            <a href="#" @click.prevent="cambiodePagina(pagination.current_page + 1)">
+                                        <li class="page-item" v-if="pagination.current_page < pagination.last_page">
+                                            <a class="page-link" href="#" @click.prevent="cambiodePagina(pagination.current_page + 1)">
                                                 <span>Siguiente</span>
                                             </a>
                                         </li>
                                     </ul>
                                 </nav>
+                               
+
                                 <div v-else class="alert alert-dark" role="alert">
                                     <span >No hay nada </span>
                                 </div>
-                        
                     
                     </div>
                 </div>
@@ -87,6 +88,7 @@
     </div>
 
 </div>
+
 
 <div class="modal fade" id="añadirusuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">

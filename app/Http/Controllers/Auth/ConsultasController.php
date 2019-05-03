@@ -26,7 +26,7 @@ class ConsultasController extends Controller
         // $Datos_Empresa->save();
         // return redirect('/');
         // Hash::make(request('password'));
-        Datos_empresa::create([
+        $datos_empresa=Datos_empresa::create([
             'nombre'=>$resquest['nombre'],
             'cif'=>$resquest['cif'],
             'direccion'=>$resquest['direccion'],
@@ -37,17 +37,16 @@ class ConsultasController extends Controller
             'email'=>$resquest['email'],
             'password'=>Hash::make($resquest['password']),
         ]);
+        $datos_empresa->save();
         // theincidence.19@gmail.com
         // Barcelona_12
-        $correoEnviar=$resquest['email'];
+        $correoEnviar=$datos_empresa['email'];
         $datos = array('Nombre'=>$resquest['nombre'] ,'constraseña'=>$resquest['password']);
-        Mail::send('email.contactos',$datos, function($msj){
-            $msj->to("ariel.zac18@gmail.com","theincidence");
+        Mail::send('email.contactos',$datos, function($msj) use ($correoEnviar){
+            $msj->to($correoEnviar,"theincidence");
             $msj->subject("Envio de datos cuenta");
             $msj->from('heincidence.19@gmail.com',"theinciden");
         });
-
-        
         return;
     }
 }

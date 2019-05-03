@@ -38,7 +38,7 @@ body {
 	z-index: 3;
   }
   
-  .header ul {
+  .header .menu {
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -46,14 +46,14 @@ body {
 	background-color: #fff;
   }
   
-  .header li a {
+  .header .li .a {
 	display: block;
 	padding: 20px 20px;
 	border-right: 1px solid #f4f4f4;
 	text-decoration: none;
   }
   
-  .header li a:hover,
+  .header .li .a:hover,
   .header .menu-btn:hover {
 	background-color: #f4f4f4;
   }
@@ -143,10 +143,10 @@ body {
   /* 48em = 768px */
   
   @media (min-width: 48em) {
-	.header li {
+	.header .li {
 	  float: left;
 	}
-	.header li a {
+	.header .li .a {
 	  padding: 20px 30px;
 	}
 	.header .menu {
@@ -253,19 +253,19 @@ nav {
 	padding-bottom: 20px;
 }
 
-nav ul {
+nav .menu {
 	/* margin: -12px; */
 	padding: 0;
 	list-style: none;
 	padding-right: 20px;
 }
 	
-nav ul li {
+nav .menu li {
 	display: inline-block;
 	line-height: 70px;
 }
 			
-nav ul li a {
+nav .menu li a {
 	display: block;
 	padding: 0 10px;
 	text-decoration: none;
@@ -273,7 +273,7 @@ nav ul li a {
 	/* margin-top: 20px; */
 	position: relative;
 }
-nav ul li a:hover {
+nav .menu li a:hover {
 	text-decoration: none;
 	color: white;
 	
@@ -476,9 +476,9 @@ input:focus, input[type]:focus {
 	text-decoration:none !important;
 }
 /* Cosas de ariel luego quitar  o modificar no tocar solo puede tocar una vez que se hable conmigo*/
-.colorNA{
+/* .colorNA{
 	background-color: red;
-}
+} */
 .ir-arriba {
 	display:none;
 	padding:20px;
