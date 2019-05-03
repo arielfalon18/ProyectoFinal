@@ -66,7 +66,7 @@
         <div class="form-group">
             <textarea class="form-control" name="Descripcion" id="Descripcion" cols="30" rows="10" placeholder="Descripcion"></textarea>
         </div>
-        <button id="AñadirEmpleado" class="btn btn-primary">Añadir</button>
+        <button id="AñadirIncidencia" class="btn btn-primary">Añadir</button>
         </form>
       </div>
     </div>
