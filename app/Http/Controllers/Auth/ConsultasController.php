@@ -41,7 +41,7 @@ class ConsultasController extends Controller
         // theincidence.19@gmail.com
         // Barcelona_12
         $correoEnviar=$datos_empresa['email'];
-        $datos = array('Nombre'=>$resquest['nombre'] ,'constraseña'=>$resquest['password']);
+        $datos = array('Nombre'=>$resquest['nombre'] ,'contraseña'=>$resquest['password'],'email'=>$resquest['email']);
         Mail::send('email.contactos',$datos, function($msj) use ($correoEnviar){
             $msj->to($correoEnviar,"theincidence");
             $msj->subject("Envio de datos cuenta");
