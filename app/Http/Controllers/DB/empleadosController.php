@@ -5,8 +5,8 @@ namespace App\Http\Controllers\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Empleados;
-use App\Tecnicos;
-use App\Usuarios;
+use App\Rol;
+use App\Departamento;
 
 class empleadosController extends Controller
 {
@@ -34,7 +34,22 @@ class empleadosController extends Controller
             'email' =>'required',
             'telefono' =>'required'
         ]);
-        $empleados=Empleados::create($resquest->all());
+        $rol=Rol::where('nombre',$resquest['Idrol'])->get();
+        $departamento=Departamento::where('Nombre',$resquest['IdDepartamento'])->get();
+        foreach ($rol as $roles) {
+            foreach ($departamento as $depart) {
+                $empleados=Empleados::create([
+                    "nombre"=>$resquest['nombre'],
+                    "dni"=>$resquest['dni'],
+                    "email"=>$resquest['email'],
+                    "telefono"=>$resquest['telefono'],
+                    "IdEmpresa"=>$resquest['IdEmpresa'],
+                    "IdDepartamento"=>$depart->id,
+                    "Idrol"=>$roles->id_R,
+                ]);
+            }
+        }
+        
         $empleados->save();
         // if ($resquest['tipo_usuario']=='Tecnico') {
         //     // $datos= Empleados::find($resquest['nombre']);
@@ -55,8 +70,8 @@ class empleadosController extends Controller
     }
     public function eliminarEmpleado($id){
         // eliminamos un usuario en la base de datos
-        $usuario = Usuarios::findOrFail($id);
-        $usuario->delete();
+        // $usuario = Usuarios::findOrFail($id);
+        // $usuario->delete();
 
         // usuario tecnico de la base de datos 
         // $Tecnico= Tecnicos::findOrFail($id);

@@ -11,8 +11,8 @@ class Rol extends Model
     public $timestamps = false;
 
     //Relacion de muchos a uno
-    // public function empleados(){
-    //     return $this->hasOne('app\Empleados','Idrol');
-    // }
+    public function empleados(){
+        return $this->hasMany('app\Empleados','Idrol','id_R');
+    }
     
 }

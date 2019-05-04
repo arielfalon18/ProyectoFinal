@@ -84,6 +84,8 @@ var app = new Vue({
                 Edificio:this.EdificioD,
                 IdEmpresa:this.id
             }).then(response=>{
+                $('#añadirdepartamento').modal('hide');
+                location.reload();
                 
             }).catch(error => {
                 this.errors = error.response.data
@@ -170,8 +172,8 @@ var app = new Vue({
                 email:this.emailT,
                 telefono:this.telefonoT,
                 IdEmpresa:this.id,
-                IdDepartamento:this.idDepartamento,
-                Idrol:this.idRol,
+                IdDepartamento:$('#TDepartamento').val(),
+                Idrol:$('#TipoEmpleado').val(),
             }).then(response=>{
                 this.errors=[];
                 this.getEmpleados();
@@ -185,7 +187,8 @@ var app = new Vue({
                 console.log("efecto shake");
                 $('#añadirusuario').effect('shake');
             })           
-            // console.log($('#datosIdEmpreado').val);
+            // console.log($('#TDepartamento').val());
+            // console.log($('#TipoEmpleado').val());
             
         },
         cambiodePagina: function(page){

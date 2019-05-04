@@ -14,7 +14,7 @@ class Rol extends Migration
     public function up()
     {
         Schema::defaultStringLength(191);
-        Schema::create('rol', function (Blueprint  $table){
+        Schema::create('id_R', function (Blueprint  $table){
             $table->increments('id');
             $table->string('nombre');
         });
