@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Empleados;
 use App\Rol;
 use App\Departamento;
-
+use App\login;
 class empleadosController extends Controller
 {
     public function VerEmpreados(Request $request){
@@ -49,29 +49,23 @@ class empleadosController extends Controller
                 ]);
             }
         }
-        
         $empleados->save();
-        // if ($resquest['tipo_usuario']=='Tecnico') {
-        //     // $datos= Empleados::find($resquest['nombre']);
-            
-        //     Tecnicos::create([
-        //         "id"=>$empleados['id'],
-        //         "UsuarioLogin"=>$resquest['email'],
-        //         "Password"=>$resquest['nombre']
-        //     ]);
-        // }else if($resquest['tipo_usuario']=='Usuario'){
-        //     Usuarios::create([
-        //         "id"=>$empleados['id'],
-        //         "UsuarioLogin"=>$resquest['email'],
-        //         "Password"=>$resquest['nombre'].$resquest['dni']
-        //     ]);
-        // }
+
+        //Crear login del empleado 
+        $loginU=login::create([
+            "id"=>$empleados['id'],
+            "usuarioLogin"=>$resquest['email'],
+            //De momento 12345 luego se cambia y se codificara la constraseña
+            "paswordLogin"=>'12345'
+        ]);
+        $loginU->save();
+        
         return;
     }
     public function eliminarEmpleado($id){
-        // eliminamos un usuario en la base de datos
-        // $usuario = Usuarios::findOrFail($id);
-        // $usuario->delete();
+        //eliminamos un usuario en la base de datos
+        $loginU = login::findOrFail($id);
+        $loginU->delete();
 
         // usuario tecnico de la base de datos 
         // $Tecnico= Tecnicos::findOrFail($id);

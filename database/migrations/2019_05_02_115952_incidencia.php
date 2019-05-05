@@ -31,7 +31,7 @@ class Incidencia extends Migration
             $table->integer('IdEmpresa')->unsigned();
             $table->foreign('IdEmpresa')->references('id')->on('Datos_Empresa')
                 ->onDelete('cascade')
-                ->onDelete('cascade');
+                ->onUpdate('cascade');
         });
     }
 
