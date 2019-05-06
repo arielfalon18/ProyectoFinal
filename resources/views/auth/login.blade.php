@@ -14,7 +14,7 @@
                 </div>
                 <div class="panel-body">
                     <div class="text-right">
-                        <button class=" btn btn-primary" data-toggle="modal" data-target="#InserUsuarioE">Acceder Usuario</button>
+                        <button class=" btn btn-primary" ><a style="color:white" href="/InciarEmpleado">Acceder Usuario</a></button>
                     </div>
                     
                     <form action="{{route('login')}}" method="POST">

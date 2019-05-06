@@ -5,6 +5,7 @@ namespace App\Http\Controllers\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Empleados;
+use Illuminate\Support\Facades\Hash;
 use App\Rol;
 use App\Departamento;
 use App\login;
@@ -56,7 +57,7 @@ class empleadosController extends Controller
             "id"=>$empleados['id'],
             "usuarioLogin"=>$resquest['email'],
             //De momento 12345 luego se cambia y se codificara la constraseña
-            "paswordLogin"=>'12345'
+            "paswordLogin"=>Hash::make('12345')
         ]);
         $loginU->save();
         
