@@ -126,6 +126,7 @@ CREATE TABLE `login` (
   `id` int(10) UNSIGNED NOT NULL,
   `usuarioLogin` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `paswordLogin` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL
+  /*  `nombre` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL */
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --

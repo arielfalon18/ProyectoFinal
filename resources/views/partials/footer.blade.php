@@ -4,11 +4,17 @@
   <div class="container-fluid text-center text-md-left">
     <div class="row">
       <div class="col-md-4 mt-md-0 mt-3">
-        <a id="logo-header-footer" href="inicio"><img id="main-header-logo-footer" src="media/logo/logo-transparent.png" alt  =""></a>S
+        <a id="logo-header-footer" href="inicio"><img id="main-header-logo-footer" src="media/logo/logo-transparent.png"></a>
       </div>
       <div class="col-md-4 mb-md-0 mb-3 footerdiv2">
-       <i class="far fa-copyright cr-logo"></i>
-          
+        <!-- <i class="far fa-copyright cr-logo"></i> -->
+        <ul>
+          <div class="list">
+            <li class="llista"><a href="/Contactos">Contactos</a></li>
+            <li class="llista">2</li>
+            <li class="llista">3</li>
+
+          </div>
         </ul>
       </div>
       <div class="col-md-4 mb-md-0 mb-3">
