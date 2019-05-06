@@ -10,15 +10,16 @@
       </div>
       <div class="modal-body">
         <!-- Formulario para añadir un departamento a la base de datos  -->
-        <form  method="post" v-on:submit.prevent="loginUsuario">
-        
+        <form  action="{{route('loginEmpleadoU')}}" method="POST">
+        {{csrf_field()}}
         <div class="form-group">
             <label for="loginN">Email</label>
-            <input type="text" class="form-control" v-model="loginN" id="loginN" name="loginN" placeholder="Introduce tu nombre">
+            <input type="text" class="form-control" value="{{old('loginN')}}" id="loginN" name="loginN" placeholder="Introduce tu nombre">
+            {!! $errors->first('loginN','<span class="help-block">:message</span>')!!}
         </div>
-        <div class="form-group">
+        <div class="form-group {{$errors->has('password')? 'has-error' :''}}">
             <label for="passwordN">Passwird</label>
-            <input type="text" class="form-control"  v-model="passwordN" name="passwordN" id="passwordN" placeholder="Introduce tu password">
+            <input type="text" class="form-control"   name="passwordN" id="passwordN" placeholder="Introduce tu password">
         </div>
         <button id="AñadirEmpleado" class="btn btn-primary">Acceder Usuario</button>
         </form>

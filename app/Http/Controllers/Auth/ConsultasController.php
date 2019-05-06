@@ -12,20 +12,29 @@ class ConsultasController extends Controller
 {
     public function nuevoR(Request $resquest)
     {
+        $messages = [
+            'nombre.required' => 'Agrega el nombre del estudiante.',
+            'cif.required' =>'El nombre del estudiante no puede ser mayor a :max caracteres.',
+            'direccion.required' => 'Agrega la puntuación al estudiante.',
+            'telefono.required' => 'La puntuación debe ser un número',
+            'ciudad.required' => 'Ciudad necesario',
+            'pais.required' => 'Pais necesario',
+            'codigoP.required' => 'Codigo postal necesario',
+            'email.required' => 'Email necesario',
+            'password.required' => 'Contraseña necesaria'
+        ];
+        $resquest->validate([
+            'nombre'=>'required',
+            'cif'=>'required',
+            'direccion'=>'required',
+            'telefono'=>'required',
+            'ciudad'=>'required',
+            'pais'=>'required',
+            'codigoP'=>'required',
+            'email'=>'required',
+            'password'=>'required',
+        ],$messages);
         
-        // $Datos_Empresa = new Datos_empresa;
-        // $Datos_Empresa->nombre = request('nombre');
-        // $Datos_Empresa->cif = request('cif');
-        // $Datos_Empresa->direccion = request('direccion');
-        // $Datos_Empresa->telefono = request('telefono');
-        // $Datos_Empresa->ciudad = request('ciudad');
-        // $Datos_Empresa->pais = request('pais');
-        // $Datos_Empresa->codigoP = request('codigoP');
-        // $Datos_Empresa->email = request('email');
-        // $Datos_Empresa->password = Hash::make('123456789');
-        // $Datos_Empresa->save();
-        // return redirect('/');
-        // Hash::make(request('password'));
         $datos_empresa=Datos_empresa::create([
             'nombre'=>$resquest['nombre'],
             'cif'=>$resquest['cif'],

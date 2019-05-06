@@ -27,9 +27,13 @@ class Empleado extends Migration
             $table->foreign('IdEmpresa')->references('id')->on('Datos_Empresa')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
+            //De momento no se puede ejecutar las relaciones de este modo 
+            //porque cuando haces la migrte no te lo hace de orden directo te lo hace
+            //orden 1 por 1 y no te lo hace de forma que te coja el valor primero la tabla empleado.
+            
             // $table->foreign('IdDepartamento')->references('id')->on('Departamento')
             //     ->onDelete('cascade')
-            //     ->onDelete('cascade');
+            //     ->onUpdate('cascade');
             // $table->foreign('Idrol')->references('id')->on('rol')
             // ->onDelete('cascade')
             // ->onDelete('cascade');

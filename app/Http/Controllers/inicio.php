@@ -12,5 +12,8 @@ class inicio extends Controller
         return view('inicio');
         
     }
+    public function getFormulario(){
+        return view('vistas.FormularioLogin');
+    }
 
 }

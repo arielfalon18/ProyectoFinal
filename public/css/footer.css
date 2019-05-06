@@ -1,0 +1,17 @@
+#main-header-logo-footer{
+    width: 300px;
+    height: 300px;
+}
+.list{
+    list-style:none;
+    margin-top: 50px;
+}
+.page-footer{color: wheat;
+    background-color: black;
+}
+.cr-logo{
+width: 200px;
+}
+.llista{
+    margin-bottom: 50px;
+}

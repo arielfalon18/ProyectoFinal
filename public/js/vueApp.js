@@ -25,8 +25,8 @@ var app = new Vue({
         emailT:'',
         telefonoT:'',
         id:'',
-        idDepartamento:'',
-        idRol:'',
+        selected:'A',
+        idRol:'B',
         //Login usuario de base de datos
         loginN:'',
         passwordN:'',
@@ -172,9 +172,7 @@ var app = new Vue({
                 // console.log("efecto shake");
                 // $('#añadirusuario').effect('shake');
                 this.errors = error.response.data
-            })
-          
-            
+            })   
         },
         // Mostramos todos los empleados que tenemos en la base de datos e
         getEmpleados: function(page){
@@ -215,6 +213,8 @@ var app = new Vue({
                 this.dniT='';
                 this.emailT='';
                 this.telefonoT='';
+                this.selected='A';
+                this.idRol='B';
             }).catch(error => {
                 // Errores
                 console.log("efecto shake");
@@ -227,12 +227,6 @@ var app = new Vue({
         cambiodePagina: function(page){
             this.pagination.current_page = page;
             this.getEmpleados(page);
-        },
-        loginUsuario:function(){
-            console.log("HOLA");
-            usuarioLogin :this.loginN;
-            paswordLogin:this.passwordN
-            
-        },
+        }
     }
   })
