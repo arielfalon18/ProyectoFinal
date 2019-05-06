@@ -20,11 +20,19 @@ class Empleado extends Migration
             $table->string('dni');
             $table->string('email');
             $table->integer('telefono');
-            $table->string('tipo_usuario');
+            // $table->string('tipo_usuario');
             $table->integer('IdEmpresa')->unsigned();
+            $table->integer('IdDepartamento')->unsigned();
+            $table->integer('Idrol')->unsigned();
             $table->foreign('IdEmpresa')->references('id')->on('Datos_Empresa')
                 ->onDelete('cascade')
-                ->onDelete('cascade');
+                ->onUpdate('cascade');
+            // $table->foreign('IdDepartamento')->references('id')->on('Departamento')
+            //     ->onDelete('cascade')
+            //     ->onDelete('cascade');
+            // $table->foreign('Idrol')->references('id')->on('rol')
+            // ->onDelete('cascade')
+            // ->onDelete('cascade');
         });
     }
 

@@ -5,14 +5,16 @@ namespace App\Http\Controllers\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Empleados;
-use App\Tecnicos;
-use App\Usuarios;
-
+use App\Rol;
+use App\Departamento;
+use App\login;
 class empleadosController extends Controller
 {
     public function VerEmpreados(Request $request){
-        $empleados=Empleados::orderBy('id','ASC')->paginate(5);
+        $empleados=Empleados::with('RolE')->paginate(5);
+      
         //Paginacion de empleados de la tabla
+       
         return [
             'pagination' =>[
                 'total'         =>$empleados->total(),
@@ -32,31 +34,44 @@ class empleadosController extends Controller
             'email' =>'required',
             'telefono' =>'required'
         ]);
-        $empleados=Empleados::create($resquest->all());
-        $empleados->save();
-        if ($resquest['tipo_usuario']=='Tecnico') {
-            // $datos= Empleados::find($resquest['nombre']);
-            
-            Tecnicos::create([
-                "id"=>$empleados['id'],
-                "UsuarioLogin"=>$resquest['email'],
-                "Password"=>$resquest['nombre']
-            ]);
-        }else if($resquest['tipo_usuario']=='Usuario'){
-            Usuarios::create([
-                "id"=>$empleados['id'],
-                "UsuarioLogin"=>$resquest['email'],
-                "Password"=>$resquest['nombre'].$resquest['dni']
-            ]);
+        $rol=Rol::where('nombre',$resquest['Idrol'])->get();
+        $departamento=Departamento::where('Nombre',$resquest['IdDepartamento'])->get();
+        foreach ($rol as $roles) {
+            foreach ($departamento as $depart) {
+                $empleados=Empleados::create([
+                    "nombre"=>$resquest['nombre'],
+                    "dni"=>$resquest['dni'],
+                    "email"=>$resquest['email'],
+                    "telefono"=>$resquest['telefono'],
+                    "IdEmpresa"=>$resquest['IdEmpresa'],
+                    "IdDepartamento"=>$depart->id,
+                    "Idrol"=>$roles->id_R,
+                ]);
+            }
         }
+        $empleados->save();
 
-
+        //Crear login del empleado 
+        $loginU=login::create([
+            "id"=>$empleados['id'],
+            "usuarioLogin"=>$resquest['email'],
+            //De momento 12345 luego se cambia y se codificara la constraseña
+            "paswordLogin"=>'12345'
+        ]);
+        $loginU->save();
+        
         return;
     }
     public function eliminarEmpleado($id){
-        $empleados = Empleados::findOrFail($id);
-        // $empleados = Tecnicos::findOrFail($id);
-        // $empleados = Usuarios::findOrFail($id);
+        //eliminamos un usuario en la base de datos
+        $loginU = login::findOrFail($id);
+        $loginU->delete();
+
+        // usuario tecnico de la base de datos 
+        // $Tecnico= Tecnicos::findOrFail($id);
+        // $Tecnico ->delete();
+        // Eliminamos un empleado de la base de datos
+        $empleados =Empleados::findOrFail($id);
         $empleados->delete();
     }
 }

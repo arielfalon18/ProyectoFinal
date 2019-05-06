@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Tecnico extends Migration
+class Login extends Migration
 {
     /**
      * Run the migrations.
@@ -14,13 +14,13 @@ class Tecnico extends Migration
     public function up()
     {
         Schema::defaultStringLength(191);
-        Schema::create('Tecnico', function (Blueprint  $table){
+        Schema::create('login', function (Blueprint  $table){
             $table->integer('id')->unsigned()->primary();
-            $table->string('UsuarioLogin');
-            $table->string('Password');
+            $table->string('usuarioLogin');
+            $table->string('paswordLogin');
             $table->foreign('id')->references('id')->on('empleados')
                 ->onDelete('cascade')
-                ->onDelete('cascade');
+                ->onUpdate('cascade');
         });
     }
 
@@ -31,6 +31,6 @@ class Tecnico extends Migration
      */
     public function down()
     {
-        Schema::drop('Tecnico');
+        //
     }
 }

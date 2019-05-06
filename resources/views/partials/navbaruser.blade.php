@@ -1,5 +1,4 @@
 <header id="main-header">
-    <!-- Navgador de la derecha lo podemos poner en el centro o dejarlo ahy  -->
   <nav class="navbar navbar-expand-lg navbar-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -21,17 +20,17 @@
 </header>
 
 
+<!-- jsdnfjnfjsndfjnsdfjnsdjfsdnjfnsdjfndkjfnsd -->
 
-<!-- <script>
-const nav = document.querySelector('#main-header');
-const navTop = nav.offsetTop;
-function stickyNavigation() {
-  if (window.scrollY >= 665) {
-    document.body.classList.add('fixed-nav');
-  } else {
-    document.body.classList.remove('fixed-nav');
-  }
-}
-window.addEventListener('scroll', stickyNavigation);
+<!-- <header class="header">
+  <a href="" class="logo"> <a id="logo-header" href="inicio"><img id="main-header-logo" src="media/logo/logo-transparent.png" alt=""></a></a>
+  <input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li class=li><a class="a" href="/inicio">Inicio</a></li>
+    <li class=li><a class="a" href="/Nosotros">Acerca de nosotros</a></li>
+    <li class=li><a class="a" href="/Contactos">Contacto</a></li>
+    <li class=li><a class="a" href="/registrarse">Acceso</a></li>
+  </ul>
+</header> -->
 
-</script> -->

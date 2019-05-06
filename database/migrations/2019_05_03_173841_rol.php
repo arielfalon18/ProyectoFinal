@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Usuario extends Migration
+class Rol extends Migration
 {
     /**
      * Run the migrations.
@@ -14,13 +14,9 @@ class Usuario extends Migration
     public function up()
     {
         Schema::defaultStringLength(191);
-        Schema::create('Usuario', function (Blueprint  $table){
-            $table->integer('id')->unsigned()->primary();
-            $table->string('UsuarioLogin');
-            $table->string('Password');
-            $table->foreign('id')->references('id')->on('empleados')
-                ->onDelete('cascade')
-                ->onDelete('cascade');
+        Schema::create('rol', function (Blueprint  $table){
+            $table->increments('id_R');
+            $table->string('nombre');
         });
     }
 

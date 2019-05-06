@@ -20,20 +20,18 @@ class Incidencia extends Migration
             $table->string('FechaEntrada');
             $table->string('FechaCierre');
             $table->string('NombreCategoria');
-            $table->string('FechaEntrada');
             $table->string('Descripcion');
             $table->string('Imagenes');
-            $table->integer('Id_Emplesa_usuario');
-            $table->integer('Id_Emplesa_tecnico');
+            $table->integer('Id_Empleado_usuario');
+            $table->integer('Id_Empleado_tecnico');
             $table->string('NombrePrioridad');
             $table->string('Estado');
-            $table->string('Prioridad');
             $table->string('Prioridad');
 
             $table->integer('IdEmpresa')->unsigned();
             $table->foreign('IdEmpresa')->references('id')->on('Datos_Empresa')
                 ->onDelete('cascade')
-                ->onDelete('cascade');
+                ->onUpdate('cascade');
         });
     }
 
