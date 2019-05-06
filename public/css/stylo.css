@@ -444,7 +444,7 @@ Mi comentario Aqui..
 /* Para quitar el azul de los input */
 input:focus{
 	box-shadow: none !important;
-    outline: none !important;
+  outline: none !important;
 }
 .tipoL{
 	font-size: 20px;

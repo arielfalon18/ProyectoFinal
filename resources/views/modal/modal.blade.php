@@ -15,6 +15,7 @@
             <div class="form-group col-md-7">
             <!-- v-model="nombre" -->
                 <input type="text" class="form-control" id="nombreT"  v-model="nombreT" name="nombreT" placeholder="Introduce su nombre">
+                <span v-for="error in errors" class="text-danger">@{{error.nombre}}</span>
             </div>
             <div class="form-group col-md-5">
                 <input type="text" class="form-control" id="dniT" v-model="dniT"   name="dniT" placeholder="DNI">
@@ -40,7 +41,6 @@
                 <option v-for="RolEmplead in RolEmpleado">@{{RolEmplead.nombre}}</option>
           </select>
         </div>
-        <span v-for="error in errors" class="text-danger">@{{error}}</span>
         <button id="AñadirEmpleado" class="btn btn-primary">Añadir</button>
         </form>
       </div>
