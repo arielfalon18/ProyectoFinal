@@ -2,8 +2,6 @@
 @section('content')
 <div class="usuario">
     <div class="container-fluid usuario">
-
-        
         <button id="incidencia" class="btn btn-primary" data-toggle="modal" data-target="#crearincidencia">Crear incidencia</button>
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-xs-12 to-do border">TO DO
@@ -19,11 +17,7 @@
                     <div class="card1"></div>
                 </div>
             </div>
-        
     </div>
-    <!-- <div class="container">
-        <button class="btn btn-primary" data-toggle="modal" data-target="#crearincidencia">Crear incidencia></button>
-    </div> -->
 </div>
 
 
@@ -41,25 +35,29 @@
       <div class="modal-body">
         <!-- Formulario para añadir un usuario a la base de datos  -->
         <form  method="post"   >
+            {{ csrf_field()}}
         <div class="form-row">
-            <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="FechaI"  v-model="FechaI" name="FechaI" placeholder="Fecha incidencia">
+            <!-- <div class="form-group col-md-6">
+                <label>Fecha incidencia</label>
+                <input type="date" class="form-control" id="FechaI"  v-model="FechaI" name="FechaI">
             </div>
             <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="FechaC" v-model="FechaC" name="FechaC" placeholder="Fecha Cierre">
-            </div>
+                <label>Fecha cerrada</label>
+                <input type="date" class="form-control" id="FechaC" v-model="FechaC" name="FechaC" placeholder="Fecha cerrada">
+            </div> -->
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <select class="form-control" name="Categoria" id="Categoria" >
+                <option value="" disabled selected>Selecciona categoria</option>
                     <option>Categoria1</option>
                     <option>Categoria2</option>
                     <option>Categoria3</option>
                 </select>
             </div>
-            <div class="form-group col-md-6">
+            <!-- <div class="form-group col-md-6">
                 <input type="text" class="form-control" id="Estado" v-model="Estado" name="Estado" placeholder="Estado">
-            </div>
+            </div> -->
         </div>
         
         <div class="form-row">
@@ -68,6 +66,7 @@
             </div>
             <div class="form-group col-md-6">
                 <select class="form-control" name="Prioridad" id="Prioridad">
+                <option value="" disabled selected>Selecciona prioridad</option>
                     <option>Baja</option>
                     <option>Media</option>
                     <option>Alta</option>

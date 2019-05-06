@@ -9,7 +9,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h1 class="panel-title">Acceso a la aplicacion</h1>
-                    <h1>Bienevenido </h1>
+                    <h1>Bienvenido </h1>
                     <p>Para registrarse porfavor rellene sus datos correspondientes</p>
                 </div>
                 <div class="panel-body">

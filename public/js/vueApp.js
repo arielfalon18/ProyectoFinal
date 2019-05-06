@@ -31,6 +31,18 @@ var app = new Vue({
         loginN:'',
         passwordN:'',
         //-------------
+
+        //DAVID
+        id:'',
+        fechaInc:'',
+        fechaFin:'',
+        categoria:'',
+        estado:'',
+        imagen:'',
+        prioridad:'',
+        descripcion:'',
+
+        //
         
         errors:[],
         aceptadoE:false,
@@ -79,6 +91,23 @@ var app = new Vue({
         }
     },
     methods:{
+        //crear una incidencia
+        CreateInciencia: function(){
+          var urlIncidencia = 'http://127.0.0.1:8000/CrearInci';
+          axios.post(urlIncidencia,{
+              FechaEntrada:this.fechaInc,
+              FechaCierre:this.fechaFin,
+              NombreCategoria:this.categoria,
+              Imagenes:this.imagen,
+              Descripcion:this.Descripcion,
+              Prioridad:this.prioridad,
+          }).then(response=>{
+              $('#crearincidencia').modal('hide');
+              location.reload();
+          }).catch(error=>{
+              this.errors = error.response.data
+          })
+        },
         // Departamentos crear un departamento
         CreateDepartament: function(){
             var urlDepartament='http://127.0.0.1:8000/CreateDepar';
