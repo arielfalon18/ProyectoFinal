@@ -16,12 +16,12 @@
                </header>
                <div class="container">
                   <div class="row">
-                     <div class="col-md-6">
+                     <div class="col-md-6 mt-md-0 mt-3">
                         <div class="div-img">
                            <img class="img-1" src="media/tickets.png" alt="">
                         </div>
                      </div>
-                     <div class="col-md-6">
+                     <div class="col-md-6 mt-md-0 mt-3">
                         <p class="text1">En TheIncidence puedes hacer que el servicio y soporte al cliente a la hora de gestionar las incidencias sea mas facil y productivo</p>
                      </div>
                   </div>
@@ -34,10 +34,10 @@
                </header>
                <div class="container">
                   <div class="row">
-                     <div class="col-md-6">
+                     <div class="col-md-6 mt-md-0 mt-3">
                         <p class="text2">Ofrecemos un gestor de incidencias adaptable para cualquier empresa que lo desee.</p>
                      </div>
-                     <div class="col-md-6 col6">
+                     <div class="col-md-6 col6 mt-md-0 mt-3">
                         <div class="div-img2">
                            <img class="img-2 " src="media/help.png" alt="">
                         </div>
@@ -50,43 +50,7 @@
             <h1>A que nos dedicamos?</h1></header>
             </article>
       </section>
-      <footer id="main-footer">
-         <div class="row footer-row">
-            <div class="col-4">
-               <ul>
-                  <li>
-                     <span class="footer.list">1</span>
-                     <span class="footer.list">2</span>
-                     <span class="footer.list">3</span>
-                     <span class="footer.list">4</span>
-                  </li>
-               </ul>
-            </div>
-            <div class="col-4">
-               <ul>
-                  <li>
-                     <span class="footer.list">1</span>
-                     <span class="footer.list">2</span>
-                     <span class="footer.list">3</span>
-                     <span class="footer.list">4</span>
-                  </li>
-               </ul>
-            </div>
-            <div class="col-4">
-               <ul>
-                  <li>
-                     <span class="footer.list">1</span>
-                     <span class="footer.list">2</span>
-                     <span class="footer.list">3</span>
-                     <span class="footer.list">4</span>
-                  </li>
-               </ul>
-            </div>
-         </div>
-         
-         <p id="footer-p" >Copyright &copy; 2019 <a href="#">No copiar</a></p>
-      </footer> 
-      
    </div>
 </div>
+
 @stop
