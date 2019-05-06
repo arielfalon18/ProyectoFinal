@@ -9,11 +9,11 @@ class incidenciaController extends Controller
 {
     public function newIncidencia (Request $request){
         $this->validate($request,[
-            'FechaEntrada',
-            'FechaCierre',
-            'NombreCategoria',
-            'Descripcion',
-            'Imagenes',
+            'FechaEntrada'=>'requiered',
+            'FechaCierre'=>'requiered',
+            'NombreCategoria'=>'requiered',
+            'Descripcion'=>'requiered',
+            'Imagenes'=>'requiered',
         ]);
         $incidencia= Incidencia::create([
             "FechaEntrada"=>$request['FechaEntrada'],
