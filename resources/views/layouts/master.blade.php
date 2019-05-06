@@ -24,7 +24,7 @@
     <div  id="appV" class="contenidoabajo">
     @yield('content')
     </div>
-    @extends('partials.footer') 
+    <!-- @extends('partials.footer')  -->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="/js/jquery/jquery-3.3.1.slim.min.js"></script>

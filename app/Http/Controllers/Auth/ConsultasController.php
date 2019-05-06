@@ -17,7 +17,11 @@ class ConsultasController extends Controller
             'cif.required' =>'El nombre del estudiante no puede ser mayor a :max caracteres.',
             'direccion.required' => 'Agrega la puntuación al estudiante.',
             'telefono.required' => 'La puntuación debe ser un número',
-            'score.between' => 'La puntuación debe estar entre :min y :max'
+            'ciudad.required' => 'Ciudad necesario',
+            'pais.required' => 'Pais necesario',
+            'codigoP.required' => 'Codigo postal necesario',
+            'email.required' => 'Email necesario',
+            'password.required' => 'Contraseña necesaria'
         ];
         $resquest->validate([
             'nombre'=>'required',
