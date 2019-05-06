@@ -64,16 +64,20 @@
         
         <div class="form-group" v-model="id={{auth()->user()->id}}">
             <input type="text" class="form-control" id="nombreD" v-model="nombreD" name="nombreD" placeholder="Departamento">
+            <span v-for="error in errors" class="text-danger">@{{error.Nombre}}</span>
         </div>
         <div class="form-row">
             <div class="form-group col-md-7">
                 <input type="text" class="form-control" name="EdificioD" v-model="EdificioD" id="EdificioD" placeholder="Edificio">
+                <span v-for="error in errors" class="text-danger">@{{error.Edificio}}</span>
             </div>
             <div class="form-group col-md-5">
                 <input type="text" class="form-control"  id="plantaD" v-model="plantaD" name="plantaD" placeholder="Planta">
+                <span v-for="error in errors" class="text-danger">@{{error.Planta}}</span>
             </div>
         </div>
             <button id="AñadirEmpleado" class="btn btn-primary">Añadir</button>
+            
         </div>
         </form>
       </div>
