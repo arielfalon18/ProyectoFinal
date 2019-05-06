@@ -9,6 +9,7 @@ use App\Departamento;
 class departamentoController extends Controller
 {
     public function NEWdepartamento(Request $resquest){
+        
         $this->validate($resquest,[
             'Nombre' =>'required',
             'Planta' =>'required',
