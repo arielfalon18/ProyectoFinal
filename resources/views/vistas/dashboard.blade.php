@@ -87,7 +87,4 @@
     </div>
 </div>
 @include('modal.modal')
-
-
-
 @stop

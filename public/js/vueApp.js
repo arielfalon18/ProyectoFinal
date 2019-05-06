@@ -27,7 +27,11 @@ var app = new Vue({
         id:'',
         idDepartamento:'',
         idRol:'',
+        //Login usuario de base de datos
+        loginN:'',
+        passwordN:'',
         //-------------
+        
         errors:[],
         aceptadoE:false,
         pagination: {
@@ -194,6 +198,12 @@ var app = new Vue({
         cambiodePagina: function(page){
             this.pagination.current_page = page;
             this.getEmpleados(page);
-        }
+        },
+        loginUsuario:function(){
+            console.log("HOLA");
+            usuarioLogin :this.loginN;
+            paswordLogin:this.passwordN
+            
+        },
     }
   })

@@ -13,6 +13,10 @@
                     <p>Para registrarse porfavor rellene sus datos correspondientes</p>
                 </div>
                 <div class="panel-body">
+                    <div class="text-right">
+                        <button class=" btn btn-primary" data-toggle="modal" data-target="#InserUsuarioE">Acceder Usuario</button>
+                    </div>
+                    
                     <form action="{{route('login')}}" method="POST">
                         {{csrf_field()}}
                         <div class="form-group {{$errors->has('email')? 'has-error' :''}}">
@@ -31,13 +35,13 @@
                             {!! $errors->first('password','<span class="help-block">:message</span>')!!}
                         </div>
                         <button class="btn btn-primary"> Acceder</button>
-                        
                     </form>
+                        
                 </div>
             </div>
         </div>
         <div class="col-md-2"></div>
     </div>
-
 </div>
+@include('modal.modal2')
 @stop
