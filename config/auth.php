@@ -150,6 +150,11 @@ return [
             'provider' => 'Datos_empresa',
             'hash' => false,
         ],
+
+        'usuarioL' =>[
+            'driver' => 'session',
+            'provider' => 'login',
+        ]
     ],
 
     /*
@@ -174,6 +179,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\Datos_empresa::class,
         ],
+        'usuarioL' =>[
+            'driver' =>'eloquent',
+            'model' => App\login::class,
+        ]
 
         // 'users' => [
         //     'driver' => 'database',

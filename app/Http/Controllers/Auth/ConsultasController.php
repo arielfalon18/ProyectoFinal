@@ -20,7 +20,7 @@ class ConsultasController extends Controller
             'ciudad.required' => 'Ciudad necesario',
             'pais.required' => 'Pais necesario',
             'codigoP.required' => 'Codigo postal necesario',
-            'email.required' => 'Email necesario',
+            
             'password.required' => 'Contraseña necesaria'
         ];
         $resquest->validate([
@@ -31,7 +31,7 @@ class ConsultasController extends Controller
             'ciudad'=>'required',
             'pais'=>'required',
             'codigoP'=>'required',
-            'email'=>'required',
+            'email'=>'required|email',
             'password'=>'required',
         ],$messages);
         

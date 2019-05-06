@@ -11,7 +11,7 @@
             <p>Theincidence@incidence.org</p>
         </div>
         <div class="alert alert-success" v-if="respuestaEmpresa" role="alert">
-            Registro completo
+            Revisa el correo 
         </div>
         <h1 class="align-center" id="letra">DATOS EMPRESARIALES</h1>
         <form  method="post" v-on:submit.prevent="NuevaContratacion">
@@ -19,39 +19,39 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <input type="text" class="form-control" v-model="nombre" id="nombre" name="nombre" placeholder="Nombre empresa">
-                    <span v-for="error in errors" class="text-danger">@{{error.nombre}}</span>
+                    <span v-if="errors.nombre" class="text-danger">@{{errors.nombre[0]}}</span>
                 </div>
                 <div class="form-group col-md-6">
                     <input type="text" class="form-control" id="cif" v-model="cif"  name="cif" placeholder="CIF">
-                    <span v-for="error in errors" class="text-danger">@{{error.cif}}</span>
+                    <span v-if="errors.cif" class="text-danger">@{{errors.cif[0]}}</span>
                 </div>
             </div>
             <div class="form-group">
                 <input type="text" class="form-control" name="direccion" v-model="direccion" id="direccion" placeholder="Dirección">
-                <span v-for="error in errors" class="text-danger">@{{error.direccion}}</span>
+                <span v-if="errors.direccion" class="text-danger">@{{errors.direccion[0]}}</span>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <input type="text" class="form-control" id="ciudad" v-model="ciudad" name="ciudad" placeholder="Ciudad">
-                    <span v-for="error in errors" class="text-danger">@{{error.ciudad}}</span>
+                    <span v-if="errors.ciudad" class="text-danger">@{{errors.ciudad[0]}}</span>
                 </div>
                 <div class="form-group col-md-3">
-                    <input type="text" class="form-control" id="pais" v-model="pais" name="pais" placeholder="Pais">
-                    <span v-for="error in errors" class="text-danger">@{{error.pais}}</span>
+                    <input type="text" class="form-control" id="pais" v-model="pais" name="pais" placeholder="Pais">    
+                    <span v-if="errors.ciudad" class="text-danger">@{{errors.pais[0]}}</span>
                 </div>
                 <div class="form-group col-md-3">
                     <input type="number" class="form-control disableN" v-model="codigoP" id="codigoP" name="codigoP" placeholder="Codigo Postal">
-                    <span v-for="error in errors" class="text-danger">@{{error.codigoP}}</span>
+                    <span v-if="errors.ciudad" class="text-danger">@{{errors.codigoP[0]}}</span>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <input type="text" class="form-control" id="email" v-model="email" name="email" placeholder="Correo electronico">
-                    <span v-for="error in errors" class="text-danger">@{{error.email}}</span>
+                    <span v-if="errors.email" class="text-danger">@{{errors.email[0]}}</span>
                 </div>
                 <div class="form-group col-md-6">
                     <input  type="number" class="form-control disableN" v-model="telefono"  class="form-control" id="telefono" name="telefono" placeholder="Telefono">
-                    <span v-for="error in errors" class="text-danger">@{{error.telefono}}</span>
+                    <span v-if="errors.telefono" class="text-danger">@{{errors.telefono[0]}}</span>
                 </div>
             </div>
             <!-- <div class="form-row">
