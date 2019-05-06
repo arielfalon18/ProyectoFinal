@@ -24,7 +24,6 @@ class Incidencia extends Migration
             $table->string('Imagenes');
             $table->integer('Id_Empleado_usuario');
             $table->integer('Id_Empleado_tecnico');
-            $table->string('NombrePrioridad');
             $table->string('Estado');
             $table->string('Prioridad');
 
