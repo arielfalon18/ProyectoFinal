@@ -19,20 +19,24 @@
             </div>
             <div class="form-group col-md-5">
                 <input type="text" class="form-control" id="dniT" v-model="dniT"   name="dniT" placeholder="DNI">
+                <span v-for="error in errors" class="text-danger">@{{error.dni}}</span>
             </div>
         </div>
         <div class="form-group">
             <input type="text" class="form-control" name="emailT" v-model="emailT"  id="emailT" placeholder="Introduce el email">
+            <span v-for="error in errors" class="text-danger">@{{error.email}}</span>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <input type="text" class="form-control" id="telefonoT" v-model="telefonoT"  name="telefonoT" placeholder="Telefono">
+                <span v-for="error in errors" class="text-danger">@{{error.telefono}}</span>
             </div>
             <div class="form-group col-md-6">
-            <select class="form-control" v-model="idRol" name="TDepartamento" id="TDepartamento" >
-                <option value="B" disabled selected>Selecciona departamento</option>
-                <option v-for="dapart in DepartamentosT" >@{{dapart.Nombre}}</option>
-            </select>
+              <select class="form-control" v-model="idRol" name="TDepartamento" id="TDepartamento" >
+                  <option value="B" disabled selected>Selecciona departamento</option>
+                  <option v-for="dapart in DepartamentosT" >@{{dapart.Nombre}}</option>
+              </select>
+              <span v-for="error in errors" class="text-danger">@{{error.IdDepartamento}}</span>
             </div>
         </div>
         <div class="form-group">
@@ -40,8 +44,10 @@
                 <option value="A" disabled selected>Selecciona tipo de usuario</option>
                 <option v-for="RolEmplead in RolEmpleado">@{{RolEmplead.nombre}}</option>
           </select>
+          <span v-for="error in errors" class="text-danger">@{{error.Idrol}}</span>
         </div>
         <button id="AñadirEmpleado" class="btn btn-primary">Añadir</button>
+        
         </form>
       </div>
     </div>

@@ -33,7 +33,9 @@ class empleadosController extends Controller
             'nombre' =>'required',
             'dni' =>'required',
             'email' =>'required',
-            'telefono' =>'required'
+            'telefono' =>'required',
+            'IdDepartamento' =>'required',
+            'Idrol' =>'required'
         ]);
         $rol=Rol::where('nombre',$resquest['Idrol'])->get();
         $departamento=Departamento::where('Nombre',$resquest['IdDepartamento'])->get();

@@ -217,8 +217,8 @@ var app = new Vue({
                 this.idRol='B';
             }).catch(error => {
                 // Errores
-                console.log("efecto shake");
-                $('#añadirusuario').effect('shake');
+                // console.log("efecto shake");
+                // $('#añadirusuario').effect('shake');
                 this.errors = error.response.data;
             })           
             // console.log($('#TDepartamento').val());
