@@ -31,6 +31,6 @@
     <li><a href="/inicio">Inicio</a></li>
     <li><a href="/Nosotros">Acerca de nosotros</a></li>
     <li><a href="/Contactos">Contacto</a></li>
-    <li><a href="/registrarse">Accesp</a></li>
+    <li><a href="/registrarse">Acceso</a></li>
   </ul>
 </header>

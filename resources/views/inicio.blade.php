@@ -6,8 +6,8 @@
       <!-- Contenido que ofrecemos Aqui podemos enviar a cada ruta que queramos  -->
       <img class="ImagePortada" src="media/prueba/1.jpg" alt="" />
       <div class="text-centrado-home">
-         <div class="text-center-main">The Incidence</div>
-         <div class="text-center-secondary">Gestio de incidencias para empresas</div>
+         <div class="text-center-main"><p> The Incidence</p></div>
+         <p class="text-center-secondary">Gestio de incidencias para empresas</p>
       </div>
       <section id="main-content">
             <article class="article1">

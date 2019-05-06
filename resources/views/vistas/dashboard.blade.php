@@ -3,7 +3,7 @@
 
 <!-- Quitar lo de registro  -->
 <div class="registro">
-    <div class="container-fluild">
+    <div class="container-fluid">
         <div class="row"> 
             <!-- <div class="col-md-2"></div> -->
             <div class="col-md-12 col-md-offset-4">
