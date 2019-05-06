@@ -219,6 +219,7 @@ var app = new Vue({
                 // Errores
                 console.log("efecto shake");
                 $('#añadirusuario').effect('shake');
+                this.errors = error.response.data;
             })           
             // console.log($('#TDepartamento').val());
             // console.log($('#TipoEmpleado').val());
