@@ -111,6 +111,7 @@
         <div class="form-group">
           <input type="text" class="form-control" name="tipoI" id="tipoI" placeholder="Tipo">
         </div>
+       
         <div class="form-group">
                 <textarea class="form-control" name="DescripcionI" id="DescripcionI" cols="30" rows="10" placeholder="Descripcion"></textarea>
             </div>
