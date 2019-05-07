@@ -11,14 +11,14 @@ use App\Empleados;
 class incidenciaController extends Controller
 {
     public function newIncidencia (Request $request){
-        $empl_usu = Empleados::where('nombre',$request['Id_Empleado_usuario'])->get();
+        
         $incidencia = new Incidencia;
         $incidencia->FechaEntrada=request('FechaI');
         $incidencia->FechaCierre=request('FechaC');
         $incidencia->NombreCategoria=request('Categoria');
         $incidencia->Descripcion=request('Descripcion');
         $incidencia->Imagenes=request('Imagen');
-        $incidencia->Id_Empleado_usuario=$empl_usu;
+        $incidencia->Id_Empleado_usuario="154";
         $incidencia->Id_Empleado_tecnico='145';
         $incidencia->Estado='Pendiente';
         $incidencia->Prioridad=request('Prioridad');
