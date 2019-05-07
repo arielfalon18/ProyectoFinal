@@ -6,13 +6,12 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Empleados;
 use Illuminate\Support\Facades\Hash;
-use App\Rol;
 use App\Departamento;
 use App\login;
 class empleadosController extends Controller
 {
     public function VerEmpreados(Request $request){
-        $empleados=Empleados::with('RolE')->paginate(5);
+        $empleados=Empleados::orderBy('id', 'ASC')->paginate(5);
       
         //Paginacion de empleados de la tabla
        
@@ -29,17 +28,24 @@ class empleadosController extends Controller
         ];
     }
     public function newEmpleados(Request $resquest){
-        $this->validate($resquest,[
+        $messages = [
+            'nombre.required' => 'El nombre es requerido',
+            'dni.required' =>'El DNI es requerido',
+            'email.required' => 'Edificio requerido',
+            'telefono.required' => 'El telefono es requerido',
+            'IdDepartamento.required' =>'Seleccione el Id Departamento',
+            'Idrol.required' => 'Seleccione un tipo de usuario'
+
+        ];
+        $resquest->validate([
             'nombre' =>'required',
             'dni' =>'required',
             'email' =>'required',
             'telefono' =>'required',
             'IdDepartamento' =>'required',
             'Idrol' =>'required'
-        ]);
-        $rol=Rol::where('nombre',$resquest['Idrol'])->get();
+        ],$messages);
         $departamento=Departamento::where('Nombre',$resquest['IdDepartamento'])->get();
-        foreach ($rol as $roles) {
             foreach ($departamento as $depart) {
                 $empleados=Empleados::create([
                     "nombre"=>$resquest['nombre'],
@@ -48,18 +54,19 @@ class empleadosController extends Controller
                     "telefono"=>$resquest['telefono'],
                     "IdEmpresa"=>$resquest['IdEmpresa'],
                     "IdDepartamento"=>$depart->id,
-                    "Idrol"=>$roles->id_R,
+                    "Rol"=>$resquest['Idrol'],
                 ]);
             }
-        }
+        
         $empleados->save();
 
         //Crear login del empleado 
         $loginU=login::create([
-            "id"=>$empleados['id'],
             "usuarioLogin"=>$resquest['email'],
             //De momento 12345 luego se cambia y se codificara la constraseña
-            "paswordLogin"=>Hash::make('12345')
+            "paswordLogin"=>Hash::make('12345'),
+            "rol"=>$resquest['Idrol'],
+            "Id_empleado"=>$empleados['id']
         ]);
         $loginU->save();
         
@@ -67,13 +74,10 @@ class empleadosController extends Controller
     }
     public function eliminarEmpleado($id){
         //eliminamos un usuario en la base de datos
-        $loginU = login::findOrFail($id);
+        //Buscamos La id de la parte de id_empleado y que elimine la ID 
+        $loginU = login::where('Id_empleado',$id);
         $loginU->delete();
-
-        // usuario tecnico de la base de datos 
-        // $Tecnico= Tecnicos::findOrFail($id);
-        // $Tecnico ->delete();
-        // Eliminamos un empleado de la base de datos
+        //Eliminamos un empleado de la base de datos con el ID
         $empleados =Empleados::findOrFail($id);
         $empleados->delete();
     }

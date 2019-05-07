@@ -23,7 +23,7 @@ class Empleado extends Migration
             // $table->string('tipo_usuario');
             $table->integer('IdEmpresa')->unsigned();
             $table->integer('IdDepartamento')->unsigned();
-            $table->integer('Idrol')->unsigned();
+            $table->string('Rol');
             $table->foreign('IdEmpresa')->references('id')->on('Datos_Empresa')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');

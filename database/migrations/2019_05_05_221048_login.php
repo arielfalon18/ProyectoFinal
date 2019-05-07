@@ -15,10 +15,12 @@ class Login extends Migration
     {
         Schema::defaultStringLength(191);
         Schema::create('login', function (Blueprint  $table){
-            $table->integer('id')->unsigned()->primary();
+            $table->increments('id');
             $table->string('usuarioLogin');
             $table->string('paswordLogin');
-            $table->foreign('id')->references('id')->on('empleados')
+            $table->string('rol');
+            $table->integer('Id_empleado')->unsigned();
+            $table->foreign('Id_empleado')->references('id')->on('empleados')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });

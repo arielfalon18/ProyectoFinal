@@ -154,6 +154,7 @@ return [
         'usuarioL' =>[
             'driver' => 'session',
             'provider' => 'login',
+            'hash' => false,
         ]
     ],
 

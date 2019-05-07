@@ -52,7 +52,8 @@ CREATE TABLE `datos_empresa` (
 --
 
 INSERT INTO `datos_empresa` (`id`, `nombre`, `cif`, `direccion`, `ciudad`, `pais`, `codigoP`, `telefono`, `email`, `password`) VALUES
-(1, 'Empresa', '12345678A', 'C/Rogent', 'Barcelona', 'España', '08026', 12345678, 'correo@gmail.com', '$2y$10$Z2ptghocrZDNlnyKPIN.G.5jDkyvZoyVgalEX/o79u21tElirdT26');
+(1, 'Empresa', '12345678A', 'C/Rogent', 'Barcelona', 'España', '08026', 12345678, 'correo@gmail.com', '$2y$10$Z2ptghocrZDNlnyKPIN.G.5jDkyvZoyVgalEX/o79u21tElirdT26'),
+(2, 'EmpresaANA', '213123', 'C/Rogent', 'Barcelona', 'España', '08026', 12345678, 'ariel.falon@iesjoandaustria.org', '$2y$10$T06X3/FpBvYRX8qG629y/OgPrr116mjo3GnNvhHb705zgvqxC6/SG');
 
 -- --------------------------------------------------------
 
@@ -74,7 +75,8 @@ CREATE TABLE `departamento` (
 
 INSERT INTO `departamento` (`id`, `Nombre`, `Planta`, `Edificio`, `IdEmpresa`) VALUES
 (1, 'Departamento1', 'Planta1', 'Edificio1', 1),
-(2, 'Departamento2', 'Planta2', 'Edificio2', 1);
+(2, 'Departamento2', 'Planta2', 'Edificio2', 1),
+(3, 'Departamento3', 'Planta3', 'Edifico3', 2);
 
 -- --------------------------------------------------------
 
@@ -90,16 +92,20 @@ CREATE TABLE `empleados` (
   `telefono` int(11) NOT NULL,
   `IdEmpresa` int(10) UNSIGNED NOT NULL,
   `IdDepartamento` int(10) UNSIGNED NOT NULL,
-  `Idrol` int(10) UNSIGNED NOT NULL
+  `Rol` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 
 --
 -- Volcado de datos para la tabla `empleados`
 --
 
-INSERT INTO `empleados` (`id`, `nombre`, `dni`, `email`, `telefono`, `IdEmpresa`, `IdDepartamento`, `Idrol`) VALUES
-(10, 'Empleado1', '1234545A', 'emplea@gmail.com', 12345678, 1, 2, 1),
-(11, 'Empleado2', '1234567F', 'empleadi@gmail.com', 123545678, 1, 1, 2);
+INSERT INTO `empleados` (`id`, `nombre`, `dni`, `email`, `telefono`, `IdEmpresa`, `IdDepartamento`, `Rol`) VALUES
+(15, 'Empleado2', '12312321', 'empleado4@gmail.com', 123123123, 1, 2, 'Tecnico'),
+(16, 'Empleado3', '123123A', 'empleado3@gmail.com', 12312321, 1, 2, 'Tecnico'),
+(17, 'Empleado1', '21321321', 'adasd@gmail.com', 123213, 2, 3, 'Tecnico'),
+(18, 'Empleado4', '122132A', 'empleado4@gmail.com', 12312312, 1, 1, 'Usuario');
+
 
 -- --------------------------------------------------------
 
@@ -131,17 +137,22 @@ CREATE TABLE `incidencia` (
 CREATE TABLE `login` (
   `id` int(10) UNSIGNED NOT NULL,
   `usuarioLogin` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `paswordLogin` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL
-  /*  `nombre` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL */
+  `paswordLogin` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rol` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Id_empleado` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 
 --
 -- Volcado de datos para la tabla `login`
 --
 
-INSERT INTO `login` (`id`, `usuarioLogin`, `paswordLogin`) VALUES
-(10, 'emplea@gmail.com', '12345'),
-(11, 'empleadi@gmail.com', '12345');
+INSERT INTO `login` (`id`, `usuarioLogin`, `paswordLogin`, `rol`, `Id_empleado`) VALUES
+(6, 'empleado4@gmail.com', '$2y$10$XOnUuXPLdx0lNrxbrG6ZFOPjflRzC96bDUR4u0.d.oxuHXbgZeujm', 'Tecnico', 15),
+(7, 'empleado3@gmail.com', '$2y$10$YHXk18fFlJiVzX.WLrHzheuXNXNbC/zFBoxvp12ze/JktTutRk3j6', 'Tecnico', 16),
+(8, 'adasd@gmail.com', '$2y$10$w/46G5axIIPq6NBFg9wq5.1YNBOzI1eC6Rbtqx7gXH3DCnBt.KzdG', 'Tecnico', 17),
+(9, 'empleado4@gmail.com', '$2y$10$jm6EMpIJjjbSC1kxVPuSJO3mIL4uc.2lIcACVz8OwtuuCRIwGsp6K', 'Usuario', 18);
+
 
 -- --------------------------------------------------------
 
@@ -172,28 +183,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 
 -- --------------------------------------------------------
 
---
--- Estructura de tabla para la tabla `rol`
---
 
-CREATE TABLE `rol` (
-  `id_R` int(10) UNSIGNED NOT NULL,
-  `nombre` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `rol`
---
-
-INSERT INTO `rol` (`id_R`, `nombre`) VALUES
-(1, 'Usuario'),
-(2, 'Tecnico');
-
---
--- Índices para tablas volcadas
---
-
---
 -- Indices de la tabla `datos_empresa`
 --
 ALTER TABLE `datos_empresa`
@@ -212,8 +202,7 @@ ALTER TABLE `departamento`
 ALTER TABLE `empleados`
   ADD PRIMARY KEY (`id`),
   ADD KEY `empleados_idempresa_foreign` (`IdEmpresa`),
-  ADD KEY `IdDepartamento` (`IdDepartamento`),
-  ADD KEY `Idrol` (`Idrol`);
+  ADD KEY `IdDepartamento` (`IdDepartamento`);
 
 --
 -- Indices de la tabla `incidencia`
@@ -226,7 +215,8 @@ ALTER TABLE `incidencia`
 -- Indices de la tabla `login`
 --
 ALTER TABLE `login`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `login_id_empleado_foreign` (`Id_empleado`);
 
 --
 -- Indices de la tabla `migrations`
@@ -268,19 +258,17 @@ ALTER TABLE `empleados`
 ALTER TABLE `incidencia`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
+ALTER TABLE `login`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+
 --
 -- AUTO_INCREMENT de la tabla `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
---
--- AUTO_INCREMENT de la tabla `rol`
---
-ALTER TABLE `rol`
-  MODIFY `id_R` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
---
 -- Restricciones para tablas volcadas
 --
 
@@ -295,7 +283,6 @@ ALTER TABLE `departamento`
 --
 ALTER TABLE `empleados`
   ADD CONSTRAINT `empleados_ibfk_1` FOREIGN KEY (`IdDepartamento`) REFERENCES `departamento` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `empleados_ibfk_2` FOREIGN KEY (`Idrol`) REFERENCES `rol` (`id_R`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `empleados_idempresa_foreign` FOREIGN KEY (`IdEmpresa`) REFERENCES `datos_empresa` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
@@ -308,7 +295,7 @@ ALTER TABLE `incidencia`
 -- Filtros para la tabla `login`
 --
 ALTER TABLE `login`
-  ADD CONSTRAINT `login_id_foreign` FOREIGN KEY (`id`) REFERENCES `empleados` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `login_id_empleado_foreign` FOREIGN KEY (`Id_empleado`) REFERENCES `empleados` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

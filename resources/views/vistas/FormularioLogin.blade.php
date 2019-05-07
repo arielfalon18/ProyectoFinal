@@ -7,16 +7,14 @@
             
         </div>
         <div class="col-4">
-            <form  action="{{url('loginEmpleadoU')}}" method="POST">
-                {{csrf_field()}}
+            <form action="{{url('loginEmpleadoU')}}"  method="POST">
                 <div class="form-group">
                     <label for="usuarioLogin">Email</label>
                     <input type="text" class="form-control"  id="usuarioLogin" name="usuarioLogin" placeholder="Introduce tu nombre">
-                    
                 </div>
                 <div class="form-group ">
                     <label for="paswordLogin">Password</label>
-                    <input type="text" class="form-control"   name="paswordLogin" id="paswordLogin" placeholder="Introduce tu password">
+                    <input type="text" class="form-control"  name="paswordLogin" id="paswordLogin" placeholder="Introduce tu password">
                 </div>
                 <button id="AñadirEmpleado" class="btn btn-primary">Acceder Usuario</button>
             </form>

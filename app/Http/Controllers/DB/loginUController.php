@@ -1,24 +1,20 @@
 <?php
 
 namespace App\Http\Controllers\DB;
-use App\login;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use \Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use \Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
+use App\login;
 
 class loginUController extends Controller
 {
-    // public function __construct(){
-    //     $this->middleware('guest' ,['only' => 'showLoginform']);
-    // }
+    
     use AuthenticatesUsers;
     protected $loginView='';
     protected $guard ='usuarioL';
-    public function loginEmpleado(){
-        
-
-
+    public function authenticated(){
+        return redirect('user.user');
     }
 }

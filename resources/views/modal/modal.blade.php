@@ -34,7 +34,7 @@
             <div class="form-group col-md-6">
               <select class="form-control" v-model="idRol" name="TDepartamento" id="TDepartamento" >
                   <option value="B" disabled selected>Selecciona departamento</option>
-                  <option v-for="dapart in DepartamentosT" >@{{dapart.Nombre}}</option>
+                  <option v-for="dapart in DepartamentosT" v-if="dapart.IdEmpresa=={{auth()->user()->id}}">@{{dapart.Nombre}}</option>
               </select>
               <span v-if="errors.IdDepartamento" class="text-danger">@{{errors.IdDepartamento[0]}}</span>
             </div>
@@ -42,7 +42,8 @@
         <div class="form-group">
           <select  class="form-control" v-model="selected" name="TipoEmpleado" id="TipoEmpleado" >
                 <option value="A" disabled selected>Selecciona tipo de usuario</option>
-                <option v-for="RolEmplead in RolEmpleado">@{{RolEmplead.nombre}}</option>
+                <option >Usuario</option>
+                <option >Tecnico</option>
           </select>
           <span v-if="errors.Idrol" class="text-danger">@{{errors.Idrol[0]}}</span>
         </div>
@@ -70,16 +71,16 @@
         
         <div class="form-group" v-model="id={{auth()->user()->id}}">
             <input type="text" class="form-control" id="nombreD" v-model="nombreD" name="nombreD" placeholder="Departamento">
-            <span v-for="error in errors" class="text-danger">@{{error.Nombre}}</span>
+            <span v-if="errors.Nombre" class="text-danger">@{{errors.Nombre[0]}}</span>
         </div>
         <div class="form-row">
             <div class="form-group col-md-7">
                 <input type="text" class="form-control" name="EdificioD" v-model="EdificioD" id="EdificioD" placeholder="Edificio">
-                <span v-for="error in errors" class="text-danger">@{{error.Edificio}}</span>
+                <span v-if="errors.Edificio" class="text-danger">@{{errors.Edificio[0]}}</span>
             </div>
             <div class="form-group col-md-5">
                 <input type="text" class="form-control"  id="plantaD" v-model="plantaD" name="plantaD" placeholder="Planta">
-                <span v-for="error in errors" class="text-danger">@{{error.Planta}}</span>
+                <span v-if="errors.Planta" class="text-danger">@{{errors.Planta[0]}}</span>
             </div>
         </div>
             <button id="AñadirEmpleado" class="btn btn-primary">Añadir</button>

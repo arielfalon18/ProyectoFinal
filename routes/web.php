@@ -1,7 +1,7 @@
 <?php
 Route::get('/', 'HomeController@getHome');
 Route::get('inicio', 'inicio@getIndex');
-Route::get('user', 'UsuarioController@getIndex');
+Route::get('user', 'UsuarioController@getIndex')->name('user');
 Route::get('registrarse', 'Auth\LoginController@showLoginform')->middleware('guest');
 Route::post('login', 'Auth\LoginController@login')->name('login');
 Route::get('dashboard', 'DashboardController@index')->name('dashboard');
@@ -37,6 +37,7 @@ Route::get('empreadoE/{id}','DB\empleadosController@eliminarEmpleado');
 
 //Hacemos una relacion que con estos datos se pueda loguear un empleado a la base de datos 
 Route::get('InciarEmpleado', 'inicio@getFormulario');
-Route::post('loginEmpleadoU', 'DB\loginUController@loginEmpleado');
+
+Route::post('loginEmpleadoU', 'DB\loginUController@login');
 
 //-------------------------------------------------

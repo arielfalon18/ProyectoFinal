@@ -1,12 +1,12 @@
-
+Vue.component('ejemplo1', {
+    template: '<p>asdasdasd</p>',
+});
 var app = new Vue({
     el: '#appV',
     // Llamamos ala funcion de la base de datos 
     created:function(){
         this.getDepartament();
         this.getEmpleados();
-        this.getRol();
-        
     },
     data: {
     //Departamento:Departamento,
@@ -28,8 +28,8 @@ var app = new Vue({
         selected:'A',
         idRol:'B',
         //Login usuario de base de datos
-        loginN:'',
-        passwordN:'',
+        usuarioLogin:'',
+        paswordLogin:'',
         //-------------
 
         //DAVID
@@ -121,7 +121,7 @@ var app = new Vue({
                 location.reload();
                 
             }).catch(error => {
-                this.errors = error.response.data
+                this.errors = error.response.data.errors
             })
         },
         // Mostrar Departamentos 
@@ -129,13 +129,6 @@ var app = new Vue({
             var urldepartamento='http://127.0.0.1:8000/DepartamentosGET';
             axios.get(urldepartamento).then(response =>{
                 this.DepartamentosT=response.data
-            }) 
-        },
-        //Mostrar los rol de empleado que tenemos 
-        getRol: function(){
-            var urlRolEmpleado='http://127.0.0.1:8000/RolEmpleadoGET';
-            axios.get(urlRolEmpleado).then(response =>{
-                this.RolEmpleado=response.data
             }) 
         },
         //Añadimos los datos enpresariales
@@ -231,6 +224,20 @@ var app = new Vue({
         cambiodePagina: function(page){
             this.pagination.current_page = page;
             this.getEmpleados(page);
-        }
+        },
+        // LoginEmpleado: function(){
+        //     var urlIncidencia = 'http://127.0.0.1:8000/loginEmpleadoU';
+        //     axios.post(urlIncidencia,{
+        //         usuarioLogin:this.usuarioLogin,
+        //         paswordLogin:this.paswordLogin,
+        //     }).then(response=>{
+                
+                
+                
+        //     }).catch(error=>{
+        //         var errors = error.response
+        //         console.log(errors);
+        //     })
+        // }
     }
   })
