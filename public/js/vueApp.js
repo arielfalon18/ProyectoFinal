@@ -41,7 +41,6 @@ var app = new Vue({
         imagen:'',
         prioridad:'',
         descripcion:'',
-
         //
         
         errors:[],
@@ -54,6 +53,13 @@ var app = new Vue({
             'from' :0,
             'to':0,
         },
+
+        //INVENTARIO
+        
+        nombreI:'',
+        tipoI:'',
+        DescripcionI:'',
+
         nombre:'',
         cif:'',
         direccion:'',
@@ -93,21 +99,24 @@ var app = new Vue({
     methods:{
         //crear una incidencia
         CreateInciencia: function(){
-          var urlIncidencia = 'http://127.0.0.1:8000/CrearInci';
-          axios.post(urlIncidencia,{
-              FechaEntrada:this.fechaInc,
-              FechaCierre:this.fechaFin,
-              NombreCategoria:this.categoria,
-              Imagenes:this.imagen,
-              Descripcion:this.Descripcion,
-              Prioridad:this.prioridad,
-          }).then(response=>{
-              $('#crearincidencia').modal('hide');
-              location.reload();
-          }).catch(error=>{
-              this.errors = error.response.data
-          })
-        },
+            var urlIncidencia = 'http://127.0.0.1:8000/CrearInci';
+            axios.post(urlIncidencia,{
+
+                NombreCategoria:this.Categoria,
+                Imagenes:this.Imagen,
+                Descripcion:this.Descripcion,
+                Prioridad:this.Prioridad,
+            }).then(response=>{
+                $('#crearincidencia').modal('hide');
+                
+                this.Categoria='';
+                this.Imagen='';
+                this.Prioridad='';
+                this.Descripcion='';
+            }).catch(error=>{
+                this.errors = error.response.data
+            })
+          },
         // Departamentos crear un departamento
         CreateDepartament: function(){
             var urlDepartament='http://127.0.0.1:8000/CreateDepar';
@@ -225,19 +234,19 @@ var app = new Vue({
             this.pagination.current_page = page;
             this.getEmpleados(page);
         },
-        // LoginEmpleado: function(){
-        //     var urlIncidencia = 'http://127.0.0.1:8000/loginEmpleadoU';
-        //     axios.post(urlIncidencia,{
-        //         usuarioLogin:this.usuarioLogin,
-        //         paswordLogin:this.paswordLogin,
-        //     }).then(response=>{
-                
-                
-                
-        //     }).catch(error=>{
-        //         var errors = error.response
-        //         console.log(errors);
-        //     })
-        // }
+
+        NuevoInvenatario: function(){
+            var urlCreateInventario='http://127.0.0.1:8000/CreateInventario';
+            axios.post(urlCreateInventario,{
+                nombre:this.nombreI,
+                tipo:this.tipoI,
+                Descripcion:this.DescripcionI
+                }
+            ).then(response=>{
+                this.nombreI='';
+                this.tipoI='';
+                this.DescripcionI='';
+            })
+        }
     }
   })

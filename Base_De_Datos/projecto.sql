@@ -28,11 +28,18 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `datos_empresa`
 --
 
-CREATE TABLE 'inventarios'(
-  
+-- Creamos la base de datos inventario
 
+CREATE TABLE `inventarios` (
+  `id` INT(10) NOT NULL AUTO_INCREMENT , 
+  `nombre` VARCHAR(20) NOT NULL ,
+  `tipo` VARCHAR(20) NOT NULL ,
+  `descripcion` VARCHAR(50) NOT NULL ,
+  `idEmpresa` INT(10) NOT NULL ,
+  `idEmpleado` INT(10) NOT NULL ,
+  PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
 
-)
 
 CREATE TABLE `datos_empresa` (
   `id` int(10) UNSIGNED NOT NULL,
@@ -125,7 +132,7 @@ CREATE TABLE `incidencia` (
   `NombrePrioridad` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Estado` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Prioridad` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `IdEmpresa` int(10) UNSIGNED NOT NULL
+  `Idinventario` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------

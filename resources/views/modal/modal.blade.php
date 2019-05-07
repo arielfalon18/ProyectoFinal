@@ -10,7 +10,7 @@
       </div>
       <div class="modal-body">
         <!-- Formulario para añadir un usuario a la base de datos  -->
-        <form  method="post"   v-on:submit.prevent="nuevoEmpreados">
+        <form  method="POST"   v-on:submit.prevent="nuevoEmpreados">
         <div class="form-row" v-model="id={{auth()->user()->id}}">
             <div class="form-group col-md-7">
             <!-- v-model="nombre" -->
@@ -104,18 +104,19 @@
       </div>
       <div class="modal-body">
         <!-- Formulario para añadir un departamento a la base de datos  -->
-        <form  method="post">
-        
+        <form  method="post" action="{{url('/inventario/NewInvenatario')}}">
+        {{ csrf_field()}}
         <div class="form-group">
             <input type="text" class="form-control" id="nombreI" name="nombreI" placeholder="Nombre">
         </div>
         <div class="form-group">
           <input type="text" class="form-control" name="tipoI" id="tipoI" placeholder="Tipo">
         </div>
+       
         <div class="form-group">
                 <textarea class="form-control" name="DescripcionI" id="DescripcionI" cols="30" rows="10" placeholder="Descripcion"></textarea>
             </div>
-            <button id="AñadirEmpleado" class="btn btn-primary">Añadir</button>
+            <button id="NuevoInvenatario" class="btn btn-primary">Añadir</button>
         </div>
         </form>
       </div>

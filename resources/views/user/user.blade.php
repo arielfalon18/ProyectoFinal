@@ -34,17 +34,17 @@
       </div>
       <div class="modal-body">
         <!-- Formulario para añadir un usuario a la base de datos  -->
-        <form  method="post" v-on:submit.prevent="nuevaIncidencia">
-            
+        <form method="POST" action="{{url('/incidencia/newIncidencia')}}">
+            {{ csrf_field()}}
         <div class="form-row">
-            <!-- <div class="form-group col-md-6">
+            <div class="form-group col-md-6">
                 <label>Fecha incidencia</label>
-                <input type="date" class="form-control" id="FechaI"  v-model="FechaI" name="FechaI">
+                <input type="text" class="form-control" id="FechaI"  v-model="FechaI" name="FechaI" value="{{ old('scheduled_date',date('d-m-Y')) }}">
             </div>
             <div class="form-group col-md-6">
                 <label>Fecha cerrada</label>
-                <input type="date" class="form-control" id="FechaC" v-model="FechaC" name="FechaC" placeholder="Fecha cerrada">
-            </div> -->
+                <input type="text" class="form-control" id="FechaC" v-model="FechaC" name="FechaC" placeholder="Fecha cerrada" value="{{ old('scheduled_date',date('d-m-Y')) }}">
+            </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
@@ -62,7 +62,7 @@
         
         <div class="form-row">
             <div class="form-group">
-                <input type="file" name="Imagen" id="Imagen" class="form-control" v-model="Imagen">
+                <input type="file" name="Imagen" id="Imagen" class="form-control">
             </div>
             <div class="form-group col-md-6">
                 <select class="form-control" name="Prioridad" id="Prioridad">

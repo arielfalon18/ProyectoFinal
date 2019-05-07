@@ -19,11 +19,19 @@ Route::get('Contactos', function () {
 });
 // DATOS DE BASE DE DATOS 
 //Crear una incidencia
-Route::post('CrearInci', 'DB\incidenciaController@newIncidencia');
+Route::post('/incidencia/newIncidencia', 'DB\incidenciaController@newIncidencia');
 //Creamos un departamento
 Route::post('CreateDepar', 'DB\departamentoController@NEWdepartamento');
 //Mostramos los datos de departamento
 Route::get('DepartamentosGET','DB\departamentoController@GetDepartamento');
+
+
+//Creamos un Inventario
+Route::post('/inventario/NewInvenatario', 'DB\InventarioController@NewInvenatario');
+//Mostramos Departamento
+Route::get('InventarioGET','DB\InventarioController@GetInventario');
+
+
 //Mostrar los ROl de empresa 
 Route::get('RolEmpleadoGET','DB\RolController@GetRol');
 //--------------------------------
@@ -32,12 +40,13 @@ Route::get('empleados', 'DB\empleadosController@VerEmpreados');
 //INSERTAR DATOS DE EMPLEADOS 7
 Route::post('NEWempleados' , 'DB\empleadosController@NEWempleados');
 
-//Eliminamos los datos de empleados de tal manera tambien eliminamos el id del login ya que esta relacionado con la base de datos
+//Eliminamos los datos de empleados
 Route::get('empreadoE/{id}','DB\empleadosController@eliminarEmpleado');
+
 
 //Hacemos una relacion que con estos datos se pueda loguear un empleado a la base de datos 
 Route::get('InciarEmpleado', 'inicio@getFormulario');
 
 Route::post('loginEmpleadoU', 'DB\loginUController@login');
 
-//-------------------------------------------------
+
