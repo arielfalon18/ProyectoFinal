@@ -13,9 +13,9 @@ class ConsultasController extends Controller
     public function nuevoR(Request $resquest)
     {
         $messages = [
-            'nombre.required' => 'Agrega el nombre del estudiante.',
+            'nombre.required' => 'Agrega el nombre',
             'cif.required' =>'El nombre del estudiante no puede ser mayor a :max caracteres.',
-            'direccion.required' => 'Agrega la puntuación al estudiante.',
+            'direccion.required' => 'Agregar la direccion',
             'telefono.required' => 'La puntuación debe ser un número',
             'ciudad.required' => 'Ciudad necesario',
             'pais.required' => 'Pais necesario',

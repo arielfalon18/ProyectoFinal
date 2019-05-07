@@ -28,6 +28,12 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `datos_empresa`
 --
 
+CREATE TABLE 'inventarios'(
+  
+
+
+)
+
 CREATE TABLE `datos_empresa` (
   `id` int(10) UNSIGNED NOT NULL,
   `nombre` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
