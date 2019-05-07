@@ -37,6 +37,6 @@ Route::get('empreadoE/{id}','DB\empleadosController@eliminarEmpleado');
 
 //Hacemos una relacion que con estos datos se pueda loguear un empleado a la base de datos 
 Route::get('InciarEmpleado', 'inicio@getFormulario');
-Route::post('loginEmpleadoU', 'DB\loginUController@loginEmpleado')->name('loginEmpleadoU');
+Route::post('loginEmpleadoU', 'DB\loginUController@loginEmpleado');
 
 //-------------------------------------------------

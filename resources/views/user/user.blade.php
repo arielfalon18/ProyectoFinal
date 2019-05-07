@@ -34,8 +34,8 @@
       </div>
       <div class="modal-body">
         <!-- Formulario para añadir un usuario a la base de datos  -->
-        <form  method="post"   >
-            {{ csrf_field()}}
+        <form  method="post" v-on:submit.prevent="nuevaIncidencia">
+            
         <div class="form-row">
             <!-- <div class="form-group col-md-6">
                 <label>Fecha incidencia</label>

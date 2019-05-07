@@ -171,7 +171,10 @@ var app = new Vue({
                 // // Errores
                 // console.log("efecto shake");
                 // $('#añadirusuario').effect('shake');
-                this.errors = error.response.data
+                this.errors = error.response.data.errors
+                // if (error.response.status == 422){
+                //     this.errors = error.response.data.errors
+                // }
             })   
         },
         // Mostramos todos los empleados que tenemos en la base de datos e
@@ -217,9 +220,9 @@ var app = new Vue({
                 this.idRol='B';
             }).catch(error => {
                 // Errores
-                console.log("efecto shake");
-                $('#añadirusuario').effect('shake');
-                this.errors = error.response.data;
+                // console.log("efecto shake");
+                // $('#añadirusuario').effect('shake');
+                this.errors = error.response.data.errors;
             })           
             // console.log($('#TDepartamento').val());
             // console.log($('#TipoEmpleado').val());
