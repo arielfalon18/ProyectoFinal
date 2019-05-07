@@ -9,12 +9,17 @@ use App\Departamento;
 class departamentoController extends Controller
 {
     public function NEWdepartamento(Request $resquest){
-        
-        $this->validate($resquest,[
+        $messages = [
+            'Nombre.required' => 'Departamento requerido',
+            'Planta.required' =>'Planta requerida',
+            'Edificio.required' => 'Edificio requerido'
+        ];
+        $resquest->validate([
             'Nombre' =>'required',
             'Planta' =>'required',
             'Edificio' =>'required'
-        ]);
+        ],$messages);
+
         $Departamento=Departamento::create($resquest->all());
         $Departamento->save();
     }
