@@ -103,8 +103,8 @@
       </div>
       <div class="modal-body">
         <!-- Formulario para añadir un departamento a la base de datos  -->
-        <form  method="post">
-        
+        <form  method="post" action="{{url('/inventario/NewInvenatario')}}">
+        {{ csrf_field()}}
         <div class="form-group">
             <input type="text" class="form-control" id="nombreI" name="nombreI" placeholder="Nombre">
         </div>
@@ -114,7 +114,7 @@
         <div class="form-group">
                 <textarea class="form-control" name="DescripcionI" id="DescripcionI" cols="30" rows="10" placeholder="Descripcion"></textarea>
             </div>
-            <button id="AñadirEmpleado" class="btn btn-primary">Añadir</button>
+            <button id="NuevoInvenatario" class="btn btn-primary">Añadir</button>
         </div>
         </form>
       </div>

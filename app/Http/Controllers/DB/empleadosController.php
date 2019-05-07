@@ -13,7 +13,7 @@ class empleadosController extends Controller
 {
     public function VerEmpreados(Request $request){
         $empleados=Empleados::with('RolE')->paginate(5);
-      
+            
         //Paginacion de empleados de la tabla
        
         return [

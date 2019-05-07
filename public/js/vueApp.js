@@ -42,8 +42,6 @@ var app = new Vue({
         prioridad:'',
         descripcion:'',
 
-        //
-        
         errors:[],
         aceptadoE:false,
         pagination: {
@@ -54,6 +52,13 @@ var app = new Vue({
             'from' :0,
             'to':0,
         },
+
+        //INVENTARIO
+        
+        nombreI:'',
+        tipoI:'',
+        DescripcionI:'',
+
         nombre:'',
         cif:'',
         direccion:'',
@@ -231,6 +236,20 @@ var app = new Vue({
         cambiodePagina: function(page){
             this.pagination.current_page = page;
             this.getEmpleados(page);
+        },
+
+        NuevoInvenatario: function(){
+            var urlCreateInventario='http://127.0.0.1:8000/CreateInventario';
+            axios.post(urlCreateInventario,{
+                nombre:this.nombreI,
+                tipo:this.tipoI,
+                Descripcion:this.DescripcionI
+                }
+            ).then(response=>{
+                this.nombreI='';
+                this.tipoI='';
+                this.DescripcionI='';
+            })
         }
     }
   })

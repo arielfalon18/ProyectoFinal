@@ -24,6 +24,14 @@ Route::post('CrearInci', 'DB\incidenciaController@newIncidencia');
 Route::post('CreateDepar', 'DB\departamentoController@NEWdepartamento');
 //Mostramos los datos de departamento
 Route::get('DepartamentosGET','DB\departamentoController@GetDepartamento');
+
+
+//Creamos un Inventario
+Route::post('/inventario/NewInvenatario', 'DB\InventarioController@NewInvenatario');
+//Mostramos Departamento
+Route::get('InventarioGET','DB\InventarioController@GetInventario');
+
+
 //Mostrar los ROl de empresa 
 Route::get('RolEmpleadoGET','DB\RolController@GetRol');
 //--------------------------------
