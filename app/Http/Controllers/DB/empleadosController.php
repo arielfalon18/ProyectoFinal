@@ -62,9 +62,9 @@ class empleadosController extends Controller
 
         //Crear login del empleado 
         $loginU=login::create([
-            "usuarioLogin"=>$resquest['email'],
+            "email"=>$resquest['email'],
             //De momento 12345 luego se cambia y se codificara la constraseña
-            "paswordLogin"=>Hash::make('12345'),
+            "password"=>Hash::make('12345'),
             "rol"=>$resquest['Idrol'],
             "Id_empleado"=>$empleados['id']
         ]);
@@ -80,5 +80,11 @@ class empleadosController extends Controller
         //Eliminamos un empleado de la base de datos con el ID
         $empleados =Empleados::findOrFail($id);
         $empleados->delete();
+    }
+    
+
+    public function empleadoAll(){
+        $EmpleadosALl=Empleados::get();
+        return $EmpleadosALl;
     }
 }

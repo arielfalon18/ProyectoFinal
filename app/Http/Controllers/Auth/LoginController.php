@@ -22,10 +22,6 @@ class LoginController extends Controller
             'email' => 'email|required|string',
             'password' => 'required|string'
         ]);
-
-        
-
-
         if (Auth::attempt($credentials)) {
            return redirect()->route('dashboard');
         }
