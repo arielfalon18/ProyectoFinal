@@ -11,7 +11,7 @@
                     <div class="card1"></div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-xs-12 done border">DONE  
-                    <div class="card1"></div>
+                    <div class="card1">@{{PRUEBASAS}}</div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-xs-12 notposible border">NOT POSIBLE  
                     <div class="card1"></div>

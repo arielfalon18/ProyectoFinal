@@ -128,7 +128,8 @@
       </div>
     </div>
   </div>
+  @include('modal.modal')
 </div>
 <!-- <h1 v-for="empleadoD in empleadosNA">@{{empleadoD.nombre}}</h1> -->
-@include('modal.modal')
+
 @stop
