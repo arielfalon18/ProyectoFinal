@@ -11,7 +11,6 @@ class UsuarioController extends Controller
     public function getIndex(){
         $incidencia = Incidencia::all();
         
-        dd($incidencia);
 
         return view('user.user')
         ->with('incidencia',$incidencia);

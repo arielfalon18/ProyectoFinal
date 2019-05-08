@@ -3,27 +3,58 @@
 <div class="usuario">
     <div class="container-fluid usuario">
         <button id="incidencia" class="btn btn-primary" data-toggle="modal" data-target="#crearincidencia">Crear incidencia</button>
-            <!-- <div class="row">
-                <div class="col-lg-3 col-md-6 col-xs-12 to-do border">TO DO
-                    
+            <div class="row">
+               
+                <div class="col-lg-3 col-md-6 col-xs-12 to-do border"><h5>Pendiente</h5>
+                @foreach( $incidencia as $incidencia )
+                    @if( $incidencia->Estado == 'Pendiente')
                     <div class="card1">
-                        
-                         
+                       
+
                     </div>
-                
+                    <p>ID: {{$incidencia->id}}</p>
+                    <p>{{$incidencia->FechaEntrada}}</p>
+                    <p>{{$incidencia->Estado}}</p>
+                    <p>{{$incidencia->Descripcion}}</p>
+                    <hr>
+                    
+                    
                 </div>
-                <div class="col-lg-3 col-md-6 col-xs-12 doing border">IN PROGRES  
+                @elseif ( $incidencia->Estado == 'Progreso')
+                <div class="col-lg-3 col-md-6 col-xs-12 doing border"><h5>Progreso</h5>
                     <div class="card1"></div>
+                    <p>{{$incidencia->id}}</p>
+                    <p>{{$incidencia->FechaEntrada}}</p>
+                    <p>{{$incidencia->Estado}}</p>
+                    <p>{{$incidencia->Descripcion}}</p>
+                    <hr>
+                    
                 </div>
-                <div class="col-lg-3 col-md-6 col-xs-12 done border">DONE  
+                @elseif ( $incidencia->Estado == 'Finalizada')
+                <div class="col-lg-3 col-md-6 col-xs-12 done border"><h5>Finalizada</h5>  
                     <div class="card1"></div>
+                    <p>{{$incidencia->id}}</p>
+                    <p>{{$incidencia->FechaEntrada}}</p>
+                    <p>{{$incidencia->Estado}}</p>
+                    <p>{{$incidencia->Descripcion}}</p>
+                    <hr>
+                   
                 </div>
-                <div class="col-lg-3 col-md-6 col-xs-12 notposible border">NOT POSIBLE  
+                @elseif ( $incidencia->Estado == 'Cancelada')
+                <div class="col-lg-3 col-md-6 col-xs-12 notposible border"><h5>Cancelada</h5> 
                     <div class="card1"></div>
+                    <p>{{$incidencia->id}}</p>
+                    <p>{{$incidencia->FechaEntrada}}</p>
+                    <p>{{$incidencia->Estado}}</p>
+                    <p>{{$incidencia->Descripcion}}</p>
+                    <hr>
+                    @endif
+                @endforeach
                 </div>
-            </div> -->
+            </div>
     </div>
 </div>
+@stop
 
 
 
