@@ -84,9 +84,7 @@
             </div>
         </div>
             <button id="AñadirEmpleado" class="btn btn-primary">Añadir</button>
-            
         </div>
-        
         </form>
       </div>
     </div>
@@ -105,8 +103,7 @@
       </div>
       <div class="modal-body">
         <!-- Formulario para añadir un departamento a la base de datos  -->
-        <form  method="post"  v-on:submit.prevent="NuevoInvenatario">
-        
+        <form  method="post" v-on:submit.prevent="NuevoInvenatario">
         <div class="form-group">
           <select  class="form-control" name="Nempleado" id="Nempleado" >
                 <option  disabled selected>Selecciona un empleado</option>
@@ -121,10 +118,10 @@
         <div class="form-group">
           <input type="text" class="form-control" name="tipoI"  v-model="tipoI"  id="tipoI" placeholder="Tipo">
         </div>
-       
         <div class="form-group">
                 <textarea class="form-control" name="DescripcionI"  v-model="DescripcionI"  id="DescripcionI" cols="30" rows="10" placeholder="Descripcion"></textarea>
         </div>
+        <h1 >@{{PRUEBASAS}}</h1>
         <button id="NuevoInvenatario" class="btn btn-primary">Añadir</button>
         </div>
         </form>
