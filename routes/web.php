@@ -28,6 +28,12 @@ Route::get('DepartamentosGET','DB\departamentoController@GetDepartamento');
 
 //Creamos un Inventario
 Route::post('/inventario/NewInvenatario', 'DB\InventarioController@NewInvenatario');
+
+//Mostramos todos los usuario sin paginacion 
+
+Route::get('empleadosAll','DB\empleadosController@empleadoAll');
+
+
 //Mostramos Departamento
 Route::get('InventarioGET','DB\InventarioController@GetInventario');
 
@@ -47,6 +53,6 @@ Route::get('empreadoE/{id}','DB\empleadosController@eliminarEmpleado');
 //Hacemos una relacion que con estos datos se pueda loguear un empleado a la base de datos 
 Route::get('InciarEmpleado', 'inicio@getFormulario');
 
-Route::post('loginEmpleadoU', 'DB\loginUController@login');
+Route::post('loginEmpleadoU', 'DB\loginUController@login')->name('login');
 
 

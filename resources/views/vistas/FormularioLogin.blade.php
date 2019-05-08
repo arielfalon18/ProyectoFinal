@@ -8,13 +8,16 @@
         </div>
         <div class="col-4">
             <form action="{{url('loginEmpleadoU')}}"  method="POST">
-                <div class="form-group">
+            {{csrf_field()}}
+                <div class="form-group {{$errors->has('usuarioLogin')? 'has-error' :''}}">
                     <label for="usuarioLogin">Email</label>
-                    <input type="text" class="form-control"  id="usuarioLogin" name="usuarioLogin" placeholder="Introduce tu nombre">
+                    <input type="email" class="form-control"  id="usuarioLogin" name="usuarioLogin" placeholder="Introduce tu nombre">
+                    {!! $errors->first('usuarioLogin','<span class="help-block">:message</span>')!!}
                 </div>
-                <div class="form-group ">
+                <div class="form-group {{$errors->has('password')? 'has-error' :''}}">
                     <label for="paswordLogin">Password</label>
                     <input type="text" class="form-control"  name="paswordLogin" id="paswordLogin" placeholder="Introduce tu password">
+                    {!! $errors->first('paswordLogin','<span class="help-block">:message</span>')!!}
                 </div>
                 <button id="aña" class="btn btn-primary">Acceder Usuario</button>
             </form>

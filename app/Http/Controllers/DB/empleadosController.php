@@ -81,4 +81,10 @@ class empleadosController extends Controller
         $empleados =Empleados::findOrFail($id);
         $empleados->delete();
     }
+    
+
+    public function empleadoAll(){
+        $EmpleadosALl=Empleados::get();
+        return $EmpleadosALl;
+    }
 }

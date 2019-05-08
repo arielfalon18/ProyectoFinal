@@ -15,11 +15,24 @@ class RedirectIfAuthenticated
      * @param  string|null  $guard
      * @return mixed
      */
+   
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect('/dashboard');
+        switch ($guard) {
+            case 'usuarioL':
+                if (Auth::guard($guard)->check()) {
+                  return redirect('/user');
+              }
+    
+              break;
+            default:
+            if (Auth::guard($guard)->check()) {
+                return redirect('/dashboard');
+            }
+    
+            break;
         }
+        
 
         return $next($request);
     }

@@ -180,7 +180,7 @@ return [
             'driver' => 'eloquent',
             'model' => App\Datos_empresa::class,
         ],
-        'usuarioL' =>[
+        'login' =>[
             'driver' =>'eloquent',
             'model' => App\login::class,
         ]

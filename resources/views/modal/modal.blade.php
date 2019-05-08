@@ -86,6 +86,7 @@
             <button id="AñadirEmpleado" class="btn btn-primary">Añadir</button>
             
         </div>
+        
         </form>
       </div>
     </div>
@@ -106,6 +107,14 @@
         <!-- Formulario para añadir un departamento a la base de datos  -->
         <form  method="post" action="{{url('/inventario/NewInvenatario')}}">
         {{ csrf_field()}}
+        <div class="form-group">
+          <select  class="form-control" name="Nempleado" id="Nempleado" >
+                <option  disabled selected>Selecciona un empleado</option>
+                <!-- No te lo hace por algo de Laravel asi que tendras que pillar otra forma pero esto te decia que muestre todo y te lo haga  -->
+                <option v-for="empleadoD in empleadosNA" v-if="dapart.id=={{auth()->user()->id}}">@{{empleadoD.nombre}}</option>
+          </select>
+          <!-- <span v-if="errors.Idrol" class="text-danger">@{{errors.Idrol[0]}}</span> -->
+        </div>
         <div class="form-group">
             <input type="text" class="form-control" id="nombreI" name="nombreI" placeholder="Nombre">
         </div>

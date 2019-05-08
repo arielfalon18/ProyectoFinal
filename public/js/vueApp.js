@@ -7,6 +7,7 @@ var app = new Vue({
     created:function(){
         this.getDepartament();
         this.getEmpleados();
+        this.getEmpleadosAll();
     },
     data: {
     //Departamento:Departamento,
@@ -31,7 +32,9 @@ var app = new Vue({
         usuarioLogin:'',
         paswordLogin:'',
         //-------------
-
+        //Iventario 
+        NEmpleados:'C',
+        empleadosNA:[],
         //DAVID
         id:'',
         fechaInc:'',
@@ -178,6 +181,15 @@ var app = new Vue({
                 //     this.errors = error.response.data.errors
                 // }
             })   
+        },
+        //Mostramos los empleados pero eso si sin paginacion 
+        getEmpleadosAll:function(){
+            var urlgeempleadosAll="http://127.0.0.1:8000/empleadosAll";
+            axios.get(urlgeempleadosAll).then(response=>{
+                this.empleadosNA=response.data
+            })
+            
+            
         },
         // Mostramos todos los empleados que tenemos en la base de datos e
         getEmpleados: function(page){
