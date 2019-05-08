@@ -23,8 +23,8 @@ class loginUController extends Controller
     
     public function login(){
         $credentials=$this->validate(request(),[
-            'usuarioLogin' => 'email|required|string',
-            'paswordLogin' => 'required|string'
+            'email' => 'email|required|string',
+            'password' => 'required|string'
         ]);
 
         if (Auth::guard('usuarioL')->attempt($credentials)) {
@@ -32,7 +32,7 @@ class loginUController extends Controller
         }
 
         return back()
-        ->withErrors(['usuarioLogin' => trans('auth.failed')])
-        ->withImput(request(['usuarioLogin']));
+        ->withErrors(['email' => trans('auth.failed')])
+        ->withImput(request(['email']));
     }
 }
