@@ -9,18 +9,25 @@ use App\Datos_empresa;
 use App\Empleados;
 
 class InventarioController extends Controller
-{
+{   
     public function NewInvenatario(Request $resquest){
-    
         
-        
-        $inventario = new Inventarios;  
-        $inventario->nombre=request('nombreI');
-        $inventario->tipo=request('tipoI');
-        $inventario->descripcion=request('DescripcionI');
-        $inventario->idEmpresa=1;
-        $inventario->idEmpleado=1;
+        // $inventario = new Inventarios;  
+        // $inventario->nombre=request('nombreI');
+        // $inventario->tipo=request('tipoI');
+        // $inventario->descripcion=request('DescripcionI');
+        // $inventario->idEmpresa=1;
+        // $inventario->idEmpleado=1;
+        // $inventario->save();
+        $inventario = Inventarios::create([
+            "nombre"=>$resquest['nombre'],
+            "tipo"=>$resquest['tipo'],
+            "descripcion"=>$resquest['Descripcion'],
+            "idEmpresa"=>1,
+            "idEmpleado"=>2,
+        ]);
         $inventario->save();
     }
+
     
 }

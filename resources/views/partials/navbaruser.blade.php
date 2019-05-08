@@ -7,12 +7,12 @@
     <!-- <li class=li><a class="a" href="/inicio">Inicio</a></li>
     <li class=li><a class="a" href="/Nosotros">Acerca</a></li> -->
     
-    <form method="POST" action="{{ route('logout')}}">
-    {{ csrf_field()}}
+    
     <li class=li><a class="a">Nombre usuario</a></li>
     <li class=li><a class="a">The Incidence</a></li>
-    <li class=li><a class="a" href="/inicio">Cerrar sesion</a></li>
-    </form>
+    <li class=li> 
+    <a class="a" href="logoutCA">CerrarSeccion</a></li>
+    </li>
   </ul>
 </header>
 
