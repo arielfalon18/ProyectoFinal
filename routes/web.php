@@ -1,4 +1,6 @@
 <?php
+
+
 Route::get('/', 'HomeController@getHome');
 Route::get('inicio', 'inicio@getIndex');
 Route::get('user', 'UsuarioController@getIndex')->name('user');
@@ -34,7 +36,8 @@ Route::post('/inventario/NewInvenatario', 'DB\InventarioController@NewInvenatari
 Route::get('empleadosAll','DB\empleadosController@empleadoAll');
 
 
-//Mostramos Departamento
+//Inventarios 
+Route::post('CreateInventario' , 'DB\InventarioController@NewInvenatario');
 Route::get('InventarioGET','DB\InventarioController@GetInventario');
 
 
@@ -54,5 +57,7 @@ Route::get('empreadoE/{id}','DB\empleadosController@eliminarEmpleado');
 Route::get('InciarEmpleado', 'inicio@getFormulario');
 
 Route::post('loginEmpleadoU', 'DB\loginUController@login')->name('loginEmpleadoU');
+
+Route::get('logoutCA', 'DB\loginUController@logout')->name('logoutCA');
 
 

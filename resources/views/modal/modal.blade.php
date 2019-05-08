@@ -105,8 +105,8 @@
       </div>
       <div class="modal-body">
         <!-- Formulario para añadir un departamento a la base de datos  -->
-        <form  method="post" action="{{url('/inventario/NewInvenatario')}}">
-        {{ csrf_field()}}
+        <form  method="post"  v-on:submit.prevent="NuevoInvenatario">
+        
         <div class="form-group">
           <select  class="form-control" name="Nempleado" id="Nempleado" >
                 <option  disabled selected>Selecciona un empleado</option>
@@ -116,16 +116,16 @@
           <!-- <span v-if="errors.Idrol" class="text-danger">@{{errors.Idrol[0]}}</span> -->
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" id="nombreI" name="nombreI" placeholder="Nombre">
+            <input type="text" class="form-control"  v-model="nombreI"  id="nombreI" name="nombreI" placeholder="Nombre">
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" name="tipoI" id="tipoI" placeholder="Tipo">
+          <input type="text" class="form-control" name="tipoI"  v-model="tipoI"  id="tipoI" placeholder="Tipo">
         </div>
        
         <div class="form-group">
-                <textarea class="form-control" name="DescripcionI" id="DescripcionI" cols="30" rows="10" placeholder="Descripcion"></textarea>
-            </div>
-            <button id="NuevoInvenatario" class="btn btn-primary">Añadir</button>
+                <textarea class="form-control" name="DescripcionI"  v-model="DescripcionI"  id="DescripcionI" cols="30" rows="10" placeholder="Descripcion"></textarea>
+        </div>
+        <button id="NuevoInvenatario" class="btn btn-primary">Añadir</button>
         </div>
         </form>
       </div>

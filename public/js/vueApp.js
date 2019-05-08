@@ -62,7 +62,7 @@ var app = new Vue({
         nombreI:'',
         tipoI:'',
         DescripcionI:'',
-
+        //-------------------
         nombre:'',
         cif:'',
         direccion:'',
@@ -248,17 +248,7 @@ var app = new Vue({
         },
 
         NuevoInvenatario: function(){
-            var urlCreateInventario='http://127.0.0.1:8000/CreateInventario';
-            axios.post(urlCreateInventario,{
-                nombre:this.nombreI,
-                tipo:this.tipoI,
-                Descripcion:this.DescripcionI
-                }
-            ).then(response=>{
-                this.nombreI='';
-                this.tipoI='';
-                this.DescripcionI='';
-            })
+            console.log("COSAS");
         }
     }
   })

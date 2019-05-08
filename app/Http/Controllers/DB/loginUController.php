@@ -28,11 +28,15 @@ class loginUController extends Controller
         ]);
 
         if (Auth::guard('usuarioL')->attempt($credentials)) {
-           return redirect()->route('user.user');
+           return redirect()->route('user');
         }
 
         return back()
         ->withErrors(['email' => trans('auth.failed')])
         ->withImput(request(['email']));
+    }
+    public function logout(){
+        Auth::guard('usuarioL')->logout();
+        return redirect('/');
     }
 }
