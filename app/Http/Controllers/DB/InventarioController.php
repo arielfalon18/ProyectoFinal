@@ -18,7 +18,7 @@ class InventarioController extends Controller
         $inventario->nombre=request('nombreI');
         $inventario->tipo=request('tipoI');
         $inventario->descripcion=request('DescripcionI');
-        $inventario->idEmpresa=1;
+        $inventario->idEmpresa=
         $inventario->idEmpleado=1;
         $inventario->save();
     }
