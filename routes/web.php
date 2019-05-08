@@ -1,4 +1,6 @@
 <?php
+
+
 Route::get('/', 'HomeController@getHome');
 Route::get('inicio', 'inicio@getIndex');
 Route::get('user', 'UsuarioController@getIndex')->name('user');
@@ -24,7 +26,8 @@ Route::post('/incidencia/newIncidencia', 'DB\incidenciaController@newIncidencia'
 Route::post('CreateDepar', 'DB\departamentoController@NEWdepartamento');
 //Mostramos los datos de departamento
 Route::get('DepartamentosGET','DB\departamentoController@GetDepartamento');
-
+//Mostrar incidencias
+Route::get('index','incidenciaController@index');
 
 //Creamos un Inventario
 Route::post('/inventario/NewInvenatario', 'DB\InventarioController@NewInvenatario');

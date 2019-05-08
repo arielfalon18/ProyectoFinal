@@ -3,9 +3,14 @@
 <div class="usuario">
     <div class="container-fluid usuario">
         <button id="incidencia" class="btn btn-primary" data-toggle="modal" data-target="#crearincidencia">Crear incidencia</button>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-lg-3 col-md-6 col-xs-12 to-do border">TO DO
-                    <div class="card1"></div>
+                    
+                    <div class="card1">
+                        
+                         
+                    </div>
+                
                 </div>
                 <div class="col-lg-3 col-md-6 col-xs-12 doing border">IN PROGRES  
                     <div class="card1"></div>
@@ -16,7 +21,7 @@
                 <div class="col-lg-3 col-md-6 col-xs-12 notposible border">NOT POSIBLE  
                     <div class="card1"></div>
                 </div>
-            </div>
+            </div> -->
     </div>
 </div>
 
