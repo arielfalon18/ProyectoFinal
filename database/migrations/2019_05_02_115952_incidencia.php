@@ -27,8 +27,8 @@ class Incidencia extends Migration
             $table->string('Estado');
             $table->string('Prioridad');
 
-            $table->integer('IdEmpresa')->unsigned();
-            $table->foreign('IdEmpresa')->references('id')->on('Datos_Empresa')
+            $table->integer('IdInventario')->unsigned();
+            $table->foreign('IdInventario')->references('id')->on('inventarios')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });

@@ -12,9 +12,20 @@ class UsuarioController extends Controller
         $this->middleware('auth');
     }
     public function getIndex(){
+        $incidencia = Incidencia::all();
         
-        return view('user.user');
+        dd($incidencia);
+
+        return view('user.user')
+        ->with('incidencia',$incidencia);
+
+        
+        // return view('user.user');
 
     }
-   
+
+    // public function getIncidencia(){
+    //     $incidencias = Incidencia::all();
+    //     return view('user.user')->with('user',$incidencias);
+    // }
 }
