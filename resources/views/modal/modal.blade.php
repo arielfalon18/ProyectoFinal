@@ -110,12 +110,12 @@
             <input type="text" class="form-control" id="nombreI" name="nombreI" placeholder="Nombre">
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" name="tipoI" id="tipoI" placeholder="Tipo">
+          <input type="text" class="form-control" name="tipoI" id="tipoI" placeholder="Nombre Inventario">
         </div>
        
         <div class="form-group">
-                <textarea class="form-control" name="DescripcionI" id="DescripcionI" cols="30" rows="10" placeholder="Descripcion"></textarea>
-            </div>
+          <textarea class="form-control" name="DescripcionI" id="DescripcionI" cols="30" rows="10" placeholder="Descripcion"></textarea>
+        </div>
             <button id="NuevoInvenatario" class="btn btn-primary">Añadir</button>
         </div>
         </form>

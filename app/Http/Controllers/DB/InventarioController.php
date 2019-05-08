@@ -9,7 +9,7 @@ use App\Datos_empresa;
 use App\Empleados;
 
 class InventarioController extends Controller
-{
+{   
     public function NewInvenatario(Request $resquest){
     
         

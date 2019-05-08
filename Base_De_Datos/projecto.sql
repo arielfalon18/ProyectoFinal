@@ -32,11 +32,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `inventarios` (
   `id` INT(10) NOT NULL AUTO_INCREMENT , 
-  `nombre` VARCHAR(20) NOT NULL ,
-  `tipo` VARCHAR(20) NOT NULL ,
-  `descripcion` VARCHAR(50) NOT NULL ,
-  `idEmpresa` INT(10) NOT NULL ,
-  `idEmpleado` INT(10) NOT NULL ,
+  `nombre` VARCHAR(20)COLLATE utf8mb4_unicode_ci NOT NULL ,
+  `tipo` VARCHAR(20)COLLATE utf8mb4_unicode_ci NOT NULL ,
+  `descripcion` VARCHAR(50)COLLATE utf8mb4_unicode_ci NOT NULL ,
+  `idEmpresa` INT(10) UNSIGNED NOT NULL ,
+  `idEmpleado` INT(10) UNSIGNED NOT NULL ,
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
 
