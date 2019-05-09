@@ -8,23 +8,30 @@ use App\Incidencia;
 
 class UsuarioController extends Controller
 {
-    public function __construct(){
-        $this->middleware('auth');
-    }
+    // public function __construct(){
+    //     $this->middleware('auth');
+    // }
     public function getIndex(){
-        $incidencia = Incidencia::all();
+        // $incidencia = Incidencia::all();
         
 
-        return view('user.user')
-        ->with('incidencia',$incidencia);
+        // return view('user.user')
+        // ->with('incidencia',$incidencia);
+        $incidencias = Incidencia::where('Estado','Pendiente')->get();
+        return view('user.user')->with('incidencia',$incidencias);
 
         
-        // return view('user.user');
+        // $incidencia = Incidencia::where('Estado','Progreso')->get();
+        // return view('user.user')->with('incidencia',$incidencia);
+        //return view('user.user');
 
     }
+    public function scopeProgreso($query){
+        return $query->where('Estado','Progreso');
+    }
 
-    // public function getIncidencia(){
-    //     $incidencias = Incidencia::all();
-    //     return view('user.user')->with('user',$incidencias);
+    // public function Pendientes(){
+    //     $incidencias = Incidencia::where('Estado','Pendiente');
+    //     return view('user.user')->with('incidencia',$incidencias);
     // }
 }

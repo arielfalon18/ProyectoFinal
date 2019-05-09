@@ -114,7 +114,6 @@ CREATE TABLE `incidencia` (
   `Imagenes` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Id_Empleado_usuario` int(11) NOT NULL,
   `Id_Empleado_tecnico` int(11) NOT NULL,
-  `NombrePrioridad` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Estado` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Prioridad` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Idinventario` int(10) UNSIGNED NOT NULL

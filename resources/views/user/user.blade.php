@@ -7,51 +7,44 @@
                
                 <div class="col-lg-3 col-md-6 col-xs-12 to-do border"><h5>Pendiente</h5>
                 @foreach( $incidencia as $incidencia )
-                    @if( $incidencia->Estado == 'Pendiente')
-                    <div class="card1">
-                       
+                    
+                        <div class="card1">
+                        
 
-                    </div>
-                    <p>ID: {{$incidencia->id}}</p>
-                    <p>{{$incidencia->FechaEntrada}}</p>
-                    <p>{{$incidencia->Estado}}</p>
-                    <p>{{$incidencia->Descripcion}}</p>
-                    <hr>
+                        </div>
+                        <p>ID: {{$incidencia->id}}</p>
+                        <p>{{$incidencia->FechaEntrada}}</p>
+                        <p>{{$incidencia->Estado}}</p>
+                        <p>{{$incidencia->Descripcion}}</p>
+                        <hr>
                     
-                    
+                @endforeach          
                 </div>
-                @elseif ( $incidencia->Estado == 'Progreso')
+
+
+                
                 <div class="col-lg-3 col-md-6 col-xs-12 doing border"><h5>Progreso</h5>
-                    <div class="card1"></div>
-                    <p>{{$incidencia->id}}</p>
-                    <p>{{$incidencia->FechaEntrada}}</p>
-                    <p>{{$incidencia->Estado}}</p>
-                    <p>{{$incidencia->Descripcion}}</p>
-                    <hr>
-                    
-                </div>
-                @elseif ( $incidencia->Estado == 'Finalizada')
-                <div class="col-lg-3 col-md-6 col-xs-12 done border"><h5>Finalizada</h5>  
-                    <div class="card1"></div>
-                    <p>{{$incidencia->id}}</p>
-                    <p>{{$incidencia->FechaEntrada}}</p>
-                    <p>{{$incidencia->Estado}}</p>
-                    <p>{{$incidencia->Descripcion}}</p>
-                    <hr>
+                @foreach ( $incidencia as $incidencia)
                    
-                </div>
-                @elseif ( $incidencia->Estado == 'Cancelada')
-                <div class="col-lg-3 col-md-6 col-xs-12 notposible border"><h5>Cancelada</h5> 
-                    <div class="card1"></div>
-                    <p>{{$incidencia->id}}</p>
-                    <p>{{$incidencia->FechaEntrada}}</p>
-                    <p>{{$incidencia->Estado}}</p>
-                    <p>{{$incidencia->Descripcion}}</p>
-                    <hr>
-                    @endif
+                        
+                    
                 @endforeach
                 </div>
-            </div>
+
+
+                <div class="col-lg-3 col-md-6 col-xs-12 finish border"><h5>Finalizada</h5>
+
+
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-xs-12 cancel border"><h5>Cancelada</h5>
+
+                </div>
+
+                
+                
+            </div> 
+            
     </div>
 </div>
 @stop
