@@ -109,17 +109,21 @@
                 <option value="C" disabled selected>Selecciona un empleado</option>
                 <!-- No te lo hace por algo de Laravel asi que tendras que pillar otra forma pero esto te decia que muestre todo y te lo haga  -->
                 <option  v-for="empleadoD in empleadosNA" v-if="empleadoD.IdEmpresa=={{auth()->user()->id}}">@{{empleadoD.nombre}}</option>
+                
           </select>
-          <!-- <span v-if="errors.Idrol" class="text-danger">@{{errors.Idrol[0]}}</span> -->
+          <span v-if="errors.idEmpleado" class="text-danger">@{{errors.idEmpleado[0]}}</span>
         </div>
         <div class="form-group">
             <input type="text" class="form-control"  v-model="nombreI"  id="nombreI" name="nombreI" placeholder="Nombre">
+            <span v-if="errors.nombre" class="text-danger">@{{errors.nombre[0]}}</span>
         </div>
         <div class="form-group">
           <input type="text" class="form-control" name="tipoI"  v-model="tipoI"  id="tipoI" placeholder="Tipo">
+          <span v-if="errors.tipo" class="text-danger">@{{errors.tipo[0]}}</span>
         </div>
         <div class="form-group">
                 <textarea class="form-control" name="DescripcionI"  v-model="DescripcionI"  id="DescripcionI" cols="30" rows="10" placeholder="Descripcion"></textarea>
+                <span v-if="errors.descripcion" class="text-danger">@{{errors.descripcion[0]}}</span>
         </div>
         <button id="NuevoInvenatario" class="btn btn-primary">Añadir</button>
         </div>

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-05-2019 a las 11:15:54
--- Versión del servidor: 10.1.35-MariaDB
--- Versión de PHP: 7.2.9
+-- Tiempo de generación: 09-05-2019 a las 16:42:53
+-- Versión del servidor: 10.1.38-MariaDB
+-- Versión de PHP: 7.3.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -60,7 +60,7 @@ CREATE TABLE `departamento` (
   `Nombre` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Planta` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Edificio` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `IdEmpresa` int(10) UNSIGNED NOT NULL
+  `IdEmpresa` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -84,7 +84,7 @@ CREATE TABLE `empleados` (
   `dni` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `telefono` int(11) NOT NULL,
-  `IdEmpresa` int(10) UNSIGNED NOT NULL,
+  `IdEmpresa` int(10) NOT NULL,
   `IdDepartamento` int(10) UNSIGNED NOT NULL,
   `Rol` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -106,7 +106,7 @@ INSERT INTO `empleados` (`id`, `nombre`, `dni`, `email`, `telefono`, `IdEmpresa`
 --
 
 CREATE TABLE `incidencia` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) NOT NULL,
   `FechaEntrada` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `FechaCierre` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `NombreCategoria` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -114,11 +114,20 @@ CREATE TABLE `incidencia` (
   `Imagenes` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Id_Empleado_usuario` int(11) NOT NULL,
   `Id_Empleado_tecnico` int(11) NOT NULL,
-  `NombrePrioridad` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Estado` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Prioridad` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Idinventario` int(10) UNSIGNED NOT NULL
+  `IdInventario` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `incidencia`
+--
+
+INSERT INTO `incidencia` (`id`, `FechaEntrada`, `FechaCierre`, `NombreCategoria`, `Descripcion`, `Imagenes`, `Id_Empleado_usuario`, `Id_Empleado_tecnico`, `Estado`, `Prioridad`, `IdInventario`) VALUES
+(1, '09-05-2019', '09-05-2019', 'Categoria3', 'e1wdqwdqw', 'Captura.PNG', 154, 145, 'Finalizada', 'Media', 1),
+(2, '09-05-2019', '09-05-2019', 'Categoria2', 'eqweqwe', 'Captura.PNG', 154, 145, 'Progreso', 'Baja', 1),
+(3, '09-05-2019', '09-05-2019', 'Categoria1', 'asdadasd', 'Captura.PNG', 154, 145, 'Pendiente', 'Alta', 1),
+(4, '09-05-2019', '09-05-2019', 'Categoria1', 'asdasdas', 'Captura.PNG', 154, 145, 'Cancelada', 'Media', 1);
 
 -- --------------------------------------------------------
 
@@ -140,7 +149,7 @@ CREATE TABLE `inventarios` (
 --
 
 INSERT INTO `inventarios` (`id`, `nombre`, `tipo`, `descripcion`, `idEmpresa`, `idEmpleado`) VALUES
-(1, '123', 'qwe', 'qweqwe', 1, 1);
+(1, '123', 'qwe', 'qweqwe', 1, 16);
 
 -- --------------------------------------------------------
 
@@ -153,7 +162,7 @@ CREATE TABLE `login` (
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `rol` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Id_empleado` int(10) UNSIGNED NOT NULL
+  `Id_empleado` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -219,16 +228,25 @@ ALTER TABLE `empleados`
   ADD KEY `IdDepartamento` (`IdDepartamento`);
 
 --
+-- Indices de la tabla `incidencia`
+--
+ALTER TABLE `incidencia`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `inventarios`
 --
 ALTER TABLE `inventarios`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idEmpleado` (`idEmpleado`),
+  ADD KEY `idEmpresa` (`idEmpresa`);
 
 --
 -- Indices de la tabla `login`
 --
 ALTER TABLE `login`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `Id_empleado` (`Id_empleado`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -253,6 +271,12 @@ ALTER TABLE `empleados`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
+-- AUTO_INCREMENT de la tabla `incidencia`
+--
+ALTER TABLE `incidencia`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT de la tabla `inventarios`
 --
 ALTER TABLE `inventarios`
@@ -263,6 +287,36 @@ ALTER TABLE `inventarios`
 --
 ALTER TABLE `login`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `departamento`
+--
+ALTER TABLE `departamento`
+  ADD CONSTRAINT `departamento_ibfk_1` FOREIGN KEY (`IdEmpresa`) REFERENCES `datos_empresa` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `empleados`
+--
+ALTER TABLE `empleados`
+  ADD CONSTRAINT `empleados_ibfk_1` FOREIGN KEY (`IdDepartamento`) REFERENCES `departamento` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `empleados_ibfk_2` FOREIGN KEY (`IdEmpresa`) REFERENCES `datos_empresa` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `inventarios`
+--
+ALTER TABLE `inventarios`
+  ADD CONSTRAINT `inventarios_ibfk_1` FOREIGN KEY (`idEmpleado`) REFERENCES `empleados` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `inventarios_ibfk_2` FOREIGN KEY (`idEmpresa`) REFERENCES `datos_empresa` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `login`
+--
+ALTER TABLE `login`
+  ADD CONSTRAINT `login_ibfk_1` FOREIGN KEY (`Id_empleado`) REFERENCES `empleados` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
