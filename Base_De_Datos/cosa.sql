@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Temps de generació: 08-05-2019 a les 16:44:19
--- Versió del servidor: 10.1.38-MariaDB
--- Versió de PHP: 7.1.27
+-- Tiempo de generación: 09-05-2019 a las 11:15:54
+-- Versión del servidor: 10.1.35-MariaDB
+-- Versión de PHP: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de dades: `projecto`
+-- Base de datos: `projecto`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `datos_empresa`
+-- Estructura de tabla para la tabla `datos_empresa`
 --
 
 CREATE TABLE `datos_empresa` (
@@ -42,7 +42,7 @@ CREATE TABLE `datos_empresa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Bolcament de dades per a la taula `datos_empresa`
+-- Volcado de datos para la tabla `datos_empresa`
 --
 
 INSERT INTO `datos_empresa` (`id`, `nombre`, `cif`, `direccion`, `ciudad`, `pais`, `codigoP`, `telefono`, `email`, `password`) VALUES
@@ -52,7 +52,7 @@ INSERT INTO `datos_empresa` (`id`, `nombre`, `cif`, `direccion`, `ciudad`, `pais
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `departamento`
+-- Estructura de tabla para la tabla `departamento`
 --
 
 CREATE TABLE `departamento` (
@@ -64,7 +64,7 @@ CREATE TABLE `departamento` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Bolcament de dades per a la taula `departamento`
+-- Volcado de datos para la tabla `departamento`
 --
 
 INSERT INTO `departamento` (`id`, `Nombre`, `Planta`, `Edificio`, `IdEmpresa`) VALUES
@@ -75,7 +75,7 @@ INSERT INTO `departamento` (`id`, `Nombre`, `Planta`, `Edificio`, `IdEmpresa`) V
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `empleados`
+-- Estructura de tabla para la tabla `empleados`
 --
 
 CREATE TABLE `empleados` (
@@ -90,18 +90,19 @@ CREATE TABLE `empleados` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Bolcament de dades per a la taula `empleados`
+-- Volcado de datos para la tabla `empleados`
 --
 
 INSERT INTO `empleados` (`id`, `nombre`, `dni`, `email`, `telefono`, `IdEmpresa`, `IdDepartamento`, `Rol`) VALUES
 (15, 'Empleado2', '12312321', 'empleado4@gmail.com', 123123123, 1, 2, 'Tecnico'),
 (16, 'Empleado3', '123123A', 'empleado3@gmail.com', 12312321, 1, 2, 'Tecnico'),
-(18, 'Empleado4', '122132A', 'empleado4@gmail.com', 12312312, 1, 1, 'Usuario');
+(18, 'Empleado4', '122132A', 'empleado4@gmail.com', 12312312, 1, 1, 'Usuario'),
+(20, 'Empleado5', '123213S', 'Empleado5@gmail.com', 12345678, 1, 1, 'Tecnico');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `incidencia`
+-- Estructura de tabla para la tabla `incidencia`
 --
 
 CREATE TABLE `incidencia` (
@@ -122,7 +123,7 @@ CREATE TABLE `incidencia` (
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `inventarios`
+-- Estructura de tabla para la tabla `inventarios`
 --
 
 CREATE TABLE `inventarios` (
@@ -135,7 +136,7 @@ CREATE TABLE `inventarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Bolcament de dades per a la taula `inventarios`
+-- Volcado de datos para la tabla `inventarios`
 --
 
 INSERT INTO `inventarios` (`id`, `nombre`, `tipo`, `descripcion`, `idEmpresa`, `idEmpleado`) VALUES
@@ -144,30 +145,31 @@ INSERT INTO `inventarios` (`id`, `nombre`, `tipo`, `descripcion`, `idEmpresa`, `
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `login`
+-- Estructura de tabla para la tabla `login`
 --
 
 CREATE TABLE `login` (
   `id` int(10) NOT NULL,
-  `usuarioLogin` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `paswordLogin` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `rol` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Id_empleado` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Bolcament de dades per a la taula `login`
+-- Volcado de datos para la tabla `login`
 --
 
-INSERT INTO `login` (`id`, `usuarioLogin`, `paswordLogin`, `rol`, `Id_empleado`) VALUES
+INSERT INTO `login` (`id`, `email`, `password`, `rol`, `Id_empleado`) VALUES
 (6, 'empleado4@gmail.com', '$2y$10$XOnUuXPLdx0lNrxbrG6ZFOPjflRzC96bDUR4u0.d.oxuHXbgZeujm', 'Tecnico', 15),
 (7, 'empleado3@gmail.com', '$2y$10$YHXk18fFlJiVzX.WLrHzheuXNXNbC/zFBoxvp12ze/JktTutRk3j6', 'Tecnico', 16),
-(9, 'empleado4@gmail.com', '$2y$10$jm6EMpIJjjbSC1kxVPuSJO3mIL4uc.2lIcACVz8OwtuuCRIwGsp6K', 'Usuario', 18);
+(9, 'empleado4@gmail.com', '$2y$10$jm6EMpIJjjbSC1kxVPuSJO3mIL4uc.2lIcACVz8OwtuuCRIwGsp6K', 'Usuario', 18),
+(10, 'Empleado5@gmail.com', '$2y$10$tnRn02RN7Ww96AF8/u03J.BU3wfPAx07Ao/qp6cAQXpTZ9bbmx4H6', 'Tecnico', 20);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `migrations`
+-- Estructura de tabla para la tabla `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -177,7 +179,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Bolcament de dades per a la taula `migrations`
+-- Volcado de datos para la tabla `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -192,24 +194,24 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (9, '2019_05_05_221048_login', 1);
 
 --
--- Índexs per a les taules bolcades
+-- Índices para tablas volcadas
 --
 
 --
--- Índexs per a la taula `datos_empresa`
+-- Indices de la tabla `datos_empresa`
 --
 ALTER TABLE `datos_empresa`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índexs per a la taula `departamento`
+-- Indices de la tabla `departamento`
 --
 ALTER TABLE `departamento`
   ADD PRIMARY KEY (`id`),
   ADD KEY `departamento_idempresa_foreign` (`IdEmpresa`);
 
 --
--- Índexs per a la taula `empleados`
+-- Indices de la tabla `empleados`
 --
 ALTER TABLE `empleados`
   ADD PRIMARY KEY (`id`),
@@ -217,50 +219,50 @@ ALTER TABLE `empleados`
   ADD KEY `IdDepartamento` (`IdDepartamento`);
 
 --
--- Índexs per a la taula `inventarios`
+-- Indices de la tabla `inventarios`
 --
 ALTER TABLE `inventarios`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índexs per a la taula `login`
+-- Indices de la tabla `login`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT per les taules bolcades
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT per la taula `datos_empresa`
+-- AUTO_INCREMENT de la tabla `datos_empresa`
 --
 ALTER TABLE `datos_empresa`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT per la taula `departamento`
+-- AUTO_INCREMENT de la tabla `departamento`
 --
 ALTER TABLE `departamento`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT per la taula `empleados`
+-- AUTO_INCREMENT de la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT per la taula `inventarios`
+-- AUTO_INCREMENT de la tabla `inventarios`
 --
 ALTER TABLE `inventarios`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT per la taula `login`
+-- AUTO_INCREMENT de la tabla `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

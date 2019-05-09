@@ -96,7 +96,7 @@
 
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body">
-        <ejemplo1></ejemplo1>
+        <!-- <ejemplo1></ejemplo1> -->
       </div>
     </div>
   </div>

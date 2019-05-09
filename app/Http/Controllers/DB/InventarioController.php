@@ -5,7 +5,6 @@ namespace App\Http\Controllers\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Inventarios;
-use App\Datos_empresa;
 use App\Empleados;
 
 class InventarioController extends Controller
@@ -19,13 +18,16 @@ class InventarioController extends Controller
         // $inventario->idEmpresa=1;
         // $inventario->idEmpleado=1;
         // $inventario->save();
-        $inventario = Inventarios::create([
-            "nombre"=>$resquest['nombre'],
-            "tipo"=>$resquest['tipo'],
-            "descripcion"=>$resquest['Descripcion'],
-            "idEmpresa"=>1,
-            "idEmpleado"=>2,
-        ]);
+        $EmpleadoI=Empleados::where('nombre',$resquest['idEmpleado'])->get();
+            foreach ($EmpleadoI as $empl) {
+                $inventario = Inventarios::create([
+                    "nombre"=>$resquest['nombre'],
+                    "tipo"=>$resquest['tipo'],
+                    "descripcion"=>$resquest['descripcion'],
+                    "idEmpresa"=>$resquest['idEmpresa'],
+                    "idEmpleado"=>$empl->id,
+                ]);
+            }
         $inventario->save();
     }
 

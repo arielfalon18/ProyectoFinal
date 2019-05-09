@@ -1,18 +1,33 @@
-Vue.component('ejemplo1', {
-    template: `<table class="table" >
-                    <thead>
-                        <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">DNI</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Telefono</th>
-                            <th scope="col">Tipo Usuario</th>
-                            <th scope="col">Acciones</th>
-                        </tr>
-                    </thead>
-                </table>`,
-});
+// Vue.component('ejemplo1', {
+//     props: ['empleados'],
+//     template: `
+//     <table class="table" >
+//         <thead>
+//             <tr>
+//                 <th scope="col">Id</th>
+//                 <th scope="col">Nombre</th>
+//                 <th scope="col">DNI</th>
+//                 <th scope="col">Email</th>
+//                 <th scope="col">Telefono</th>
+//                 <th scope="col">Tipo Usuario</th>
+//                 <th scope="col">Acciones</th>
+//             </tr>
+//         </thead>
+//         <tbody v-for="empleadoD in empleados">
+//             <tr v-if='empleadoD.IdEmpresa=={{auth()->user()->id}}'>
+//                 <th scope="row">@{{empleadoD.id}}</th>
+//                 <td>@{{empleadoD.nombre}}</td>
+//                 <td>@{{empleadoD.dni}}</td>
+//                 <td>@{{empleadoD.email}}</td>
+//                 <td>@{{empleadoD.telefono}}</td>
+//                 <td>@{{empleadoD.Rol}}</td>
+//                 <td><button class="btn btn-primary" v-on:click.prevent="deleteempleado(empleadoD)">Borrar</button><td>                                        
+//             </tr>
+//         <tbody>
+//     </table>`,
+// });
+
+// Vue.component('ejemplo1', require('./components/tablaEmp.vue'));
 var app = new Vue({
     el: '#appV',
     // Llamamos ala funcion de la base de datos 
@@ -46,7 +61,7 @@ var app = new Vue({
         paswordLogin:'',
         //-------------
         //Iventario 
-        NEmpleados:'C',
+        Nempleado:'C',
         empleadosNA:[],
         //DAVID
         id:'',
@@ -264,7 +279,22 @@ var app = new Vue({
         },
 
         NuevoInvenatario: function(){
-        console.log("HOLA");
+            var urlNEWInventario='http://127.0.0.1:8000/CreateInventario';
+            axios.post(urlNEWInventario,{
+                nombre:this.nombreI,
+                tipo:this.tipoI,
+                descripcion:this.DescripcionI,
+                idEmpresa:this.id,
+                idEmpleado:$('#Nempleado').val()
+            }).then(response=>{
+                this.errors=[];
+                this.nombreI='';
+                this.tipoI='';
+                this.DescripcionI='';
+                this.Nempleado='C';
+            }).catch(error => {
+                this.errors = error.response.data.errors;
+            })           
         },
 
         
