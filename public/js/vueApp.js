@@ -35,6 +35,7 @@ var app = new Vue({
         this.getDepartament();
         this.getEmpleados();
         this.getEmpleadosAll();
+        this.getIncidencias();
     },
     data: {
     //Departamento:Departamento,7
@@ -101,6 +102,8 @@ var app = new Vue({
         telefono:'',
         respuestaEmpresa:false,
         offset:3,
+        //Tecnico Incidencia
+        IncidenciaT:[]
     },
     computed:{
         isActived: function(){
@@ -288,6 +291,7 @@ var app = new Vue({
                 idEmpleado:$('#Nempleado').val()
             }).then(response=>{
                 this.errors=[];
+                $('#añadirinventario').modal('hide');
                 this.nombreI='';
                 this.tipoI='';
                 this.DescripcionI='';
@@ -296,6 +300,18 @@ var app = new Vue({
                 this.errors = error.response.data.errors;
             })           
         },
+        //Mostrar todos las incidencias
+        getIncidencias: function(){
+            var urlIncidenciat='http://127.0.0.1:8000/incidenciasT';
+            axios.get(urlIncidenciat).then(response =>{
+                this.IncidenciaT=response.data
+               
+            }) 
+        },
+        //Funcion de contador aleatorio
+        funcionContadir: function(){
+            
+        }
 
         
 

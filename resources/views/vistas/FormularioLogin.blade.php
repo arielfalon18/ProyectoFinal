@@ -7,7 +7,7 @@
             
         </div>
         <div class="col-4">
-            <form action="{{url('loginEmpleadoU')}}"  method="POST">
+            <form action="{{route('loginEmpleadoU')}}"  method="POST">
             {{csrf_field()}}
                 <div class="form-group {{$errors->has('email')? 'has-error' :''}}">
                     <label for="email">Email</label>

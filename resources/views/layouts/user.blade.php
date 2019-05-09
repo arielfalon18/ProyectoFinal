@@ -23,7 +23,7 @@
   <body >
     <!-- Navbar para user -->
     @include('partials.navbaruser')
-    <div  id="appV" class="contenidoabajo">
+    <div   class="contenidoabajo">
     @yield('content')
     </div>
     <!-- Optional JavaScript -->

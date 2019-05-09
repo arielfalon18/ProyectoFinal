@@ -10,14 +10,19 @@ use App\Empleados;
 class InventarioController extends Controller
 {   
     public function NewInvenatario(Request $resquest){
-        
-        // $inventario = new Inventarios;  
-        // $inventario->nombre=request('nombreI');
-        // $inventario->tipo=request('tipoI');
-        // $inventario->descripcion=request('DescripcionI');
-        // $inventario->idEmpresa=1;
-        // $inventario->idEmpleado=1;
-        // $inventario->save();
+        $messages = [
+            'nombre.required' => 'El nombre es requerido',
+            'tipo.required' =>'Escribe el tipo de inventario requerida',
+            'descripcion.required' => 'Selecciona una descripcion requerido',
+            'idEmpleado' => 'Selecciona un empleado'
+        ];
+        $resquest->validate([
+            'nombre' =>'required',
+            'tipo' =>'required',
+            'descripcion' =>'required',
+            'idEmpleado' =>'required'
+        ],$messages);
+
         $EmpleadoI=Empleados::where('nombre',$resquest['idEmpleado'])->get();
             foreach ($EmpleadoI as $empl) {
                 $inventario = Inventarios::create([

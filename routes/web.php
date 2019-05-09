@@ -1,6 +1,5 @@
 <?php
 
-
 Route::get('/', 'HomeController@getHome');
 Route::get('inicio', 'inicio@getIndex');
 Route::get('user', 'UsuarioController@getIndex')->name('user');
@@ -60,5 +59,11 @@ Route::get('InciarEmpleado', 'inicio@getFormulario');
 Route::post('loginEmpleadoU', 'DB\loginUController@login')->name('loginEmpleadoU');
 
 Route::get('logoutCA', 'DB\loginUController@logout')->name('logoutCA');
+
+
+//Añadimos la ruta de tecnico para que pueda ver todos los datos de tecnico
+Route::get('tecnico', 'vistas_de_empleados\tecnicoController@getIndex');
+
+Route::get('incidenciasT','vistas_de_empleados\tecnicoIncidenciaController@getIncideciasP');
 
 
