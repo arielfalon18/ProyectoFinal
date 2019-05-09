@@ -7,44 +7,51 @@
                
                 <div class="col-lg-3 col-md-6 col-xs-12 to-do border"><h5>Pendiente</h5>
                 @foreach( $incidencia as $incidencia )
-                    
                         <div class="card1">
-                        
-
                         </div>
                         <p>ID: {{$incidencia->id}}</p>
                         <p>{{$incidencia->FechaEntrada}}</p>
                         <p>{{$incidencia->Estado}}</p>
                         <p>{{$incidencia->Descripcion}}</p>
                         <hr>
-                    
                 @endforeach          
                 </div>
 
-
-                
                 <div class="col-lg-3 col-md-6 col-xs-12 doing border"><h5>Progreso</h5>
-                @foreach ( $incidencia as $incidencia)
-                   
-                        
-                    
+                @foreach ( $progreso as $progreso)
+                        <div class="card1"></div>
+                        <p>{{$progreso->id}}</p>
+                        <p>{{$progreso->FechaEntrada}}</p>
+                        <p>{{$progreso->Estado}}</p>
+                        <p>{{$progreso->Descripcion}}</p>
+                        <hr>
                 @endforeach
                 </div>
 
-
                 <div class="col-lg-3 col-md-6 col-xs-12 finish border"><h5>Finalizada</h5>
-
+                @foreach ( $finalizada as $finalizada)
+                        <div class="card1"></div>
+                        <p>{{$finalizada->id}}</p>
+                        <p>{{$finalizada->FechaEntrada}}</p>
+                        <p>{{$finalizada->Estado}}</p>
+                        <p>{{$finalizada->Descripcion}}</p>
+                        <hr>
+                @endforeach
 
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-xs-12 cancel border"><h5>Cancelada</h5>
-
+                    @foreach ( $cancelada as $cancelada)
+                        <div class="card1"></div>
+                        <p>{{$cancelada->id}}</p>
+                        <p>{{$cancelada->FechaEntrada}}</p>
+                        <p>{{$cancelada->Estado}}</p>
+                        <p>{{$cancelada->Descripcion}}</p>
+                        <hr>
+                    @endforeach
                 </div>
-
                 
-                
-            </div> 
-            
+            </div>   
     </div>
 </div>
 @stop

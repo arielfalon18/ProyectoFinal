@@ -29,12 +29,6 @@ Route::get('DepartamentosGET','DB\departamentoController@GetDepartamento');
 //Mostrar incidencias
 
 
-Route::get('progreso',function(){
-    return view('user-user');
-   
-});
-
-
 //Creamos un Inventario
 Route::post('/inventario/NewInvenatario', 'DB\InventarioController@NewInvenatario');
 
