@@ -26,7 +26,13 @@ Route::post('CreateDepar', 'DB\departamentoController@NEWdepartamento');
 //Mostramos los datos de departamento
 Route::get('DepartamentosGET','DB\departamentoController@GetDepartamento');
 //Mostrar incidencias
-Route::get('index','incidenciaController@index');
+
+
+Route::get('progreso',function(){
+    return view('user-user');
+   
+});
+
 
 //Creamos un Inventario
 Route::post('/inventario/NewInvenatario', 'DB\InventarioController@NewInvenatario');
