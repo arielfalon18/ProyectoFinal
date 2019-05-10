@@ -182,21 +182,16 @@ nav ul li a:hover {
 	/* border-style:solid; */
 	border-color:black;
 }
-.to-do{
-	border: 1px;
-	height: 500px;
-}
-.to-do-text{
-	border: 1px solid black;
-	width: 100%;
-	text-align: center;
-}
 
-.card1{
-	border: 1pc solid black;
-	width: 50px;
-	height: 50px;
-}
+
 #incidencia{
 	margin-left: 15px;
+}
+
+.title-estados{
+	border-bottom: 1px solid black;
+}
+.card1{
+	border: 1px solid;
+	margin-bottom: 3ppx;
 }
