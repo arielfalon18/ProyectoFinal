@@ -1,4 +1,5 @@
 <?php
+
 Route::get('/', 'HomeController@getHome');
 Route::get('inicio', 'inicio@getIndex');
 Route::get('user', 'UsuarioController@getIndex')->name('user');
@@ -29,7 +30,14 @@ Route::get('DepartamentosGET','DB\departamentoController@GetDepartamento');
 
 //Creamos un Inventario
 Route::post('/inventario/NewInvenatario', 'DB\InventarioController@NewInvenatario');
-//Mostramos Departamento
+
+//Mostramos todos los usuario sin paginacion 
+
+Route::get('empleadosAll','DB\empleadosController@empleadoAll');
+
+
+//Inventarios 
+Route::post('CreateInventario' , 'DB\InventarioController@NewInvenatario');
 Route::get('InventarioGET','DB\InventarioController@GetInventario');
 
 
