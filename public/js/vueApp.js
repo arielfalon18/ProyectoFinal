@@ -309,8 +309,13 @@ var app = new Vue({
             }) 
         },
         //Funcion de contador aleatorio
-        funcionContadir: function(){
+        funcionContadir(arrayV){
+            for (i=0; i<arrayV.length; i++) {
+                return i;
+            }
             
+           
+           
         }
 
         

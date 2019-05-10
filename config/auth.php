@@ -154,7 +154,11 @@ return [
         'usuarioL' =>[
             'driver' => 'session',
             'provider' => 'login',
-            'hash' => false,
+        ],
+        'usuarioL-api' =>[
+            'driver' => 'token',
+            'provider' => 'login',
+            
         ]
     ],
 
@@ -211,6 +215,11 @@ return [
             'provider' => 'Datos_empresa',
             'table' => 'password_resets',
             'expire' => 60,
+        ],
+        'login' => [
+            'provider' => 'login',
+            'table' => 'password_resets',
+            'expire' => 15,
         ],
     ],
 

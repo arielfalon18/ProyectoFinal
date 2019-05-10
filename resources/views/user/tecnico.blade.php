@@ -16,7 +16,7 @@
             </thead>
             <tbody v-for="incidenciaVS in IncidenciaT">
                 <tr  v-if="incidenciaVS.Estado =='Pendiente'">
-                    <th scope="row">1</th>
+                    <th scope="row">@{{funcionContadir(IncidenciaT)}}</th>
                     <td>@{{incidenciaVS.id}}</td>
                     <td>@{{incidenciaVS.Descripcion}}</td>
                     <td>@{{incidenciaVS.Estado}}</td>
