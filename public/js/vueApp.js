@@ -92,7 +92,7 @@ var app = new Vue({
         nombreI:'',
         tipoI:'',
         DescripcionI:'',
-        //-------------------
+
         nombre:'',
         cif:'',
         direccion:'',
@@ -214,19 +214,7 @@ var app = new Vue({
                 // }
             })   
         },
-        //Mostramos los empleados pero eso si sin paginacion 
-        getEmpleadosAll:function(){
-            var urlgeempleadosAll="http://127.0.0.1:8000/empleadosAll";
-            axios.get(urlgeempleadosAll).then(response=>{
-                this.empleadosNA=response.data
-            })
-            
-            
-        },
         // Mostramos todos los empleados que tenemos en la base de datos e
-
-
-
         getEmpleados: function(page){
             var urleditorial='http://127.0.0.1:8000/empleados?page='+page;
             axios.get(urleditorial).then(response =>{

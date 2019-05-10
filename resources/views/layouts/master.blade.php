@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="/css/fontawesome/font.css">
     <link rel="stylesheet" href="/css/stylo.css">
     <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/animations/animate.css">
+
     <link rel="stylesheet" href="/css/app.css">  
     <script src="/js/vue/vueD.js"></script>
     <script src="/js/axios.js"></script>
@@ -25,7 +27,9 @@
     @yield('content')
     </div>
     <!-- Optional JavaScript -->
+    @include('partials.footer')
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <script src="/js/jquery/jquery-3.3.1.slim.min.js"></script>
     
     <script src="/js/jquery/popper.min.js"></script>
