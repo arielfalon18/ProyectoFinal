@@ -315,18 +315,5 @@ var app = new Vue({
                 return j+i;
             }
         },
-        //Color de incidencia por tipo de prioridad
-        funciondedarColor(datos){
-            if (datos =='Alta') {
-                $("#datosC").css("background-color", "red");  
-                return datos;
-            }else if (datos ='Baja') {
-                $("#datosC").hasClass("Pbaja");
-                return datos;
-            }else if (datos=='Media'){
-                $("#datosC").addClass("Pmedia");
-                return datos;
-            }   
-        }
     }
   })

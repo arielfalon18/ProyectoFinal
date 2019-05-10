@@ -195,3 +195,13 @@ nav ul li a:hover {
 	border: 1px solid;
 	margin-bottom: 3ppx;
 }
+
+.TAlta{
+	background-color: red;
+}
+.TBaja{
+	background-color: green;
+}
+.TMedio{
+	background-color: yellow;
+}

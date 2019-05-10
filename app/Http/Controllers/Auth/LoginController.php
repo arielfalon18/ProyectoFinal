@@ -15,7 +15,7 @@ class LoginController extends Controller
 
 
     public function showLoginform(){
-        return view('auth.login');
+        return view('Auth.login');
     }
     public function login(){
         $credentials=$this->validate(request(),[

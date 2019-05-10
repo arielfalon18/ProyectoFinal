@@ -21,7 +21,9 @@
                     <td>@{{incidenciaVS.id}}</td>
                     <td>@{{incidenciaVS.Descripcion}}</td>
                     <td>@{{incidenciaVS.Estado}}</td>
-                    <td id="datosC">@{{funciondedarColor(incidenciaVS.Prioridad)}}</td>
+                    <td v-if="incidenciaVS.Prioridad=='Alta'" class="TAlta border text-center">@{{incidenciaVS.Prioridad}}</td>
+                    <td v-else-if="incidenciaVS.Prioridad=='Baja'" class="TBaja border text-center">@{{incidenciaVS.Prioridad}}</td>
+                    <td v-else-if="incidenciaVS.Prioridad=='Medio'" class="TMedio border text-center">@{{incidenciaVS.Prioridad}}</td>
                     <td><button class="btn btn-danger" >Resolver</button></td>
 
                 </tr>
