@@ -49,6 +49,9 @@
             <article class="article3">
             <header>
             <h1>A que nos dedicamos?</h1></header>
+            <div class="div-img2">
+               <img class="img-3 " src="media/Incidencia.png" alt="">
+            </div>
             </article>
       </section>
    </div>

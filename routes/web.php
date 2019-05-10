@@ -54,7 +54,7 @@ Route::get('logoutCA', 'DB\loginUController@logout')->name('logoutCA');
 
 
 //Añadimos la ruta de tecnico para que pueda ver todos los datos de tecnico
-Route::get('tecnico', 'vistas_de_empleados\tecnicoController@getIndex');
+Route::get('tecnico', 'vistas_de_empleados\tecnicoController@getIndex')->name('tecnico');
 
 Route::get('incidenciasT','vistas_de_empleados\tecnicoIncidenciaController@getIncideciasP');
 
