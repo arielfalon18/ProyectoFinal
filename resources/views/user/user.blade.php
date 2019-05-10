@@ -5,19 +5,18 @@
         <button id="incidencia" class="btn btn-primary" data-toggle="modal" data-target="#crearincidencia">Crear incidencia</button>
             <div class="row">
                
-                <div class="col-lg-3 col-md-6 col-xs-12 to-do border"><h5>Pendiente</h5>
+                <div class="col-lg-3 col-md-6 col-xs-12 to-do border"><h5 class="title-estados">Pendiente</h5>
                 @foreach( $incidencia as $incidencia )
-                        <div class="card1">
-                        </div>
-                        <p>ID: {{$incidencia->id}}</p>
-                        <p>{{$incidencia->FechaEntrada}}</p>
-                        <p>{{$incidencia->Estado}}</p>
-                        <p>{{$incidencia->Descripcion}}</p>
+                    <div class="card1">
+                        <p>ID: {{$incidencia->id}} Fecha-Entrada {{$incidencia->FechaEntrada}}</p>
+                        <p>Estado: {{$incidencia->Estado}} </p>
+                        <p>Descripcion: {{$incidencia->Descripcion}}</p>
                         <hr>
+                    </div>
                 @endforeach          
                 </div>
 
-                <div class="col-lg-3 col-md-6 col-xs-12 doing border"><h5>Progreso</h5>
+                <div class="col-lg-3 col-md-6 col-xs-12 doing border"><h5 class="title-estados">Progreso</h5>
                 @foreach ( $progreso as $progreso)
                         <div class="card1"></div>
                         <p>{{$progreso->id}}</p>
@@ -28,7 +27,7 @@
                 @endforeach
                 </div>
 
-                <div class="col-lg-3 col-md-6 col-xs-12 finish border"><h5>Finalizada</h5>
+                <div class="col-lg-3 col-md-6 col-xs-12 finish border"><h5  class="title-estados">Finalizada</h5>
                 @foreach ( $finalizada as $finalizada)
                         <div class="card1"></div>
                         <p>{{$finalizada->id}}</p>
@@ -40,7 +39,7 @@
 
                 </div>
 
-                <div class="col-lg-3 col-md-6 col-xs-12 cancel border"><h5>Cancelada</h5>
+                <div class="col-lg-3 col-md-6 col-xs-12 cancel border"><h5  class="title-estados">Cancelada</h5>
                     @foreach ( $cancelada as $cancelada)
                         <div class="card1"></div>
                         <p>{{$cancelada->id}}</p>
