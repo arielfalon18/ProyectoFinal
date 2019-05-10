@@ -8,7 +8,8 @@
     <li class=li><a class="a" href="/Nosotros">Acerca</a></li> -->
     
     
-    <li class=li><a class="a">Nombre usuario</a></li>
+    <li class=li><a class="a">{{auth('usuarioL')->user()->email}}</a></li>
+    <!-- <li class=li><a class="a">NombreUsaurio</a></li> -->
     <li class=li><a class="a">The Incidence</a></li>
     <li class=li> 
     <a class="a" href="logoutCA">CerrarSeccion</a></li>

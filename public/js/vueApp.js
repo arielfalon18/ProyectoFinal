@@ -1,15 +1,45 @@
-Vue.component('ejemplo1', {
-    template: '<p>asdasdasd</p>',
-});
+// Vue.component('ejemplo1', {
+//     props: ['empleados'],
+//     template: `
+//     <table class="table" >
+//         <thead>
+//             <tr>
+//                 <th scope="col">Id</th>
+//                 <th scope="col">Nombre</th>
+//                 <th scope="col">DNI</th>
+//                 <th scope="col">Email</th>
+//                 <th scope="col">Telefono</th>
+//                 <th scope="col">Tipo Usuario</th>
+//                 <th scope="col">Acciones</th>
+//             </tr>
+//         </thead>
+//         <tbody v-for="empleadoD in empleados">
+//             <tr v-if='empleadoD.IdEmpresa=={{auth()->user()->id}}'>
+//                 <th scope="row">@{{empleadoD.id}}</th>
+//                 <td>@{{empleadoD.nombre}}</td>
+//                 <td>@{{empleadoD.dni}}</td>
+//                 <td>@{{empleadoD.email}}</td>
+//                 <td>@{{empleadoD.telefono}}</td>
+//                 <td>@{{empleadoD.Rol}}</td>
+//                 <td><button class="btn btn-primary" v-on:click.prevent="deleteempleado(empleadoD)">Borrar</button><td>                                        
+//             </tr>
+//         <tbody>
+//     </table>`,
+// });
+
+// Vue.component('ejemplo1', require('./components/tablaEmp.vue'));
 var app = new Vue({
     el: '#appV',
     // Llamamos ala funcion de la base de datos 
     created:function(){
         this.getDepartament();
         this.getEmpleados();
+        this.getEmpleadosAll();
+        this.getIncidencias();
     },
     data: {
-    //Departamento:Departamento,
+    //Departamento:Departamento,7
+        PRUEBASAS:'HOLA',
         nombreD:'',
         plantaD:'',
         EdificioD:'',
@@ -31,7 +61,9 @@ var app = new Vue({
         usuarioLogin:'',
         paswordLogin:'',
         //-------------
-
+        //Iventario 
+        Nempleado:'C',
+        empleadosNA:[],
         //DAVID
         id:'',
         fechaInc:'',
@@ -70,6 +102,8 @@ var app = new Vue({
         telefono:'',
         respuestaEmpresa:false,
         offset:3,
+        //Tecnico Incidencia
+        IncidenciaT:[]
     },
     computed:{
         isActived: function(){
@@ -236,16 +270,44 @@ var app = new Vue({
         },
 
         NuevoInvenatario: function(){
-            var urlCreateInventario='http://127.0.0.1:8000/CreateInventario';
-            axios.post(urlCreateInventario,{
+            var urlNEWInventario='http://127.0.0.1:8000/CreateInventario';
+            axios.post(urlNEWInventario,{
                 nombre:this.nombreI,
                 tipo:this.tipoI,
-                Descripcion:this.DescripcionI
+                descripcion:this.DescripcionI,
+                idEmpresa:this.id,
+                idEmpleado:$('#Nempleado').val()
             }).then(response=>{
+                this.errors=[];
+                $('#añadirinventario').modal('hide');
                 this.nombreI='';
                 this.tipoI='';
                 this.DescripcionI='';
-            })
+                this.Nempleado='C';
+            }).catch(error => {
+                this.errors = error.response.data.errors;
+            })           
+        },
+        //Mostrar todos las incidencias
+        getIncidencias: function(){
+            var urlIncidenciat='http://127.0.0.1:8000/incidenciasT';
+            axios.get(urlIncidenciat).then(response =>{
+                this.IncidenciaT=response.data
+               
+            }) 
+        },
+        //Funcion de contador aleatorio
+        funcionContadir(arrayV){
+            for (i=0; i<arrayV.length; i++) {
+                return i;
+            }
+            
+           
+           
         }
+
+        
+
+
     }
   })

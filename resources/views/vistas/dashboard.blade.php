@@ -96,7 +96,7 @@
 
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body">
-        <ejemplo1></ejemplo1>
+        <!-- <ejemplo1></ejemplo1> -->
       </div>
     </div>
   </div>
@@ -128,7 +128,8 @@
       </div>
     </div>
   </div>
+  @include('modal.modal')
 </div>
 <!-- <h1 v-for="empleadoD in empleadosNA">@{{empleadoD.nombre}}</h1> -->
-@include('modal.modal')
+
 @stop

@@ -24,6 +24,7 @@ Route::post('/incidencia/newIncidencia', 'DB\incidenciaController@newIncidencia'
 Route::post('CreateDepar', 'DB\departamentoController@NEWdepartamento');
 //Mostramos los datos de departamento
 Route::get('DepartamentosGET','DB\departamentoController@GetDepartamento');
+//Mostrar incidencias
 
 
 //Creamos un Inventario
@@ -47,4 +48,14 @@ Route::get('empreadoE/{id}','DB\empleadosController@eliminarEmpleado');
 //Hacemos una relacion que con estos datos se pueda loguear un empleado a la base de datos 
 Route::get('InciarEmpleado', 'inicio@getFormulario');
 
-Route::post('loginEmpleadoU', 'DB\loginUController@login');
+Route::post('loginEmpleadoU', 'DB\loginUController@login')->name('loginEmpleadoU');
+
+Route::get('logoutCA', 'DB\loginUController@logout')->name('logoutCA');
+
+
+//Añadimos la ruta de tecnico para que pueda ver todos los datos de tecnico
+Route::get('tecnico', 'vistas_de_empleados\tecnicoController@getIndex')->name('tecnico');
+
+Route::get('incidenciasT','vistas_de_empleados\tecnicoIncidenciaController@getIncideciasP');
+
+
