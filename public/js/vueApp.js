@@ -36,6 +36,7 @@ var app = new Vue({
         this.getEmpleados();
         this.getEmpleadosAll();
         this.getIncidencias();
+        
     },
     data: {
     //Departamento:Departamento,7
@@ -310,16 +311,24 @@ var app = new Vue({
         },
         //Funcion de contador aleatorio
         funcionContadir(arrayV){
+            var j=0;
             for (i=0; i<arrayV.length; i++) {
-                return i;
+                i++;
+                return j+i;
             }
-            
-           
-           
+        },
+        //Color de incidencia por tipo de prioridad
+        funciondedarColor(datos){
+            if (datos =='Alta') {
+                $("#datosC").css("background-color", "red");  
+                return datos;
+            }else if (datos ='Baja') {
+                $("#datosC").hasClass("Pbaja");
+                return datos;
+            }else if (datos=='Media'){
+                $("#datosC").addClass("Pmedia");
+                return datos;
+            }   
         }
-
-        
-
-
     }
   })

@@ -1,5 +1,6 @@
 @extends('layouts.user')
 @section('content')
+
 <div id="appV"  class="registro">
     <div class="container-fluid">
         <div>
@@ -20,8 +21,8 @@
                     <td>@{{incidenciaVS.id}}</td>
                     <td>@{{incidenciaVS.Descripcion}}</td>
                     <td>@{{incidenciaVS.Estado}}</td>
-                    <td>@{{incidenciaVS.Prioridad}}</td>
-                    <td><button class="btn btn-danger">Resolver</button></td>
+                    <td id="datosC">@{{funciondedarColor(incidenciaVS.Prioridad)}}</td>
+                    <td><button class="btn btn-danger" >Resolver</button></td>
 
                 </tr>
             </tbody>
