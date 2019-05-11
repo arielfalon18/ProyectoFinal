@@ -28,9 +28,15 @@
 // });
 
 // Vue.component('ejemplo1', require('./components/tablaEmp.vue'));
+// import tablaEmp from './components/tablaEmp.vue';
+// Vue.component('ejemplo',tablaEmp)
+
 var app = new Vue({
     el: '#appV',
+    // render:h=>h(appV),
+    
     // Llamamos ala funcion de la base de datos 
+    
     created:function(){
         this.getDepartament();
         this.getEmpleados();

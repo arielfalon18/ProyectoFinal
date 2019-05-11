@@ -1,11 +1,13 @@
 <template>
-    <div>
-        <h1>Hola</h1>
-    </div>
-</template>
-<script>
-export default {
     
-}
-</script>
+        <h1>Hola</h1>
+    
+</template>
+// <script>
+// export default {
+//     name: "app-tablaE",
+// }
+// </script>
+
+
 
