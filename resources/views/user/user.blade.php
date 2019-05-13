@@ -23,6 +23,7 @@
                     </div>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">ver mas</button>
 
+                        <p>Descripcion: {{$incidencia->Descripcion}}</p>
                     </div>
                 </div>
                    
@@ -71,7 +72,6 @@
                     </div>
                 </div>
                 @endforeach
-
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-xs-12 cancel border"><h5  class="title-estados">Cancelada</h5>
@@ -122,23 +122,20 @@
                 <label>Fecha incidencia</label>
                 <input type="text" class="form-control" id="FechaI"  v-model="FechaI" name="FechaI" value="{{ old('scheduled_date',date('d-m-Y')) }}">
             </div>
-            <div class="form-group col-md-6">
+            <!-- <div class="form-group col-md-6">
                 <label>Fecha cerrada</label>
                 <input type="text" class="form-control" id="FechaC" v-model="FechaC" name="FechaC" placeholder="Fecha cerrada" value="{{ old('scheduled_date',date('d-m-Y')) }}">
-            </div>
+            </div> -->
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <select class="form-control" name="Categoria" id="Categoria" >
-                <option value="" disabled selected>Selecciona categoria</option>
-                    <option>Categoria1</option>
-                    <option>Categoria2</option>
-                    <option>Categoria3</option>
+                <select class="form-control" name="Departamento" id="Departamento" >
+                <option value="" disabled selected>Selecciona departamento</option>
+                    <option>Departamento1</option>
+                    <option>Departamento2</option>
+                    <option>Departamento3</option>
                 </select>
             </div>
-            <!-- <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="Estado" v-model="Estado" name="Estado" placeholder="Estado">
-            </div> -->
         </div>
         
         <div class="form-row">
