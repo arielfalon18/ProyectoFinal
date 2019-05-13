@@ -66,5 +66,7 @@ Route::get('tecnico', 'vistas_de_empleados\tecnicoController@getIndex')->name('t
 
 Route::get('incidenciasT','vistas_de_empleados\tecnicoIncidenciaController@getIncideciasP');
 
+//Vistas del jefe personal quien decide que tecnico sera responsable de cada incidenci 
+Route::get('JefePersonal','vistas_de_empleados\JefePersonalController@getIndex')->name('JefePersonal');
 
 

@@ -15,10 +15,10 @@ class Empleados extends Model
         return $this->hasMany(Datos_Empresa::class);
     }
     //Relacion de uno a muchos
-    // public function RolE(){
-    //     //Nombre del modelo ,,,, id del modelo ,,,, id de la relacion
-    //     return $this->hasOne('App\Rol' ,'id_R' , 'Idrol');
-    // }
+    public function Departamentos(){
+        //Nombre del modelo ,,,, id del modelo ,,,, id de la relacion
+        return $this->hasOne('App\Departamento' ,'id' , 'IdDepartamento');
+    }
 
     
 }

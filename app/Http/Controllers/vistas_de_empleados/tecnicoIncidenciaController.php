@@ -10,7 +10,7 @@ class tecnicoIncidenciaController extends Controller
 {
     //
     public function getIncideciasP(){
-        $IncidenciasT=Incidencia::get();
+        $IncidenciasT=Incidencia::with('NombresEmpleado')->get();
         return $IncidenciasT;
     }
 }
