@@ -4,6 +4,7 @@
 <div id="appV"  class="registro">
     <div class="container-fluid">
         <div>
+        <h2>Bienvenido Tecnico</h2>
             <table class="table table-striped">
             <thead>
                 <tr>
@@ -15,14 +16,17 @@
                 <th scope="operaciones">Accion</th>
                 </tr>
             </thead>
-            <tbody v-for="incidenciaVS in IncidenciaT">
+            <tbody v-for="(incidenciaVS,index)  in IncidenciaT">
                 <tr  v-if="incidenciaVS.Estado =='Pendiente'">
                     <th scope="row">@{{funcionContadir(IncidenciaT)}}</th>
                     <td>@{{incidenciaVS.id}}</td>
                     <td>@{{incidenciaVS.Descripcion}}</td>
                     <td>@{{incidenciaVS.Estado}}</td>
-                    <td id="datosC">@{{funciondedarColor(incidenciaVS.Prioridad)}}</td>
-                    <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">@{{getidIncidencia()}}Accion</button></td>
+                    <td v-if="incidenciaVS.Prioridad=='Alta'" class="TAlta border text-center">@{{incidenciaVS.Prioridad}}</td>
+                    <td v-else-if="incidenciaVS.Prioridad=='Baja'" class="TBaja border text-center">@{{incidenciaVS.Prioridad}}</td>
+                    <td v-else-if="incidenciaVS.Prioridad=='Media'" class="TMedio border text-center">@{{incidenciaVS.Prioridad}}</td>
+                    <td><button class="btn btn-danger" >Resolver</button></td>
+
                 </tr>
             </tbody>
             </table>

@@ -10,7 +10,7 @@
     <title>The incidence</title>
 
     <!-- <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/fontawesome/font.css">
     <link rel="stylesheet" href="/css/stylo.css">
     <link rel="stylesheet" href="/css/footer.css">
@@ -37,6 +37,5 @@
     <script src="/js/jquery/bootstrap.min.js"></script>
     <script src="/js/vueApp.js"></script> 
     <script src="/js/JqueryEfectos.js"></script>
-  
   </body>
 </html>

@@ -11,7 +11,7 @@ use App\login;
 class loginUController extends Controller
 {
     
-    
+    protected $redirectTo='/user';
     protected $loginView='';
     protected $guard ='usuarioL';
     public function __construct(){
@@ -28,7 +28,13 @@ class loginUController extends Controller
         ]);
 
         if (Auth::guard('usuarioL')->attempt($credentials)) {
-           return redirect()->route('user');
+           
+           if (auth('usuarioL')->user()->rol=='Tecnico') {
+            return redirect()->route('tecnico');
+            }else{
+                return redirect()->route('user');
+            }
+
         }
 
         return back()
@@ -38,5 +44,9 @@ class loginUController extends Controller
     public function logout(){
         Auth::guard('usuarioL')->logout();
         return redirect('/');
+    }
+    public function redirectPath()
+    {
+        
     }
 }

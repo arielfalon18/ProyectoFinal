@@ -193,5 +193,15 @@ nav ul li a:hover {
 }
 .card1{
 	border: 1px solid;
-	margin-bottom: 3px;
+	margin-bottom: 3ppx;
+}
+
+.TAlta{
+	background-color: red;
+}
+.TBaja{
+	background-color: green;
+}
+.TMedio{
+	background-color: yellow;
 }
