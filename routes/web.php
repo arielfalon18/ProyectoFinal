@@ -67,3 +67,4 @@ Route::get('tecnico', 'vistas_de_empleados\tecnicoController@getIndex')->name('t
 Route::get('incidenciasT','vistas_de_empleados\tecnicoIncidenciaController@getIncideciasP');
 
 
+

@@ -304,16 +304,15 @@ var app = new Vue({
             var urlIncidenciat='http://127.0.0.1:8000/incidenciasT';
             axios.get(urlIncidenciat).then(response =>{
                 this.IncidenciaT=response.data
-               
             }) 
         },
         //Funcion de contador aleatorio
         funcionContadir(arrayV){
-            var j=0;
-            for (i=0; i<arrayV.length; i++) {
-                i++;
-                return j+i;
-            }
+
+            // for (i=1; i<arrayV.length; i++) {
+            //     alert(i);
+            // // return x;
+            // }
         },
         //Color de incidencia por tipo de prioridad
         funciondedarColor(datos){
@@ -327,6 +326,6 @@ var app = new Vue({
                 $("#datosC").addClass("Pmedia");
                 return datos;
             }   
-        }
+        },
     }
   })
