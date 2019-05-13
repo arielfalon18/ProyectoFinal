@@ -243,10 +243,16 @@ nav ul li a:hover {
 .cardFecha{
 	padding-left: 60px !important;
 }
-.boton-info-inc{
-text-align: center;
+.IDescripcion:hover{
+	height: 100px;
+	transition: 0.8s;
 }
-
+.icon-info{
+	text-align: center;
+}
+.Infor-more{
+	width: 200px;
+}
 /************/
 .TAlta{
 	background-color: red;

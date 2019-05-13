@@ -19,11 +19,12 @@
                         </tbody>
                     </table>
                         
-                        <p>Estado: {{$incidencia->Estado}} </p>
+                        <p>Estado: {{$incidencia->Estado}} </p>IDescripcion
                     </div>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">ver mas</button>
-
-                        <p>Descripcion: {{$incidencia->Descripcion}}</p>
+                    <div class="icon-info">
+                        <a href=""><i class="fas fa-chevron-down"></i></a>
+                    </div>
+                    <div clas="Infor-more">aa</div>
                     </div>
                 </div>
                    
@@ -166,7 +167,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Informacion General</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -174,10 +175,7 @@
       <div class="modal-body">
         
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+
     </div>
   </div>
 </div>
