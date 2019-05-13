@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use App\Departamento;
 use Illuminate\Database\Eloquent\Model;
 
 class Incidencia extends Model
@@ -16,6 +16,10 @@ class Incidencia extends Model
         return $this->hasOne('App\Empleados' ,'id' , 'Id_Empleado_usuario');
     }
 
+    //relacion con departamento     
+    public function departamentos(){
+        return $this->belongsToMany('App\Departamentos');
+    }
+   
 }
 
-    
