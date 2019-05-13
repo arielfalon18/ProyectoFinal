@@ -11,7 +11,7 @@ use App\login;
 class empleadosController extends Controller
 {
     public function VerEmpreados(Request $request){
-        $empleados=Empleados::orderBy('id', 'ASC')->paginate(5);
+        $empleados=Empleados::with('Departamentos')->orderBy('id', 'ASC')->paginate(5);
       
         //Paginacion de empleados de la tabla
        
@@ -66,7 +66,9 @@ class empleadosController extends Controller
             //De momento 12345 luego se cambia y se codificara la constraseña
             "password"=>Hash::make('12345'),
             "rol"=>$resquest['Idrol'],
-            "Id_empleado"=>$empleados['id']
+            "Id_empleado"=>$empleados['id'],
+            "Id_Empresa"=>$resquest['IdEmpresa'],
+            "Id_Departamento"=>$empleados->IdDepartamento
         ]);
         $loginU->save();
         

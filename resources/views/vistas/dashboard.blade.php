@@ -25,8 +25,8 @@
               </div>
               <div class="espacio">
                   <button class="btn btn-primary" data-toggle="modal" data-target="#añadirdepartamento">Añadir Departamentos</button>
-                  <button class="btn btn-primary" data-toggle="modal" data-target="#añadirinventario">Añadir Inventario</button>
                   <button class="btn btn-primary" data-toggle="modal" data-target="#añadirusuario">Añadir Usuario</button>
+                  <button class="btn btn-primary" data-toggle="modal" data-target="#añadirinventario">Añadir Inventario</button>
               </div>
             </div>
             <!-- ACORDIOM -->
@@ -129,6 +129,7 @@
                                   <th scope="col">DNI</th>
                                   <th scope="col">Email</th>
                                   <th scope="col">Telefono</th>
+                                  <th scope="col">Departamentos</th>
                                   <th scope="col">Tipo Usuario</th>
                                   <th scope="col">Acciones</th>
                               </tr>
@@ -140,6 +141,7 @@
                                   <td>@{{empleadoD.dni}}</td>
                                   <td>@{{empleadoD.email}}</td>
                                   <td>@{{empleadoD.telefono}}</td>
+                                  <td>@{{empleadoD.departamentos.Nombre}}</td>
                                   <td>@{{empleadoD.Rol}}</td>
                                   <td><button class="btn btn-primary" v-on:click.prevent="deleteempleado(empleadoD)">Borrar</button><td>                                        
                               </tr>
