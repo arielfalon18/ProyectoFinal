@@ -7,47 +7,92 @@
                
                 <div class="col-lg-3 col-md-6 col-xs-12 to-do border"><h5 class="title-estados">Pendiente</h5>
                 @foreach( $incidencia as $incidencia )
+               <div class="main-card-incidencia"></div>
+                <div class="card w-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$incidencia->Estado}}</h5>
                     <div class="card1">
-                        <p>ID: {{$incidencia->id}} Fecha-Entrada {{$incidencia->FechaEntrada}}</p>
+                    <table class="card1Text">
+                        <tbody>
+                            <td>Usuario : {{$incidencia->Id_Empleado_usuario}} </td>
+                            <th class="cardFecha"> {{$incidencia->FechaEntrada}}</th>
+                        </tbody>
+                    </table>
+                        
                         <p>Estado: {{$incidencia->Estado}} </p>
-                        <p>Descripcion: {{$incidencia->Descripcion}}</p>
-                        <p>Descripcion: {{$incidencia->Descripcion}}</p>
+                    </div>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">ver mas</button>
 
                     </div>
+                </div>
+                   
                 @endforeach          
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-xs-12 doing border"><h5 class="title-estados">Progreso</h5>
                 @foreach ( $progreso as $progreso)
-                        <div class="card2"></div>
-                        <p>{{$progreso->id}}</p>
-                        <p>{{$progreso->FechaEntrada}}</p>
-                        <p>{{$progreso->Estado}}</p>
-                        <p>{{$progreso->Descripcion}}</p>
-
+                <div class="main-card-incidencia"></div>
+                <div class="card w-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$progreso->Estado}}</h5>
+                    <div class="card2">
+                    <table class="card1Text">
+                        <tbody>
+                            <td>Usuario : {{$progreso->Id_Empleado_usuario}} </td>
+                            <th class="cardFecha"> {{$progreso->FechaEntrada}}</th>
+                        </tbody>
+                    </table>
+                        
+                        <p>Estado: {{$progreso->Estado}} </p>
+                    </div>
+                        <a href="#" class="boton-info-inc btn btn-primary">Ver mas</a>
+                    </div>
+                </div>  
                 @endforeach
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-xs-12 finish border"><h5  class="title-estados">Finalizada</h5>
                 @foreach ( $finalizada as $finalizada)
-                        <div class="card3"></div>
-                        <p>{{$finalizada->id}}</p>
-                        <p>{{$finalizada->FechaEntrada}}</p>
-                        <p>{{$finalizada->Estado}}</p>
-                        <p>{{$finalizada->Descripcion}}</p>
-
+                <div class="main-card-incidencia"></div>
+                <div class="card w-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$finalizada->Estado}}</h5>
+                    <div class="card3">
+                    <table class="card1Text">
+                        <tbody>
+                            <td>Usuario : {{$finalizada->Id_Empleado_usuario}} </td>
+                            <th class="cardFecha"> {{$finalizada->FechaEntrada}}</th>
+                        </tbody>
+                    </table>
+                        
+                        <p>Estado: {{$finalizada->Estado}} </p>
+                    </div>
+                        <a href="#" class="boton-info-inc btn btn-primary">Ver mas</a>
+                    </div>
+                </div>
                 @endforeach
 
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-xs-12 cancel border"><h5  class="title-estados">Cancelada</h5>
                     @foreach ( $cancelada as $cancelada)
-                        <div class="card4"></div>
-                        <p>{{$cancelada->id}}</p>
-                        <p>{{$cancelada->FechaEntrada}}</p>
-                        <p>{{$cancelada->Estado}}</p>
-                        <p>{{$cancelada->Descripcion}}</p>
-
+                    <div class="main-card-incidencia"></div>
+                    <div class="card w-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$cancelada->Estado}}</h5>
+                    <div class="card4">
+                    <table class="card1Text">
+                        <tbody>
+                            <td>Usuario : {{$cancelada->Id_Empleado_usuario}} </td>
+                            <th class="cardFecha"> {{$cancelada->FechaEntrada}}</th>
+                        </tbody>
+                    </table>
+                        
+                        <p>Estado: {{$cancelada->Estado}} </p>
+                    </div>
+                    <button type="button" data-toggle="modal" data-target="#myModal">Launch modal</button>
+                    </div>
+                </div>
                     @endforeach
                 </div>
                 
@@ -114,6 +159,27 @@
         </div>
         <button id="AñadirIncidencia" class="btn btn-primary">Añadir</button>
         </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para Ver mas de incidencias -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
