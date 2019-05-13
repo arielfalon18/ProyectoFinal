@@ -1,37 +1,10 @@
-// Vue.component('ejemplo1', {
-//     props: ['empleados'],
-//     template: `
-//     <table class="table" >
-//         <thead>
-//             <tr>
-//                 <th scope="col">Id</th>
-//                 <th scope="col">Nombre</th>
-//                 <th scope="col">DNI</th>
-//                 <th scope="col">Email</th>
-//                 <th scope="col">Telefono</th>
-//                 <th scope="col">Tipo Usuario</th>
-//                 <th scope="col">Acciones</th>
-//             </tr>
-//         </thead>
-//         <tbody v-for="empleadoD in empleados">
-//             <tr v-if='empleadoD.IdEmpresa=={{auth()->user()->id}}'>
-//                 <th scope="row">@{{empleadoD.id}}</th>
-//                 <td>@{{empleadoD.nombre}}</td>
-//                 <td>@{{empleadoD.dni}}</td>
-//                 <td>@{{empleadoD.email}}</td>
-//                 <td>@{{empleadoD.telefono}}</td>
-//                 <td>@{{empleadoD.Rol}}</td>
-//                 <td><button class="btn btn-primary" v-on:click.prevent="deleteempleado(empleadoD)">Borrar</button><td>                                        
-//             </tr>
-//         <tbody>
-//     </table>`,
-// });
-
-// Vue.component('ejemplo1', require('./components/tablaEmp.vue'));
-// import tablaEmp from './components/tablaEmp.vue';
-// Vue.component('ejemplo',tablaEmp)
-
-var app = new Vue({
+Vue.component('app-tabla', {
+    template: '#app-tabla'
+});
+Vue.component('app-tablaD', {
+    template: '#app-tablaD'
+});
+new Vue({
     el: '#appV',
     // render:h=>h(appV),
     
@@ -314,11 +287,11 @@ var app = new Vue({
             }) 
         },
         //Funcion de contador aleatorio
-        funcionContadir(arrayV){
-            var j=0;
-            for (i=0; i<arrayV.length; i++) {
-                i++;
-                return j+i;
+        funcionContadir(value){
+            for(i=0;i<value.length;i++){
+                for(x=0; x<value[i].length;x++){
+                    return i;
+                }
             }
         },
     }
