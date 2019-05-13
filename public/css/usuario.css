@@ -1,5 +1,7 @@
 /* CSS para usuarios */
-
+#usuario{
+	background-color: black;;
+}
   /* header */
   
   .header {
@@ -175,27 +177,77 @@ nav ul li a:hover {
     color: white !important;
 }  */
 .container-fluid{
-	margin-top: 100px;
-	width: 99% !important;
+	margin-top: 80px;
+	width: 100% !important;
 	height: 80vh;
 	border-width:2px;
 	/* border-style:solid; */
 	border-color:black;
 }
+.to-do{
+	background-color:hsl(0, 0%, 50%);
+}
+.cancel{
+	background-color:hsl(0, 0%, 50%);
+}
+.finish{
+	background-color:hsl(0, 0%, 50%);
+}
+.doing{
+	background-color:hsl(0, 0%, 50%);
 
-
+}
 #incidencia{
 	margin-left: 15px;
 }
-
+.main-card-incidencia{
+	margin-bottom: 20px;
+}
 .title-estados{
-	border-bottom: 1px solid black;
+	text-align: center;
+    text-transform: uppercase;
+		padding-top: 10px;
+		color: white;
 }
+/********Card Style*********/
 .card1{
-	border: 1px solid;
-	margin-bottom: 3ppx;
+	border: 1px solid black;
+	margin-bottom: 10px;
+	border-radius: 21px;
+}
+.w-100{
+	border-radius: 30px !important;
+}
+.card2{
+	border: 1px solid red;
+	margin-bottom: 10px;
+	border-radius: 21px;
+}
+.card3{
+	border: 1px solid blue;
+	margin-bottom: 10px;
+	border-radius: 21px;
 }
 
+.card4{
+	border: 1px solid green;
+	margin-bottom: 10px;
+	border-radius: 21px;
+}
+.Itext{
+	text-transform: uppercase;
+}
+.card1Text{
+	margin-top:15px !important;
+}
+.cardFecha{
+	padding-left: 60px !important;
+}
+.boton-info-inc{
+text-align: center;
+}
+
+/************/
 .TAlta{
 	background-color: red;
 }

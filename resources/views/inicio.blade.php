@@ -5,10 +5,25 @@
    <div class="cointainer">   
       <!--Hasta aqui solo el header -->
       <!-- Contenido que ofrecemos Aqui podemos enviar a cada ruta que queramos  -->
-      <img class="ImagePortada" src="media/prueba/2.jpg" alt="" />
+      <div class="bd-example">
+         <div id="carouselExampleCaptions" class="carousel slide ImagePortada" data-ride="carousel">
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <img src="media/prueba/2.jpg" class="d-block w-100 h-100" alt="">
+               </div>
+               <div class="carousel-item">
+                  <img src="media/prueba/1.jpg" class="d-block w-100 h-100" alt="...">
+               </div>
+               <div class="carousel-item">
+                  <img src="media/prueba/3.jpg" class="d-block w-100 h-100" alt="...">
+               </div>
+            </div>   
+         </div>
+      </div>
+      <!-- <img class="ImagePortada" src="media/prueba/2.jpg" alt="" /> -->
       <div class="text-centrado-home">
          <div class="text-center-main "><p class="fadeInUp"> The Incidence</p></div>
-         <p class="text-center-secondary">Gestio de incidencias para empresas</p>
+         <!-- <p class="text-center-secondary">Gestio de incidencias para empresas</p> -->
       </div>
       <section id="main-content">
             <article class="article1">

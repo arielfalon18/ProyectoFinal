@@ -25,7 +25,7 @@
                     <td v-if="incidenciaVS.Prioridad=='Alta'" class="TAlta border text-center">@{{incidenciaVS.Prioridad}}</td>
                     <td v-else-if="incidenciaVS.Prioridad=='Baja'" class="TBaja border text-center">@{{incidenciaVS.Prioridad}}</td>
                     <td v-else-if="incidenciaVS.Prioridad=='Media'" class="TMedio border text-center">@{{incidenciaVS.Prioridad}}</td>
-                    <td><button class="btn btn-danger" >Resolver</button></td>
+                    <td><button class="btn btn-danger " id="exampleModal">Resolver</button></td>
 
                 </tr>
             </tbody>
@@ -50,11 +50,7 @@
       </div>
       <div class="modal-body">
       <div v-for="incidenciaVS in IncidenciaT">
-
           @{{incidenciaVS.id}}
-          
-          
-          
       </div>
 
       </div>
