@@ -28,17 +28,19 @@ class incidenciaController extends Controller
         //     'Descripcion' => 'requiered',
         //     'Prioridad' => 'requiered'
         // ],$messages);
-
-        $incidencia = new Incidencia;
-        $incidencia->FechaEntrada=request('FechaI');
-        $incidencia->FechaCierre=request('FechaC');
-        $incidencia->IdDepartamento=request('Departamento');
-        $incidencia->Descripcion=request('Descripcion');
-        $incidencia->Imagenes=request('Imagen');
-        $incidencia->Id_Empleado_usuario='154';
-        $incidencia->Estado='Pendiente';
-        $incidencia->Prioridad=request('Prioridad');
-        $incidencia->IdInventario=1;
+        $departamento=Departamento::where('Nombre'['IdDepartamento'])->get();
+        foreach ($departamento as $depart) {
+            $incidencia = new Incidencia;
+            $incidencia->FechaEntrada=request('FechaI');
+            $incidencia->FechaCierre=request('FechaC');
+            $incidencia->IdDepartamento=$depart->id;
+            $incidencia->Descripcion=request('Descripcion');
+            $incidencia->Imagenes=request('Imagen');
+            $incidencia->Id_Empleado_usuario='154';
+            $incidencia->Estado='Pendiente';
+            $incidencia->Prioridad=request('Prioridad');
+            $incidencia->IdInventario=1;
+        }
         //guadamos los datos en la BBDD
         $incidencia->save();
         return redirect('user');
