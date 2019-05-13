@@ -18,10 +18,10 @@ class Incidencia extends Migration
         Schema::create('Incidencia', function (Blueprint  $table){
             $table->increments('id');
             $table->string('FechaEntrada');
-            $table->string('FechaCierre');
+            $table->string('FechaCierre')->nullable();
             $table->string('NombreCategoria');
             $table->string('Descripcion');
-            $table->string('Imagenes');
+            $table->string('Imagenes')->nullable();
             $table->integer('Id_Empleado_usuario');
             $table->integer('Id_Empleado_tecnico');
             $table->string('Estado');

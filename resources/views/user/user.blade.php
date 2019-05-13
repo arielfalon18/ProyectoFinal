@@ -11,8 +11,6 @@
                         <p>ID: {{$incidencia->id}} Fecha-Entrada {{$incidencia->FechaEntrada}}</p>
                         <p>Estado: {{$incidencia->Estado}} </p>
                         <p>Descripcion: {{$incidencia->Descripcion}}</p>
-                        <p>Descripcion: {{$incidencia->Descripcion}}</p>
-
                     </div>
                 @endforeach          
                 </div>
@@ -37,7 +35,6 @@
                         <p>{{$finalizada->Descripcion}}</p>
 
                 @endforeach
-
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-xs-12 cancel border"><h5  class="title-estados">Cancelada</h5>
@@ -84,16 +81,13 @@
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <select class="form-control" name="Categoria" id="Categoria" >
-                <option value="" disabled selected>Selecciona categoria</option>
-                    <option>Categoria1</option>
-                    <option>Categoria2</option>
-                    <option>Categoria3</option>
+                <select class="form-control" name="Departamento" id="Departamento" >
+                <option value="" disabled selected>Selecciona departamento</option>
+                    <option>Departamento1</option>
+                    <option>Departamento2</option>
+                    <option>Departamento3</option>
                 </select>
             </div>
-            <!-- <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="Estado" v-model="Estado" name="Estado" placeholder="Estado">
-            </div> -->
         </div>
         
         <div class="form-row">

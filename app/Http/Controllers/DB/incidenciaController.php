@@ -32,11 +32,10 @@ class incidenciaController extends Controller
         $incidencia = new Incidencia;
         $incidencia->FechaEntrada=request('FechaI');
         $incidencia->FechaCierre=request('FechaC');
-        $incidencia->NombreCategoria=request('Categoria');
+        $incidencia->IdDepartamento=request('Departamento');
         $incidencia->Descripcion=request('Descripcion');
         $incidencia->Imagenes=request('Imagen');
         $incidencia->Id_Empleado_usuario='154';
-        $incidencia->Id_Empleado_tecnico='145';
         $incidencia->Estado='Pendiente';
         $incidencia->Prioridad=request('Prioridad');
         $incidencia->IdInventario=1;
