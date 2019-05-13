@@ -4,6 +4,7 @@
 <div id="appV"  class="registro">
     <div class="container-fluid">
         <div>
+        <h1>Bienvenido Tecnico</h1>
             <table class="table table-striped">
             <thead>
                 <tr>
