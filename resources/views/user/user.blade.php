@@ -122,7 +122,7 @@
         <!-- Formulario para añadir un usuario a la base de datos  -->
         <form method="POST" action="{{url('/incidencia/newIncidencia')}}">
             {{ csrf_field()}}
-        <div class="form-row">
+        <div class="form-row" >
             <div class="form-group col-md-6">
                 <label>Fecha incidencia</label>
                 <input type="text" class="form-control" id="FechaI"  v-model="FechaI" name="FechaI" value="{{ old('scheduled_date',date('d-m-Y')) }}">
@@ -133,14 +133,12 @@
             </div> -->
         </div>
         <div class="form-row">
-            <div class="form-group col-md-6">
-                <select class="form-control" name="Departamento" id="Departamento" >
-                <option value="" disabled selected>Selecciona departamento</option>
-                    
-                    <option>Departamento1</option>
-                    <option>Departamento2</option>
-                    <option>Departamento3</option>
+            <div class="form-group col-md-6" id="appV" >
+                <select class="form-control" v-model="idRol" name="TDepartamento" id="TDepartamento" >
+                    <option value="B" disabled selected>Selecciona departamento</option>
+                    <option v-for="dapart in DepartamentosT" >@{{dapart.Nombre}}</option>
                 </select>
+                <span v-if="errors.IdDepartamento" class="text-danger">@{{errors.IdDepartamento[0]}}</span>
             </div>
         </div>
         
