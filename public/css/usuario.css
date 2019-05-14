@@ -259,7 +259,12 @@ nav ul li a:hover {
 }
 #abrir-progreso{
 	display:none;
-
+}
+#abrir-cancelada{
+	display:none;
+}
+#abrir-finalizada{
+	display:none;
 }
 /************/
 .TAlta{
