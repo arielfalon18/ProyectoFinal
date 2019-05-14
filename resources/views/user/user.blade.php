@@ -130,13 +130,9 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <select class="form-control" name="Departamento" id="Departamento" >
-                <option value="" disabled selected>Selecciona departamento</option>
-                    @foreach ($departamentos as $departamento)
-                        <option value="{{ $departamento['id'] }}">{{ $departamento['nombre'] }}</option>
-                    @endforeach
-                    <option>Departamento1</option>
-                    <option>Departamento2</option>
-                    <option>Departamento3</option>
+                    <option value="" disabled selected>Selecciona departamento</option>
+                    <option v-for="dapart in DepartamentosT">@{{dapart.Nombre}}</option>
+
                 </select>
             </div>
         </div>

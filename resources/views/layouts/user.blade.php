@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/css/usuario.css">
     <link rel="stylesheet" href="/css/stylo.css">
     <!-- <link rel="stylesheet" href="/css/app.css"> -->
-   
+    <script src="/js/vueApp.js"></script>
     <script src="/js/vue/vueD.js"></script>
     <script src="/js/axios.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>

@@ -11,8 +11,8 @@ class Incidencia extends Model
     public $timestamps = false;
 
     //relacion con departamento     
-    public function departamentos(){
-        return $this->belongsToMany('App\Departamentos');
+    public function departamentosGet(){
+        return $this->belongsToMany('App\Departamentos','id','IdDepartamento');
     }
    
 }
