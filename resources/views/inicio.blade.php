@@ -17,6 +17,9 @@
                <div class="carousel-item">
                   <img src="media/prueba/3.jpg" class="d-block w-100 h-100" alt="...">
                </div>
+                <div class="carousel-item">
+                  <img src="media/prueba/bg.jpg" class="d-block w-100 h-100" alt="...">
+               </div>
             </div>   
          </div>
       </div>

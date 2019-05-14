@@ -43,7 +43,9 @@
           <select  class="form-control" v-model="selected" name="TipoEmpleado" id="TipoEmpleado" >
                 <option value="A" disabled selected>Selecciona tipo de usuario</option>
                 <option >Usuario</option>
+                <option >Personal</option>
                 <option >Tecnico</option>
+                
           </select>
           <span v-if="errors.Idrol" class="text-danger">@{{errors.Idrol[0]}}</span>
         </div>
@@ -114,15 +116,15 @@
           <span v-if="errors.idEmpleado" class="text-danger">@{{errors.idEmpleado[0]}}</span>
         </div>
         <div class="form-group">
-            <input type="text" class="form-control"  v-model="nombreI"  id="nombreI" name="nombreI" placeholder="Nombre">
+            <input type="text" class="form-control"  v-model="nombreI"  id="nombreI" name="nombreI" placeholder="Nombre Inventario">
             <span v-if="errors.nombre" class="text-danger">@{{errors.nombre[0]}}</span>
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" name="tipoI"  v-model="tipoI"  id="tipoI" placeholder="Tipo">
+          <input type="text" class="form-control" name="tipoI"  v-model="tipoI"  id="tipoI" placeholder="Tipo Inventorio">
           <span v-if="errors.tipo" class="text-danger">@{{errors.tipo[0]}}</span>
         </div>
         <div class="form-group">
-                <textarea class="form-control" name="DescripcionI"  v-model="DescripcionI"  id="DescripcionI" cols="30" rows="10" placeholder="Descripcion"></textarea>
+                <textarea class="form-control" name="DescripcionI"  v-model="DescripcionI"  id="DescripcionI" cols="30" rows="10" placeholder="Descripcion de Inventorio"></textarea>
                 <span v-if="errors.descripcion" class="text-danger">@{{errors.descripcion[0]}}</span>
         </div>
         <button id="NuevoInvenatario" class="btn btn-primary">Añadir</button>

@@ -20,7 +20,7 @@ class login extends Authenticatable
     //Creamos el modelo de login para que pueda pillar los datos de la base de datos 
     protected $guard ='usuarioL';
     protected $table = 'login';
-    protected $fillable = ['id','email','password','rol','Id_empleado'];
+    protected $fillable = ['id','email','password','rol','Id_empleado','Id_Empresa','Id_Departamento'];
     public $timestamps = false;
     
      /**
