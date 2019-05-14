@@ -8,13 +8,14 @@
     <!-- Bootstrap CSS -->
 
     <!-- <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    
     <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="/css/fontawesome/font.css">
     <title>Usuario</title>
     <link rel="stylesheet" href="/css/usuario.css">
     <link rel="stylesheet" href="/css/stylo.css">
-    <!-- <link rel="stylesheet" href="/css/app.css"> -->
-    <script src="/js/vueApp.js"></script>
+    
+    <link rel="stylesheet" href="/css/app.css">
     <script src="/js/vue/vueD.js"></script>
     <script src="/js/axios.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
