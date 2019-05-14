@@ -29,8 +29,7 @@ class incidenciaController extends Controller
         //     'Descripcion' => 'requiered',
         //     'Prioridad' => 'requiered'
         // ],$messages);
-        // $departamento=Departamento::where('Nombre'['IdDepartamento'])->get();
-        // foreach ($departamento as $depart) {
+        
             $incidencia = new Incidencia;
             $incidencia->FechaEntrada=request('FechaI');
             $incidencia->FechaCierre=request('FechaC');
@@ -41,20 +40,16 @@ class incidenciaController extends Controller
             $incidencia->Estado='Pendiente';
             $incidencia->Prioridad=request('Prioridad');
             $incidencia->IdInventario=1;
-        // }
+        
         //guadamos los datos en la BBDD
         $incidencia->save();
-        return view('user');
+        
+        $departament = Departamento::all();
+        return view('user')->with('departament',$departament);
     }
-        public function getIncidencias(){
-            $incidencia=Incidencia::with('departamentosGet')->get();
-            dd($incidencia);
-        }
+        
 
-    public function GetDepartamentos(){
-        $departamentos = Departamento::get();
-        return view('user', compact("departamentos"));
-    }
+    
 
     
     
