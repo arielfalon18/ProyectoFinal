@@ -7,24 +7,24 @@
                
                 <div class="col-lg-3 col-md-6 col-xs-12 to-do border"><h5 class="title-estados">Pendiente</h5>
                 @foreach( $incidencia as $incidencia )
-               <div class="main-card-incidencia"></div>
-                <div class="card w-100">
-                    <div class="card-body">
-                        <h5 class="card-title">{{$incidencia->Estado}}</h5>
-                    <div class="card1">
-                    <table class="card1Text">
-                        <tbody>
-                            <td>Usuario : {{$incidencia->Id_Empleado_usuario}} </td>
-                            <th class="cardFecha"> {{$incidencia->FechaEntrada}}</th>
-                        </tbody>
-                    </table>
-                        
-                        <p>Estado: {{$incidencia->Estado}} </p>IDescripcion
-                    </div>
-                    <div class="icon-info">
-                        <a href=""><i class="fas fa-chevron-down"></i></a>
-                    </div>
-                    <div clas="Infor-more">aa</div>
+                <div class="main-card-incidencia"></div>
+                    <div class="card w-100">
+                        <div class="card-body">
+                            <h5 class="card-title">{{$incidencia->Estado}}</h5>
+                        <div class="card1">
+                        <table class="card1Text">
+                            <tbody>
+                                <td>Usuario : {{$incidencia->Id_Empleado_usuario}} </td>
+                                <th class="cardFecha"> {{$incidencia->FechaEntrada}}</th>
+                            </tbody>
+                        </table>
+                            
+                            <p>Estado: {{$incidencia->Estado}} </p>
+                        </div>
+                        <button type="button" id="mostrar">ver mas</button>                 
+                        <div id="abrir">
+                            <p>Descripcion: {{$incidencia->Descripcion}}</p>
+                        </div>  
                     </div>
                 </div>
                    
@@ -32,24 +32,27 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-xs-12 doing border"><h5 class="title-estados">Progreso</h5>
-                @foreach ( $progreso as $progreso)
-                <div class="main-card-incidencia"></div>
-                <div class="card w-100">
-                    <div class="card-body">
-                        <h5 class="card-title">{{$progreso->Estado}}</h5>
-                    <div class="card2">
-                    <table class="card1Text">
-                        <tbody>
-                            <td>Usuario : {{$progreso->Id_Empleado_usuario}} </td>
-                            <th class="cardFecha"> {{$progreso->FechaEntrada}}</th>
-                        </tbody>
-                    </table>
-                        
-                        <p>Estado: {{$progreso->Estado}} </p>
-                    </div>
-                        <a href="#" class="boton-info-inc btn btn-primary">Ver mas</a>
-                    </div>
-                </div>  
+                    @foreach ( $progreso as $progreso)
+                    <div class="main-card-incidencia"></div>
+                        <div class="card w-100">
+                            <div class="card-body">
+                                <h5 class="card-title">{{$progreso->Estado}}</h5>
+                            <div class="card2">
+                            <table class="card1Text">
+                                <tbody>
+                                    <td>Usuario : {{$progreso->Id_Empleado_usuario}} </td>
+                                    <th class="cardFecha"> {{$progreso->FechaEntrada}}</th>
+                                </tbody>
+                            </table>
+                                
+                            <p>Estado: {{$progreso->Estado}} </p>
+                            </div> 
+                            <button type="button" id="mostrar-progreso" style="background-color: white">ver mas</button>                 
+                            <div id="abrir-progreso">
+                                <p>Descripcion: {{$progreso->Descripcion}}</p>
+                            </div>
+                        </div>
+                    </div>  
                 @endforeach
                 </div>
 
@@ -68,8 +71,10 @@
                     </table>
                         
                         <p>Estado: {{$finalizada->Estado}} </p>
-                    </div>
-                        <a href="#" class="boton-info-inc btn btn-primary">Ver mas</a>
+                    </div> 
+                    <button type="button" id="mostrar" style="background-color: white">Search</button>                 
+                    <div id="abrir">
+                        <p>Descripcion: {{$incidencia->Descripcion}}</p>
                     </div>
                 </div>
                 @endforeach
@@ -132,9 +137,7 @@
             <div class="form-group col-md-6">
                 <select class="form-control" name="Departamento" id="Departamento" >
                 <option value="" disabled selected>Selecciona departamento</option>
-                    @foreach ($departamentos as $departamento)
-                        <option value="{{ $departamento['id'] }}">{{ $departamento['nombre'] }}</option>
-                    @endforeach
+                    
                     <option>Departamento1</option>
                     <option>Departamento2</option>
                     <option>Departamento3</option>
