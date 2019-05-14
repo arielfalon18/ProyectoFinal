@@ -186,15 +186,19 @@ nav ul li a:hover {
 }
 .to-do{
 	background-color:hsl(0, 0%, 50%);
+	height: 70vh;
 }
 .cancel{
 	background-color:hsl(0, 0%, 50%);
+	height: 70vh;
 }
 .finish{
 	background-color:hsl(0, 0%, 50%);
+	height: 70vh;
 }
 .doing{
 	background-color:hsl(0, 0%, 50%);
+	height: 70vh;
 
 }
 #incidencia{
@@ -250,8 +254,12 @@ nav ul li a:hover {
 .icon-info{
 	text-align: center;
 }
-.Infor-more{
-	width: 200px;
+#abrir{
+	display:none;
+}
+#abrir-progreso{
+	display:none;
+
 }
 /************/
 .TAlta{
