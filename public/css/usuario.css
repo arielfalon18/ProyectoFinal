@@ -1,6 +1,6 @@
 /* CSS para usuarios */
 #usuario{
-	background-color: black;;
+	background-color: rgba(0,0,0,.1);
 }
   /* header */
   
@@ -134,7 +134,7 @@
 }
 header .li .a{
 	background-color: black;
-	color: white;
+	color: white !important;
 	display: none;
 	
 }
@@ -176,33 +176,37 @@ nav ul li a:hover {
 .nombreUser{
     color: white !important;
 }  */
+.a{
+	color: white;
+}
 .container-fluid{
-	margin-top: 80px;
+	margin-top: -30px;;
 	width: 100% !important;
 	height: 80vh;
-	border-width:2px;
+
 	/* border-style:solid; */
 	border-color:black;
 }
 .to-do{
-	background-color:hsl(0, 0%, 50%);
-	height: 70vh;
+	background-color:#FFF8DC;
+	
 }
 .cancel{
-	background-color:hsl(0, 0%, 50%);
-	height: 70vh;
+	background-color:#FFF8DC;
+	
 }
 .finish{
-	background-color:hsl(0, 0%, 50%);
-	height: 70vh;
+	background-color:#FFF8DC;
+	
 }
 .doing{
-	background-color:hsl(0, 0%, 50%);
-	height: 70vh;
+	background-color:#FFF8DC;
+	
 
 }
 #incidencia{
-	margin-left: 15px;
+	margin-top: 80px;
+    margin-left: 50%;
 }
 .main-card-incidencia{
 	margin-bottom: 20px;
@@ -211,11 +215,11 @@ nav ul li a:hover {
 	text-align: center;
     text-transform: uppercase;
 		padding-top: 10px;
-		color: white;
+		color: black;
 }
 /********Card Style*********/
 .card1{
-	border: 1px solid black;
+	/* border: 1px solid black; */
 	margin-bottom: 10px;
 	border-radius: 21px;
 }
@@ -223,18 +227,18 @@ nav ul li a:hover {
 	border-radius: 30px !important;
 }
 .card2{
-	border: 1px solid red;
+	/* border: 1px solid red; */
 	margin-bottom: 10px;
 	border-radius: 21px;
 }
 .card3{
-	border: 1px solid blue;
+	/* border: 1px solid blue; */
 	margin-bottom: 10px;
 	border-radius: 21px;
 }
 
 .card4{
-	border: 1px solid green;
+	/* border: 1px solid green; */
 	margin-bottom: 10px;
 	border-radius: 21px;
 }
@@ -257,9 +261,14 @@ nav ul li a:hover {
 #abrir{
 	display:none;
 }
+#abrir:hover{
+	height: 30px;
+	 transition: 0.8ms;
+}
 #abrir-progreso{
 	display:none;
 }
+
 #abrir-cancelada{
 	display:none;
 }

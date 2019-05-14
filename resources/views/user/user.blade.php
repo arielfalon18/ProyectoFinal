@@ -1,8 +1,9 @@
 @extends('layouts.user')
 @section('content')
 <div class="usuario">
+<button id="incidencia" class="btn btn-primary" data-toggle="modal" data-target="#crearincidencia">Crear incidencia</button>
+
     <div class="container-fluid usuario">
-        <button id="incidencia" class="btn btn-primary" data-toggle="modal" data-target="#crearincidencia">Crear incidencia</button>
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-xs-12 to-do border"><h5 class="title-estados">Pendiente</h5>
                 @foreach( $incidencia as $incidencia )
@@ -17,11 +18,9 @@
                                 <th class="cardFecha"> {{$incidencia->FechaEntrada}}</th>
                             </tbody>
                         </table>
-                            
-                            <p>Estado: {{$incidencia->Estado}} </p>
-                        </div>
-                        <button type="button" id="mostrar" style="background-color: white">Search</button>                 
-                        <div id="abrir">
+                            <p>Tecnico : Pendiente de Asignar</p>
+                            <p>Estado: {{$incidencia->Estado}} </p>                            
+                            <hr>
                             <p>Descripcion: {{$incidencia->Descripcion}}</p>
                         </div>  
                     </div>
@@ -43,11 +42,10 @@
                                     <th class="cardFecha"> {{$progreso->FechaEntrada}}</th>
                                 </tbody>
                             </table>
+                            <p>Tecnico </p>
                                 
                                 <p>Estado: {{$progreso->Estado}} </p>
-                            </div>
-                            <button type="button" id="mostrar-progreso" style="background-color: white">Search</button>                 
-                            <div id="abrir-progreso">
+                                <hr>
                                 <p>Descripcion: {{$progreso->Descripcion}}</p>
                             </div>
                         </div> 
@@ -68,13 +66,12 @@
                             <th class="cardFecha"> {{$finalizada->FechaEntrada}}</th>
                         </tbody>
                     </table>
-                        
+                    <p>Tecnico </p>    
                         <p>Estado: {{$finalizada->Estado}} </p>
-                    </div>
-                    <button type="button" id="mostrar-finalizada" style="background-color: white">Search</button>                 
-                    <div id="abrir-finalizada">
+                        <hr>
                         <p>Descripcion: {{$finalizada->Descripcion}}</p>
-                    </div>
+
+                    </div>                   
                     </div>
                 </div>
                 @endforeach
@@ -93,13 +90,12 @@
                             <th class="cardFecha"> {{$cancelada->FechaEntrada}}</th>
                         </tbody>
                     </table>
-                        
+                    <p>Tecnico </p>     
                         <p>Estado: {{$cancelada->Estado}} </p>
-                    </div>
-                    <button type="button" id="mostrar-cancelada" style="background-color: white">Search</button>                 
-                            <div id="abrir-cancelada">
-                                <p>Descripcion: {{$cancelada->Descripcion}}</p>
-                            </div>  
+                        
+                        <hr>
+                        <p>Descripcion: {{$cancelada->Descripcion}}</p>
+                    </div> 
                     </div>
                 </div>
                     @endforeach
