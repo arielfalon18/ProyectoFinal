@@ -1,6 +1,5 @@
 @extends('layouts.user')
 @section('content')
-
 <div id="appV"  class="registro">
     <div class="container">
         <div class="row">
@@ -16,8 +15,8 @@
                         </tr>
                     </thead>
                     <tbody v-for="(incidenciaVS,index)  in IncidenciaT">
-                        <tr v-if="incidenciaVS.Id_Empres == {{auth('usuarioL')->user()->Id_Empresa}} && incidenciaVS.Prioridad=='Pendiente'
-                            && incidenciaVS.Id_Departamento=={{auth('usuarioL')->user()->Id_Departamento}}">
+                        <tr v-if="incidenciaVS.Id_Empresa == {{auth('usuarioL')->user()->Id_Empresa}} && incidenciaVS.Estado=='Pendiente'
+                            && incidenciaVS.IdDepartamento=={{auth('usuarioL')->user()->Id_Departamento}}">
                             <th scope="row">1</th>
                             <td>@{{incidenciaVS.Descripcion}}</td>
                             <td>@{{incidenciaVS.nombres_empleado.nombre}}</td>
