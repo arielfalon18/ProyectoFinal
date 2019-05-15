@@ -9,18 +9,20 @@
                     <thead class="thead-dark">
                         <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Descripcion</th>
                         <th scope="col">Nombre Empleado</th>
                         <th scope="col">Prioridad</th>
+                        <th scope="col">Ver</th>
+                        <th scope="col">AsignarT</th>
                         </tr>
                     </thead>
                     <tbody v-for="(incidenciaVS,index)  in IncidenciaT">
                         <tr v-if="incidenciaVS.Id_Empresa == {{auth('usuarioL')->user()->Id_Empresa}} && incidenciaVS.Estado=='Pendiente'
                             && incidenciaVS.IdDepartamento=={{auth('usuarioL')->user()->Id_Departamento}}">
                             <th scope="row">1</th>
-                            <td>@{{incidenciaVS.Descripcion}}</td>
                             <td>@{{incidenciaVS.nombres_empleado.nombre}}</td>
                             <td>@{{incidenciaVS.Prioridad}}</td>
+                            <td><button class="btn btn-info" v-on:click.prevent="MostrarDI(incidenciaVS)">Mostrar</button></td>
+                            <td><button class="btn btn-success" >Asignar</button></td>
                         </tr>
                     </tbody>
                     </table>
@@ -31,4 +33,5 @@
             </div>
         </div>
     </div>
+    @include('modal.modalDI')
 </div>
