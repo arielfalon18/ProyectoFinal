@@ -10,7 +10,8 @@
                 <div class="main-card-incidencia"></div>
                     <div class="card w-100">
                         <div class="card-body">
-                            <h5 class="card-title">{{$incidencia->Estado}}</h5>
+                        <div class="estado-color-pendiente"></div>
+                            <h5 class="card-title">{{$incidencia->Estado}} </h5>
                         <div class="card1">
                         <table class="card1Text">
                             <tbody>
@@ -34,6 +35,7 @@
                     <div class="main-card-incidencia"></div>
                         <div class="card w-100">
                             <div class="card-body">
+                            <div class="estado-color-progreso"></div>
                                 <h5 class="card-title">{{$progreso->Estado}}</h5>
                             <div class="card2">
                             <table class="card1Text">
@@ -58,6 +60,7 @@
                 <div class="main-card-incidencia"></div>
                 <div class="card w-100">
                     <div class="card-body">
+                    <div class="estado-color-finalizada"></div>
                         <h5 class="card-title">{{$finalizada->Estado}}</h5>
                     <div class="card3">
                     <table class="card1Text">
@@ -82,6 +85,7 @@
                     <div class="main-card-incidencia"></div>
                     <div class="card w-100">
                     <div class="card-body">
+                    <div class="estado-color-cancelada"></div>
                         <h5 class="card-title">{{$cancelada->Estado}}</h5>
                     <div class="card4">
                     <table class="card1Text">

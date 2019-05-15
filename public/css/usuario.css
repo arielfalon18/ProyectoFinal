@@ -3,7 +3,10 @@
 	background-color: rgba(0,0,0,.1);
 }
   /* header */
-  
+  .contenidoabajo{
+
+	background-color: #C2C2C2;
+	}
   .header {
 	background-color: #fff;
 	box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
@@ -189,18 +192,22 @@ nav ul li a:hover {
 }
 .to-do{
 	background-color:#FFF8DC;
+	height: 80vh;
 	
 }
 .cancel{
 	background-color:#FFF8DC;
+	height: 80vh;
 	
 }
 .finish{
 	background-color:#FFF8DC;
+	height: 80vh;
 	
 }
 .doing{
-	background-color:#FFF8DC;
+	background-color:#FFF8DC;height: 80vh;
+
 	
 
 }
@@ -236,7 +243,9 @@ nav ul li a:hover {
 	margin-bottom: 10px;
 	border-radius: 21px;
 }
-
+.card{
+	border: rgba(0,0,0,.125) !important;
+}
 .card4{
 	/* border: 1px solid green; */
 	margin-bottom: 10px;
@@ -251,12 +260,50 @@ nav ul li a:hover {
 .cardFecha{
 	padding-left: 60px !important;
 }
+.card-body{
+	padding-bottom: 0px !important;
+}
 .IDescripcion:hover{
 	height: 100px;
 	transition: 0.8s;
 }
 .icon-info{
 	text-align: center;
+}
+.estadoI{
+	
+}
+.estado-color-pendiente{
+	top: 0px;
+	float: right;
+	width: 6px;
+	height:65%;
+	border-radius: 15px;
+	background-color: grey;
+}
+.estado-color-progreso{
+	top: 0px;
+	float: right;
+	width: 6px;
+	height:65%;
+	border-radius: 15px;
+	background-color: blue;
+}
+.estado-color-finalizada{
+	top: 0px;
+	float: right;
+	width: 6px;
+	height:65%;
+	border-radius: 15px;
+	background-color: green;
+}
+.estado-color-cancelada{
+	top: 0px;
+	float: right;
+	width: 6px;
+	height:65%;
+	border-radius: 15px;
+	background-color: red;
 }
 #abrir{
 	display:none;
