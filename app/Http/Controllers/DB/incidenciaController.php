@@ -39,11 +39,11 @@ class incidenciaController extends Controller
             $incidencia->Id_Empleado_usuario='154';
             $incidencia->Estado='Pendiente';
             $incidencia->Prioridad=request('Prioridad');
-            $incidencia->IdInventario=1;
+            $incidencia->Id_Empresa=1;
         
         //guadamos los datos en la BBDD
         $incidencia->save();
-        
+
         $departament = Departamento::all();
         return view('user')->with('departament',$departament);
     }
