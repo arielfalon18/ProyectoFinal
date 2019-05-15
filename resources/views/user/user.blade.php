@@ -136,7 +136,7 @@
             <div class="form-group col-md-6" id="appV" >
                 <select class="form-control" v-model="idRol" name="TDepartamento" id="TDepartamento" >
                     <option value="B" disabled selected>Selecciona departamento</option>
-                    <option v-for="dapart in DepartamentosT" >@{{dapart.Nombre}}</option>
+                    <option v-for="dapart in DepartamentosT">@{{dapart.Nombre}}</option>
                 </select>
                 <span v-if="errors.IdDepartamento" class="text-danger">@{{errors.IdDepartamento[0]}}</span>
             </div>
