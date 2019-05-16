@@ -6,15 +6,19 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Incidencia;
 use Carbon\Carbon;
-use App\Departamento;   
-
+use App\Departamento; 
+use App\Empleados;
 
 class incidenciaController extends Controller
 {
 
-    
+    public function incidenciaController (){
+        return view('user');
+    }
 
     public function newIncidencia (Request $request){
+        $departamento=Departamento::all();
+        $empleado=Empleados::all();
         // $messages = [
         //     'nombre.required' => 'El nombre es requerido',
         //     'dni.required' =>'El DNI es requerido',
@@ -29,23 +33,42 @@ class incidenciaController extends Controller
         //     'Descripcion' => 'requiered',
         //     'Prioridad' => 'requiered'
         // ],$messages);
-        
-            $incidencia = new Incidencia;
-            $incidencia->FechaEntrada=request('FechaI');
-            $incidencia->FechaCierre=request('FechaC');
-            $incidencia->IdDepartamento='1';
-            $incidencia->Descripcion=request('Descripcion');
-            $incidencia->Imagenes=request('Imagen');
-            $incidencia->Id_Empleado_usuario='154';
-            $incidencia->Estado='Pendiente';
-            $incidencia->Prioridad=request('Prioridad');
-            $incidencia->Id_Empresa=1;
-        
-        //guadamos los datos en la BBDD
-        $incidencia->save();
+        $departamento=Departamento::where('Nombre',$request['IdDepartamento'])->get();
+        $empleado = Empleados::where('Nombre',$request['Id_Empleado_usuario'])->get();
+        //dd($request);
+        //dd($departamento);
+        foreach ($departamento as $depart) {
+            foreach ($empleado as $empl) {
+                // $incidencia=Incidencia::create([
+                //     "FechaEntrada"=>$request['FechaEntrada'],
+                //     "FechaCierre"=>$request['FechaCierre'],
+                //     "IdDepartamento"=>$depart->id,
+                //     "Descripcion"=>$request['Descripcion'],
+                //     "Imagenes"=>$request['Imagenes'],
+                //     "Id_Empleado_usuario"=>$empl->id,
+                //     "Estado"=>'Pendiente',
+                //     "Prioridad"=>$request['Prioridad'],
+                //     "Id_Empresa"=>1,
+                // ]);
+                $incidencia = new Incidencia;
+                $incidencia->FechaEntrada=request('FechaI');
+                $incidencia->FechaCierre=request('FechaC');
+                $incidencia->IdDepartamento=$depart->id;
+                $incidencia->Descripcion=request('Descripcion');
+                $incidencia->Imagenes=request('Imagen');
+                $incidencia->Id_Empleado_usuario=$empl->id;
+                $incidencia->Estado='Pendiente';
+                $incidencia->Prioridad=request('Prioridad');
+                $incidencia->Id_Empresa=3;
 
-        $departament = Departamento::all();
-        return view('user')->with('departament',$departament);
+           }
+            //guadamos los datos en la BBDD
+            $incidencia->save();
+       }
+        
+        return redirect('user');
+
+        
     }
         
 

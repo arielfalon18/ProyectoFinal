@@ -25,7 +25,6 @@
                         </div>  
                     </div>
                 </div>
-                   
                 @endforeach          
                 </div>
 
@@ -120,8 +119,8 @@
       </div>
       <div class="modal-body">
         <!-- Formulario para añadir un usuario a la base de datos  -->
-        <form method="POST" action="{{url('/incidencia/newIncidencia')}}">
-            {{ csrf_field()}}
+        <form method="POST" action="{{ url('/incidencia/newIncidencia') }}">
+        {{ csrf_field() }}
         <div class="form-row" >
             <div class="form-group col-md-6">
                 <label>Fecha incidencia</label>
@@ -136,7 +135,7 @@
             <div class="form-group col-md-6" id="appV" >
                 <select class="form-control" v-model="idRol" name="TDepartamento" id="TDepartamento" >
                     <option value="B" disabled selected>Selecciona departamento</option>
-                    <option v-for="dapart in DepartamentosT">@{{dapart.Nombre}}</option>
+                    <option v-for="depart in DepartamentosT" v-if="depart.IdEmpresa=={{auth('usuarioL')->user()->Id_Empresa}}">@{{depart.Nombre}}</option>
                 </select>
                 <span v-if="errors.IdDepartamento" class="text-danger">@{{errors.IdDepartamento[0]}}</span>
             </div>

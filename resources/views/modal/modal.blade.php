@@ -1,5 +1,5 @@
 <!--  -->
-<div class="modal fade" id="añadirusuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+<div class="modal fade" id="añadirusuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -31,7 +31,6 @@
                 <input type="text" class="form-control" id="telefonoT" v-model="telefonoT"  name="telefonoT" placeholder="Telefono">
                 <span v-if="errors.telefono" class="text-danger">@{{errors.telefono[0]}}</span>
             </div>
-
             <div class="form-group col-md-6">
               <select class="form-control" v-model="idRol" name="TDepartamento" id="TDepartamento" >
                   <option value="B" disabled selected>Selecciona departamento</option>
