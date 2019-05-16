@@ -12,9 +12,7 @@ use App\Empleados;
 class incidenciaController extends Controller
 {
 
-    public function incidenciaController (){
-        return view('user');
-    }
+   
 
     public function newIncidencia (Request $request){
         $departamento=Departamento::all();
