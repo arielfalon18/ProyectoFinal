@@ -97,7 +97,8 @@ new Vue({
             'email':'',
             'telefono':'',
             'estado':'',
-            'prioridad':''  
+            'prioridad':'',
+            'IdDepartamento':''
             
         },
     },

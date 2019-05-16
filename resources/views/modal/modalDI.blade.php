@@ -31,7 +31,7 @@
             Imagen  
           </P>
           <div class="Info-Img-Div"> 
-            <img class="img-info" v-bind:src="cargarunaImagen(MostrarInci.Imagenes)"  alt="">
+            <img class="img-info" v-bind:src="'media/ImagenesDeIncidencia/' + MostrarInci.Imagenes"  alt="">
           </div>
         
       </div>
