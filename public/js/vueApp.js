@@ -4,6 +4,10 @@ Vue.component('app-tabla', {
 Vue.component('app-tablaD', {
     template: '#app-tablaD'
 });
+Vue.component('modal', {
+    template: '#Mostrar_Incidencia'
+});
+  
 new Vue({
     el: '#appV',
     // render:h=>h(appV),
@@ -19,7 +23,7 @@ new Vue({
     },
     data: {
     //Departamento:Departamento,7
-        PRUEBASAS:'HOLA',
+        PRUEBASAS:'media/ImagenesDeIncidencia/CapturaI.JPG',
         nombreD:'',
         plantaD:'',
         EdificioD:'',
@@ -83,7 +87,15 @@ new Vue({
         respuestaEmpresa:false,
         offset:3,
         //Tecnico Incidencia
-        IncidenciaT:[]
+        IncidenciaT:[],
+        //Mostramos los datos del incidente que tenemos 
+        //Con esto puedes ver todas los datos 
+        MostrarInci:{
+            'id':'',
+            'Descripcion':'',
+            'Imagenes':'',
+            'nombre':''
+        },
     },
     computed:{
         isActived: function(){
@@ -293,5 +305,17 @@ new Vue({
                 }
             }
         },
+        MostrarDI(valor){
+            this.MostrarInci.id=valor.id;
+            this.MostrarInci.Descripcion=valor.Descripcion;
+            this.MostrarInci.Imagenes=valor.Imagenes;
+            this.MostrarInci.nombre=valor.nombres_empleado.nombre
+            $('#Mostrar_Incidencia').modal('show');
+        },
+        //Esto es para que te concatane el texto con el nombre de la imagen que se guardo en la base de datos 
+        cargarunaImagen(valorI){
+            return 'media/ImagenesDeIncidencia/'+valorI
+        }
+        //---------------------------------------------------------------------------------------------------
     }
   })

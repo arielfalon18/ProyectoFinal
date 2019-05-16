@@ -17,15 +17,15 @@
                 </tr>
             </thead>
             <tbody v-for="(incidenciaVS,index)  in IncidenciaT">
-                <tr  v-if="incidenciaVS.Prioridad =='Pendiente' && incidenciaVS.Id_Empres=={{auth('usuarioL')->user()->Id_Empresa}} 
-                  && incidenciaVS.Id_Departamento == {{auth('usuarioL')->user()->Id_Departamento}}">
-                    <th scope="row">@{{funcionContadir(IncidenciaT)}}</th>
+                <tr  v-if="incidenciaVS.Estado =='Pendiente' && incidenciaVS.Id_Empresa=={{auth('usuarioL')->user()->Id_Empresa}} 
+                  && incidenciaVS.IdDepartamento == {{auth('usuarioL')->user()->Id_Departamento}}">
+                  <th scope="row">@{{funcionContadir(IncidenciaT)}}</th>
                     <td>@{{incidenciaVS.id}}</td>
                     <td>@{{incidenciaVS.Descripcion}}</td>
-                    <td v-if="incidenciaVS.Estado=='Alta'" class="TAlta border text-center">@{{incidenciaVS.Estado}}</td>
-                    <td v-else-if="incidenciaVS.Estado=='Baja'" class="TBaja border text-center">@{{incidenciaVS.Estado}}</td>
-                    <td v-else-if="incidenciaVS.Estado=='Medio'" class="TMedio border text-center">@{{incidenciaVS.Estado}}</td>
-                    <td>@{{incidenciaVS.Prioridad}}</td>
+                    <td>@{{incidenciaVS.Estado}}</td>
+                    <td v-if="incidenciaVS.Prioridad=='Alta'" class="TAlta border text-center">@{{incidenciaVS.Prioridad}}</td>
+                    <td v-else-if="incidenciaVS.Prioridad=='Baja'" class="TBaja border text-center">@{{incidenciaVS.Prioridad}}</td>
+                    <td v-else-if="incidenciaVS.Prioridad=='Media'" class="TMedio border text-center">@{{incidenciaVS.Prioridad}}</td>
                     <td><button class="btn btn-danger " id="exampleModal">Resolver</button></td>
 
                 </tr>
