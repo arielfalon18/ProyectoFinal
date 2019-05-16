@@ -24,6 +24,7 @@ class incidenciaController extends Controller
     public function Nuevo(Request $request){
 
         $departamento=Departamento::where('Nombre',$request['idDeparta'])->get();
+        
         foreach ($departamento as $depart) {
             $incidencia=Incidencia::create([
                 "FechaEntrada"=>$request['FechaI'],
@@ -31,10 +32,10 @@ class incidenciaController extends Controller
                 "IdDepartamento"=>$depart->id,
                 "Descripcion"=>$request['Descripcion'],
                 "Imagenes"=>$request['Imagen'],
-                "Id_Empleado_usuario"=>2,
+                "Id_Empleado_usuario"=>$request['idEmple'],
                 "Estado"=>'Pendiente',
                 "Prioridad"=>$request['Prioridad'],
-                "Id_Empresa"=>1,
+                "Id_Empresa"=>$request['idEmpre'],
             ]);
             $incidencia->save();
         };

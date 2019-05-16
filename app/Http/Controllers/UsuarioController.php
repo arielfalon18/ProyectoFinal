@@ -10,9 +10,9 @@ use App\Empresa;
 
 class UsuarioController extends Controller
 {
-    // public function __construct(){
-    //     $this->middleware('auth:usuarioL');
-    // }
+    public function __construct(){
+        $this->middleware('auth:usuarioL');
+    }
     public function getIndex(){
         return view('user.user');
     }
