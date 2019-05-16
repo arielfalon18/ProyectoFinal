@@ -16,7 +16,7 @@
                 </div>
                 <div class="form-group {{$errors->has('password')? 'has-error' :''}}">
                     <label for="password">Password</label>
-                    <input type="text" class="form-control"  name="password" id="password" placeholder="Introduce tu password">
+                    <input type="password" class="form-control"  name="password" id="password" placeholder="Introduce tu password">
                     {!! $errors->first('password','<span class="help-block">:message</span>')!!}
                 </div>
                 <button id="aña" class="btn btn-primary">Acceder Usuario</button>

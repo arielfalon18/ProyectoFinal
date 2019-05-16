@@ -89,7 +89,13 @@ new Vue({
         //Tecnico Incidencia
         IncidenciaT:[],
         //Mostramos los datos del incidente que tenemos 
-        MostrarInci:{'id':'','Descripcion':'','Imagenes':''},
+        //Con esto puedes ver todas los datos 
+        MostrarInci:{
+            'id':'',
+            'Descripcion':'',
+            'Imagenes':'',
+            'nombre':''
+        },
     },
     computed:{
         isActived: function(){
@@ -303,6 +309,7 @@ new Vue({
             this.MostrarInci.id=valor.id;
             this.MostrarInci.Descripcion=valor.Descripcion;
             this.MostrarInci.Imagenes=valor.Imagenes;
+            this.MostrarInci.nombre=valor.nombres_empleado.nombre
             $('#Mostrar_Incidencia').modal('show');
         },
         //Esto es para que te concatane el texto con el nombre de la imagen que se guardo en la base de datos 
