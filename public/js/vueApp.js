@@ -94,7 +94,13 @@ new Vue({
             'id':'',
             'Descripcion':'',
             'Imagenes':'',
-            'nombre':''
+            'nombre':'',
+            'FechaEntrada':'',
+            'email':'',
+            'telefono':'',
+            'estado':'',
+            'prioridad':''  
+            
         },
     },
     computed:{
@@ -309,7 +315,12 @@ new Vue({
             this.MostrarInci.id=valor.id;
             this.MostrarInci.Descripcion=valor.Descripcion;
             this.MostrarInci.Imagenes=valor.Imagenes;
-            this.MostrarInci.nombre=valor.nombres_empleado.nombre
+            this.MostrarInci.nombre=valor.nombres_empleado.nombre;
+            this.MostrarInci.telefono=valor.nombres_empleado.telefono;
+            this.MostrarInci.estado=valor.Estado;
+            this.MostrarInci.prioridad=valor.Prioridad;
+            this.MostrarInci.email=valor.nombres_empleado.email;
+            this.MostrarInci.FechaEntrada=valor.FechaEntrada;
             $('#Mostrar_Incidencia').modal('show');
         },
         //Esto es para que te concatane el texto con el nombre de la imagen que se guardo en la base de datos 
