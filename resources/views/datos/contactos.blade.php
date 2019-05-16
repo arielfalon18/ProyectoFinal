@@ -6,7 +6,7 @@
         <h1 id="contactanos">CONTÁCTANOS</h1>
         <div id="info">
             <p><strong class="tipoL">Llamanos:</strong> 666 666 666</p>
-            <p><strong class="tipoL">Localízanos:</strong></p>
+            <p><strong class="tipoL">Localízanos:</strong><a href="https://www.google.es/maps/dir//Institut+Joan+d'Austria,+Carrer+de+la+Selva+de+Mar,+211,+08020+Barcelona/@41.4161975,2.1640181,13z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x12a4a3340ac86a75:0xf6183083d8d67bf6!2m2!1d2.1991233!2d41.4162028">Como Llegar?</a></p>
             <p>Carrer de la Selva de Mar, 211, 08020 Barcelona</p>
             <p>Theincidence@incidence.org</p>
         </div>

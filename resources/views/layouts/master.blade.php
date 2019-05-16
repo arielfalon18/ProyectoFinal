@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="/css/fontawesome/font.css">
     <link rel="stylesheet" href="/css/stylo.css">
     <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/login/main.css">
+    <link rel="stylesheet" href="/css/login/util.css">
     <link rel="stylesheet" href="/css/animations/animate.css">
 
     <link rel="stylesheet" href="/css/app.css">  

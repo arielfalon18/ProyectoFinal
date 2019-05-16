@@ -192,24 +192,22 @@ nav ul li a:hover {
 }
 .to-do{
 	background-color:#FFF8DC;
-	height: 80vh;
+	height: fit-content;
 	
 }
 .cancel{
 	background-color:#FFF8DC;
-	height: 80vh;
+	height: fit-content;
 	
 }
 .finish{
 	background-color:#FFF8DC;
-	height: 80vh;
+	height: fit-content;
 	
 }
 .doing{
-	background-color:#FFF8DC;height: 80vh;
-
-	
-
+	background-color:#FFF8DC;
+	height: fit-content;
 }
 #incidencia{
 	margin-top: 80px;
@@ -245,6 +243,9 @@ nav ul li a:hover {
 }
 .card{
 	border: rgba(0,0,0,.125) !important;
+	width: 100%!important;
+	height: 220px;
+	margin-top: 20px;
 }
 .card4{
 	/* border: 1px solid green; */

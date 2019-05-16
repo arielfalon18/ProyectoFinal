@@ -4,31 +4,38 @@
     <div class="registro"></div>
 <div class="row">
   <div class="col-sm-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
+  <div class="card nosotroscard" style="width: 18rem;">
+  <img src="media/nosotros/1.png" class="card-img-top" alt="...">
+  <div class="card-body">
+  <p class="text-Nosotros">Ariel</p>
+    
+  </div>
+</div>
   </div>
   <div class="col-sm-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
+  <div class="card nosotroscard" style="width: 18rem;">
+  <img src="media/nosotros/1.png" class="card-img-top" alt="...">
+  <div class="card-body">
+  <p class="text-Nosotros">David</p>
+  <table>
+    <tbody>
+       <th>Nombre : </th>
+       <td> David</td>
+    </tbody>
+  </table>
+  
+    
+  </div>
+</div>
   </div>
   <div class="col-sm-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
+  <div class="card nosotroscard" style="width: 18rem;">
+  <img src="media/nosotros/1.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="text-Nosotros">Zafar</p>
+    
+  </div>
+</div>
   </div>
 </div>
 </div>

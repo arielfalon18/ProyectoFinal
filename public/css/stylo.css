@@ -101,6 +101,7 @@ p.fadeInUp {
 p.fadeInUp {
   animation: animated-text 4s steps(99,end) 1s 1 normal both,
 	animated-cursor 600ms steps(99,end);
+	font-size: 65px
 }
 /* text animation */
 
@@ -336,7 +337,7 @@ nav {
 	position: absolute; /* Hacemos que la cabecera tenga una posición fija */
 	padding-bottom: 20px;
 }
-
+.menu{    text-transform: uppercase}
 nav .menu {
 	/* margin: -12px; */
 	padding: 0;
@@ -605,7 +606,11 @@ input:focus, input[type]:focus {
 	bottom:20px;
 	right:20px;
 }
-
+.text-Nosotros{
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 30px;
+}
 /* ------------------------------------- */
 
 
