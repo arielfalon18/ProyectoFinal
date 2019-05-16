@@ -50,11 +50,12 @@ new Vue({
         empleadosNA:[],
         //DAVID
         FechaI:'',
-        idDeparta:'',
-        Imagen:'',
-        Prioridad:'',
-        Descripcion:'',
         idDeparta:'D',
+        Imagen:'',
+        Prioridad:'E',
+        Descripcion:'',
+        idEmple:'',
+        idEmpre:'',
         //
         
         errors:[],
@@ -132,22 +133,22 @@ new Vue({
         CreateInciencia: function(){
             var urlIncidencia = 'http://127.0.0.1:8000/newIncidencia';
             axios.post(urlIncidencia,{
-                FechaI:this.FechaI,
+                FechaI:$('#FechaI').val(),
                 idDeparta:$('#DepartamentoE').val(),
                 Imagen:'asdas',
+                idEmple:this.idEmple,
+                idEmpre:this.idEmpre,
                 Descripcion:this.Descripcion,
-                Prioridad:'Baja',
+                Prioridad:$('#Prioridad').val(),
             }).then(response=>{
                 this.FechaI='';
                 this.Descripcion='';
+                this.Prioridad='E';
                 this.idDeparta='D';
                 $('#crearincidencia').modal('hide');
             }).catch(error=>{
                 this.errors = error.response.data
             })
-            
-            
-           
             
           },
         // Departamentos crear un departamento
@@ -343,6 +344,5 @@ new Vue({
 
             })
         }
-        // dasdas
     }
   })

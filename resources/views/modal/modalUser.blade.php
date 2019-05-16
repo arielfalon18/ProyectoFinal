@@ -14,7 +14,7 @@
         <div class="form-row" >
             <div class="form-group col-md-6">
                 <label>Fecha incidencia</label>
-                <input type="text" class="form-control" id="FechaI"  v-model="FechaI" name="FechaI" value="{{ old('scheduled_date',date('d-m-Y')) }}">
+                <input type="text" class="form-control" id="FechaI"   name="FechaI" value="{{ old('scheduled_date',date('d-m-Y')) }}">
             </div>
             <!-- <div class="form-group col-md-6">
                 <label>Fecha cerrada</label>
@@ -31,18 +31,19 @@
             </div>
         </div>
         
-        <div class="form-row">
-            <div class="form-group">
+        <div class="form-row" v-model="idEmpre={{auth('usuarioL')->user()->Id_Empresa}}">
+            <div class="form-group" v-model="idEmple={{auth('usuarioL')->user()->Id_empleado}}" >
                 <input type="file" name="Imagen" id="Imagen" class="form-control">
             </div>
-            <div class="form-group col-md-6">
-                <select class="form-control" name="Prioridad" id="Prioridad">
-                <option value="" disabled selected>Selecciona prioridad</option>
+            <div class="form-group col-md-6" >
+                <select class="form-control" v-model="Prioridad" name="Prioridad" id="Prioridad">
+                <option value="E" disabled selected>Selecciona prioridad</option>
                     <option>Baja</option>
                     <option>Media</option>
                     <option>Alta</option>
                 </select>
             </div>
+            
         </div>
         <div class="form-group">
             <textarea class="form-control"  v-model="Descripcion" name="Descripcion" id="Descripcion" cols="30" rows="10" placeholder="Descripcion"></textarea>
