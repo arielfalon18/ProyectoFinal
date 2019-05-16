@@ -10,20 +10,11 @@ use App\Empresa;
 
 class UsuarioController extends Controller
 {
-    public function __construct(){
-        $this->middleware('auth:usuarioL');
-    }
+    // public function __construct(){
+    //     $this->middleware('auth:usuarioL');
+    // }
     public function getIndex(){
-        
-        $incidencias = Incidencia::where('Estado','Pendiente')->get();
-        $progreso = Incidencia::where('Estado','Progreso')->get();
-        $finalizada = Incidencia::where('Estado','Finalizada')->get();
-        $cancelada = Incidencia::where('Estado','Cancelada')->get();
-   
-        return view('user.user')->with('incidencia',$incidencias)
-        ->with('progreso',$progreso)->with('finalizada',$finalizada)
-        ->with('cancelada',$cancelada);
-
+        return view('user.user');
     }
     
 }

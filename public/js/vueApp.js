@@ -49,14 +49,12 @@ new Vue({
         Nempleado:'C',
         empleadosNA:[],
         //DAVID
-        id:'',
-        fechaInc:'',
-        fechaFin:'',
-        categoria:'',
-        estado:'',
-        imagen:'',
-        prioridad:'',
-        descripcion:'',
+        FechaI:'',
+        idDeparta:'',
+        Imagen:'',
+        Prioridad:'',
+        Descripcion:'',
+        idDeparta:'D',
         //
         
         errors:[],
@@ -94,7 +92,8 @@ new Vue({
             'id':'',
             'Descripcion':'',
             'Imagenes':'',
-            'nombre':''
+            'nombre':'',
+            'IdDepartamento':''
         },
     },
     computed:{
@@ -125,23 +124,25 @@ new Vue({
     methods:{
         //crear una incidencia
         CreateInciencia: function(){
-            var urlIncidencia = 'http://127.0.0.1:8000/CrearInci';
+            var urlIncidencia = 'http://127.0.0.1:8000/newIncidencia';
             axios.post(urlIncidencia,{
-
-                NombreCategoria:this.Categoria,
-                Imagenes:this.Imagen,
+                FechaI:this.FechaI,
+                idDeparta:$('#DepartamentoE').val(),
+                Imagen:'asdas',
                 Descripcion:this.Descripcion,
-                Prioridad:this.Prioridad,
+                Prioridad:'Baja',
             }).then(response=>{
-                $('#crearincidencia').modal('hide');
-                
-                this.Categoria='';
-                this.Imagen='';
-                this.Prioridad='';
+                this.FechaI='';
                 this.Descripcion='';
+                this.idDeparta='D';
+                $('#crearincidencia').modal('hide');
             }).catch(error=>{
                 this.errors = error.response.data
             })
+            
+            
+           
+            
           },
         // Departamentos crear un departamento
         CreateDepartament: function(){
@@ -297,6 +298,8 @@ new Vue({
                 this.IncidenciaT=response.data
             }) 
         },
+        
+        
         //Funcion de contador aleatorio
         funcionContadir(value){
             for(i=0;i<value.length;i++){
@@ -315,7 +318,19 @@ new Vue({
         //Esto es para que te concatane el texto con el nombre de la imagen que se guardo en la base de datos 
         cargarunaImagen(valorI){
             return 'media/ImagenesDeIncidencia/'+valorI
-        }
+        },
         //---------------------------------------------------------------------------------------------------
+        datosIncidenccia(ValorI){
+            this.MostrarInci.IdDepartamento=ValorI.IdDepartamento;
+            $('#AñadirUnaIncidencia').modal('show');
+        },
+        Incidencia: function(){
+            var urlDatosIncidencia = 'http://127.0.0.1:8000/AsignarIncidencia';
+            axios.post(urlDatosIncidencia,{
+                
+            }).then({
+
+            })
+        }
     }
   })
