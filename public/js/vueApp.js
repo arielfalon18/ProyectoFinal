@@ -145,9 +145,6 @@ new Vue({
                 this.errors = error.response.data
             })
             
-            
-           
-            
           },
         // Departamentos crear un departamento
         CreateDepartament: function(){

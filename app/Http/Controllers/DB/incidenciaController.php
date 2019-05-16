@@ -12,10 +12,17 @@ use App\Empleados;
 class incidenciaController extends Controller
 {
 
-   
+    // $messages = [
+        //     'nombre.required' => 'El nombre es requerido',
+        //     'dni.required' =>'El DNI es requerido',
+        //     'email.required' => 'Edificio requerido',
+        //     'telefono.required' => 'El telefono es requerido',
+        //     'IdDepartamento.required' =>'Seleccione el Id Departamento',
+        //     'Idrol.required' => 'Seleccione un tipo de usuario'
     
 
     public function Nuevo(Request $request){
+
         $departamento=Departamento::where('Nombre',$request['idDeparta'])->get();
         foreach ($departamento as $depart) {
             $incidencia=Incidencia::create([
