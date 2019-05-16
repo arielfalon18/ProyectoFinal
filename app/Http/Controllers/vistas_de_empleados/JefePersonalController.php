@@ -11,4 +11,7 @@ class JefePersonalController extends Controller
     public function getIndex(){
         return view('user.personalJ');
     }
+    public function AsignarIncidencia(){
+        
+    }
 }

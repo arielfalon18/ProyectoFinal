@@ -22,6 +22,7 @@ Route::get('Contactos', function () {
 // DATOS DE BASE DE DATOS 
 //Crear una incidencia
 Route::post('/incidencia/newIncidencia', 'DB\incidenciaController@newIncidencia');
+Route::post('newIncidencia','DB\incidenciaController@Nuevo');
 //Creamos un departamento
 Route::post('CreateDepar', 'DB\departamentoController@NEWdepartamento');
 //Mostramos los datos de departamento

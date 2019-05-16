@@ -22,7 +22,7 @@
                             <td>@{{incidenciaVS.nombres_empleado.nombre}}</td>
                             <td>@{{incidenciaVS.Prioridad}}</td>
                             <td><button class="btn btn-info" v-on:click.prevent="MostrarDI(incidenciaVS)">Mostrar</button></td>
-                            <td><button class="btn btn-success" >Asignar</button></td>
+                            <td><button class="btn btn-success" v-on:click.prevent="datosIncidenccia(incidenciaVS)">Asignar</button></td>
                         </tr>
                     </tbody>
                     </table>
@@ -34,4 +34,5 @@
         </div>
     </div>
     @include('modal.modalDI')
+    @include('modal.modalAsignar')
 </div>
