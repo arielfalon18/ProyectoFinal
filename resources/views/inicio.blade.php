@@ -66,15 +66,12 @@
             </article>
             <article class="article3">
             <header>
-            <h1>A que nos dedicamos?</h1></header>
+            <h1>Como Funcionamos?</h1></header>
             <div class="container">
                   <div class="row">
-                     <div class="col-md-6 mt-md-0 mt-3">
-                        <img class="img-3" src="media/Incidencia.png" alt="">                        
-                     </div>
                      <div class="col-md-6 col6 mt-md-0 mt-3">
-                        <div class="div-img2">
-                           <p>gol</p>
+                        <div class="text2">
+                           <p>Servicio de Incidencaias facile y sencillo ->Crear </p>
                         </div>
                      </div>
                   </div>
