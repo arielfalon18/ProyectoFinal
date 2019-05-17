@@ -64,7 +64,7 @@
                   </div>
                </div>
             </article>
-            <article class="article3">
+            <!-- <article class="article3">
             <header>
             <h1>Como Funcionamos?</h1></header>
             <div class="container">
@@ -78,7 +78,7 @@
                </div>
             <div class="div-img2">
             </div>
-            </article>
+            </article> -->
       </section>
    </div>
 </div>

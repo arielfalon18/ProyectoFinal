@@ -1,7 +1,7 @@
 @extends('layouts.user')
 @section('content')
 
-<div id="appV"  class="registro">
+<div id="appV"  class="tecnico">
     <div class="container-fluid">
         <div>
         <h2>Bienvenido Tecnico</h2>

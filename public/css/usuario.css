@@ -1,11 +1,14 @@
 /* CSS para usuarios */
+*{
+	/* overflow: hidden; */
+}
 #usuario{
 	background-color: rgba(0,0,0,.1);
 }
   /* header */
   .contenidoabajo{
 
-	background-color: #C2C2C2;
+	/* background-color: #C2C2C2; */
 	}
   .header {
 	background-color: #fff;
@@ -191,29 +194,50 @@ nav ul li a:hover {
 	border-color:black;
 }
 .to-do{
-	background-color:#FFF8DC;
+	background-color:#d3d4e8;
 	height: fit-content;
+	overflow:scroll;
+	height:75vh;
+	overflow-x: hidden;  
 	
+}
+.tecnico{
+	position: relative;
+    top: 100px;
+    padding-bottom: 126px;
 }
 .cancel{
-	background-color:#FFF8DC;
+	background-color:#d3d4e8;
 	height: fit-content;
-	
+	overflow:scroll;
+	height:75vh;
+	overflow-x: hidden;  
 }
 .finish{
-	background-color:#FFF8DC;
+	background-color:#d3d4e8;
 	height: fit-content;
-	
+	overflow:scroll;
+	height:75vh;
+	overflow-x: hidden;  
 }
 .doing{
-	background-color:#FFF8DC;
+	background-color:#d3d4e8;
 	height: fit-content;
+	overflow:scroll;
+	height:75vh;
+	overflow-x: hidden; 
+	/* overflow-y: scroll;  */
 }
 #incidencia{
-	margin-top: 80px;
-    margin-left: 50%;
+	margin-top: 30px;
+    margin-left: 45%;
+}
+#incidenciaa{    margin-top: 30px !important; float: right;
 }
 .main-card-incidencia{
+	margin-bottom: 20px;
+}
+.card{
 	margin-bottom: 20px;
 }
 .title-estados{
@@ -221,12 +245,21 @@ nav ul li a:hover {
     text-transform: uppercase;
 		padding-top: 10px;
 		color: black;
+		border-bottom: 1px solid;
 }
 /********Card Style*********/
 .card1{
 	/* border: 1px solid black; */
 	margin-bottom: 10px;
 	border-radius: 21px;
+	word-wrap: break-word;
+}
+.border{
+	padding-left: 15px;
+	border-radius: 15px;
+}
+.control-texto{
+	word-wrap: break-word; 
 }
 .w-100{
 	border-radius: 30px !important;
@@ -343,7 +376,9 @@ width: 100%;
 height: 100%;
 padding:10px;
 }
-
+.info{
+	color: beige;
+}
 .text-descha{
 	font-size: 20px;
 	top: 0px;
