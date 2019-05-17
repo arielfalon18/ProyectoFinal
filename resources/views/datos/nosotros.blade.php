@@ -8,7 +8,14 @@
   <img src="media/nosotros/1.png" class="card-img-top" alt="...">
   <div class="card-body">
   <p class="text-Nosotros">Ariel</p>
-    
+  <table>
+       <th>Nombre : </th>
+       <td> Ariel</td>
+  </table>
+  <table>
+       <th>Apellido : </th>
+       <td> Falon</td>
+  </table>
   </div>
 </div>
   </div>
@@ -18,12 +25,13 @@
   <div class="card-body">
   <p class="text-Nosotros">David</p>
   <table>
-    <tbody>
-       <th>Nombre : </th>
-       <td> David</td>
-    </tbody>
+    <th>Nombre : </th>
+    <td> David</td>
   </table>
-  
+  <table>
+    <th>Apellido : </th>
+    <td> Belenguer</td>
+  </table>  
     
   </div>
 </div>
@@ -33,6 +41,14 @@
   <img src="media/nosotros/1.png" class="card-img-top" alt="...">
   <div class="card-body">
     <p class="text-Nosotros">Zafar</p>
+  <table>
+      <th>Nombre : </th>
+      <td> Zafar</td>
+  </table>
+  <table>
+    <th>Apellido : </th>
+    <td> Ahmad</td>
+  </table>
     
   </div>
 </div>

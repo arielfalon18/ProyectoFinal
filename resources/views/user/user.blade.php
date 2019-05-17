@@ -1,7 +1,10 @@
 @extends('layouts.user')
 @section('content')
+<button>asd</button>
 <div id="appV" class="usuario">
   <button id="incidencia" class="btn btn-primary" data-toggle="modal" data-target="#crearincidencia">Crear incidencia</button>
+<button type="button" class="btn btn-primary" id="incidenciaa" data-toggle="modal" data-target=".bd-example-modal-sm">Editar User</button>
+
   <div class="container-fluid usuario">
     <div class="row">
 
@@ -23,7 +26,9 @@
               <p>Tecnico : Pendiente de Asignar</p>
               <p>Estado: @{{IncidenciaA.Estado}}</p>
               <hr>
-              <p>Descripcion: @{{IncidenciaA.Descripcion}}</p>
+              <div class="texto-dentro">
+                <p>Descripcion: @{{IncidenciaA.Descripcion}}</p>
+                </div>
             </div>
           </div>
         </div>
@@ -80,7 +85,7 @@
       <div class="col-lg-3 col-md-6 col-xs-12 cancel border">
         <h5 class="title-estados">Cancelada</h5>
         <div class="main-card-incidencia"></div>
-        <div class="card w-100" v-for="IncidenciaD in IncidenciaT" v-if="IncidenciaD.Estado=='Finalizada'">
+        <div class="card w-100" v-for="IncidenciaD in IncidenciaT" v-if="IncidenciaD.Estado=='Cancelada'">
           <div class="card-body">
             <div class="estado-color-cancelada"></div>
             <h5 class="card-title"> @{{IncidenciaD.Estado}}</h5>
@@ -118,9 +123,17 @@
             </button>
           </div>
           <div class="modal-body">
-
           </div>
-
         </div>
       </div>
     </div>
+
+<!-- Modal para modificar los datos del user al hacer login -->
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content" v-for="IncidenciaB in IncidenciaT">
+
+@{{IncidenciaA.Estado}}
+    </div>
+  </div>
+</div>
