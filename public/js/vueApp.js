@@ -19,11 +19,11 @@ new Vue({
         this.getEmpleados();
         this.getEmpleadosAll();
         this.getIncidencias();
-        
     },
     data: {
     //Departamento:Departamento,7
         PRUEBASAS:'media/ImagenesDeIncidencia/CapturaI.JPG',
+        operacion:false,
         nombreD:'',
         plantaD:'',
         EdificioD:'',
@@ -343,6 +343,18 @@ new Vue({
             }).then({
 
             })
+        },
+        //Descrifrar constraseña
+        decifrar: function(){
+            this.operacion=true;
+            $('#password').removeAttr('type')
+        },
+        Volver: function(){
+            this.operacion=false;
+            $('#password').attr('type','password')
         }
+    },
+    mounted() {
+        window.addEventListener('mouseup', this.Volver);
     }
   })

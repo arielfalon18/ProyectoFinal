@@ -23,8 +23,8 @@
             </span>
             <div class="wrap-input100 validate-input m-b-12 form-group {{$errors->has('password')? 'has-error' :''}}" >
             <span class="btn-show-pass">
-                    <i class="fa fa-eye"></i>
-                </span>    
+                    <i @mousedown="decifrar" @mouseover="Volver" class="fa fa-eye"></i>
+            </span>    
             <input type="password" class="form-control input100"  name="password" id="password" >
             {!! $errors->first('password','<span class="help-block">:message</span>')!!}
                 <span class="focus-input100"></span>
