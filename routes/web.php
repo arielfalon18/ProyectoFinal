@@ -70,4 +70,7 @@ Route::get('incidenciasT','vistas_de_empleados\tecnicoIncidenciaController@getIn
 //Vistas del jefe personal quien decide que tecnico sera responsable de cada incidenci 
 Route::get('JefePersonal','vistas_de_empleados\JefePersonalController@getIndex')->name('JefePersonal');
 
+//Asignar la incidencia para un tecnico
+Route::post('AsignarIncidencia' , 'DB\IncidenciaTecnico@InsertarAsignatura');
+
 

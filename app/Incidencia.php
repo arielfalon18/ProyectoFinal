@@ -18,8 +18,9 @@ class Incidencia extends Model
 
     //relacion con departamento     
     public function departamentosGet(){
-        return $this->belongsToMany('App\Departamentos','id','IdDepartamento');
+        return $this->hasOne('App\Departamento','id' ,'IdDepartamento');
     }
+    
    
 }
 

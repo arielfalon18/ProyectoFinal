@@ -13,7 +13,7 @@ class Departamento extends Model
 
 
     //relacion con incidencia
-    public function incidenias(){
-        return $this->belongsToMany('App\Incidencia');
-    }
+    // public function incidenias(){
+    //     return $this->belongsToMany('App\Incidencia');
+    // }
 }

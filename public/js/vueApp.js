@@ -68,6 +68,10 @@ new Vue({
             'from' :0,
             'to':0,
         },
+        //Asignamos un tecnico de su departamento para que pueda resolver la incidencia
+        ITecnico:'F',
+        IDepartamento:'',
+        IIncidencia:'',
 
         //INVENTARIO
         
@@ -333,17 +337,29 @@ new Vue({
         },
         //---------------------------------------------------------------------------------------------------
         datosIncidenccia(ValorI){
+            this.MostrarInci.id=ValorI.id;
             this.MostrarInci.IdDepartamento=ValorI.IdDepartamento;
             $('#AñadirUnaIncidencia').modal('show');
         },
-        Incidencia: function(){
-            var urlDatosIncidencia = 'http://127.0.0.1:8000/AsignarIncidencia';
-            axios.post(urlDatosIncidencia,{
-                
-            }).then({
-
+        //Asignar a un tecnico la incedincia deseada
+        incidenciaTecnica: function(){
+            var urlAsignarIncidencia='http://127.0.0.1:8000/AsignarIncidencia';
+            axios.post(urlAsignarIncidencia,{
+               //Pasamos la variable que queremos pasar para rellenar en formulario
+                ITecnico:$('#Tincidencia').val(),
+                IDepartamento:this.IDepartamento,
+                IIncidencia:this.IIncidencia,
+            }).then(response=>{
+                this.ITecnico='F',
+                $('#AñadirUnaIncidencia').modal('hide');
+            }).catch(error => {
+                this.errors = error.response.data.errors;
             })
+           
+            
         },
+        
+        
         //Descrifrar constraseña
         decifrar: function(){
             this.operacion=true;
