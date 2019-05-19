@@ -19,6 +19,7 @@ new Vue({
         this.getEmpleados();
         this.getEmpleadosAll();
         this.getIncidencias();
+        this.MostramosIncidenciTecnica();
     },
     data: {
     //Departamento:Departamento,7
@@ -72,7 +73,9 @@ new Vue({
         ITecnico:'F',
         IDepartamento:'',
         IIncidencia:'',
-
+        //Mostrar array 
+        IncidenciaTecni:[],
+        //---------------------------------------------------------------------
         //INVENTARIO
         
         nombreI:'',
@@ -352,11 +355,18 @@ new Vue({
             }).then(response=>{
                 this.ITecnico='F',
                 $('#AñadirUnaIncidencia').modal('hide');
+                $('#BotonAs').attr('disabled','disabled')
             }).catch(error => {
                 this.errors = error.response.data.errors;
             })
            
             
+        },
+        MostramosIncidenciTecnica: function(){
+            var urlMostrarTecnicaIn='http://127.0.0.1:8000/MostraIncidenciaTec';
+            axios.get(urlMostrarTecnicaIn).then(response =>{
+                this.IncidenciaTecni=response.data
+            }) 
         },
         
         

@@ -2,7 +2,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Agregamos un inventario</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Asignamos un Tutor</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -15,7 +15,6 @@
                     <option value="F" v-model="IIncidencia=MostrarInci.id" disabled selected>Seleciona el Tecnico</option>
                     <option v-for="emplea in empleadosNA" v-if="emplea.Rol=='Tecnico' && emplea.IdDepartamento==MostrarInci.IdDepartamento">@{{emplea.nombre}}</option>
                 </select>
-            
           </div>
         <button id="incidenciaTecnica" class="btn btn-primary">Asignar</button>
         </div>

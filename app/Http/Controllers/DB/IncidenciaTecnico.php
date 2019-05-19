@@ -23,4 +23,8 @@ class IncidenciaTecnico extends Controller
             
         $Incidencia->save();
     }
+    public function MostrarIncidenciAsignadas(){
+        $TencnicoIncidencia=Tecnico_Incidencia::get();
+        return $TencnicoIncidencia;
+    }
 }

@@ -72,5 +72,7 @@ Route::get('JefePersonal','vistas_de_empleados\JefePersonalController@getIndex')
 
 //Asignar la incidencia para un tecnico
 Route::post('AsignarIncidencia' , 'DB\IncidenciaTecnico@InsertarAsignatura');
+//MostrarIncidencia del tecnico 
+Route::get('MostraIncidenciaTec','DB\IncidenciaTecnico@MostrarIncidenciAsignadas');
 
 
