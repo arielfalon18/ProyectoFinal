@@ -16,33 +16,25 @@
                         </tr>
                     </thead>
                     <tbody  v-for="(incidenciaVS,index)  in IncidenciaT">
-                        
+                  
                             <tr  v-if="incidenciaVS.Id_Empresa == {{auth('usuarioL')->user()->Id_Empresa}} && incidenciaVS.Estado=='Pendiente'
-                                && incidenciaVS.IdDepartamento=={{auth('usuarioL')->user()->Id_Departamento}} ">
+                                && incidenciaVS.IdDepartamento=={{auth('usuarioL')->user()->Id_Departamento}}">
                                 <th scope="row">1</th>
                                 <td>@{{incidenciaVS.nombres_empleado.nombre}}</td>
                                 <td v-if="incidenciaVS.Prioridad=='Alta'" class="TAlta border text-center">@{{incidenciaVS.Prioridad}}</td>
                                 <td v-else-if="incidenciaVS.Prioridad=='Baja'" class="TBaja border text-center">@{{incidenciaVS.Prioridad}}</td>
                                 <td v-else-if="incidenciaVS.Prioridad=='Media'" class="TMedio border text-center">@{{incidenciaVS.Prioridad}}</td>
                                 <td ><button class="btn btn-info" v-on:click.prevent="MostrarDI(incidenciaVS)">Mostrar</button></td>
-                                <template>
                                 <td>
-                                    <button  v-if="6==incidenciaVS.id" disabled class="btn btn-success" id="BotonAs" v-on:click.prevent="datosIncidenccia(incidenciaVS)">Asignar</button> 
-                                    <button v-else  class="btn btn-success" id="BotonAs" v-on:click.prevent="datosIncidenccia(incidenciaVS)">Asignar</button>
+                                    <button  class="btn btn-success" id="BotonAs" v-on:click.prevent="datosIncidenccia(incidenciaVS)">Asignar</button>
                                  </td>    
-                                </template>  
-                                
-    
                             </tr>
-                        
-                        
-                       
                     </tbody>
                     </table>
                    
             </div>
             <div class="col-6">
-                <p> areas pendientes</p>
+                <p> areas Progreso</p>
                 <table class="table">
                         <thead class="thead-dark">
                             <tr>

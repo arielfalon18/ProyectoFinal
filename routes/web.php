@@ -75,4 +75,6 @@ Route::post('AsignarIncidencia' , 'DB\IncidenciaTecnico@InsertarAsignatura');
 //MostrarIncidencia del tecnico 
 Route::get('MostraIncidenciaTec','DB\IncidenciaTecnico@MostrarIncidenciAsignadas');
 
+Route::get('MostrarContadorTec','vistas_de_empleados\tecnicoIncidenciaController@Getcontador');
+
 

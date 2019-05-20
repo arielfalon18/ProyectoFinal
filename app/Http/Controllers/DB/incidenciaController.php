@@ -24,7 +24,7 @@ class incidenciaController extends Controller
     public function Nuevo(Request $request){
 
         $departamento=Departamento::where('Nombre',$request['idDeparta'])->get();
-        
+       
         foreach ($departamento as $depart) {
             $incidencia=Incidencia::create([
                 "FechaEntrada"=>$request['FechaI'],

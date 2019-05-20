@@ -20,7 +20,9 @@ class Incidencia extends Model
     public function departamentosGet(){
         return $this->hasOne('App\Departamento','id' ,'IdDepartamento');
     }
-    
+    public function AsignacionTecnico(){
+        return $this->hasMany('App\Tecnico_Incidencia','Id_Incidencia','id');
+    }
    
 }
 
