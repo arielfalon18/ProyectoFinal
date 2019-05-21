@@ -19,6 +19,7 @@ class Empleados extends Model
         //Nombre del modelo ,,,, id del modelo ,,,, id de la relacion
         return $this->hasOne('App\Departamento' ,'id' , 'IdDepartamento');
     }
+    
 
     
 }

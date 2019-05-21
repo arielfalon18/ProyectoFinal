@@ -16,8 +16,10 @@ class IncidenciaTecnico extends Controller
         foreach ($buscarTecnico as $Tecnico) {
             $Incidencia=Tecnico_Incidencia::create([
                 "id_Tecnico"=>$Tecnico->id,
+                "iD_empleado"=>$resquest['iD_empleado'],
                 "Id_Departamento"=>$resquest['IDepartamento'],
                 "Id_Incidencia"=>$resquest['IIncidencia'],
+                
             ]);
         }
         $ModificarEstado=Incidencia::find($resquest['IIncidencia']);
@@ -26,7 +28,7 @@ class IncidenciaTecnico extends Controller
         $Incidencia->save();
     }
     public function MostrarIncidenciAsignadas(){
-        $TencnicoIncidencia=Tecnico_Incidencia::with('MostrarDatosIncidencia')->get();
+        $TencnicoIncidencia=Tecnico_Incidencia::with('MostrarDatosIncidencia','mostrarTecnico','mostrarDepartamento','mostrarEmpleado')->get();
         return $TencnicoIncidencia;
     }
 }

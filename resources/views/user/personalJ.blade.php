@@ -36,14 +36,24 @@
             <div class="col-6">
                 <p> areas Progreso</p>
                 <table class="table">
-                        <thead class="thead-dark">
-                            <tr>
+                    <thead class="thead-dark">
+                        <tr>
                             <th scope="col">#</th>
                             <th scope="col">Nombre Tecnico</th>
                             <th scope="col">Numero Incidencia</th>
                             <th scope="col">Nombre del departamento</th>
-                            </tr>
-                        </thead>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(TecnicoAsignado,index)  in IncidenciaTecni" 
+                        v-if="TecnicoAsignado.mostrar_datos_incidencia.Id_Empresa == {{auth('usuarioL')->user()->Id_Empresa}} && 
+                        TecnicoAsignado.Id_Departamento=={{auth('usuarioL')->user()->Id_Departamento}}">
+                            <td>1</td>
+                            <td>@{{TecnicoAsignado.mostrar_tecnico.nombre}}</td>
+                            <td>@{{TecnicoAsignado.mostrar_datos_incidencia.id}}</td>
+                            <td>@{{TecnicoAsignado.mostrar_departamento.Nombre}}</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>

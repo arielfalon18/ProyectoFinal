@@ -74,6 +74,7 @@ new Vue({
         ITecnico:'F',
         IDepartamento:'',
         IIncidencia:'',
+        iD_empleado:'',
         //Mostrar array 
         IncidenciaTecni:[],
         //---------------------------------------------------------------------
@@ -107,11 +108,27 @@ new Vue({
             'telefono':'',
             'estado':'',
             'prioridad':'',
-            'IdDepartamento':''
+            'IdDepartamento':'',
+            'Idempleado':'',
             
         },
         //Mostrar Tecnico ç
         mostrarTecnicoIm:[],
+        //Array para mostrar todas las informacion para el tecnico
+        DatosPerTecnico:{
+            'datos':'',
+            //datos del empleado
+            'nombreCreador':'',
+            'nombreDepartamento':'',
+            'dni':'',
+            'telefono':'',
+            //Datos de la incidencia
+            'Descripcion':'',
+            'FechaEntrada':'',
+            'Prioridad':'',
+            
+
+        },
     },
     computed:{
         isActived: function(){
@@ -346,6 +363,7 @@ new Vue({
         datosIncidenccia(ValorI){
             this.MostrarInci.id=ValorI.id;
             this.MostrarInci.IdDepartamento=ValorI.IdDepartamento;
+            this.MostrarInci.Idempleado=ValorI.Id_Empleado_usuario;
             $('#AñadirUnaIncidencia').modal('show');
         },
         //Asignar a un tecnico la incedincia deseada
@@ -358,8 +376,10 @@ new Vue({
                 
                //Pasamos la variable que queremos pasar para rellenar en formulario
                 ITecnico:solo,
+                iD_empleado:this.iD_empleado,
                 IDepartamento:this.IDepartamento,
                 IIncidencia:this.IIncidencia,
+                
             }).then(response=>{
                 this.ITecnico='F',
                 $('#AñadirUnaIncidencia').modal('hide');
@@ -403,6 +423,11 @@ new Vue({
         Volver: function(){
             this.operacion=false;
             $('#password').attr('type','password')
+        },
+        MostrarDetallesTecnico: function(valores){
+            this.DatosPerTecnico.nombreCreador=valores.mostrar_empleado.nombre;
+            this.DatosPerTecnico.dni=valores.mostrar_empleado.dni;
+            $('#MostrarDetallesIncidencia').modal('show');
         }
     },
     mounted() {
