@@ -12,7 +12,7 @@
       <div class="col-lg-3 col-md-6 col-xs-12 to-do border">
         <h5 class="title-estados">Pendiente</h5>
         <div class="main-card-incidencia"></div>
-        <div class="card w-100" v-for="IncidenciaA in IncidenciaT" v-if="IncidenciaA.Estado=='Pendiente'">
+        <div class="card w-100" v-for="IncidenciaA in IncidenciaT" v-if="IncidenciaA.Estado=='Pendiente' && IncidenciaA.id_Empresa=={{auth('usuarioL')->user()->Id_Empresa}}">
           <div class="card-body" v-for="empleadosA in empleadosNA" v-if="IncidenciaA.	Id_Empleado_usuario==empleadosA.id">
             <div class="estado-color-pendiente"></div>
             <h5 class="card-title">@{{IncidenciaA.Estado}} <p class="cardFecha"> <strong>@{{IncidenciaA.FechaEntrada}} </strong></p></h5>

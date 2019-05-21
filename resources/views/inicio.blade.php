@@ -9,7 +9,7 @@
          <div id="carouselExampleCaptions" class="carousel slide ImagePortada" data-ride="carousel">
             <div class="carousel-inner">
                <div class="carousel-item active">
-                  <img src="media/prueba/2.jpg" class="d-block w-100 h-100" alt="">
+                  <img src="media/prueba/4.jpg" class="d-block w-100 h-100" alt="">
                </div>
                <div class="carousel-item">
                   <img src="media/prueba/1.jpg" class="d-block w-100 h-100" alt="...">
