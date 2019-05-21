@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Tecnico_Incidencia;
 use App\Empleados;
+use App\Incidencia;
 
 class IncidenciaTecnico extends Controller
 {
@@ -17,14 +18,15 @@ class IncidenciaTecnico extends Controller
                 "id_Tecnico"=>$Tecnico->id,
                 "Id_Departamento"=>$resquest['IDepartamento'],
                 "Id_Incidencia"=>$resquest['IIncidencia'],
-                
             ]);
         }
-            
+        $ModificarEstado=Incidencia::find($resquest['IIncidencia']);
+        $ModificarEstado->Estado='Progreso';
+        $ModificarEstado->save();
         $Incidencia->save();
     }
     public function MostrarIncidenciAsignadas(){
-        $TencnicoIncidencia=Tecnico_Incidencia::get();
+        $TencnicoIncidencia=Tecnico_Incidencia::with('MostrarDatosIncidencia')->get();
         return $TencnicoIncidencia;
     }
 }

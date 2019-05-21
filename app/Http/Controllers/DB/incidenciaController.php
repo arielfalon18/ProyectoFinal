@@ -30,7 +30,7 @@ class incidenciaController extends Controller
         ],$messages);
 
         $departamento=Departamento::where('Nombre',$request['idDeparta'])->get();
-        
+       
         foreach ($departamento as $depart) {
             $incidencia=Incidencia::create([
                 "FechaEntrada"=>$request['FechaI'],

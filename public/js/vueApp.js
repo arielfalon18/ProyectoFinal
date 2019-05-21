@@ -20,6 +20,7 @@ new Vue({
         this.getEmpleadosAll();
         this.getIncidencias();
         this.MostramosIncidenciTecnica();
+        this.mostrartodoslosTecnico();
     },
     data: {
     //Departamento:Departamento,7
@@ -109,6 +110,8 @@ new Vue({
             'IdDepartamento':''
             
         },
+        //Mostrar Tecnico ç
+        mostrarTecnicoIm:[],
     },
     computed:{
         isActived: function(){
@@ -314,6 +317,7 @@ new Vue({
         },
         
         
+        
         //Funcion de contador aleatorio
         funcionContadir(value){
             for(i=0;i<value.length;i++){
@@ -346,21 +350,39 @@ new Vue({
         },
         //Asignar a un tecnico la incedincia deseada
         incidenciaTecnica: function(){
+            var valor=$('#Tincidencia').val();
+            var soltexto = valor.split("(");
+            var solo=soltexto[0]
             var urlAsignarIncidencia='http://127.0.0.1:8000/AsignarIncidencia';
             axios.post(urlAsignarIncidencia,{
+                
                //Pasamos la variable que queremos pasar para rellenar en formulario
-                ITecnico:$('#Tincidencia').val(),
+                ITecnico:solo,
                 IDepartamento:this.IDepartamento,
                 IIncidencia:this.IIncidencia,
             }).then(response=>{
                 this.ITecnico='F',
                 $('#AñadirUnaIncidencia').modal('hide');
-                $('#BotonAs').attr('disabled','disabled')
+                location.reload();
             }).catch(error => {
                 this.errors = error.response.data.errors;
             })
-           
             
+            
+        //    No tocar 
+        // SELECT c.id, c.nombre,c.Rol,c.IdDepartamento, COUNT(r.Id) as Contador
+        //     FROM empleados c
+        //     LEFT JOIN tecnico_incidencia r 
+        //     ON c.id = r.id_Tecnico
+        //     where c.Rol='Tecnico'
+        //     GROUP BY c.id  
+        //-----------------------------------------------------------------------------
+        },
+        mostrartodoslosTecnico: function(){
+            var urlTecnicaContador='http://127.0.0.1:8000/MostrarContadorTec';
+            axios.get(urlTecnicaContador).then(response=>{
+                this.mostrarTecnicoIm=response.data
+            })
         },
         MostramosIncidenciTecnica: function(){
             var urlMostrarTecnicaIn='http://127.0.0.1:8000/MostraIncidenciaTec';
@@ -368,7 +390,10 @@ new Vue({
                 this.IncidenciaTecni=response.data
             }) 
         },
-        
+        // select * from incidencia WHERE id not in (
+        //     SELECT Id_Incidencia FROM `tecnico_incidencia`
+        //         )
+
         
         //Descrifrar constraseña
         decifrar: function(){
