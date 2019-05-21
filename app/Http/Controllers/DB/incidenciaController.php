@@ -5,23 +5,29 @@ namespace App\Http\Controllers\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Incidencia;
-use Carbon\Carbon;
 use App\Departamento; 
-use App\Empleados;
 
 class incidenciaController extends Controller
 {
 
-    // $messages = [
-        //     'nombre.required' => 'El nombre es requerido',
-        //     'dni.required' =>'El DNI es requerido',
-        //     'email.required' => 'Edificio requerido',
-        //     'telefono.required' => 'El telefono es requerido',
-        //     'IdDepartamento.required' =>'Seleccione el Id Departamento',
-        //     'Idrol.required' => 'Seleccione un tipo de usuario'
     
 
     public function Nuevo(Request $request){
+
+        $messages = [
+            'FechaI.required' => 'La fecha es requerida',
+            'Descripcion.required' =>'Introduce una pequeña descripción',
+            'Prioridad.required' => 'Seleccione la prioridad',
+            'idDeparta.required' => 'Seleccione el departamento'
+          
+        ];
+        $request->validate([
+            'FechaI' => 'required',
+            'Descripcion' => 'required',
+            'Prioridad' => 'required',
+            'idDeparta' => 'required'
+           
+        ],$messages);
 
         $departamento=Departamento::where('Nombre',$request['idDeparta'])->get();
        

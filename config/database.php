@@ -42,7 +42,7 @@ return [
         'mysql' => [
             'driver'    => 'mysql',
             'host'      => 'localhost',
-            'database'  => 'projecto',
+            'database'  => 'projectoFinal',
             'username'  => 'root',
             'password' => '',
             'unix_socket' => env('DB_SOCKET', ''),

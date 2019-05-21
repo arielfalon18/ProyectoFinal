@@ -14,7 +14,8 @@
         <div class="form-row" >
             <div class="form-group col-md-6">
                 <label>Fecha incidencia</label>
-                <input type="text" class="form-control" id="FechaI"   name="FechaI" value="{{ old('scheduled_date',date('d-m-Y')) }}">
+                <input type="text" class="form-control" id="FechaI" name="FechaI" value="{{ old('scheduled_date',date('d-m-Y')) }}">
+                <span v-if="errors.FechaI" class="text-danger">@{{errors.FechaI[0]}}</span>
             </div>
             <!-- <div class="form-group col-md-6">
                 <label>Fecha cerrada</label>
@@ -27,7 +28,7 @@
                     <option value="D" disabled selected>Selecciona departamento</option>
                     <option v-for="depart in DepartamentosT" v-if="depart.IdEmpresa=={{auth('usuarioL')->user()->Id_Empresa}}">@{{depart.Nombre}}</option>
                 </select>
-                
+                <span v-if="errors.idDeparta" class="text-danger">@{{errors.idDeparta[0]}}</span>
             </div>
         </div>
         
@@ -42,11 +43,13 @@
                     <option>Media</option>
                     <option>Alta</option>
                 </select>
+                <span v-if="errors.Prioridad" class="text-danger">@{{errors.Prioridad[0]}}</span>
             </div>
             
         </div>
         <div class="form-group">
-            <textarea class="form-control"  v-model="Descripcion" name="Descripcion" id="Descripcion" cols="30" rows="10" placeholder="Descripcion"></textarea>
+            <textarea class="form-control"  v-model="Descripcion" name="Descripcion" id="Descripcion" cols="5" rows="5" placeholder="Descripcion"></textarea>
+            <span v-if="errors.Descripcion" class="text-danger">@{{errors.Descripcion[0]}}</span>
         </div>
         <button id="AñadirIncidencia" class="btn btn-primary">Añadir</button>
         </form>

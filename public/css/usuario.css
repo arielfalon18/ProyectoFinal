@@ -1,22 +1,22 @@
 /* CSS para usuarios */
-*{
-	/* overflow: hidden; */
-}
+/* *{
+	 overflow: hidden; 
+} */
 #usuario{
 	background-color: rgba(0,0,0,.1);
 }
-  /* header */
-  .contenidoabajo{
+.usuario{
+margin-top: 20px;
+}
 
-	/* background-color: #C2C2C2; */
-	}
-  .header {
+	/* header */
+.header {
 	background-color: #fff;
 	box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
 	position: fixed;
 	width: 100%;
 	z-index: 3;
-  }
+}
   
   .header .menu {
 	margin: 0;
@@ -138,6 +138,7 @@
     top: 0;
     position: absolute;
 }
+
 header .li .a{
 	background-color: black;
 	color: white !important;
@@ -240,6 +241,9 @@ nav ul li a:hover {
 .card{
 	margin-bottom: 20px;
 }
+.texto-dentro{
+	display:block;
+}
 .title-estados{
 	text-align: center;
     text-transform: uppercase;
@@ -263,6 +267,7 @@ nav ul li a:hover {
 }
 .w-100{
 	border-radius: 30px !important;
+	height: auto;
 }
 .card2{
 	/* border: 1px solid red; */
@@ -277,7 +282,7 @@ nav ul li a:hover {
 .card{
 	border: rgba(0,0,0,.125) !important;
 	width: 100%!important;
-	height: 220px;
+
 	margin-top: 20px;
 }
 .card4{
@@ -293,6 +298,7 @@ nav ul li a:hover {
 }
 .cardFecha{
 	padding-left: 60px !important;
+	float: right !important;
 }
 .card-body{
 	padding-bottom: 0px !important;
@@ -309,7 +315,7 @@ nav ul li a:hover {
 	top: 0px;
 	float: right;
 	width: 6px;
-	height:65%;
+	height: 58%;
 	border-radius: 15px;
 	background-color: grey;
 }
@@ -317,7 +323,7 @@ nav ul li a:hover {
 	top: 0px;
 	float: right;
 	width: 6px;
-	height:65%;
+	height: 58%;
 	border-radius: 15px;
 	background-color: blue;
 }
@@ -325,7 +331,7 @@ nav ul li a:hover {
 	top: 0px;
 	float: right;
 	width: 6px;
-	height:65%;
+	height: 58%;
 	border-radius: 15px;
 	background-color: green;
 }
@@ -333,7 +339,7 @@ nav ul li a:hover {
 	top: 0px;
 	float: right;
 	width: 6px;
-	height:65%;
+	height: 58%;
 	border-radius: 15px;
 	background-color: red;
 }
@@ -347,6 +353,11 @@ nav ul li a:hover {
 #abrir-progreso{
 	display:none;
 }
+
+.informacion{
+	margin-bottom: 0px;
+}
+
 
 #abrir-cancelada{
 	display:none;
@@ -383,7 +394,7 @@ padding:10px;
 	font-size: 20px;
 	top: 0px;
 	float: right;
-}	
+}
 #texto-info{
 	font-size: 20px;
 	color: black;
