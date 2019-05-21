@@ -135,3 +135,27 @@
   </div>
 </div>
 
+<div class="modal fade" id="ImportCSV" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Importar CSV </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Formulario Para importar una  csv en laravel-->
+        <form  method="post" v-on:submit.prevent="">
+          <div class="form-group">
+            <label  for="Fichero"> Selecciona el CSV</label>
+            <input type="file" class="form-control-file" id="Fichero">
+          </div>
+          <button id="NuevoInvenatario" class="btn btn-primary">Importar CSV</button>
+          </div>
+        </form>
+          
+      </div>
+    </div>
+  </div>
+</div>
