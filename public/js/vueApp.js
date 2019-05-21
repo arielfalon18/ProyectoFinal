@@ -157,7 +157,7 @@ new Vue({
                 this.idDeparta='D';
                 $('#crearincidencia').modal('hide');
             }).catch(error=>{
-                this.errors = error.response.data
+                this.errors = error.response.data.errors
             })
             
           },
