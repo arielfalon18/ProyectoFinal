@@ -157,7 +157,7 @@ INSERT INTO `inventarios` (`id`, `nombre`, `tipo`, `descripcion`, `idEmpresa`, `
 --
 
 CREATE TABLE `login` (
-  `id` int(10) NOT NULL,
+  `id` int(10) PRIMARY KEY NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `rol` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,

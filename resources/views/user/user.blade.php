@@ -13,22 +13,22 @@
         <h5 class="title-estados">Pendiente</h5>
         <div class="main-card-incidencia"></div>
         <div class="card w-100" v-for="IncidenciaA in IncidenciaT" v-if="IncidenciaA.Estado=='Pendiente'">
-          <div class="card-body">
+          <div class="card-body" v-for="empleadosA in empleadosNA" v-if="IncidenciaA.	Id_Empleado_usuario==empleadosA.id">
             <div class="estado-color-pendiente"></div>
-            <h5 class="card-title">@{{IncidenciaA.Estado}}</h5>
-            <div class="card1">
-              <table class="card1Text">
+            <h5 class="card-title">@{{IncidenciaA.Estado}} <p class="cardFecha"> <strong>@{{IncidenciaA.FechaEntrada}} </strong></p></h5>
+            <div class="card1" v-for="DepartamentosA in DepartamentosT" v-if="IncidenciaA.IdDepartamento==DepartamentosA.id">
+              <table class="card1Text" >
                 <tbody>
-                  <td>Usuario : @{{IncidenciaA.Id_Empleado_usuario}} </td>
-                  <th class="cardFecha"> @{{IncidenciaA.FechaEntrada}}</th>
+                  <td>Usuario: @{{empleadosA.nombre}}</td>
                 </tbody>
               </table>
-              <p>Tecnico : Pendiente de Asignar</p>
-              <p>Estado: @{{IncidenciaA.Estado}}</p>
+              <p class="informacion">Tecnico: Pendiente de Asignar</p>
+              <p class="informacion">Departamento: @{{DepartamentosA.Nombre}}</p>
+              <p class="informacion">Prioridad: @{{IncidenciaA.Prioridad}}</p>
               <hr>
               <div class="texto-dentro">
-                <p>Descripcion: @{{IncidenciaA.Descripcion}}</p>
-                </div>
+                <p class="informacion">Descripcion: @{{IncidenciaA.Descripcion}}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -38,20 +38,20 @@
         <h5 class="title-estados">Progreso</h5>
         <div class="main-card-incidencia"></div>
         <div class="card w-100" v-for="IncidenciaB in IncidenciaT" v-if="IncidenciaB.Estado=='Progreso'">
-          <div class="card-body">
+          <div class="card-body" v-for="empleadosB in empleadosNA" v-if="IncidenciaB.Id_Empleado_usuario==empleadosB.id">
             <div class="estado-color-progreso"></div>
-            <h5 class="card-title">@{{IncidenciaB.Estado}}</h5>
-            <div class="card2">
+            <h5 class="card-title">@{{IncidenciaB.Estado}} <p class="cardFecha"><strong> @{{IncidenciaB.FechaEntrada}}</strong></p></h5>
+            <div class="card2" v-for="DepartamentosB in DepartamentosT" v-if="IncidenciaB.IdDepartamento==DepartamentosB.id">
               <table class="card1Text">
                 <tbody>
-                  <td>Usuario : @{{IncidenciaB.Id_Empleado_usuario}} </td>
-                  <th class="cardFecha"> @{{IncidenciaB.FechaEntrada}}</th>
+                  <td>Usuario: @{{empleadosB.nombre}}</td>
                 </tbody>
               </table>
-              <p>Tecnico </p>
-              <p>Estado: @{{IncidenciaB.Estado}} </p>
+              <p class="informacion">Tecnico </p>
+              <p class="informacion">Departamento: @{{DepartamentosB.Nombre}}</p>
+              <p class="informacion">Prioridad: @{{IncidenciaB.Prioridad}} </p>
               <hr>
-              <p>Descripcion: @{{IncidenciaB.Descripcion}}</p>
+              <p class="informacion">Descripcion: @{{IncidenciaB.Descripcion}}</p>
             </div>
           </div>
         </div>
@@ -62,20 +62,21 @@
         <h5 class="title-estados">Finalizada</h5>
         <div class="main-card-incidencia"></div>
         <div class="card w-100" v-for="IncidenciaC in IncidenciaT" v-if="IncidenciaC.Estado=='Finalizada'">
-          <div class="card-body">
+          <div class="card-body" v-for="empleadosC in empleadosNA" v-if="IncidenciaC.Id_Empleado_usuario==empleadosC.id">
             <div class="estado-color-finalizada"></div>
-            <h5 class="card-title">@{{IncidenciaC.Estado}}</h5>
-            <div class="card3">
+            <h5 class="card-title">@{{IncidenciaC.Estado}} <p class="cardFecha"> <strong>@{{IncidenciaC.FechaEntrada}}</strong></p></h5>
+            <div class="card3" v-for="DepartamentosC in DepartamentosT" v-if="IncidenciaC.IdDepartamento==DepartamentosC.id">
               <table class="card1Text">
                 <tbody>
-                  <td>Usuario : @{{IncidenciaC.Id_Empleado_usuario}} </td>
-                  <th class="cardFecha"> @{{IncidenciaC.FechaEntrada}}</th>
+                  <td>Usuario: @{{empleadosC.nombre}} </td>
+                  
                 </tbody>
               </table>
-              <p>Tecnico </p>
-              <p>Estado: @{{IncidenciaC.Estado}} </p>
+              <p class="informacion">Tecnico </p>
+              <p class="informacion">Departamento: @{{DepartamentosC.Nombre}}</p>
+              <p class="informacion">Prioridad: @{{IncidenciaC.Prioridad}} </p>
               <hr>
-              <p>Descripcion: @{{IncidenciaC.Descripcion}}</p>
+              <p class="informacion">Descripcion: @{{IncidenciaC.Descripcion}}</p>
             </div>
           </div>
         </div>
@@ -86,20 +87,20 @@
         <h5 class="title-estados">Cancelada</h5>
         <div class="main-card-incidencia"></div>
         <div class="card w-100" v-for="IncidenciaD in IncidenciaT" v-if="IncidenciaD.Estado=='Cancelada'">
-          <div class="card-body">
+          <div class="card-body" v-for="empleadosD in empleadosNA" v-if="IncidenciaD.Id_Empleado_usuario==empleadosD.id">
             <div class="estado-color-cancelada"></div>
-            <h5 class="card-title"> @{{IncidenciaD.Estado}}</h5>
-            <div class="card4">
+            <h5 class="card-title"> @{{IncidenciaD.Estado}} <p class="cardFecha"> <strong>@{{IncidenciaD.FechaEntrada}}</strong></p></h5>
+            <div class="card4" v-for="DepartamentosD in DepartamentosT" v-if="IncidenciaD.IdDepartamento==DepartamentosD.id">
               <table class="card1Text">
                 <tbody>
-                  <td>Usuario : @{{IncidenciaD.Id_Empleado_usuario}} </td>
-                  <th class="cardFecha"> @{{IncidenciaD.FechaEntrada}}</th>
+                  <td>Usuario : @{{empleadosD.nombre}} </td>
                 </tbody>
               </table>
-              <p>Tecnico </p>
-              <p>Estado: @{{IncidenciaD.Estado}} </p>
+              <p class="informacion">Tecnico </p>
+              <p class="informacion">Departamento: @{{DepartamentosD.Nombre}}</p>
+              <p class="informacion">Prioridad: @{{IncidenciaD.Prioridad}} </p>
               <hr>
-              <p>Descripcion: @{{IncidenciaD.Descripcion}}</p>
+              <p class="informacion">Descripcion: @{{IncidenciaD.Descripcion}}</p>
             </div>
           </div>
         </div>
