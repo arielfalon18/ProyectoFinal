@@ -20,6 +20,7 @@ new Vue({
         this.getEmpleadosAll();
         this.getIncidencias();
         this.MostramosIncidenciTecnica();
+        this.mostrartodoslosTecnico();
     },
     data: {
     //Departamento:Departamento,7
@@ -349,10 +350,14 @@ new Vue({
         },
         //Asignar a un tecnico la incedincia deseada
         incidenciaTecnica: function(){
+            var valor=$('#Tincidencia').val();
+            var soltexto = valor.split("(");
+            var solo=soltexto[0]
             var urlAsignarIncidencia='http://127.0.0.1:8000/AsignarIncidencia';
             axios.post(urlAsignarIncidencia,{
+                
                //Pasamos la variable que queremos pasar para rellenar en formulario
-                ITecnico:$('#Tincidencia').val(),
+                ITecnico:solo,
                 IDepartamento:this.IDepartamento,
                 IIncidencia:this.IIncidencia,
             }).then(response=>{
@@ -362,6 +367,8 @@ new Vue({
             }).catch(error => {
                 this.errors = error.response.data.errors;
             })
+            
+            
         //    No tocar 
         // SELECT c.id, c.nombre,c.Rol,c.IdDepartamento, COUNT(r.Id) as Contador
         //     FROM empleados c
@@ -369,7 +376,6 @@ new Vue({
         //     ON c.id = r.id_Tecnico
         //     where c.Rol='Tecnico'
         //     GROUP BY c.id  
-            
         //-----------------------------------------------------------------------------
         },
         mostrartodoslosTecnico: function(){

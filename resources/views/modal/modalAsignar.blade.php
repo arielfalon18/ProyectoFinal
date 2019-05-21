@@ -13,7 +13,7 @@
           <div class="form-group" v-model="IDepartamento=MostrarInci.IdDepartamento">
                 <select class="form-control" v-model="ITecnico" name="Tincidencia" id="Tincidencia">
                     <option value="F" v-model="IIncidencia=MostrarInci.id" disabled selected>Seleciona el Tecnico</option>
-                    <option v-for="emplea in empleadosNA" v-if="emplea.Rol=='Tecnico' && emplea.IdDepartamento==MostrarInci.IdDepartamento">@{{emplea.nombre}}()</option>
+                    <option v-for="emplea in mostrarTecnicoIm" v-if="emplea.Rol=='Tecnico' && emplea.IdDepartamento==MostrarInci.IdDepartamento">@{{emplea.nombre}}(@{{emplea.Contador}})</option>
                 </select>
           </div>
         <button id="incidenciaTecnica" class="btn btn-primary">Asignar</button>

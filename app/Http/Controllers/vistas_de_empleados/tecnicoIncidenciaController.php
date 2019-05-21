@@ -22,7 +22,7 @@ class tecnicoIncidenciaController extends Controller
 // return $incidencia;
 
     }
-    public function Getcontador(){
+    public function mostrarTecnicoIm(){
         $datosContadorTecnico=TecnicoContador::get();
         return $datosContadorTecnico;
     }

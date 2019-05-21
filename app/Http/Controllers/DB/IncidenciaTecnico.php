@@ -26,7 +26,7 @@ class IncidenciaTecnico extends Controller
         $Incidencia->save();
     }
     public function MostrarIncidenciAsignadas(){
-        $TencnicoIncidencia=Tecnico_Incidencia::get('Id_Incidencia');
+        $TencnicoIncidencia=Tecnico_Incidencia::with('MostrarDatosIncidencia')->get();
         return $TencnicoIncidencia;
     }
 }
