@@ -27,6 +27,7 @@
                   <button class="btn btn-primary" data-toggle="modal" data-target="#añadirdepartamento">Añadir Departamentos</button>
                   <button class="btn btn-primary" data-toggle="modal" data-target="#añadirusuario">Añadir Usuario</button>
                   <button class="btn btn-primary" data-toggle="modal" data-target="#añadirinventario">Añadir Inventario</button>
+                  <button class="btn btn-primary" data-toggle="modal" data-target="#ImportCSV">Importar CSV</button>
               </div>
             </div>
             <!-- ACORDIOM -->
@@ -151,26 +152,26 @@
                       <!-- Final Resposible table -->
                         <nav  aria-label="Page navigation example">
                             <ul class="pagination">
-                                <li class="page-item" v-if="pagination.current_page > 1">
+                                <li  v-if="pagination.current_page > 1">
                                     <a class="page-link" href="#" @click.prevent="cambiodePagina(pagination.current_page - 1)">
                                         <span>Atras</span>
                                     </a>
                                 </li>
-                                <li class="page-item" v-for="page in pagesNumber" v-bind:class="[ page == isActived ? 'active' : '']">
+                                <li  v-for="page in pagesNumber" v-bind:class="[ page == isActived ? 'active' : '']">
                                     <a class="page-link" href="#" @click.prevent="cambiodePagina(page)">
                                         @{{page}}
                                     </a>
                                 </li>
-                                <li class="page-item" v-if="pagination.current_page < pagination.last_page">
+                                <li v-if="pagination.current_page < pagination.last_page">
                                     <a class="page-link" href="#" @click.prevent="cambiodePagina(pagination.current_page + 1)">
                                         <span>Siguiente</span>
                                     </a>
                                 </li>
                             </ul>
                         </nav>
-                        <div v-else class="alert alert-dark" role="alert">
-                            <span >No hay nada </span>
-                        </div>
+                      <div v-else class="alert alert-dark" role="alert">
+                          <span >No hay nada </span>
+                      </div>
                     </template>
                     <!-- Cierre de template -->
                   </div>

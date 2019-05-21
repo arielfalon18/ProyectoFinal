@@ -62,14 +62,7 @@ new Vue({
         
         errors:[],
         aceptadoE:false,
-        pagination: {
-            'total' :0,
-            'current_page':0,
-            'per_page' :0,
-            'last_page':0,
-            'from' :0,
-            'to':0,
-        },
+        
         //Asignamos un tecnico de su departamento para que pueda resolver la incidencia
         ITecnico:'F',
         IDepartamento:'',
@@ -126,7 +119,14 @@ new Vue({
             'Descripcion':'',
             'FechaEntrada':'',
             'Prioridad':'',
-            
+            pagination: {
+                'total' :0,
+                'current_page':0,
+                'per_page' :0,
+                'last_page':0,
+                'from' :0,
+                'to':0,
+            },
             
 
         },
@@ -141,8 +141,8 @@ new Vue({
                 return[];
             }
             var from = this.pagination.current_page - this.offset;
-            if(from <1 ){
-                from =1;
+            if(from < 1 ){
+                from = 1;
             }
             var to = from + (this.offset * 2); 
 			if(to >= this.pagination.last_page){

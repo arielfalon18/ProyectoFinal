@@ -10,11 +10,9 @@ use App\Departamento;
 use App\login;
 class empleadosController extends Controller
 {
-    public function VerEmpreados(Request $request){
-        $empleados=Empleados::with('Departamentos')->orderBy('id', 'ASC')->paginate(5);
-      
+    public function VerEmpreados(Request $resquest){
+        $empleados=Empleados::with('Departamentos')->orderBy('id','Asc')->paginate(5);
         //Paginacion de empleados de la tabla
-       
         return [
             'pagination' =>[
                 'total'         =>$empleados->total(),
