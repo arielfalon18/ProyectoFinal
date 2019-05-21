@@ -9,7 +9,8 @@ class Incidencia extends Model
     protected $table = 'incidencia';
     protected $fillable = ['id', 'FechaEntrada', 'FechaCierre', 'IdDepartamento', 'Descripcion', 'Imagenes', 'Id_Empleado_usuario', 'Estado', 'Prioridad', 'Id_Empresa'];
     public $timestamps = false;
-
+    
+    
     
     //NOMBRE DE EMPLEADOS
     public function NombresEmpleado(){
@@ -23,6 +24,7 @@ class Incidencia extends Model
     public function AsignacionTecnico(){
         return $this->hasMany('App\Tecnico_Incidencia','Id_Incidencia','id');
     }
+    
    
 }
 

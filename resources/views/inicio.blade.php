@@ -9,7 +9,7 @@
          <div id="carouselExampleCaptions" class="carousel slide ImagePortada" data-ride="carousel">
             <div class="carousel-inner">
                <div class="carousel-item active">
-                  <img src="media/prueba/2.jpg" class="d-block w-100 h-100" alt="">
+                  <img src="media/prueba/4.jpg" class="d-block w-100 h-100" alt="">
                </div>
                <div class="carousel-item">
                   <img src="media/prueba/1.jpg" class="d-block w-100 h-100" alt="...">
@@ -64,21 +64,55 @@
                   </div>
                </div>
             </article>
-            <!-- <article class="article3">
+            <article class="article3">
             <header>
-            <h1>Como Funcionamos?</h1></header>
+            <h1>¿Sabias Que?</h1></header>
             <div class="container">
                   <div class="row">
-                     <div class="col-md-6 col6 mt-md-0 mt-3">
+                     <div class="col-md-12  mt-md-0 mt-3">
                         <div class="text2">
-                           <p>Servicio de Incidencaias facile y sencillo ->Crear </p>
+                           <p class="artc3-text">Un sistema de tickets (sistema de tickets de soporte) puede recopila todas las solicitudes de asistencia al cliente.</p>
                         </div>
+                        <p class="artc3-text">Un sistema de tickets de soporte también permite la recopilación de datos que pueden utilizarse para mejorar el equipo de soporte de una empresa en su conjunto. La razón de esto es que un sistema de tickets de soporte permite un sistema de seguimiento de problemas, que da visibilidad al panorama general de un equipo de soporte</p>
                      </div>
                   </div>
                </div>
             <div class="div-img2">
             </div>
-            </article> -->
+            </article>
+            <article class="article4">
+            <header>
+            <h1>Ha llegado la hora</h1></header>
+            <div class="container">
+                  <div class="row">
+                     <div class="col-md-12  mt-md-0 mt-3">
+                        <div class="text2">
+                           <!-- <p class="artc3-text">Cualquier empresa que no utilice un sistema de tickets de soporte debe comenzar a hacerlo de inmediato. Hasta que eso suceda:</p> -->
+                        </div>
+                        <p class="artc3-text">Las mejores prácticas de actualización de la base de conocimientos y la mejora continua del servicio después de la resolución de los tickets garantizan:</p>
+                     </div>
+                  </div>
+                  <div class="row ">
+                     <div class="col-4"> <p class="artic4-div-texto">Mejora de la percepción empresarial de las TI y sus servicios</p>
+                     </div>
+                     <div class="col-4 artic4-div-texto">Ahorrando tiempo y recursos, y mejorando la eficiencia general del negocio</div>
+                     <div class="col-4 artic4-div-texto">Satisfacción del usuario final con la calidad de los servicios informáticos.</div>
+                  
+                  </div>
+               </div>
+            </article>
+            <article class="article5">
+            <header>
+            </header>
+            <div class="container">
+            <p class="artc3-text">Registro de problemas y seguimiento del progreso</p>
+                  <div class="row">
+                     <div class="col-md-lg-12  mt-md-0 mt-3">
+                        <p>Después de detectar los problemas, debemos registrarlos de manera estructurada de acuerdo con segmentos como categorías, urgencia e impacto.</p>
+                     </div>
+                  </div>
+               </div>
+            </article>
       </section>
    </div>
 </div>
@@ -91,8 +125,36 @@
          <a id="logo-header-footer" href="/inicio"><img id="main-header-logo-footer" src="media/logo/logo-transparent.png"></a>
          </div>
          <div class="col-md-4 mb-md-0 mb-3 footerdiv2">
-            <!-- <i class="far fa-copyright cr-logo"></i> -->
+
+            <div class="footer-div1">
+               <p class="footer-text-div2">Contacto</p>
+               <div>
+               <a href="/Contactos">Contacto Empresa</a>
+               </div>
+               <div>
+               <a href="/registrarse">Login Empresa</a>
+               </div>
+               <div>
+               <a href="/InciarEmpleado">Login Empleado</a>
+               </div>
+            </div>
+            <div class="footer-div2">
+               <p class="footer-text-div2">Nosotros</p>
+               <a href="/Nosotros">David</a>
+               <a href="/Nosotros">Ariel</a>
+               <a href="/Nosotros">Zafar</a>
+            </div>
             <ul>
+            <li class="llista">
+                     <i class="fas fa-at"></i>
+                     <i class="fab fa-google-plus-g"></i>
+                     <i class="fab fa-linkedin-in"></i>
+                     <i class="fab fa-twitter"></i>          
+                  </li>
+            </ul>
+            
+            <!-- <i class="far fa-copyright cr-logo"></i> -->
+            <!-- <ul>
                <div class="list list1">
                <li class="llista"><a href="inicio">Inicio</a></li>
                   <li class="llista"><a href="/Contactos">Contactos</a></li>
@@ -103,15 +165,15 @@
                      <i class="fab fa-linkedin-in"></i>
                      <i class="fab fa-twitter"></i>          
                   </li>
-               </div>
+               </div> -->
             </ul>
          </div>
          <div class="col-md-4 mb-md-0 mb-3 footerdiv2">
             <div id="info">
-               <p><strong class="tipoL">Llamanos:</strong> 666 666 666</p>
-               <p><strong class="tipoL">Localízanos:</strong></p>
-               <p>Carrer de la Selva de Mar, 211, 08020 Barcelona : <a href="https://www.google.com/maps/dir//Carrer+de+la+Selva+de+Mar,+211,+08020+Barcelona/@41.415937,2.1969793,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x12a4a3340875c049:0x308883c45cf4e2f5!2m2!1d2.199168!2d41.415933!3e0" target="_blank">Como LLegar?</a></p>
-               <p>Theincidence@incidence.org</p>
+               <p class="TipoA"><strong class="tipoL">Llamanos:</strong> 666 666 666</p>
+               <p class="TipoA"><strong class="tipoL">Localízanos:</strong></p>
+               <p class="TipoA">Carrer de la Selva de Mar, 211, 08020 Barcelona : <a href="https://www.google.com/maps/dir//Carrer+de+la+Selva+de+Mar,+211,+08020+Barcelona/@41.415937,2.1969793,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x12a4a3340875c049:0x308883c45cf4e2f5!2m2!1d2.199168!2d41.415933!3e0" target="_blank">Como LLegar?</a></p>
+               <p class="TipoA">Theincidence@incidence.org</p>
             </div>
          </div>
       </div>

@@ -5,18 +5,18 @@
 #usuario{
 	background-color: rgba(0,0,0,.1);
 }
-  /* header */
-  /* .contenidoabajo{
+.usuario{
+margin-top: 20px;
+}
 
-	 background-color: #C2C2C2; 
-	} */
-  .header {
+	/* header */
+.header {
 	background-color: #fff;
 	box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
 	position: fixed;
 	width: 100%;
 	z-index: 3;
-  }
+}
   
   .header .menu {
 	margin: 0;
@@ -297,7 +297,8 @@ nav ul li a:hover {
 	margin-top:15px !important;
 }
 .cardFecha{
-	float: right;
+	padding-left: 60px !important;
+	float: right !important;
 }
 .card-body{
 	padding-bottom: 0px !important;
@@ -314,7 +315,7 @@ nav ul li a:hover {
 	top: 0px;
 	float: right;
 	width: 6px;
-	height:65%;
+	height: 58%;
 	border-radius: 15px;
 	background-color: grey;
 }
@@ -322,7 +323,7 @@ nav ul li a:hover {
 	top: 0px;
 	float: right;
 	width: 6px;
-	height:65%;
+	height: 58%;
 	border-radius: 15px;
 	background-color: blue;
 }
@@ -330,7 +331,7 @@ nav ul li a:hover {
 	top: 0px;
 	float: right;
 	width: 6px;
-	height:65%;
+	height: 58%;
 	border-radius: 15px;
 	background-color: green;
 }
@@ -338,7 +339,7 @@ nav ul li a:hover {
 	top: 0px;
 	float: right;
 	width: 6px;
-	height:65%;
+	height: 58%;
 	border-radius: 15px;
 	background-color: red;
 }
