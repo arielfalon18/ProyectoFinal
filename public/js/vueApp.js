@@ -163,7 +163,7 @@ new Vue({
             axios.post(urlIncidencia,{
                 FechaI:$('#FechaI').val(),
                 idDeparta:$('#DepartamentoE').val(),
-                Imagen:'asdas',
+                Imagen:$('#Imagen').val(),
                 idEmple:this.idEmple,
                 idEmpre:this.idEmpre,
                 Descripcion:this.Descripcion,
@@ -174,6 +174,7 @@ new Vue({
                 this.Prioridad='E';
                 this.idDeparta='D';
                 $('#crearincidencia').modal('hide');
+                location.reload();
             }).catch(error=>{
                 this.errors = error.response.data.errors
             })
