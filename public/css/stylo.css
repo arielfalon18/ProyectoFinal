@@ -571,7 +571,7 @@ input:focus{
 }
 .tipoL{
 	font-size: 20px;
-	color: white;
+	color:#666666;
 }
 .tipoA{
 	font-size: 15px;
@@ -612,7 +612,11 @@ input:focus{
 .registro{
 	position: relative;
 	top: 80px;
-	padding-bottom: 126px;
+	/* padding-bottom: 126px; */
+}
+.nosotros{
+	position: relative;
+	top: 80px;
 }
 #letra{
 	letter-spacing: 4px;

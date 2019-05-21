@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('content')
 <div class="container">
-    <div class="registro"></div>
-<div class="row">
+  
+<div class="row nosotros">
   <div class="col-sm-4">
   <div class="card nosotroscard" style="width: 18rem;">
   <img src="media/nosotros/1.png" class="card-img-top" alt="...">
