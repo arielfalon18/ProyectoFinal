@@ -6,9 +6,13 @@
           <h1>Detalles del Usuario</h1>
           <p>@{{DatosPerTecnico.nombreCreador}}</p>
           <p>@{{DatosPerTecnico.dni}}</p>
+          <p>@{{DatosPerTecnico.telefono}}</p>
+          <p>@{{DatosPerTecnico.nombreDepartamento}}</p>
         </div>
         <div class="col-6">
-          sad
+          <p>@{{DatosPerTecnico.Descripcion}}</p>
+          <p>@{{DatosPerTecnico.FechaEntrada}}</p>
+          <p>@{{DatosPerTecnico.Prioridad}}</p>
         </div>
       </div>
     </div>

@@ -127,6 +127,7 @@ new Vue({
             'FechaEntrada':'',
             'Prioridad':'',
             
+            
 
         },
     },
@@ -425,8 +426,15 @@ new Vue({
             $('#password').attr('type','password')
         },
         MostrarDetallesTecnico: function(valores){
+            //Datos de quien lo creo
             this.DatosPerTecnico.nombreCreador=valores.mostrar_empleado.nombre;
             this.DatosPerTecnico.dni=valores.mostrar_empleado.dni;
+            this.DatosPerTecnico.telefono=valores.mostrar_empleado.telefono;
+            this.DatosPerTecnico.nombreDepartamento=valores.mostrar_departamento.Nombre;
+            //Datos de que incidencia 
+            this.DatosPerTecnico.Descripcion=valores.mostrar_datos_incidencia.Descripcion;
+            this.DatosPerTecnico.FechaEntrada=valores.mostrar_datos_incidencia.FechaEntrada;
+            this.DatosPerTecnico.Prioridad=valores.mostrar_datos_incidencia.Prioridad;
             $('#MostrarDetallesIncidencia').modal('show');
         }
     },
