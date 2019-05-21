@@ -202,12 +202,14 @@ p.text-center-secondary {
 	.header .menu-icon {
 	  display: none;
 	}
-  }
-  
+}
 
-
-
-
+/* .div-menu-user{
+	width: 30px;
+	height: 30px;
+	margin-top: 50px;
+	border: 1px solid black;
+} */
 
 /************/
 h1 {
@@ -521,33 +523,39 @@ margin-left: 10px;
 .article1{
 	background-color: black;
 	width: 100%;
-	height: 110vh;
+	height:auto;
+	padding-bottom: 50px;
 }
 .article2{
 	margin-top: 60px;
 	/* margin-top: 20px; */
 	width: 98%;
-	height: 100vh;
+	height: auto;
+	padding-bottom: 50px;
 }
 .article3{
 	background-color: #586079;
 	width: 100%;
-	height: 100vh;
+	height: auto;
+	padding-bottom: 50px;
 }
 .article4{
 	background-color: #586166;
-	width: 100%;
-	height: 100vh;
+	width: auto;
+	height: auto;
+	padding-bottom: 50px;
 }
 .article5{
 	background-color:green;
 	width: 100%;
-	height: 50vh;
+	height: auto;
+	padding-bottom: 50px;
 }
 .artic4-div-texto{
 	text-align: center;
 	font-size: 30px;
 	color: white;
+	padding-bottom: 50px;
 }
 /* 
 
@@ -573,6 +581,7 @@ input:focus{
 	font-size: 20px;
 	color:#666666;
 }
+/*******/
 .tipoA{
 	font-size: 15px;
 	color: white;
@@ -581,6 +590,9 @@ input:focus{
 	margin-right: 20px;
 	/* font-size: 20px; */
 
+}
+.imgpersonal{
+	width: 30px;
 }
 .footer-div1{
 	float: left;
