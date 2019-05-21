@@ -12,7 +12,8 @@
       <div class="col-lg-3 col-md-6 col-xs-12 to-do border">
         <h5 class="title-estados">Pendiente</h5>
         <div class="main-card-incidencia"></div>
-        <div class="card w-100" v-for="IncidenciaA in IncidenciaT" v-if="IncidenciaA.Estado=='Pendiente'">
+        <div class="card w-100" v-for="IncidenciaA in IncidenciaT" v-if="IncidenciaA.Estado=='Pendiente' 
+        && IncidenciaA.Id_Empleado_usuario=={{auth('usuarioL')->user()->Id_empleado}}">
           <div class="card-body" v-for="empleadosA in empleadosNA" v-if="IncidenciaA.	Id_Empleado_usuario==empleadosA.id">
             <div class="estado-color-pendiente"></div>
             <h5 class="card-title">@{{IncidenciaA.Estado}} <p class="cardFecha"> <strong>@{{IncidenciaA.FechaEntrada}} </strong></p></h5>
@@ -37,7 +38,8 @@
       <div class="col-lg-3 col-md-6 col-xs-12 doing border">
         <h5 class="title-estados">Progreso</h5>
         <div class="main-card-incidencia"></div>
-        <div class="card w-100" v-for="IncidenciaB in IncidenciaT" v-if="IncidenciaB.Estado=='Progreso'">
+        <div class="card w-100" v-for="IncidenciaB in IncidenciaT" v-if="IncidenciaB.Estado=='Progreso'
+        && IncidenciaB.Id_Empleado_usuario=={{auth('usuarioL')->user()->Id_empleado}}">
           <div class="card-body" v-for="empleadosB in empleadosNA" v-if="IncidenciaB.Id_Empleado_usuario==empleadosB.id">
             <div class="estado-color-progreso"></div>
             <h5 class="card-title">@{{IncidenciaB.Estado}} <p class="cardFecha"><strong> @{{IncidenciaB.FechaEntrada}}</strong></p></h5>
@@ -58,10 +60,11 @@
       </div>
 
       <!-- MOSTRAMOS LAS INCIDENCIAS QUE ESTEN FINALIZADAS -->
-      <div class="col-lg-3 col-md-6 col-xs-12 finish border">
+      <div class="col-lg-3 col-md-6 col-xs-12 finish border" >
         <h5 class="title-estados">Finalizada</h5>
         <div class="main-card-incidencia"></div>
-        <div class="card w-100" v-for="IncidenciaC in IncidenciaT" v-if="IncidenciaC.Estado=='Finalizada'">
+        <div class="card w-100" v-for="IncidenciaC in IncidenciaT" v-if="IncidenciaC.Estado=='Finalizada'
+        && IncidenciaC.Id_Empleado_usuario=={{auth('usuarioL')->user()->Id_empleado}}">
           <div class="card-body" v-for="empleadosC in empleadosNA" v-if="IncidenciaC.Id_Empleado_usuario==empleadosC.id">
             <div class="estado-color-finalizada"></div>
             <h5 class="card-title">@{{IncidenciaC.Estado}} <p class="cardFecha"> <strong>@{{IncidenciaC.FechaEntrada}}</strong></p></h5>
@@ -72,7 +75,7 @@
                   
                 </tbody>
               </table>
-              <p class="informacion">Tecnico </p>
+              <p class="informacion">Tecnico: </p>
               <p class="informacion">Departamento: @{{DepartamentosC.Nombre}}</p>
               <p class="informacion">Prioridad: @{{IncidenciaC.Prioridad}} </p>
               <hr>
@@ -86,7 +89,8 @@
       <div class="col-lg-3 col-md-6 col-xs-12 cancel border">
         <h5 class="title-estados">Cancelada</h5>
         <div class="main-card-incidencia"></div>
-        <div class="card w-100" v-for="IncidenciaD in IncidenciaT" v-if="IncidenciaD.Estado=='Cancelada'">
+        <div class="card w-100" v-for="IncidenciaD in IncidenciaT" v-if="IncidenciaD.Estado=='Cancelada'
+        && IncidenciaD.Id_Empleado_usuario=={{auth('usuarioL')->user()->Id_empleado}}">
           <div class="card-body" v-for="empleadosD in empleadosNA" v-if="IncidenciaD.Id_Empleado_usuario==empleadosD.id">
             <div class="estado-color-cancelada"></div>
             <h5 class="card-title"> @{{IncidenciaD.Estado}} <p class="cardFecha"> <strong>@{{IncidenciaD.FechaEntrada}}</strong></p></h5>

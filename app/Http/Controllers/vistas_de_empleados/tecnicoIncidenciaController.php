@@ -23,7 +23,7 @@ class tecnicoIncidenciaController extends Controller
 
     }
     public function mostrarTecnicoIm(){
-        $datosContadorTecnico=TecnicoContador::get();
+        $datosContadorTecnico=Incidencia::get();
         return $datosContadorTecnico;
     }
 }
