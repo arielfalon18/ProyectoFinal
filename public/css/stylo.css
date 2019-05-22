@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Gugi');
+@import url('https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900&display=swap');
 /* html {
     overflow: scroll;
     overflow-x: hidden;
@@ -533,6 +534,7 @@ margin-left: 10px;
 	height: auto;
 	padding-bottom: 50px;
 }
+
 .article3{
 	background-color: #586079;
 	width: 100%;
@@ -706,3 +708,14 @@ input:focus, input[type]:focus {
     text-decoration: none;
 	}
 } */
+/************************************************/
+/* Tecnico Ver detaller estilos*/
+.modal-tecnico-detalles{
+	border-radius: 15px !important;
+}
+.txt-detal{
+	font-family: 'Nunito', sans-serif;
+	text-align: center;
+	font-size: 25px;
+}
+

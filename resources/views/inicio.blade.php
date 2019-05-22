@@ -58,7 +58,7 @@
                      </div>
                      <div class="col-md-6 col6 mt-md-0 mt-3">
                         <div class="div-img2">
-                           <img class="img-2 " src="media/help.png" alt="">
+                           <img class="img-2 " data-aos="fade-up" src="media/help.png" alt="">
                         </div>
                      </div>
                   </div>
@@ -105,20 +105,9 @@
             <header>
             </header>
             <div class="container">
-            <p class="artc3-text">Registro de problemas y seguimiento del progreso</p>
-                  <div class="row">
-                     <div class="col-md-lg-12  mt-md-0 mt-3">
-                        
-                     </div>
-                     <div class="row">
-                        <div class="col-4"> <img class="imgpersonal"  src="/media/examples/personal.png">   </div>
-                        <div class="col-4"></div>
-                        <div class="col-4"></div>
-
-
-                     </div>
-                  </div>
-               </div>
+               <p class="artc3-text">Registro de problemas y seguimiento del progreso</p>
+               
+            </div>
             </article>
       </section>
    </div>
