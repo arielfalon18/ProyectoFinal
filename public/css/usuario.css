@@ -1,7 +1,4 @@
-/* CSS para usuarios */
-*{
-	/* overflow: hidden; */
-}
+
 #usuario{
 	background-color: rgba(0,0,0,.1);
 }
@@ -237,6 +234,11 @@ nav ul li a:hover {
 .main-card-incidencia{
 	margin-bottom: 20px;
 }
+
+.texto-dentro{
+	display:block;
+}
+
 .card{
 	margin-bottom: 20px;
 }
@@ -284,6 +286,10 @@ nav ul li a:hover {
 	/* border: 1px solid green; */
 	margin-bottom: 10px;
 	border-radius: 21px;
+}
+
+.informacion{
+	margin-bottom: 0px;
 }
 .Itext{
 	text-transform: uppercase;
