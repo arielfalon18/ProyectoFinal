@@ -2,6 +2,7 @@
 :root{
 	--border: #dadee1;
 	--blaco: #fff;
+	--negro:  black;
 	--background: #f6f7f8;
 	--grisFosc: #455055;
 	--marro: #b4ab9b;
@@ -14,39 +15,29 @@
 	/* overflow: hidden; */
 }
 #usuario{
-	background-color: rgba(0,0,0,.1);
+	background-color: var(--negro);
 }
 .usuario{
 	margin-top: 40px;
 }
-
-	/* header */
-	  .header {
-	background-color: var(--blaco);
-	box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
-	position: fixed;
-	width: 100%;
-	z-index: 3;
-  }
-  
   .header .menu {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	overflow: hidden;
-	background-color: #fff;
+	background-color: var(--blaco);
   }
   
   .header .li .a {
 	display: block;
 	padding: 20px 20px;
-	border-right: 1px solid #f4f4f4;
+	border-right: 1px solid var(--blaco);
 	text-decoration: none;
   }
   
   .header .li .a:hover,
   .header .menu-btn-user:hover {
-	background-color:black !important;
+	background-color: var(--negro) !important;
   }
   
   /* .header .logo {
@@ -134,12 +125,12 @@
 /*Poner el header arriba del todo*/
 .header{
 	top:1px;
-	background-color: black !important;
+	background-color:  var(--negro) !important;
 }
 
 
 #main-header {
-    background-color: black;
+    background-color:  var(--negro);
     font-size: 20px;
     height: 70px;
    
@@ -150,8 +141,8 @@
     position: absolute;
 }
 header .li .a{
-	background-color: black;
-	color: white !important;
+	background-color:  var(--negro);
+	color: var(--blaco) !important;
 	display: none;
 	
 }
@@ -174,27 +165,27 @@ nav ul li a {
 	display: block;
 	padding: 0 10px;
 	text-decoration: none;
-	color: white;
+	color: var(--blaco);
 	position: relative;
 }
 nav ul li a:hover {
 	text-decoration: none;
-	color: white;
+	color: var(--blaco);
 	
 }
 
 /* .empresa{
-    color: white !important;
+    color: var(--blaco) !important;
 }
 .cerrarSesion{
     float: right;
-    color: white !important;
+    color: var(--blaco) !important;
 }
 .nombreUser{
     color: white !important;
 }  */
 .a{
-	color: white;
+	color: var(--blaco);
 }
 .container-fluid{
 	margin-top: -30px;;
@@ -202,16 +193,18 @@ nav ul li a:hover {
 	height: 80vh;
 
 	/* border-style:solid; */
-	border-color:black;
+	border-color: var(--negro);
 }
 .to-do{
 	background-color:#d3d4e8;
 	height: fit-content;
 	overflow:scroll;
-	height:75vh;
-	overflow-x: hidden;  
-	
+	height:80vh;
+  overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none
 }
+
 .tecnico{
 	position: relative;
     top: 100px;
@@ -221,22 +214,31 @@ nav ul li a:hover {
 	background-color:#d3d4e8;
 	height: fit-content;
 	overflow:scroll;
-	height:75vh;
+	height: 80vh;
 	overflow-x: hidden;  
+	overflow-y: scroll;
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none
 }
 .finish{
 	background-color:#d3d4e8;
 	height: fit-content;
 	overflow:scroll;
-	height:75vh;
+	height: 80vh;
 	overflow-x: hidden;  
+	overflow-y: scroll;
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none
 }
 .doing{
 	background-color:#d3d4e8;
 	height: fit-content;
 	overflow:scroll;
-	height:75vh;
+	height: 80vh;
 	overflow-x: hidden; 
+	overflow-y: scroll;
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none
 	/* overflow-y: scroll;  */
 }
 #incidencia{
@@ -253,27 +255,33 @@ nav ul li a:hover {
 }
 .title-estados{
 	text-align: center;
-    text-transform: uppercase;
-		padding-top: 10px;
-		color: black;
-		border-bottom: 1px solid;
+	text-transform: uppercase;
+	padding-top: 10px;
+	color:  var(--negro);
+	border-bottom: 1px solid;
+	position: fixed;
+	display: contents;
+		
 }
 /********Card Style*********/
 .card1{
-	/* border: 1px solid black; */
+	/* border: 1px solid  var(--negro); */
 	margin-bottom: 10px;
 	border-radius: 21px;
 	word-wrap: break-word;
 }
 .border{
-	padding-left: 15px;
-	border-radius: 15px;
+	padding-left: 15px !important;
+	border-radius: 15px !important;
+	padding-right: 15px !important;
+
 }
 .control-texto{
 	word-wrap: break-word; 
 }
 .w-100{
-	border-radius: 30px !important;
+	border-radius: 15px !important;
+	height: auto !important;
 }
 .card2{
 	/* border: 1px solid red; */
@@ -304,7 +312,7 @@ nav ul li a:hover {
 	width: 146px;
 }
 .cardFecha{
-	padding-left: 60px !important;
+	padding-right: 10px !important;
 	float: right !important;
 }
 .card-body{
@@ -322,7 +330,7 @@ nav ul li a:hover {
 	top: 0px;
 	float: right;
 	width: 6px;
-	height: 58%;
+	height: 160px;
 	border-radius: 15px;
 	background-color: grey;
 }
@@ -330,7 +338,7 @@ nav ul li a:hover {
 	top: 0px;
 	float: right;
 	width: 6px;
-	height: 58%;
+	height: 160px;
 	border-radius: 15px;
 	background-color: blue;
 }
@@ -338,7 +346,7 @@ nav ul li a:hover {
 	top: 0px;
 	float: right;
 	width: 6px;
-	height: 58%;
+	height: 160px;
 	border-radius: 15px;
 	background-color: green;
 }
@@ -346,7 +354,7 @@ nav ul li a:hover {
 	top: 0px;
 	float: right;
 	width: 6px;
-	height: 58%;
+	height: 160px;
 	border-radius: 15px;
 	background-color: red;
 }
@@ -399,14 +407,14 @@ padding:10px;
 }	
 #texto-info{
 	font-size: 20px;
-	color: black;
+	color:  var(--negro);
 }
 #teasdxto-info1{
 	font-size: 30px;
 	text-transform: uppercase;
 }
 .div-linea{
-	border: 1px solid black;
+	border: 1px solid  var(--negro);
 	font-size: 30px;
 }
 .Estado-derecha{
