@@ -5,12 +5,10 @@ namespace App\Http\Controllers\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Incidencia;
-use App\Departamento; 
+use App\Departamento;
 
 class incidenciaController extends Controller
 {
-
-    
 
     public function Nuevo(Request $request){
 
@@ -44,13 +42,8 @@ class incidenciaController extends Controller
                 "Id_Empresa"=>$request['idEmpre'],
             ]);
             $incidencia->save();
-        };
-        
+        };   
     }
         
-
-    
-
-    
     
 }
