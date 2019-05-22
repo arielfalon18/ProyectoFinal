@@ -14,7 +14,6 @@
     <title>Usuario</title>
     <link rel="stylesheet" href="/css/usuario.css">
     <link rel="stylesheet" href="/css/stylo.css">
-    
     <link rel="stylesheet" href="/css/app.css">
     <script src="/js/vue/vueD.js"></script>
     <script src="/js/axios.js"></script>
@@ -24,7 +23,7 @@
   <body >
     <!-- Navbar para user -->
     @include('partials.navbaruser')
-    <div   class="contenidoabajo">
+    <div class="contenidoabajo">
     @yield('content')
     </div>
     <!-- Optional JavaScript -->

@@ -1,3 +1,14 @@
+
+:root{
+	--border: #dadee1;
+	--blaco: #fff;
+	--background: #f6f7f8;
+	--grisFosc: #455055;
+	--marro: #b4ab9b;
+	--granete: #9e0f2e;
+
+}
+
 /* CSS para usuarios */
 *{
 	/* overflow: hidden; */
@@ -11,7 +22,7 @@
 
 	/* header */
 	  .header {
-	background-color: #fff;
+	background-color: var(--blaco);
 	box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
 	position: fixed;
 	width: 100%;
