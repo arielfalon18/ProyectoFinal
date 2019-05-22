@@ -98,10 +98,10 @@
             <div class="card4" v-for="DepartamentosD in DepartamentosT" v-if="IncidenciaD.IdDepartamento==DepartamentosD.id">
               <table class="card1Text">
                 <tbody>
-                  <td>Usuario : @{{empleadosD.nombre}} </td>
+                  <td>Usuario: @{{empleadosD.nombre}} </td>
                 </tbody>
               </table>
-              <p class="informacion">Tecnico </p>
+              <p class="informacion">Tecnico: </p>
               <p class="informacion">Departamento: @{{DepartamentosD.Nombre}}</p>
               <p class="informacion">Prioridad: @{{IncidenciaD.Prioridad}} </p>
               <hr>

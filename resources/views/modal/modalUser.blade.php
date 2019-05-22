@@ -9,7 +9,7 @@
       </div>
       <div class="modal-body">
         <!-- Formulario para añadir un usuario a la base de datos  -->
-        <form method="post" v-on:submit.prevent="CreateInciencia">
+        <form method="post" v-on:submit.prevent="CreateInciencia" enctype=»multipart/form-data»>
         
         <div class="form-row" >
             <div class="form-group col-md-6">
