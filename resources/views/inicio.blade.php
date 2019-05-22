@@ -108,7 +108,14 @@
             <p class="artc3-text">Registro de problemas y seguimiento del progreso</p>
                   <div class="row">
                      <div class="col-md-lg-12  mt-md-0 mt-3">
-                        <p>Después de detectar los problemas, debemos registrarlos de manera estructurada de acuerdo con segmentos como categorías, urgencia e impacto.</p>
+                        
+                     </div>
+                     <div class="row">
+                        <div class="col-4"> <img class="imgpersonal"  src="/media/examples/personal.png">   </div>
+                        <div class="col-4"></div>
+                        <div class="col-4"></div>
+
+
                      </div>
                   </div>
                </div>
