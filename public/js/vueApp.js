@@ -119,7 +119,8 @@ new Vue({
             'Descripcion':'',
             'FechaEntrada':'',
             'Prioridad':'',
-            pagination: {
+        },
+        pagination: {
                 'total' :0,
                 'current_page':0,
                 'per_page' :0,
@@ -127,10 +128,24 @@ new Vue({
                 'from' :0,
                 'to':0,
             },
-            
-
-        },
+        //Csv No tocar Probando Prueba1
+        parse_header: [],
+        parse_csv: [],
+        sortOrders:{},
+        sortKey: '',
+        SeleccionarTabla:false,
+        BottonEnviar:false,
+        //Para que lo filtre los indices guardar por si acaso
+        // filters: {
+        //     capitalize: function (str) {
+        //       return str.charAt(0).toUpperCase() + str.slice(1)
+        //     }
+        // },
+        //Datos del fichero import guardar datos vacios
+        csv_file:'',
+        Ntabla:'G'
     },
+    //PAginacion 
     computed:{
         isActived: function(){
             return this.pagination.current_page;
@@ -157,6 +172,53 @@ new Vue({
         }
     },
     methods:{
+        //No tocar CSV ariel
+        //funcion de ordenar CSV
+        // ordenarCSV: function (key) {
+        //     var vm = this
+        //     vm.sortKey = key
+        //     vm.sortOrders[key] = vm.sortOrders[key] * -1
+        // },
+        // Esto mostrara el CSV en una array
+        csvJSON(csv){
+            var vm = this
+            var lines = csv.split("\n")
+            var result = []
+            var headers = lines[0].split(",")
+            //Guardamos en esta array
+            vm.parse_header = lines[0].split(",") 
+            
+            lines.map(function(line, indexLine){
+              if (indexLine < 1) return 
+              
+              var obj = {}
+              var currentline = line.split(",")
+              
+              headers.map(function(header, indexHeader){
+                obj[header] = currentline[indexHeader]
+              })
+              
+              result.push(obj)
+            })
+            result.pop() // remove the last item because undefined values
+            this.SeleccionarTabla=true;
+            this.BottonEnviar=true;
+            return result // JavaScript object
+        },
+        //Cargar CSV una vez seleccionada se cargara el CSV
+        loadCSV(e) {
+            var vm = this
+            if (window.FileReader) {
+              var reader = new FileReader();
+              reader.readAsText(e.target.files[0]);
+              // Handle errors load
+              reader.onload = function(event) {
+                var csv = event.target.result;
+                vm.parse_csv = vm.csvJSON(csv)
+              };
+            }
+        },
+        //---------------------CSV-----------------------------------------
         //crear una incidencia
         CreateInciencia: function(){
             var urlIncidencia = 'http://127.0.0.1:8000/newIncidencia';
@@ -417,6 +479,21 @@ new Vue({
         //         )
 
         
+        //Fichero import pasar guardar datos en SQL 
+        guardarCSV: function(){
+            var ImportarCSV='http://127.0.0.1:8000/importCSV';
+            axios.post(ImportarCSV,{
+                csv_file:this.csv_file,
+                Ntabla:$('#Ntabla').val()
+            }).then(response=>{
+                this.Ntabla='G'
+            }).catch(error => {
+                
+            })
+           
+            
+        },
+        //-----------------------
         //Descrifrar constraseña
         decifrar: function(){
             this.operacion=true;

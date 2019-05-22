@@ -183,10 +183,10 @@
             <!-- FINAL ACORDIOM -->
           </div>
         </div>
+        @include('modal.modal')
       </div>
     </div>
   </div>
-  @include('modal.modal')
 </div>
 
 <!-- <h1 v-for="empleadoD in empleadosNA">@{{empleadoD.nombre}}</h1> -->

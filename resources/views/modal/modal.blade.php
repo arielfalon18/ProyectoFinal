@@ -135,8 +135,9 @@
   </div>
 </div>
 
-<div class="modal fade" id="ImportCSV" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<!-- Exportamos el CSV -->
+<div class="modal fade bd-example-modal-xl" id="ImportCSV" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Importar CSV </h5>
@@ -145,16 +146,43 @@
         </button>
       </div>
       <div class="modal-body">
-        <!-- Formulario Para importar una  csv en laravel-->
-        <form  method="post" v-on:submit.prevent="">
-          <div class="form-group">
-            <label  for="Fichero"> Selecciona el CSV</label>
-            <input type="file" class="form-control-file" id="Fichero">
-          </div>
-          <button id="NuevoInvenatario" class="btn btn-primary">Importar CSV</button>
-          </div>
-        </form>
+        <div class="panel panel-sm">
           
+          <div class="panel-body">
+          <form action="post" v-on:submit.prevent="guardarCSV">
+            <div class="form-group">
+              <label for="csv_file" class="control-label col-sm-3">CSV fichero</label>
+                <input type="file" v-model="csv_file" id="csv_file" name="csv_file" class="form-control-file" @change="loadCSV($event)">
+            </div>  
+              
+                
+                <div v-if="SeleccionarTabla" class="form-group" >
+                  <select  class="form-control" v-model="Ntabla" name="Ntabla" id="Ntabla" >
+                        <option value="G" disabled selected>Selecciona tabla</option>
+                        <option >Departamento</option>
+                        <option >Empleados</option>
+                  </select>
+                </div>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th cope="col" v-for="key in parse_header"
+                            :class="{ active: sortKey == key }">
+                          <!-- @{{ key | capitalize }} -->
+                          @{{key}}
+                        </th>
+                      </tr>
+                    </thead> 
+                      <tr v-for="csv in parse_csv">
+                        <td v-for="key in parse_header" v-model="datos=parse_csv">
+                          @{{csv[key]}}
+                        </td>
+                      </tr>
+                  </table>
+                <button v-if="BottonEnviar" class="btn btn-primary">Enviar</button>
+              </form>
+          </div>
+        </div>
       </div>
     </div>
   </div>
