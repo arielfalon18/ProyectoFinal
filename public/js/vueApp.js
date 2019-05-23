@@ -53,7 +53,7 @@ new Vue({
         //DAVID
         FechaI:'',
         idDeparta:'D',
-        Imagen:'',
+        Imagen,
         Prioridad:'E',
         Descripcion:'',
         idEmple:'',
@@ -227,11 +227,12 @@ new Vue({
         //---------------------CSV-----------------------------------------
         //crear una incidencia
         CreateInciencia: function(){
+            
             var urlIncidencia = 'http://127.0.0.1:8000/newIncidencia';
             axios.post(urlIncidencia,{
                 FechaI:$('#FechaI').val(),
                 idDeparta:$('#DepartamentoE').val(),
-                Imagen:$('#Imagen').val(),
+                Imagen:$('#Imagen').val().substring(12),
                 idEmple:this.idEmple,
                 idEmpre:this.idEmpre,
                 Descripcion:this.Descripcion,

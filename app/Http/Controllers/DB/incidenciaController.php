@@ -10,7 +10,8 @@ use App\Departamento;
 class incidenciaController extends Controller
 {
 
-    public function Nuevo(Request $request){
+    public function store(Request $request){
+        
 
         $messages = [
             'FechaI.required' => 'La fecha es requerida',
@@ -28,22 +29,29 @@ class incidenciaController extends Controller
         ],$messages);
 
         $departamento=Departamento::where('Nombre',$request['idDeparta'])->get();
-       
+        
+        
+        
         foreach ($departamento as $depart) {
+
+            if ($request->file('Imagen')) {
+                $file = $request->file($request['Imagen']);
+                $name = time().$file->getClientOriginalName();
+                $file->move(public_path().'/mediaD/', $name);
+               
+            }
             $incidencia=Incidencia::create([
                 "FechaEntrada"=>$request['FechaI'],
-                "FechaCierre"=>'28/01/2012',
+                "FechaCierre"=>'NULL',
                 "IdDepartamento"=>$depart->id,
                 "Descripcion"=>$request['Descripcion'],
-                "Imagenes"=>$request['Imagen'],
+                "Imagenes" => 'hola',
                 "Id_Empleado_usuario"=>$request['idEmple'],
                 "Estado"=>'Pendiente',
                 "Prioridad"=>$request['Prioridad'],
                 "Id_Empresa"=>$request['idEmpre'],
-            ]);
-            $incidencia->save();
-        };   
+            ]);    
+            $incidencia->save();    
+        };
     }
-        
-    
 }

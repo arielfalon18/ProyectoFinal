@@ -15,7 +15,7 @@ class departamentoController extends Controller
             'Edificio.required' => 'Edificio requerido'
         ];
         $resquest->validate([
-            'Nombre' =>'required',
+            'Nombre' =>'required|unique:departamento,Nombre',
             'Planta' =>'required',
             'Edificio' =>'required'
         ],$messages);

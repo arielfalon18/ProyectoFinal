@@ -37,9 +37,9 @@ class empleadosController extends Controller
         ];
         $resquest->validate([
             'nombre' =>'required',
-            'dni' =>'required',
-            'email' =>'required',
-            'telefono' =>'required',
+            'dni' =>'required|unique:empleados,dni',
+            'email' =>'required|unique:empleados,email',
+            'telefono' =>'required|unique:empleados,telefono',
             'IdDepartamento' =>'required',
             'Idrol' =>'required'
         ],$messages);
