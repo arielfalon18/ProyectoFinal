@@ -12,9 +12,9 @@ class importController extends Controller
 {
     //
     public function ImportFicheroInsert(Request $request){
-        $this->validate($request,[
-            'csv_file' => 'required|csv',
-        ]);
+        // $this->validate($request,[
+        //     'csv_file' => 'required|csv',
+        // ]);
         Excel::import(new ImportDepartamento, request()->file('csv_file'));    
         return redirect('dashboard');
     }

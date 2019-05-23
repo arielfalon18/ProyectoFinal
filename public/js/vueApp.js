@@ -104,6 +104,7 @@ new Vue({
             'IdDepartamento':'',
             'Idempleado':'',
             
+            
         },
         //Mostrar Tecnico ç
         mostrarTecnicoIm:[],
@@ -141,9 +142,14 @@ new Vue({
         //       return str.charAt(0).toUpperCase() + str.slice(1)
         //     }
         // },
-        //Datos del fichero import guardar datos vacios
-        csv_file:'',
-        Ntabla:'G'
+        //Tecnico funciones 
+        //Para los botonces de cancelacion
+        DescripcionRespuesta:'',
+        HoraFinal:'',
+        Id_incidencia:'',
+        Respuesta:'G',
+        IdTecnico:'',
+        
     },
     //PAginacion 
     computed:{
@@ -478,25 +484,6 @@ new Vue({
         //     SELECT Id_Incidencia FROM `tecnico_incidencia`
         //         )
 
-        
-        //Fichero import pasar guardar datos en SQL 
-        guardarCSV: function(){
-            var ImportarCSV='http://127.0.0.1:8000/importCSV';
-            axios.post(ImportarCSV,{
-                csv_file:$('#csv_file').attr('name'),
-                // Ntabla:$('#Ntabla').val()
-            }).then(response=>{
-                this.errors=[];
-                $('#añadirinventario').modal('hide');
-                // this.Ntabla='G'
-            }).catch(error => {
-                this.errors = error.response.data.errors;
-            })
-           
-            
-           
-            
-        },
         //-----------------------
         //Descrifrar constraseña
         decifrar: function(){
@@ -507,6 +494,8 @@ new Vue({
             this.operacion=false;
             $('#password').attr('type','password')
         },
+        //Funciones del tecnico 
+        //Mostrar los detalles al tecnico los detalles de incidencia 
         MostrarDetallesTecnico: function(valores){
             //Datos de quien lo creo
             this.DatosPerTecnico.nombreCreador=valores.mostrar_empleado.nombre;
@@ -518,7 +507,43 @@ new Vue({
             this.DatosPerTecnico.FechaEntrada=valores.mostrar_datos_incidencia.FechaEntrada;
             this.DatosPerTecnico.Prioridad=valores.mostrar_datos_incidencia.Prioridad;
             $('#MostrarDetallesIncidencia').modal('show');
-        }
+        },
+        //Resolver incidencia llamada
+        Resultado: function(valores){
+            //Datos de quien lo creo
+            this.DatosPerTecnico.IdTecnico=valores.id_Tecnico;
+            this.DatosPerTecnico.idIncidencia=valores.Id_Incidencia;
+            $('#DarResultadoT').modal('show');
+        },
+        //Formulario de cancelacion de base de datos 
+        DarResultadoIncidencia :function(){
+            var hoy= new Date();
+            var AnyoFecha = hoy.getFullYear();
+            var MesFecha = hoy.getMonth();
+            var DiaFecha = hoy.getDate();
+            var hora = hoy.getHours();
+            var minutos = hoy.getMinutes();
+            var resultafchahoy=DiaFecha+"/"+(MesFecha+1)+"/"+AnyoFecha+'-'+hora+':'+minutos;
+            var DatosIncidencia='http://127.0.0.1:8000/DarResut';
+            axios.post(DatosIncidencia,{
+                Respuesta:$('#TipoEstado').val(),
+                DescripcionRespuesta:this.DescripcionRespuesta,
+                Id_incidencia:this.Id_incidencia,
+                IdTecnico:this.IdTecnico,
+                HoraFinal:resultafchahoy
+                // Ntabla:$('#Ntabla').val()
+            }).then(response=>{
+                this.errors=[];
+                this.Id_incidencia='G';
+                this.DescripcionRespuesta='';
+                $('#DarResultadoT').modal('hide');
+                location.reload();
+            }).catch(error => {
+                this.errors = error.response.data.errors;
+            })
+        },
+        //Funcion de exportar fichero en Excel
+
     },
     mounted() {
         window.addEventListener('mouseup', this.Volver);

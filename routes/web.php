@@ -82,3 +82,7 @@ Route::post('importCSV','CSV\importController@ImportFicheroInsert');
 //Import empleados CSV tambien la tabla modal ya que va todo junto cada vez que se crea un usuario 
 Route::post('importCSVEmpleado','CSV\importController@importCSVEmpleados');
 
+//Tecnico Rutas tecnico 
+//Cancelar incidencia
+Route::post('DarResut','vistas_de_empleados\tecnicoIncidenciaController@AsignarRespuesta');
+

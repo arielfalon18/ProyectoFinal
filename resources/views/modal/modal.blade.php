@@ -37,6 +37,7 @@
                   <option v-for="dapart in DepartamentosT" v-if="dapart.IdEmpresa=={{auth()->user()->id}}">@{{dapart.Nombre}}</option>
               </select>
               <span v-if="errors.IdDepartamento" class="text-danger">@{{errors.IdDepartamento[0]}}</span>
+              
             </div>
         </div>
         <div class="form-group">
@@ -83,6 +84,7 @@
             <div class="form-group col-md-5">
                 <input type="text" class="form-control"  id="plantaD" v-model="plantaD" name="plantaD" placeholder="Planta">
                 <span v-if="errors.Planta" class="text-danger">@{{errors.Planta[0]}}</span>
+                <span v-else-if="errors.Planta !=1" ></span>
             </div>
         </div>
             <button id="AñadirEmpleado" class="btn btn-primary">Añadir</button>
