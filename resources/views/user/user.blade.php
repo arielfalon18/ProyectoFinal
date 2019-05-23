@@ -13,9 +13,9 @@
       <!-- MOSTRAMOS LAS INCIDENCIAS QUE ESTAN PENDIENTES -->
       <div class="col-lg-3 col-md-6 col-xs-12">
         <div class="container_tickets to-do border">
-          <div class="title-estados"><h5>Pendiente</h5></div>
+          <!-- <div class="title-estados"><h5 class="text-estado">Pendiente</h5></div> -->
           <div class="main-card-incidencia"></div>
-          <div class="card w-100" v-for="IncidenciaA in IncidenciaT" v-if="IncidenciaA.Estado=='Pendiente' 
+          <div class="card w-100 " v-for="IncidenciaA in IncidenciaT" v-if="IncidenciaA.Estado=='Pendiente' 
           && IncidenciaA.Id_Empleado_usuario=={{auth('usuarioL')->user()->Id_empleado}}">
             <div class="card-body" v-for="empleadosA in empleadosNA" v-if="IncidenciaA.	Id_Empleado_usuario==empleadosA.id">
               <div class="estado-color-pendiente"></div>
@@ -30,7 +30,8 @@
                 <p class="informacion">Departamento: @{{DepartamentosA.Nombre}}</p>
                 <p class="informacion">Prioridad: @{{IncidenciaA.Prioridad}}</p>
                 <hr>
-                <div class="texto-dentro">
+                <div id="mostrar">Ver Descripcion</div>
+                <div id="texto-dentro">
                   <p class="informacion">Descripcion: @{{IncidenciaA.Descripcion}}</p>
                 </div>
               </div>
@@ -44,7 +45,7 @@
       <!-- MOSTRAMOS LAS INCIDENCIAS QUE ESTEN EN PROGRESO -->
       <div class="col-lg-3 col-md-6 col-xs-12">
       <div class="container_tickets doing border">
-        <h5 class="title-estados">Progreso</h5>
+      <!-- <div class="title-estados"><h5  class="text-estados">Progreso</h5></div> -->
         <div class="main-card-incidencia"></div>
         <div class="card w-100" v-for="IncidenciaB in IncidenciaT" v-if="IncidenciaB.Estado=='Progreso'
         && IncidenciaB.Id_Empleado_usuario=={{auth('usuarioL')->user()->Id_empleado}}">
@@ -71,7 +72,7 @@
       <!-- MOSTRAMOS LAS INCIDENCIAS QUE ESTEN FINALIZADAS -->
       <div class="col-lg-3 col-md-6 col-xs-12" >
       <div class="container_tickets finish border">
-        <h5 class="title-estados">Finalizada</h5>
+      <!-- <div class="title-estados"><h5>Finalizada</h5></div> -->
         <div class="main-card-incidencia"></div>
         <div class="card w-100" v-for="IncidenciaC in IncidenciaT" v-if="IncidenciaC.Estado=='Finalizada'
         && IncidenciaC.Id_Empleado_usuario=={{auth('usuarioL')->user()->Id_empleado}}">
@@ -99,7 +100,7 @@
       <div class="col-lg-3 col-md-6 col-xs-12">
       <div class="container_tickets cancel border">
 
-        <div class="title-estados"><h5>Cancelada</h5></div>
+        <!-- <div class="title-estados"><h5>Cancelada</h5></div> -->
         <div class="main-card-incidencia"></div>
         <div class="card w-100" v-for="IncidenciaD in IncidenciaT" v-if="IncidenciaD.Estado=='Cancelada'
         && IncidenciaD.Id_Empleado_usuario=={{auth('usuarioL')->user()->Id_empleado}}">

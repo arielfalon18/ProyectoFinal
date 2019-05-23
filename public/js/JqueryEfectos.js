@@ -1,5 +1,5 @@
 $( "#mostrar" ).click(function() {
-    $( "#abrir" ).toggle( "slow" );
+    $( "#texto-dentro" ).toggle( "slow" );
 });
 $( "#mostrar-progreso" ).click(function() {
     $( "#abrir-progreso" ).toggle( "slow" );    

@@ -136,11 +136,11 @@
 </div>
 
 <!-- Exportamos el CSV Departamento-->
-<div class="modal fade bd-example-modal-xl" id="ImportCSV" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
+<div class="modal fade bd-example-modal-lg" id="ImportCSV" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Importar CSV </h5>
+        <h5 class="modal-title" id="exampleModalLabel">Importar CSV</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -153,25 +153,15 @@
           {{csrf_field()}}
             <div class="form-group">
               <label for="csv_file" class="control-label col-sm-3">CSV fichero</label>
-                <input type="file"  id="csv_file" name="csv_file" class="form-control-file"  @change="loadCSV($event)">
+                <input type="file"  id="csv_file" name="csv_file" class="form-control-file">
             </div>  
               <button  class="btn btn-primary">Enviar</button>
-
             </form>
-                
-                <!-- <div v-if="SeleccionarTabla" class="form-group" >
-                  <select  class="form-control" v-model="Ntabla" name="Ntabla" id="Ntabla" >
-                        <option value="G" disabled selected>Selecciona tabla</option>
-                        <option >Departamento</option>
-                        <option >Empleados</option>
-                  </select>
-                </div> -->
-                  <table class="table">
+                  <!-- <table class="table">
                     <thead>
                       <tr>
                         <th cope="col" v-for="key in parse_header"
                             :class="{ active: sortKey == key }">
-                          <!-- @{{ key | capitalize }} -->
                           @{{key}}
                         </th>
                       </tr>
@@ -181,7 +171,7 @@
                           @{{csv[key]}}
                         </td>
                       </tr>
-                  </table>
+                  </table> -->
                
           </div>
         </div>
@@ -189,13 +179,12 @@
     </div>
   </div>
 </div>
-
 <!-- Export empleado  -->
-<div class="modal fade bd-example-modal-xl" id="ImportCSVE" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
+<div class="modal fade bd-example-modal-lg" id="ImportCSVE" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Importar CSV </h5>
+        <h5 class="modal-title" id="exampleModalLabel">Importar CSV</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -208,25 +197,15 @@
           {{csrf_field()}}
             <div class="form-group">
               <label for="csv_fileE" class="control-label col-sm-3">CSV fichero</label>
-                <input type="file"  id="csv_fileE" name="csv_fileE" class="form-control-file"  @change="loadCSV($event)">
+                <input type="file"  id="csv_fileE" name="csv_fileE" class="form-control-file">
             </div>  
               <button  class="btn btn-primary">Enviar</button>
-
             </form>
-                
-                <!-- <div v-if="SeleccionarTabla" class="form-group" >
-                  <select  class="form-control" v-model="Ntabla" name="Ntabla" id="Ntabla" >
-                        <option value="G" disabled selected>Selecciona tabla</option>
-                        <option >Departamento</option>
-                        <option >Empleados</option>
-                  </select>
-                </div> -->
-                  <table class="table">
+                  <!-- <table class="table">
                     <thead>
                       <tr>
                         <th cope="col" v-for="key in parse_header"
                             :class="{ active: sortKey == key }">
-                          <!-- @{{ key | capitalize }} -->
                           @{{key}}
                         </th>
                       </tr>
@@ -236,8 +215,7 @@
                           @{{csv[key]}}
                         </td>
                       </tr>
-                  </table>
-               
+                  </table> -->
           </div>
         </div>
       </div>
