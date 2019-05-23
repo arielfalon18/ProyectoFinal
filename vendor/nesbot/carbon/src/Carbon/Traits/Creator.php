@@ -57,6 +57,7 @@ trait Creator
         // If the class has a test now set and we are trying to create a now()
         // instance then override as required
         $isNow = empty($time) || $time === 'now';
+
         if (method_exists(static::class, 'hasTestNow') &&
             method_exists(static::class, 'getTestNow') &&
             static::hasTestNow() &&
@@ -73,10 +74,13 @@ trait Creator
             $locale = setlocale(LC_NUMERIC, '0');
             setlocale(LC_NUMERIC, 'C');
         }
-        parent::__construct($time, $timezone);
+
+        parent::__construct($time ?: 'now', $timezone);
+
         if (isset($locale)) {
             setlocale(LC_NUMERIC, $locale);
         }
+
         static::setLastErrors(parent::getLastErrors());
     }
 
@@ -299,7 +303,7 @@ trait Creator
         $day = $day === null ? $getDefault('day') : $day;
         $hour = $hour === null ? $getDefault('hour') : $hour;
         $minute = $minute === null ? $getDefault('minute') : $minute;
-        $second = $second === null ? $getDefault('second') : $second;
+        $second = (float) ($second === null ? $getDefault('second') : $second);
 
         $fixYear = null;
 
@@ -442,6 +446,13 @@ trait Creator
         return static::today($tz)->setTimeFromTimeString($time);
     }
 
+    /**
+     * @param string                          $format     Datetime format
+     * @param string                          $time
+     * @param \DateTimeZone|string|false|null $originalTz
+     *
+     * @return \DateTimeInterface|false
+     */
     private static function createFromFormatAndTimezone($format, $time, $originalTz)
     {
         // Work-around for https://bugs.php.net/bug.php?id=75577
@@ -452,11 +463,11 @@ trait Creator
         // @codeCoverageIgnoreEnd
 
         if ($originalTz === null) {
-            return parent::createFromFormat($format, $time);
+            return parent::createFromFormat($format, "$time");
         }
 
         $tz = is_int($originalTz)
-            ? @timezone_name_from_abbr(null, floatval($originalTz * 3600), 1)
+            ? @timezone_name_from_abbr('', (int) ($originalTz * 3600), 1)
             : $originalTz;
 
         $tz = static::safeCreateDateTimeZone($tz, $originalTz);
@@ -465,7 +476,7 @@ trait Creator
             return false;
         }
 
-        return parent::createFromFormat($format, $time, $tz);
+        return parent::createFromFormat($format, "$time", $tz);
     }
 
     /**
@@ -504,6 +515,10 @@ trait Creator
             if ($tz === null && !preg_match("/{$nonEscaped}[eOPT]/", $nonIgnored)) {
                 $tz = $mock->getTimezone();
             }
+
+            // Set microseconds to zero to match behavior of DateTime::createFromFormat()
+            // See https://bugs.php.net/bug.php?id=74332
+            $mock = $mock->copy()->microsecond(0);
 
             // Prepend mock datetime only if the format does not contain non escaped unix epoch reset flag.
             if (!preg_match("/{$nonEscaped}[!|]/", $format)) {

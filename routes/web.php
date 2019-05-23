@@ -77,4 +77,8 @@ Route::get('MostraIncidenciaTec','DB\IncidenciaTecnico@MostrarIncidenciAsignadas
 
 Route::get('MostrarContadorTec','vistas_de_empleados\tecnicoIncidenciaController@mostrarTecnicoIm');
 
+//Import csv  Departamento
+Route::post('importCSV','CSV\importController@ImportFicheroInsert');
+//Import empleados CSV tambien la tabla modal ya que va todo junto cada vez que se crea un usuario 
+Route::post('importCSVEmpleado','CSV\importController@importCSVEmpleados');
 

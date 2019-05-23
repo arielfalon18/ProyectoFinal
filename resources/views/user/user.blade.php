@@ -53,12 +53,12 @@
             <div class="estado-color-progreso"></div>
             <h5 class="card-title">@{{IncidenciaB.Estado}} <p class="cardFecha"><strong> @{{IncidenciaB.FechaEntrada}}</strong></p></h5>
             <div class="card2" v-for="DepartamentosB in DepartamentosT" v-if="IncidenciaB.IdDepartamento==DepartamentosB.id">
-              <table class="card1Text">
-                <tbody>
-                  <td>Usuario: @{{empleadosB.nombre}}</td>
+              <table class="card1Text" >
+                <tbody v-for="TecnicoInc in IncidenciaTecni" v-if="TecnicoInc.Id_Incidencia==IncidenciaB.id">
+                  <td>Tecnico: @{{TecnicoInc.mostrar_tecnico.nombre}}</td>  
                 </tbody>
               </table>
-              <p class="informacion">Tecnico </p>
+              <p class="informacion">Usuario: @{{empleadosB.nombre}}</p>
               <p class="informacion">Departamento: @{{DepartamentosB.Nombre}}</p>
               <p class="informacion">Prioridad: @{{IncidenciaB.Prioridad}} </p>
               <hr>
