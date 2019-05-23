@@ -483,13 +483,17 @@ new Vue({
         guardarCSV: function(){
             var ImportarCSV='http://127.0.0.1:8000/importCSV';
             axios.post(ImportarCSV,{
-                csv_file:this.csv_file,
-                Ntabla:$('#Ntabla').val()
+                csv_file:$('#csv_file').attr('name'),
+                // Ntabla:$('#Ntabla').val()
             }).then(response=>{
-                this.Ntabla='G'
+                this.errors=[];
+                $('#añadirinventario').modal('hide');
+                // this.Ntabla='G'
             }).catch(error => {
-                
+                this.errors = error.response.data.errors;
             })
+           
+            
            
             
         },

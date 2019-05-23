@@ -24,10 +24,10 @@
                   </form>
               </div>
               <div class="espacio">
-                  <button class="btn btn-primary" data-toggle="modal" data-target="#añadirdepartamento">Añadir Departamentos</button>
-                  <button class="btn btn-primary" data-toggle="modal" data-target="#añadirusuario">Añadir Usuario</button>
-                  <button class="btn btn-primary" data-toggle="modal" data-target="#añadirinventario">Añadir Inventario</button>
-                  <button class="btn btn-primary" data-toggle="modal" data-target="#ImportCSV">Importar CSV</button>
+                  
+                  <button class="btn btn-primary" data-toggle="modal" data-target="#ImportCSV">Importar Tabla Departamentos</button>
+
+                  <button class="btn btn-primary" data-toggle="modal" data-target="#ImportCSVE">Importar Tabla Empleados</button>
               </div>
             </div>
             <!-- ACORDIOM -->
@@ -43,8 +43,12 @@
 
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                   <div class="card-body">
+                  
                   <!-- Template Abierto -->
+                  
                     <template id="app-tablaD">
+                      <button class="btn btn-primary" data-toggle="modal" data-target="#añadirdepartamento">Añadir Departamentos</button>
+                      <hr>
                       <div class="table-responsive">
                         <table class="table" >
                           <thead>
@@ -105,6 +109,8 @@
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                   <div class="card-body">
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#añadirinventario">Añadir Inventario</button>
+                    <hr>
                     En proceso
                   </div>
                 </div>
@@ -121,6 +127,8 @@
                   <div class="card-body">
                     <!-- Template Abierto -->
                     <template id="app-tabla">
+                      <button class="btn btn-primary" data-toggle="modal" data-target="#añadirusuario">Añadir Usuario</button>
+                      <hr>
                       <div class="table-responsive">
                         <table class="table" >
                           <thead>
