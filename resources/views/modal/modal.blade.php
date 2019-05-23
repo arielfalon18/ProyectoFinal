@@ -197,7 +197,7 @@
           {{csrf_field()}}
             <div class="form-group">
               <label for="csv_fileE" class="control-label col-sm-3">CSV fichero</label>
-                <input type="file"  id="csv_fileE" name="csv_fileE" class="form-control-file" accept="csv>
+                <input type="file"  id="csv_fileE" name="csv_fileE" class="form-control-file">
             </div>  
               <button  class="btn btn-primary">Enviar</button>
             </form>
