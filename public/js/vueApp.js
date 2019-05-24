@@ -30,6 +30,7 @@ new Vue({
         plantaD:'',
         EdificioD:'',
         DepartamentosT:[],
+        mostrar:false,
         //Mostrar los rol de empleado
         RolEmpleado:[],
         // -----------------------
@@ -233,7 +234,13 @@ new Vue({
               };
             }
         },
+
         //---------------------CSV-----------------------------------------
+        //Funcion para ablir otro menu 
+        VerDatos: function(){
+            $('#Nav').dropdown();
+            
+        },
         //crear una incidencia
         CreateInciencia: function(){
             
