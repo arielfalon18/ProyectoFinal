@@ -17,21 +17,24 @@
     <link rel="stylesheet" href="/css/app.css">
     <script src="/js/vue/vueD.js"></script>
     <script src="/js/axios.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>   
 
   </head>
   <body >
     <!-- Navbar para user -->
     @include('partials.navbaruser')
-    <div class="contenidoabajo">
+    <div id="appV" class="contenidoabajo" >
     @yield('content')
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <script src="/js/jquery/jquery-3.3.1.slim.min.js"></script>
-    <script src="/js/jquery/popper.min.js"></script>    <!-- <script src="/assets/bootstrap/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
-    <script src="/js/jquery/bootstrap.min.js"></script>    
-    <script src="/js/vueApp.js"></script>
+    
+    <script src="/js/jquery/popper.min.js"></script>
+    <!-- <script src="/assets/bootstrap/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+    <script src="/js/jquery/bootstrap.min.js"></script>
+    <script src="/js/vueApp.js"></script> 
     <script src="/js/JqueryEfectos.js"></script>
   </body>
 </html>

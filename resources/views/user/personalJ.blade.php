@@ -3,7 +3,7 @@
 <div id="appV"  class="registro">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-sm-6" >
                 <p>Tareas pendientes</p>
                     <table class="table" >
                     <thead class="thead-dark">
@@ -33,7 +33,7 @@
                     </table>
                    
             </div>
-            <div class="col-6">
+            <div class="col-12 col-sm-6">
                 <p> areas Progreso</p>
                 <table class="table">
                     <thead class="thead-dark">
@@ -61,3 +61,5 @@
     @include('modal.modalDI')
     @include('modal.modalAsignar')
 </div>
+
+@stop
