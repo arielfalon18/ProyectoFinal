@@ -19,7 +19,9 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <input type="text" class="form-control" v-model="nombre" id="nombre" name="nombre" placeholder="Nombre empresa">
-                    <span v-if="errors.nombre" class="text-danger">@{{errors.nombre[0]}}</span>
+                    <div v-if="errors.nombre" class="alert alert-danger" role="alert">
+                        @{{errors.nombre[0]}}
+                    </div>
                 </div>
                 <div class="form-group col-md-6">
                     <input type="text" class="form-control" id="cif" v-model="cif"  name="cif" placeholder="CIF">
@@ -55,8 +57,9 @@
                 </div>
             </div>
             <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Aceptas nuestras condiciones </label>
+                <input type="checkbox" v-model="AceptarCoockies" class="form-check-input" id="botonAceptarCo">
+                <label class="form-check-label" for="exampleCheck1">He leido y acepto la <a href="inicio">política de privacidad y protección de datos</a> </label>
+                <span v-if="errors.AceptarCoockies" class="text-danger">@{{errors.AceptarCoockies[0]}}</span>
             </div>
             <button type="submit" class="btn btn-primary">Registrarse</button>
         </form>     

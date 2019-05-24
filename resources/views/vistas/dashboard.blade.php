@@ -53,7 +53,7 @@
                         <table class="table" >
                           <thead>
                               <tr>
-                                  <th scope="col">Id</th>
+                                  <th scope="col">Id <i class="fa fa-sort" v-on:click.prevent="orderDepartamento()" ></i></th>
                                   <th scope="col">Nombre</th>
                                   <th scope="col">Planta</th>
                                   <th scope="col">Edificio</th>
@@ -133,7 +133,8 @@
                         <table class="table" >
                           <thead>
                               <tr>
-                                  <th scope="col">Id</th>
+                               
+                                  <th scope="col">Id <span class="arrow" ></th>
                                   <th scope="col">Nombre</th>
                                   <th scope="col">DNI</th>
                                   <th scope="col">Email</th>
@@ -143,8 +144,9 @@
                                   <th scope="col">Acciones</th>
                               </tr>
                           </thead>
-                          <tbody v-for="empleadoD in empleados">
+                          <tbody v-for="(empleadoD,key) in empleados">
                               <tr v-if='empleadoD.IdEmpresa=={{auth()->user()->id}}'>
+                                  
                                   <th scope="row">@{{empleadoD.id}}</th>
                                   <td>@{{empleadoD.nombre}}</td>
                                   <td>@{{empleadoD.dni}}</td>

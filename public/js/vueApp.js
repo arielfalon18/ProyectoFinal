@@ -53,7 +53,7 @@ new Vue({
         //DAVID
         FechaI:'',
         idDeparta:'D',
-        Imagen,
+        Imagen:'',
         Prioridad:'E',
         Descripcion:'',
         idEmple:'',
@@ -85,6 +85,7 @@ new Vue({
         codigoP:'',
         email:'',
         telefono:'',
+        AceptarCoockies:false,
         respuestaEmpresa:false,
         offset:3,
         //Tecnico Incidencia
@@ -121,6 +122,14 @@ new Vue({
             'FechaEntrada':'',
             'Prioridad':'',
         },
+        //Ordenar
+        orderBy:{
+            field:'id',
+            order: 'desc'
+        },
+        data:'',
+        data2:'',
+        //paginacion
         pagination: {
                 'total' :0,
                 'current_page':0,
@@ -283,7 +292,8 @@ new Vue({
                 pais:this.pais,
                 codigoP:this.codigoP,
                 telefono:this.telefono,
-                email:this.email,       
+                email:this.email,
+                AceptarCoockies:$('#botonAceptarCo').prop('checked'),       
                 // nombre de la empresa - codigo postal;
                 // password:$('#nombre').val()+$('#codigoP').val()
                 password:'12345'
@@ -298,6 +308,7 @@ new Vue({
                 this.telefono='';
                 this.email='';
                 this.respuestaEmpresa=true;
+                this.AceptarCoockies=false,
                 setTimeout(() => {
                     this.respuestaEmpresa=false;
                 }, 4000);
@@ -305,11 +316,17 @@ new Vue({
                 // // Errores
                 // console.log("efecto shake");
                 // $('#añadirusuario').effect('shake');
-                this.errors = error.response.data.errors
-                // if (error.response.status == 422){
-                //     this.errors = error.response.data.errors
-                // }
+                // this.errors = error.response.data.errors
+                if (error.response.status == 422){
+                    this.errors = error.response.data.errors
+                    setTimeout(() => {
+                        this.errors=[];
+                    }, 2000);
+                }
             })   
+           
+            
+            
         },
         //Mostramos los empleados pero eso si sin paginacion 
         getEmpleadosAll:function(){
@@ -486,6 +503,26 @@ new Vue({
         //         )
 
         //-----------------------
+        //OrdenartablaDepartamento
+        orderDepartamento:function(){
+            // this.orderBy.field  =$file;
+            // if (this.orderBy.order == 'desc') {
+            //     this.orderBy.order = 'asc';
+            // }else{
+            //     this.orderBy.order = 'desc';
+            // }
+            const form = new  FormData();
+            // form.set('action' , 'orderbyp');
+            form.set('orderBy' , 'id');
+            form.set('orientation' ,'DESC');
+            
+            //Llamamos al axios que sea por post 
+            var ordenarDepartamento='http://127.0.0.1:8000/DepartamentosGET';
+            axios.post(ordenarDepartamento,{
+                data:form
+             })
+
+        },
         //Descrifrar constraseña
         decifrar: function(){
             this.operacion=true;

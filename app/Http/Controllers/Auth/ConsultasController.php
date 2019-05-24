@@ -16,12 +16,13 @@ class ConsultasController extends Controller
             'nombre.required' => 'Agrega el nombre',
             'cif.required' =>'El nombre del estudiante no puede ser mayor a :max caracteres.',
             'direccion.required' => 'Agregar la direccion',
-            'telefono.required' => 'La puntuación debe ser un número',
+            'telefono.required' => 'Introducir numero',
             'ciudad.required' => 'Ciudad necesario',
             'pais.required' => 'Pais necesario',
             'codigoP.required' => 'Codigo postal necesario',
-            
-            'password.required' => 'Contraseña necesaria'
+            'AceptarCoockies.accepted' =>'Aceptar nuestras politicas porfavor',
+            'password.required' => 'Contraseña necesaria',
+            'email.required' =>'Insertar email porfavor'
         ];
         $resquest->validate([
             'nombre'=>'required',
@@ -33,6 +34,7 @@ class ConsultasController extends Controller
             'codigoP'=>'required',
             'email'=>'required|email',
             'password'=>'required',
+            'AceptarCoockies'=> 'accepted',
         ],$messages);
         
         $datos_empresa=Datos_empresa::create([
