@@ -18,13 +18,18 @@
 .usuario{
 	margin-top: 40px;
 }
-  .header .menu {
+.header .menu {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	overflow: hidden;
 	background-color: var(--blaco);
-  }
+	
+}
+
+.menu{
+	background-color: var(--negro) !important;
+}
   
   .header .li .a {
 	display: block;
@@ -142,7 +147,17 @@ header .li .a{
 	background-color:  var(--negro);
 	color: var(--blaco) !important;
 	display: none;
-	
+}
+.liiiiiii{
+	background-color:  var(--negro);
+	color: var(--blaco) !important;
+
+	text-align: center !important;
+}
+#btnGroupDropMail{
+	float:none;
+	text-align:left;
+	background-color: var(--negro);
 }
 .contenidoabajo{
     margin: 0;

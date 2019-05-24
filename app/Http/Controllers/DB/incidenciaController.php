@@ -45,6 +45,7 @@ class incidenciaController extends Controller
              * TODAVIA NO FUNCIONA EL AÑADIR IMAGEN EN LA CARPETA PUBLIC
              * DEL PROYECTO!!!!!!!!!!!!!!!!!!!!
              */
+            
             $incidencia=Incidencia::create([
                 "FechaEntrada"=>$request['FechaI'],
                 "FechaCierre"=>'NULL',
