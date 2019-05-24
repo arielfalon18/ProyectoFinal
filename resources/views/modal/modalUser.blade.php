@@ -14,13 +14,10 @@
         <div class="form-row" >
             <div class="form-group col-md-6">
                 <label>Fecha incidencia</label>
-                <input type="text" class="form-control" id="FechaI" name="FechaI" value="{{ old('scheduled_date',date('d-m-Y')) }}">
+                <input type="text" class="form-control" id="FechaI" name="FechaI" value="{{ old('scheduled_date',date('d-m-Y')) }}" readonly="readonly">
                 <span v-if="errors.FechaI" class="text-danger">@{{errors.FechaI[0]}}</span>
             </div>
-            <!-- <div class="form-group col-md-6">
-                <label>Fecha cerrada</label>
-                <input type="text" class="form-control" id="FechaC" v-model="FechaC" name="FechaC" placeholder="Fecha cerrada" value="{{ old('scheduled_date',date('d-m-Y')) }}">
-            </div> -->
+            
         </div>
         <div class="form-row">
             <div class="form-group col-md-6" id="appV" >

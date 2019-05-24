@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Incidencia;
 use App\Departamento;
+use Illuminate\Support\Facades\Storage;
 
 class incidenciaController extends Controller
 {
@@ -31,21 +32,25 @@ class incidenciaController extends Controller
         $departamento=Departamento::where('Nombre',$request['idDeparta'])->get();
         
         
-        
         foreach ($departamento as $depart) {
 
-            if ($request->file('Imagen')) {
-                $file = $request->file($request['Imagen']);
-                $name = time().$file->getClientOriginalName();
-                $file->move(public_path().'/mediaD/', $name);
-               
-            }
+            // if ($request->file('Imagen')) {
+            //     $file = $request->file($request['Imagen']);
+            //     $name = time().$file->getClientOriginalName();
+            //     $file->move(public_path().'/mediaD/', $name);
+            //     echo $name;
+            // }
+            
+            /**
+             * TODAVIA NO FUNCIONA EL AÑADIR IMAGEN EN LA CARPETA PUBLIC
+             * DEL PROYECTO!!!!!!!!!!!!!!!!!!!!
+             */
             $incidencia=Incidencia::create([
                 "FechaEntrada"=>$request['FechaI'],
                 "FechaCierre"=>'NULL',
                 "IdDepartamento"=>$depart->id,
                 "Descripcion"=>$request['Descripcion'],
-                "Imagenes" => 'hola',
+                "Imagenes" => $request['Imagen'], //$name,
                 "Id_Empleado_usuario"=>$request['idEmple'],
                 "Estado"=>'Pendiente',
                 "Prioridad"=>$request['Prioridad'],
@@ -53,5 +58,6 @@ class incidenciaController extends Controller
             ]);    
             $incidencia->save();    
         };
+        
     }
 }
