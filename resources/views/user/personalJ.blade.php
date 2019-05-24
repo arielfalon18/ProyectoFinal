@@ -3,7 +3,7 @@
 <div id="appV"  class="registro">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 col-sm-6" >
+            <div class="col-md-6 col-sm-12 col-12" >
                 <p>Tareas pendientes</p>
                     <table class="table" >
                     <thead class="thead-dark">
@@ -19,7 +19,7 @@
                   
                             <tr  v-if="incidenciaVS.Id_Empresa == {{auth('usuarioL')->user()->Id_Empresa}} && incidenciaVS.Estado=='Pendiente'
                                 && incidenciaVS.IdDepartamento=={{auth('usuarioL')->user()->Id_Departamento}}">
-                                <th scope="row">1</th>
+                                <th scope="row">@{{index + 1}}</th>
                                 <td>@{{incidenciaVS.nombres_empleado.nombre}}</td>
                                 <td v-if="incidenciaVS.Prioridad=='Alta'" class="TAlta border text-center">@{{incidenciaVS.Prioridad}}</td>
                                 <td v-else-if="incidenciaVS.Prioridad=='Baja'" class="TBaja border text-center">@{{incidenciaVS.Prioridad}}</td>
@@ -33,7 +33,7 @@
                     </table>
                    
             </div>
-            <div class="col-12 col-sm-6">
+            <div class="col-md-6 col-sm-12  col-12">
                 <p> areas Progreso</p>
                 <table class="table">
                     <thead class="thead-dark">
