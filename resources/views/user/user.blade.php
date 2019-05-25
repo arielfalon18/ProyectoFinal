@@ -84,11 +84,11 @@
             <h5 class="card-title">@{{IncidenciaC.Estado}} <p class="cardFecha"> <strong>@{{IncidenciaC.FechaEntrada}}</strong></p></h5>
             <div class="card3" v-for="DepartamentosC in DepartamentosT" v-if="IncidenciaC.IdDepartamento==DepartamentosC.id">
               <table class="card1Text">
-                <tbody>
-                  <td>Usuario: @{{empleadosC.nombre}} </td>
+                <tbody v-for="TecnicoInc in IncidenciaTecni" v-if="TecnicoInc.Id_Incidencia==IncidenciaC.id">
+                  <td>Tecnico: @{{TecnicoInc.mostrar_tecnico.nombre}}</td> 
                 </tbody>
               </table>
-              <p class="informacion">Tecnico: </p>
+              <p class="informacion">Usuario: @{{empleadosC.nombre}} </p>
               <p class="informacion">Departamento: @{{DepartamentosC.Nombre}}</p>
               <p class="informacion">Prioridad: @{{IncidenciaC.Prioridad}} </p>
               <hr>
@@ -115,11 +115,11 @@
             <h5 class="card-title"> @{{IncidenciaD.Estado}} <p class="cardFecha"> <strong>@{{IncidenciaD.FechaEntrada}}</strong></p></h5>
             <div class="card4" v-for="DepartamentosD in DepartamentosT" v-if="IncidenciaD.IdDepartamento==DepartamentosD.id">
               <table class="card1Text">
-                <tbody>
-                  <td>Usuario : @{{empleadosD.nombre}} </td>
+                <tbody v-for="TecnicoInc in IncidenciaTecni" v-if="TecnicoInc.Id_Incidencia==IncidenciaD.id">
+                  <td> Tecnico: @{{TecnicoInc.mostrar_tecnico.nombre}} </td>
                 </tbody>
               </table>
-              <p class="informacion">Tecnico </p>
+              <p class="informacion">Usuario : @{{empleadosD.nombre}} </p>
               <p class="informacion">Departamento: @{{DepartamentosD.Nombre}}</p>
               <p class="informacion">Prioridad: @{{IncidenciaD.Prioridad}} </p>
               <hr> 

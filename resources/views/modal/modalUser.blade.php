@@ -8,19 +8,16 @@
         </button>
       </div>
       <div class="modal-body">
-        <!-- Formulario para añadir un usuario a la base de datos  -->
-        <form method="post" v-on:submit.prevent="CreateInciencia" enctype=»multipart/form-data»>
+        <!-- Formulario para añadir un incidencia a la base de datos  -->
+        <form method="post"  v-on:submit.prevent="CreateInciencia" enctype="multipart/form-data">
         
         <div class="form-row" >
             <div class="form-group col-md-6">
                 <label>Fecha incidencia</label>
-                <input type="text" class="form-control" id="FechaI" name="FechaI" value="{{ old('scheduled_date',date('d-m-Y')) }}">
+                <input type="text" class="form-control" id="FechaI" name="FechaI" value="{{ old('scheduled_date',date('d-m-Y')) }}" readonly="readonly">
                 <span v-if="errors.FechaI" class="text-danger">@{{errors.FechaI[0]}}</span>
             </div>
-            <!-- <div class="form-group col-md-6">
-                <label>Fecha cerrada</label>
-                <input type="text" class="form-control" id="FechaC" v-model="FechaC" name="FechaC" placeholder="Fecha cerrada" value="{{ old('scheduled_date',date('d-m-Y')) }}">
-            </div> -->
+            
         </div>
         <div class="form-row">
             <div class="form-group col-md-6" id="appV" >
@@ -34,7 +31,7 @@
         
         <div class="form-row" v-model="idEmpre={{auth('usuarioL')->user()->Id_Empresa}}">
             <div class="form-group" v-model="idEmple={{auth('usuarioL')->user()->Id_empleado}}" >
-                <input type="file" name="Imagen" id="Imagen" class="form-control">
+                <input type="file" name="Imagen" id="Imagen" >
             </div>
             <div class="form-group col-md-6" >
                 <select class="form-control" v-model="Prioridad" name="Prioridad" id="Prioridad">

@@ -3,6 +3,7 @@
 namespace App;
 use App\Departamento;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Incidencia extends Model
 {
@@ -24,6 +25,8 @@ class Incidencia extends Model
     public function AsignacionTecnico(){
         return $this->hasMany('App\Tecnico_Incidencia','Id_Incidencia','id');
     }
+
+    //imagenes
     
    
 }

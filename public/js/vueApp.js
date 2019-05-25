@@ -30,6 +30,7 @@ new Vue({
         plantaD:'',
         EdificioD:'',
         DepartamentosT:[],
+        mostrar:false,
         //Mostrar los rol de empleado
         RolEmpleado:[],
         // -----------------------
@@ -85,6 +86,7 @@ new Vue({
         codigoP:'',
         email:'',
         telefono:'',
+        AceptarCoockies:false,
         respuestaEmpresa:false,
         offset:3,
         //Tecnico Incidencia
@@ -104,6 +106,7 @@ new Vue({
             'IdDepartamento':'',
             'Idempleado':'',
             
+            
         },
         //Mostrar Tecnico ç
         mostrarTecnicoIm:[],
@@ -120,6 +123,14 @@ new Vue({
             'FechaEntrada':'',
             'Prioridad':'',
         },
+        //Ordenar
+        orderBy:{
+            field:'id',
+            order: 'desc'
+        },
+        data:'',
+        data2:'',
+        //paginacion
         pagination: {
                 'total' :0,
                 'current_page':0,
@@ -141,9 +152,14 @@ new Vue({
         //       return str.charAt(0).toUpperCase() + str.slice(1)
         //     }
         // },
-        //Datos del fichero import guardar datos vacios
-        csv_file:'',
-        Ntabla:'G'
+        //Tecnico funciones 
+        //Para los botonces de cancelacion
+        DescripcionRespuesta:'',
+        HoraFinal:'',
+        Id_incidencia:'',
+        Respuesta:'G',
+        IdTecnico:'',
+        
     },
     //PAginacion 
     computed:{
@@ -218,14 +234,21 @@ new Vue({
               };
             }
         },
+
         //---------------------CSV-----------------------------------------
+        //Funcion para ablir otro menu 
+        VerDatos: function(){
+            $('#Nav').dropdown();
+            
+        },
         //crear una incidencia
         CreateInciencia: function(){
+            
             var urlIncidencia = 'http://127.0.0.1:8000/newIncidencia';
             axios.post(urlIncidencia,{
                 FechaI:$('#FechaI').val(),
                 idDeparta:$('#DepartamentoE').val(),
-                Imagen:$('#Imagen').val(),
+                Imagen:$('#Imagen').val().substring(12),
                 idEmple:this.idEmple,
                 idEmpre:this.idEmpre,
                 Descripcion:this.Descripcion,
@@ -276,7 +299,8 @@ new Vue({
                 pais:this.pais,
                 codigoP:this.codigoP,
                 telefono:this.telefono,
-                email:this.email,       
+                email:this.email,
+                AceptarCoockies:$('#botonAceptarCo').prop('checked'),       
                 // nombre de la empresa - codigo postal;
                 // password:$('#nombre').val()+$('#codigoP').val()
                 password:'12345'
@@ -291,6 +315,7 @@ new Vue({
                 this.telefono='';
                 this.email='';
                 this.respuestaEmpresa=true;
+                this.AceptarCoockies=false,
                 setTimeout(() => {
                     this.respuestaEmpresa=false;
                 }, 4000);
@@ -298,11 +323,17 @@ new Vue({
                 // // Errores
                 // console.log("efecto shake");
                 // $('#añadirusuario').effect('shake');
-                this.errors = error.response.data.errors
-                // if (error.response.status == 422){
-                //     this.errors = error.response.data.errors
-                // }
+                // this.errors = error.response.data.errors
+                if (error.response.status == 422){
+                    this.errors = error.response.data.errors
+                    setTimeout(() => {
+                        this.errors=[];
+                    }, 2000);
+                }
             })   
+           
+            
+            
         },
         //Mostramos los empleados pero eso si sin paginacion 
         getEmpleadosAll:function(){
@@ -478,26 +509,27 @@ new Vue({
         //     SELECT Id_Incidencia FROM `tecnico_incidencia`
         //         )
 
-        
-        //Fichero import pasar guardar datos en SQL 
-        guardarCSV: function(){
-            var ImportarCSV='http://127.0.0.1:8000/importCSV';
-            axios.post(ImportarCSV,{
-                csv_file:$('#csv_file').attr('name'),
-                // Ntabla:$('#Ntabla').val()
-            }).then(response=>{
-                this.errors=[];
-                $('#añadirinventario').modal('hide');
-                // this.Ntabla='G'
-            }).catch(error => {
-                this.errors = error.response.data.errors;
-            })
-           
-            
-           
-            
-        },
         //-----------------------
+        //OrdenartablaDepartamento
+        orderDepartamento:function(){
+            // this.orderBy.field  =$file;
+            // if (this.orderBy.order == 'desc') {
+            //     this.orderBy.order = 'asc';
+            // }else{
+            //     this.orderBy.order = 'desc';
+            // }
+            const form = new  FormData();
+            // form.set('action' , 'orderbyp');
+            form.set('orderBy' , 'id');
+            form.set('orientation' ,'DESC');
+            
+            //Llamamos al axios que sea por post 
+            var ordenarDepartamento='http://127.0.0.1:8000/DepartamentosGET';
+            axios.post(ordenarDepartamento,{
+                data:form
+             })
+
+        },
         //Descrifrar constraseña
         decifrar: function(){
             this.operacion=true;
@@ -507,6 +539,8 @@ new Vue({
             this.operacion=false;
             $('#password').attr('type','password')
         },
+        //Funciones del tecnico 
+        //Mostrar los detalles al tecnico los detalles de incidencia 
         MostrarDetallesTecnico: function(valores){
             //Datos de quien lo creo
             this.DatosPerTecnico.nombreCreador=valores.mostrar_empleado.nombre;
@@ -518,7 +552,43 @@ new Vue({
             this.DatosPerTecnico.FechaEntrada=valores.mostrar_datos_incidencia.FechaEntrada;
             this.DatosPerTecnico.Prioridad=valores.mostrar_datos_incidencia.Prioridad;
             $('#MostrarDetallesIncidencia').modal('show');
-        }
+        },
+        //Resolver incidencia llamada
+        Resultado: function(valores){
+            //Datos de quien lo creo
+            this.DatosPerTecnico.IdTecnico=valores.id_Tecnico;
+            this.DatosPerTecnico.idIncidencia=valores.Id_Incidencia;
+            $('#DarResultadoT').modal('show');
+        },
+        //Formulario de cancelacion de base de datos 
+        DarResultadoIncidencia :function(){
+            var hoy= new Date();
+            var AnyoFecha = hoy.getFullYear();
+            var MesFecha = hoy.getMonth();
+            var DiaFecha = hoy.getDate();
+            var hora = hoy.getHours();
+            var minutos = hoy.getMinutes();
+            var resultafchahoy=DiaFecha+"/"+(MesFecha+1)+"/"+AnyoFecha+'-'+hora+':'+minutos;
+            var DatosIncidencia='http://127.0.0.1:8000/DarResut';
+            axios.post(DatosIncidencia,{
+                Respuesta:$('#TipoEstado').val(),
+                DescripcionRespuesta:this.DescripcionRespuesta,
+                Id_incidencia:this.Id_incidencia,
+                IdTecnico:this.IdTecnico,
+                HoraFinal:resultafchahoy
+                // Ntabla:$('#Ntabla').val()
+            }).then(response=>{
+                this.errors=[];
+                this.Id_incidencia='G';
+                this.DescripcionRespuesta='';
+                $('#DarResultadoT').modal('hide');
+                location.reload();
+            }).catch(error => {
+                this.errors = error.response.data.errors;
+            })
+        },
+        //Funcion de exportar fichero en Excel
+
     },
     mounted() {
         window.addEventListener('mouseup', this.Volver);

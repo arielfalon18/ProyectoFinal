@@ -18,13 +18,18 @@
 .usuario{
 	margin-top: 40px;
 }
-  .header .menu {
+.header .menu {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	overflow: hidden;
 	background-color: var(--blaco);
-  }
+	
+}
+
+.menu{
+	background-color: var(--negro) !important;
+}
   
   .header .li .a {
 	display: block;
@@ -34,7 +39,7 @@
   }
   
   .header .li .a:hover,
-  .header .menu-btn-user:hover {
+  .header  .menu-btn-user:hover {
 	background-color: var(--negro) !important;
   }
   
@@ -142,13 +147,28 @@ header .li .a{
 	background-color:  var(--negro);
 	color: var(--blaco) !important;
 	display: none;
-	
+}
+.liiiiiii{
+	background-color:  var(--negro);
+	color: var(--blaco) !important;
+
+	text-align: center !important;
+}
+#btnGroupDropMail{
+	float:none;
+	text-align:left;
+	background-color: var(--negro);
 }
 .contenidoabajo{
     margin: 0;
     padding-top: 1px;
 }
-nav ul {
+.bajarpoco{
+	position: relative;
+	top: 120px;
+	/* padding-bottom: 126px; */
+}
+/* nav ul {
 	padding: 0;
 	list-style: none;
 	padding-right: 20px;
@@ -170,7 +190,7 @@ nav ul li a:hover {
 	text-decoration: none;
 	color: var(--blaco);
 	
-}
+} */
 
 /* .empresa{
     color: var(--blaco) !important;
@@ -472,3 +492,85 @@ padding:10px;
 #texto-dentro{
 	display: none;
 }
+
+.orden{
+	text-align: right;
+}
+.ClasseUl {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	background: #030303;
+	position: relative;
+	color: white;
+}
+
+.ClasseUl li {
+	display: inline-block;
+}
+
+.ClasseUl li a {
+	color: white;
+	text-decoration: none;
+	padding: 15px;
+	display: block;
+}
+
+.ClasseUl li:hover {
+	background: rgb(11, 69, 92);
+}
+
+.ClasseUl ul {
+	position: absolute;
+	min-width: 280px;
+	background: black;
+	display: grid;
+}
+
+.ClasseUl ul li {
+	display: block;
+	background: #000;
+	color: white;
+}
+
+.ClasseUl li:hover ul {
+	display: block;
+}
+
+.ClasseUl li i {
+	color: white;
+	float: right;
+	padding-left: 20px;
+}
+
+nav div {
+	background: lightgrey;
+	color: #292929;
+	font-size: 24px;
+	padding: 0.6em;
+	cursor: pointer;
+	display: none;
+}
+
+@media(max-width: 768px) {
+	nav div {
+				display: block;
+	}
+
+	.ClasseUl {
+				display: none;
+				position: static;
+				background: #e3e3e3;
+	}
+
+	.ClasseUl li {
+				display: block;
+	}
+
+	.ClasseUl ul {
+				position: static;
+				background: #e3e3e3;
+	}
+}
+
+

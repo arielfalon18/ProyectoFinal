@@ -22,11 +22,13 @@ Route::get('Contactos', function () {
 // DATOS DE BASE DE DATOS 
 //Crear una incidencia
 Route::post('/incidencia/newIncidencia', 'DB\incidenciaController@newIncidencia');
-Route::post('newIncidencia','DB\incidenciaController@Nuevo');
+Route::post('newIncidencia','DB\incidenciaController@store');
 //Creamos un departamento
 Route::post('CreateDepar', 'DB\departamentoController@NEWdepartamento');
 //Mostramos los datos de departamento
 Route::get('DepartamentosGET','DB\departamentoController@GetDepartamento');
+//QUITAR
+Route::post('DepartamentosGET','DB\departamentoController@GetDepartamento');
 //Mostrar incidencias
 
 //Creamos un Inventario
@@ -81,4 +83,8 @@ Route::get('MostrarContadorTec','vistas_de_empleados\tecnicoIncidenciaController
 Route::post('importCSV','CSV\importController@ImportFicheroInsert');
 //Import empleados CSV tambien la tabla modal ya que va todo junto cada vez que se crea un usuario 
 Route::post('importCSVEmpleado','CSV\importController@importCSVEmpleados');
+
+//Tecnico Rutas tecnico 
+//Cancelar incidencia
+Route::post('DarResut','vistas_de_empleados\tecnicoIncidenciaController@AsignarRespuesta');
 

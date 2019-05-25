@@ -16,4 +16,8 @@ class Departamento extends Model
     // public function incidenias(){
     //     return $this->belongsToMany('App\Incidencia');
     // }
+    public static function NuevoD(){
+        return self::get();
+
+    }
 }
