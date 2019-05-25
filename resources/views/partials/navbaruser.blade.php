@@ -13,7 +13,8 @@
     </li>
   </ul>
 </header> -->
-<header class="header">
+<!-- //De david -->
+<!-- <header class="header">
   <input class="menu-btn" type="checkbox" id="menu-btn" />
   <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
   <ul class="menu">
@@ -29,5 +30,24 @@
   </ul> 
   
 
-</header>
+</header> -->
 
+<!-- De ariel -->
+<header class="orden">
+  <nav>
+    <div>
+          <i class="fa fa-bars"></i>
+    </div>
+    <ul class="ClasseUl">
+      <li><a>{{auth('usuarioL')->user()->email}}<i class="fa fa-sort-desc"></i></a>
+        <ul class="ClasseUl">
+              <li><a >Editar</a></li>
+              <li><a href="logoutCA">Cerrar Seccion</a></li>
+        </ul>
+      </li>
+      <li><a >The Incidence</a></li>
+      
+    </ul>
+  </nav>
+</header>
+<!-- https://codepen.io/samanthablackes/pen/weKRLV -->
