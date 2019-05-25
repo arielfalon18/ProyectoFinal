@@ -62,7 +62,10 @@
               <p class="informacion">Departamento: @{{DepartamentosB.Nombre}}</p>
               <p class="informacion">Prioridad: @{{IncidenciaB.Prioridad}} </p>
               <hr>
-              <p class="informacion">Descripcion: @{{IncidenciaB.Descripcion}}</p>
+              <div id="mostrar">Ver Descripcion</div>
+              <div id="texto-dentro">
+                <p class="informacion">Descripcion: @{{IncidenciaB.Descripcion}}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -89,7 +92,10 @@
               <p class="informacion">Departamento: @{{DepartamentosC.Nombre}}</p>
               <p class="informacion">Prioridad: @{{IncidenciaC.Prioridad}} </p>
               <hr>
+              <div id="mostrar">Ver Descripcion</div>
+                <div id="texto-dentro">
               <p class="informacion">Descripcion: @{{IncidenciaC.Descripcion}}</p>
+              </div> 
             </div>
           </div>
         </div>
@@ -116,8 +122,11 @@
               <p class="informacion">Tecnico </p>
               <p class="informacion">Departamento: @{{DepartamentosD.Nombre}}</p>
               <p class="informacion">Prioridad: @{{IncidenciaD.Prioridad}} </p>
-              <hr>
-              <p class="informacion">Descripcion: @{{IncidenciaD.Descripcion}}</p>
+              <hr> 
+              <div id="mostrar">Ver Descripcion</div>
+              <div id="texto-dentro">
+                <p class="informacion">Descripcion: @{{IncidenciaD.Descripcion}}</p>
+              </div>            
             </div>
           </div>
         </div>

@@ -336,6 +336,7 @@ nav ul li a:hover {
 
 .informacion{
 	margin-bottom: 0px;
+	max-width: 300px;
 }
 .Itext{
 	text-transform: uppercase;
