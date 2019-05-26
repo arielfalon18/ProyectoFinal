@@ -88,3 +88,6 @@ Route::post('importCSVEmpleado','CSV\importController@importCSVEmpleados');
 //Cancelar incidencia
 Route::post('DarResut','vistas_de_empleados\tecnicoIncidenciaController@AsignarRespuesta');
 
+//Modificar perfil de usuario
+Route::post('actualizarPerfil' ,'vistas_de_empleados\controladorPerfil@actualizarPerfil');
+

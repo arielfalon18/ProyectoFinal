@@ -1,6 +1,6 @@
 @extends('layouts.user')
 @section('content')
-<div id="appV"  class="registro">
+<div id="appV"  class="registro usuario">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 col-sm-12 col-12" >

@@ -108,6 +108,12 @@ new Vue({
             
             
         },
+        //Para modificar el perfil de un usuario lo que necesitamos es coger el ID del login y pasarlo a una variable
+        nuemeroDeusuario:'',
+        //Datos para perfil
+        passwordNew:'',
+        fotoPerfil:'',
+        idempleado:'',
         //Mostrar Tecnico ç
         mostrarTecnicoIm:[],
         //Array para mostrar todas las informacion para el tecnico
@@ -587,6 +593,26 @@ new Vue({
                 this.errors = error.response.data.errors;
             })
         },
+        modificarPerfil(valor){
+            this.nuemeroDeusuario=$("#datosId").text();
+            $('#ModificarPerfil').modal('show');
+ 
+        },
+        ActualizarPerfil : function(){
+            var UrlActualizarDatos='http://127.0.0.1:8000/actualizarPerfil';
+            axios.post(UrlActualizarDatos,{
+                idempleado:this.idempleado,
+                fotoPerfil:$('#fotoPerfil').prop('files')[0],
+                passwordNew:this.passwordNew,
+            }).then(response=>{
+                this.errors=[];
+                $('#ModificarPerfil').modal('hide');
+            }).catch(error => {
+                this.errors = error.response.data.errors;
+            })
+           
+            
+        }
         //Funcion de exportar fichero en Excel
 
     },

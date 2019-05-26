@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Empleados extends Model
 {
     protected $table = 'empleados';
-    protected $fillable = ['id', 'nombre','dni', 'email','telefono', 'IdEmpresa','IdDepartamento','Rol'];
+    protected $fillable = ['id', 'nombre','dni', 'email','telefono', 'IdEmpresa','IdDepartamento','Rol'.'Foto'];
     public $timestamps = false;
 
     //Relacion de muchos a uno

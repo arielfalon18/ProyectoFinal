@@ -1,7 +1,7 @@
 @extends('layouts.user')
 @section('content')
 
-<div id="appV"  class="tecnico">
+<div id="appV" class="usuario">
     <div class="container-fluid">
         <div>
         <h2>Bienvenido Tecnico</h2>
@@ -36,3 +36,5 @@
       <!-- Llamamos al modelo que queremos ablirlo -->
       @include('modal.modalTecnicoD')
     </div>
+
+@stop
