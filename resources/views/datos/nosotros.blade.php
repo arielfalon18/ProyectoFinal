@@ -9,8 +9,7 @@
         <div class="card-body">
           <p class="text-Nosotros">Ariel</p>
           <table>
-    
-          <th>Nombre : </th>
+              <th>Nombre : </th>
               <td> Ariel</td>
           </table>
           <table>
