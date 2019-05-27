@@ -21,6 +21,7 @@ new Vue({
         this.getIncidencias();
         this.MostramosIncidenciTecnica();
         this.mostrartodoslosTecnico();
+        this.MostrarDescripcionTecnico();
     },
     data: {
     //Departamento:Departamento,7
@@ -114,7 +115,7 @@ new Vue({
         passwordNew:'',
         fotoPerfil:'',
         idempleado:'',
-        //Mostrar Tecnico ç
+        //Mostrar Tecnico 
         mostrarTecnicoIm:[],
         //Array para mostrar todas las informacion para el tecnico
         DatosPerTecnico:{
@@ -165,7 +166,8 @@ new Vue({
         Id_incidencia:'',
         Respuesta:'G',
         IdTecnico:'',
-        
+        //mostrar descripcion tecnico
+        mostrarDescTec: [],
     },
     //PAginacion 
     computed:{
@@ -519,6 +521,12 @@ new Vue({
                 this.IncidenciaTecni=response.data
             }) 
         },
+        MostrarDescripcionTecnico:function(){
+            var urlMostrarDescTec='http://127.0.0.1:8000/mostrarDescTecnico';
+            axios.get(urlMostrarDescTec).then(response =>{
+                this.mostrarDescTec=response.data
+            })
+        },
         // select * from incidencia WHERE id not in (
         //     SELECT Id_Incidencia FROM `tecnico_incidencia`
         //         )
@@ -582,7 +590,7 @@ new Vue({
             var DiaFecha = hoy.getDate();
             var hora = hoy.getHours();
             var minutos = hoy.getMinutes();
-            var resultafchahoy=DiaFecha+"/"+(MesFecha+1)+"/"+AnyoFecha+'-'+hora+':'+minutos;
+            var resultafchahoy=DiaFecha+"-"+(MesFecha+1)+"-"+AnyoFecha;
             var DatosIncidencia='http://127.0.0.1:8000/DarResut';
             axios.post(DatosIncidencia,{
                 Respuesta:$('#TipoEstado').val(),

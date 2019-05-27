@@ -14,7 +14,7 @@
                 </div>
                 <div class="panel-body">
                     <div class="text-right">
-                        <button class=" btn btn-primary" ><a style="color:white" href="/InciarEmpleado">Acceder Usuario</a></button>
+                        <button class="btn btn-outline-info" ><a href="/InciarEmpleado">Acceder Usuario</a></button>
                     </div>
                     
                     <form action="{{route('login')}}" method="POST">
@@ -34,7 +34,7 @@
                             type="password" name="password" placeholder="Introduce tu password ">
                             {!! $errors->first('password','<span class="help-block">:message</span>')!!}
                         </div>
-                        <button class="btn btn-primary"> Acceder</button>
+                        <button class="btn btn-outline-info"> Acceder</button>
                     </form>
                         
                 </div>
