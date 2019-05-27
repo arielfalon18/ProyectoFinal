@@ -149,20 +149,6 @@
                   </li>
             </ul>
             
-            <!-- <i class="far fa-copyright cr-logo"></i> -->
-            <!-- <ul>
-               <div class="list list1">
-               <li class="llista"><a href="inicio">Inicio</a></li>
-                  <li class="llista"><a href="/Contactos">Contactos</a></li>
-                  <li class="llista"><a href="/Nosotros">Acerca de nosotros</a></li>
-                  <li class="llista">
-                     <i class="fas fa-at"></i>
-                     <i class="fab fa-google-plus-g"></i>
-                     <i class="fab fa-linkedin-in"></i>
-                     <i class="fab fa-twitter"></i>          
-                  </li>
-               </div> -->
-            </ul>
          </div>
          <div class="col-md-4 mb-md-0 mb-3 footerdiv2">
             <div id="info">

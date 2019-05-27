@@ -604,6 +604,17 @@ new Vue({
         modificarPerfil(valor){
             this.nuemeroDeusuario=$("#datosId").text();
             $('#ModificarPerfil').modal('show');
+            document.getElementById('passwordPerfil').onkeypress=function() {
+                if ($(this).val() == '') {
+                    //Check to see if there is any text entered
+                    // If there is no text within the input ten disable the button
+                    $('#GuardarPerfil').prop('disabled', true);
+                } else {
+                    //If there is text in the input, then enable the button
+                    $('#GuardarPerfil').prop('disabled', false);
+                }
+            };
+
  
         },
         datosFicheroPerfil(e){
@@ -627,7 +638,6 @@ new Vue({
                 this.errors = error.response.data.errors;
             }) 
         }
-        //Funcion de exportar fichero en Excel
 
     },
     mounted() {

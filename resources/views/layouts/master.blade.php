@@ -39,6 +39,5 @@
     <!-- <script src="/assets/bootstrap/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
     <script src="/js/jquery/bootstrap.min.js"></script>
     <script src="/js/vueApp.js"></script> 
-    <script src="/js/JqueryEfectos.js"></script>
   </body>
 </html>
