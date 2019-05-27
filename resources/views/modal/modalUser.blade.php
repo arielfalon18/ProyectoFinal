@@ -10,14 +10,12 @@
       <div class="modal-body">
         <!-- Formulario para añadir un incidencia a la base de datos  -->
         <form method="post"  v-on:submit.prevent="CreateInciencia" enctype="multipart/form-data">
-        
         <div class="form-row" >
             <div class="form-group col-md-6">
                 <label>Fecha incidencia</label>
                 <input type="text" class="form-control" id="FechaI" name="FechaI" value="{{ old('scheduled_date',date('d-m-Y')) }}" readonly="readonly">
                 <span v-if="errors.FechaI" class="text-danger">@{{errors.FechaI[0]}}</span>
             </div>
-            
         </div>
         <div class="form-row">
             <div class="form-group col-md-6" id="appV" >
@@ -28,10 +26,9 @@
                 <span v-if="errors.idDeparta" class="text-danger">@{{errors.idDeparta[0]}}</span>
             </div>
         </div>
-        
         <div class="form-row" v-model="idEmpre={{auth('usuarioL')->user()->Id_Empresa}}">
             <div class="form-group" v-model="idEmple={{auth('usuarioL')->user()->Id_empleado}}" >
-                <input type="file" name="Imagen" id="Imagen" >
+                <input type="file" name="Imagen" id="Imagen" v-on:change="fotodeIncidencia">
             </div>
             <div class="form-group col-md-6" >
                 <select class="form-control" v-model="Prioridad" name="Prioridad" id="Prioridad">
@@ -42,7 +39,6 @@
                 </select>
                 <span v-if="errors.Prioridad" class="text-danger">@{{errors.Prioridad[0]}}</span>
             </div>
-            
         </div>
         <div class="form-group">
             <textarea class="form-control"  v-model="Descripcion" name="Descripcion" id="Descripcion" cols="5" rows="5" placeholder="Descripcion"></textarea>

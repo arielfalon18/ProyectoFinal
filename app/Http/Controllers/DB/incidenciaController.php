@@ -10,10 +10,7 @@ use Illuminate\Support\Facades\Storage;
 
 class incidenciaController extends Controller
 {
-
     public function store(Request $request){
-        
-
         $messages = [
             'FechaI.required' => 'La fecha es requerida',
             'Descripcion.required' =>'Introduce una pequeña descripción',
@@ -33,32 +30,36 @@ class incidenciaController extends Controller
         
         
         foreach ($departamento as $depart) {
+            
+            $incidencia=new Incidencia;
+            $incidencia->FechaEntrada=$request['FechaI'];
+            $incidencia->FechaCierre='NULL';
+            $incidencia->IdDepartamento=$depart->id;
+            $incidencia->Descripcion=$request['Descripcion'];
+            $incidencia->Id_Empleado_usuario=$request['idEmple'];
 
-            // if ($request->file('Imagen')) {
-            //     $file = $request->file($request['Imagen']);
-            //     $name = time().$file->getClientOriginalName();
-            //     $file->move(public_path().'/mediaD/', $name);
-            //     echo $name;
-            // }
+            if($request['Imagen']==true){
+                $exploded=explode(',',$request['Imagen']);
+                $decode=base64_decode($exploded[1]);
+                if(str_contains($exploded[0],'jpeg')){
+                    $extension='jpg';
+                }
+                else{
+                    $extension='png';
+                }
+                $name=str_random().'.'.$extension;
+                $path=public_path().'/media/ImagenesDeIncidencia/'.$name;
+                file_put_contents($path,$decode);
+                $incidencia->Imagenes=$name;
+            }else{
+                $incidencia->Imagenes='NULL';
+            }
             
-            /**
-             * TODAVIA NO FUNCIONA EL AÑADIR IMAGEN EN LA CARPETA PUBLIC
-             * DEL PROYECTO!!!!!!!!!!!!!!!!!!!!
-             */
-            
-            $incidencia=Incidencia::create([
-                "FechaEntrada"=>$request['FechaI'],
-                "FechaCierre"=>'NULL',
-                "IdDepartamento"=>$depart->id,
-                "Descripcion"=>$request['Descripcion'],
-                "Imagenes" => $request['Imagen'], //$name,
-                "Id_Empleado_usuario"=>$request['idEmple'],
-                "Estado"=>'Pendiente',
-                "Prioridad"=>$request['Prioridad'],
-                "Id_Empresa"=>$request['idEmpre'],
-            ]);    
+            $incidencia->Estado='Pendiente';
+            $incidencia->Prioridad=$request['Prioridad'];
+            $incidencia->Id_Empresa=$request['idEmpre'];
+             
             $incidencia->save();    
         };
-        
     }
 }

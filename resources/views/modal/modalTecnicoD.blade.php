@@ -43,19 +43,19 @@
         <form method="POST"  v-on:submit.prevent="DarResultadoIncidencia" >
         <div class="form-group">
           <select  class="form-control" v-model="Respuesta" name="TipoEstado" id="TipoEstado" >
-                <option value="G" disabled selected>Selecciona tipo de usuario</option>
+                <option value="G" disabled selected>Seleccionar motivo</option>
                 <option >Cancelada</option>
                 <option >Finalizada</option>
           </select>
         </div>
           <div class="form-group" v-model="Id_incidencia=DatosPerTecnico.idIncidencia">
-            <label  for="exampleFormControlTextarea1">Descripcion de porque Cancelas la tarea</label>
+            <label  for="exampleFormControlTextarea1">Descripcion de la incidencia</label>
             <textarea class="form-control" v-model="DescripcionRespuesta" id="DescripcionRespuesta" name="DescripcionRespuesta" rows="3"></textarea>
           </div>
           <div class="form-check" v-model="IdTecnico=DatosPerTecnico.IdTecnico">
             <input class="form-check-input" type="checkbox" value="" id="aceptar">
             <label class="form-check-label" for="defaultCheck1">
-              Aceptas de que si cancelas ya no lo podras ver
+              Aceptas ya no lo podras ver
             </label>
             <!-- <h1>@{{DatosPerTecnico.IdTecnico}}</h1> -->
           </div>

@@ -30,11 +30,11 @@
           <P class="titulo-img-texto">
             Imagen  
           </P>
-          <div v-if="MostrarInci.Imagenes == 'NULL'">
+          <div v-if="MostrarInci.Imagenes=='NULL'">
               <h1>No hay imagen</h1>
           </div>
           <div v-else class="Info-Img-Div"> 
-          <img class="img-info" v-bind:src="'media/ImagenesDeIncidencia/'+ MostrarInci.Imagenes"  alt=""> 
+            <img class="img-info" :src="'/media/ImagenesDeIncidencia/'+MostrarInci.Imagenes"  alt=""> 
           </div>
         
       </div>

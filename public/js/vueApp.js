@@ -248,13 +248,21 @@ new Vue({
             
         },
         //crear una incidencia
-        CreateInciencia: function(){
+        fotodeIncidencia(e){
+            //console.log(e.target.files[0]);
+            var valor = new FileReader()
+            valor.readAsDataURL(e.target.files[0]);
+            valor.onload=(e) =>{
+                this.Imagen=e.target.result
+            }
             
+        },
+        CreateInciencia: function(){
             var urlIncidencia = 'http://127.0.0.1:8000/newIncidencia';
             axios.post(urlIncidencia,{
                 FechaI:$('#FechaI').val(),
                 idDeparta:$('#DepartamentoE').val(),
-                Imagen:$('#Imagen').val().substring(12),
+                Imagen:this.Imagen,
                 idEmple:this.idEmple,
                 idEmpre:this.idEmpre,
                 Descripcion:this.Descripcion,
@@ -598,20 +606,26 @@ new Vue({
             $('#ModificarPerfil').modal('show');
  
         },
+        datosFicheroPerfil(e){
+            //console.log(e.target.files[0]);
+            var valor = new FileReader()
+            valor.readAsDataURL(e.target.files[0]);
+            valor.onload=(e) =>{
+                this.fotoPerfil=e.target.result
+            }
+        },
         ActualizarPerfil : function(){
             var UrlActualizarDatos='http://127.0.0.1:8000/actualizarPerfil';
             axios.post(UrlActualizarDatos,{
                 idempleado:this.idempleado,
-                fotoPerfil:$('#fotoPerfil').prop('files')[0],
+                fotoPerfil:this.fotoPerfil,
                 passwordNew:this.passwordNew,
             }).then(response=>{
                 this.errors=[];
-                $('#ModificarPerfil').modal('hide');
+                location.reload();
             }).catch(error => {
                 this.errors = error.response.data.errors;
-            })
-           
-            
+            }) 
         }
         //Funcion de exportar fichero en Excel
 

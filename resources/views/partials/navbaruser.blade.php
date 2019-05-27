@@ -62,7 +62,10 @@
           <div class="col-6 text-center " >
             
             <div v-if="emplead.Foto=='null'">
-                <img class="imagePerfil" src='/media/imagenesPerfil/ImagenPerfilN.jpg' alt="" />
+                <img class="imagePerfil" name="fotoPerfils" src='/media/imagenesPerfil/ImagenPerfilN.jpg' alt="" />
+            </div>
+            <div v-else>
+            <img class="imagePerfil" name="fotoPerfils" :src="'/media/imagenesPerfil/'+emplead.Foto" alt="" />
             </div>
             <h3 class="nombreP">@{{emplead.nombre}}</h3>
             <p class="nombreP">@{{emplead.dni}}</p>
@@ -80,7 +83,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Cambiar Foto de perfil</label>
-                    <input type="file" class="form-control-file" id="fotoPerfil">
+                    <input type="file" class="form-control-file" v-on:change="datosFicheroPerfil">
                 </div>
                 <div class="modal-footer">
                 <button class="btn btn-primary">Guardar Datos</button>
