@@ -21,19 +21,18 @@
               <div class="estado-color-pendiente"></div>
               <h5 class="card-title">@{{IncidenciaA.Estado}} <p class="cardFecha"> <strong>@{{IncidenciaA.FechaEntrada}} </strong></p></h5>
               <div class="card1" v-for="DepartamentosA in DepartamentosT" v-if="IncidenciaA.IdDepartamento==DepartamentosA.id">
-                <table class="card1Text" >
-                  <tbody>
-                    <td>Usuario: @{{empleadosA.nombre}}</td>
-                  </tbody>
-                </table>
-                <p class="informacion">Tecnico: Pendiente de Asignar</p>
+              <div class="card1Text">
+                <div>
+                  <p class="informacion">Tecnico: Pendiente de asignar</p>
+                  <p class="informacion">Close: Pendiente</p>
+                </div>
+              </div>
+                <p class="informacion">Usuario: @{{empleadosA.nombre}}</p>
                 <p class="informacion">Departamento: @{{DepartamentosA.Nombre}}</p>
                 <p class="informacion">Prioridad: @{{IncidenciaA.Prioridad}}</p>
+                <p class="informacion">Close: Pendiente</p>
                 <hr>
-                <div id="mostrar">Ver Descripcion</div>
-                <div id="texto-dentro">
-                  <p class="informacion">Descripcion: @{{IncidenciaA.Descripcion}}</p>
-                </div>
+                <p class="informacion">Descripcion: @{{IncidenciaA.Descripcion}}</p>
               </div>
             </div>
           </div>
@@ -53,19 +52,17 @@
             <div class="estado-color-progreso"></div>
             <h5 class="card-title">@{{IncidenciaB.Estado}} <p class="cardFecha"><strong> @{{IncidenciaB.FechaEntrada}}</strong></p></h5>
             <div class="card2" v-for="DepartamentosB in DepartamentosT" v-if="IncidenciaB.IdDepartamento==DepartamentosB.id">
-              <table class="card1Text" >
-                <tbody v-for="TecnicoInc in IncidenciaTecni" v-if="TecnicoInc.Id_Incidencia==IncidenciaB.id">
-                  <td>Tecnico: @{{TecnicoInc.mostrar_tecnico.nombre}}</td>  
-                </tbody>
-              </table>
+              <div class="card1Text">
+                <div>
+                  <p class="informacion">Tecnico: @{{TecnicoInc.mostrar_tecnico.nombre}}</p>
+                  <p class="informacion">Close: Pendiente</p>
+                </div>
+              </div>
               <p class="informacion">Usuario: @{{empleadosB.nombre}}</p>
               <p class="informacion">Departamento: @{{DepartamentosB.Nombre}}</p>
               <p class="informacion">Prioridad: @{{IncidenciaB.Prioridad}} </p>
               <hr>
-              <div id="mostrar">Ver Descripcion</div>
-              <div id="texto-dentro">
-                <p class="informacion">Descripcion: @{{IncidenciaB.Descripcion}}</p>
-              </div>
+              <p class="informacion">Descripcion: @{{IncidenciaB.Descripcion}}</p>
             </div>
           </div>
         </div>
@@ -83,19 +80,21 @@
             <div class="estado-color-finalizada"></div>
             <h5 class="card-title">@{{IncidenciaC.Estado}} <p class="cardFecha"> <strong>@{{IncidenciaC.FechaEntrada}}</strong></p></h5>
             <div class="card3" v-for="DepartamentosC in DepartamentosT" v-if="IncidenciaC.IdDepartamento==DepartamentosC.id">
-              <table class="card1Text">
-                <tbody v-for="TecnicoInc in IncidenciaTecni" v-if="TecnicoInc.Id_Incidencia==IncidenciaC.id">
-                  <td>Tecnico: @{{TecnicoInc.mostrar_tecnico.nombre}}</td> 
-                </tbody>
-              </table>
-              <p class="informacion">Usuario: @{{empleadosC.nombre}} </p>
-              <p class="informacion">Departamento: @{{DepartamentosC.Nombre}}</p>
-              <p class="informacion">Prioridad: @{{IncidenciaC.Prioridad}} </p>
+              <div class="card1Text">
+                <div v-for="TecnicoInc in IncidenciaTecni" v-if="TecnicoInc.Id_Incidencia==IncidenciaC.id">
+                  <p class="informacion"><strong>Tecnico:</strong> @{{TecnicoInc.mostrar_tecnico.nombre}}</p>
+                  <p class="informacion"><strong>Close:</strong> @{{TecnicoInc.mostrar_datos_incidencia.FechaCierre}}</p>
+                </div>
+              </div>
+              <p class="informacion"><strong>Usuario:</strong> @{{empleadosC.nombre}} </p>
+              <p class="informacion"><strong>Departamento:</strong> @{{DepartamentosC.Nombre}}</p>
+              <p class="informacion"><strong>Prioridad:</strong> @{{IncidenciaC.Prioridad}} </p>
               <hr>
-              <div id="mostrar">Ver Descripcion</div>
-                <div id="texto-dentro">
-              <p class="informacion">Descripcion: @{{IncidenciaC.Descripcion}}</p>
-              </div> 
+              <p class="informacion"><strong>Descripcion usuario:</strong> @{{IncidenciaC.Descripcion}}</p>
+              <hr>
+              <div v-for="mostrarC in mostrarDescTec" v-if="mostrarC.Id_incidencia==IncidenciaC.id">
+                <p class="informacion"><strong>Descripcion tecnico:</strong> @{{mostrarC.Descripcion}} </p>
+              </div>
             </div>
           </div>
         </div>
@@ -114,19 +113,22 @@
             <div class="estado-color-cancelada"></div>
             <h5 class="card-title"> @{{IncidenciaD.Estado}} <p class="cardFecha"> <strong>@{{IncidenciaD.FechaEntrada}}</strong></p></h5>
             <div class="card4" v-for="DepartamentosD in DepartamentosT" v-if="IncidenciaD.IdDepartamento==DepartamentosD.id">
-              <table class="card1Text">
-                <tbody v-for="TecnicoInc in IncidenciaTecni" v-if="TecnicoInc.Id_Incidencia==IncidenciaD.id">
-                  <td> Tecnico: @{{TecnicoInc.mostrar_tecnico.nombre}} </td>
-                </tbody>
-              </table>
+            <div class="card1Text">
+                <div v-for="TecnicoInc in IncidenciaTecni" v-if="TecnicoInc.Id_Incidencia==IncidenciaD.id">
+                  <p class="informacion">Tecnico: @{{TecnicoInc.mostrar_tecnico.nombre}}</p>
+                      
+                  <p class="informacion">Close: @{{TecnicoInc.mostrar_datos_incidencia.FechaCierre}}</p>
+                </div>
+              </div>
               <p class="informacion">Usuario : @{{empleadosD.nombre}} </p>
               <p class="informacion">Departamento: @{{DepartamentosD.Nombre}}</p>
               <p class="informacion">Prioridad: @{{IncidenciaD.Prioridad}} </p>
               <hr> 
-              <div id="mostrar">Ver Descripcion</div>
-              <div id="texto-dentro">
-                <p class="informacion">Descripcion: @{{IncidenciaD.Descripcion}}</p>
-              </div>            
+              <p class="informacion">Descripcion: @{{IncidenciaD.Descripcion}}</p>
+              <hr>
+              <div v-for="mostrarD in mostrarDescTec" v-if="mostrarD.Id_incidencia==IncidenciaD.id">
+                <p class="informacion">Descripcion tecnico: @{{mostrarD.Descripcion}} </p>
+              </div>         
             </div>
           </div>
         </div>

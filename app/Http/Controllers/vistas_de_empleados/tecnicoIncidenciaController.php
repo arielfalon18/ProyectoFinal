@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Incidencia;
 use App\TecnicoContador;
 use App\respuestatecnico;
+
                  
 class tecnicoIncidenciaController extends Controller
 {
@@ -49,8 +50,15 @@ class tecnicoIncidenciaController extends Controller
             $CrearRespuesta->save();
             $modificarEstado=Incidencia::find($resquest['Id_incidencia']);
             $modificarEstado->Estado='Finalizada';
+            $modificarEstado->FechaCierre=$resquest['HoraFinal'];
             $modificarEstado->save();
         }
         
+    }
+    //mostrar descripcion tecnico
+
+    public function mostrarDescTec(){
+        $DescTecnico=respuestatecnico::get();
+        return $DescTecnico;
     }
 }

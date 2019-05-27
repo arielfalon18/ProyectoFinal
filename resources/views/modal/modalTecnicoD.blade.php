@@ -59,7 +59,7 @@
             </label>
             <!-- <h1>@{{DatosPerTecnico.IdTecnico}}</h1> -->
           </div>
-          <button type="submit" class="btn btn-primary">Cancelar</button>
+          <button type="submit" class="btn btn-outline-primary">Aceptar</button>
         </form>
       </div>
     </div>

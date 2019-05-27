@@ -1,7 +1,7 @@
 <div class="fakeloader"></div>   
 @extends('layouts.master')
 @section('content')
-<div class="preloader">
+<div class="   ">
    <div class="cointainer">   
       <!--Hasta aqui solo el header -->
       <!-- Contenido que ofrecemos Aqui podemos enviar a cada ruta que queramos  -->
@@ -30,9 +30,9 @@
       </div>
       <section id="main-content">
             <article class="article1">
-               <header>
+               
                   <h1 class="title-main">Informacion</h1>
-               </header>
+               
                <div class="container-fluid">
                   <div class="row">
                      <div class="col-md-6 mt-md-0 mt-3">
@@ -48,9 +48,9 @@
                
             </article> 
             <article class="article2">
-               <header>
+               
                   <h1>Servicio al cliente personalizado y simple</h1>
-               </header>
+               
                <div class="container">
                   <div class="row">
                      <div class="col-md-6 mt-md-0 mt-3">
@@ -65,8 +65,8 @@
                </div>
             </article>
             <article class="article3">
-            <header>
-            <h1>¿Sabias Que?</h1></header>
+            
+            <h1>¿Sabias Que?</h1>
             <div class="container">
                   <div class="row">
                      <div class="col-md-12  mt-md-0 mt-3">
@@ -81,8 +81,7 @@
             </div>
             </article>
             <article class="article4">
-            <header>
-            <h1>Ha llegado la hora</h1></header>
+            <h1>Ha llegado la hora</h1>
             <div class="container">
                   <div class="row">
                      <div class="col-md-12  mt-md-0 mt-3">
@@ -93,19 +92,17 @@
                      </div>
                   </div>
                   <div class="row ">
-                     <div class="col-4"> <p class="artic4-div-texto">Mejora de la percepción empresarial de las TI y sus servicios</p>
-                     </div>
+                     <div class="col-4 artic4-div-texto">Mejora de la percepción empresarial de las TI y sus servicios</p></div>
                      <div class="col-4 artic4-div-texto">Ahorrando tiempo y recursos, y mejorando la eficiencia general del negocio</div>
                      <div class="col-4 artic4-div-texto">Satisfacción del usuario final con la calidad de los servicios informáticos.</div>
-                  
                   </div>
                </div>
             </article>
             <article class="article5">
-            <header>
-            </header>
+            
+            
             <div class="container">
-               <p class="artc3-text">Registro de problemas y seguimiento del progreso</p>
+               <p class="artc5-text">Registro de problemas y seguimiento del progreso</p>
                
             </div>
             </article>
