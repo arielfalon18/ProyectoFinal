@@ -3,8 +3,8 @@
 
 <div id="appV" class="usuario">
     <div class="container-fluid">
-        <div>
-        <h2>Bienvenido Tecnico</h2>
+        <div> 
+        <h2 >Bienvenido/a {{auth('usuarioL')->user()->email }}</h2>
             <table class="table table-striped">
             <thead>
                 <tr>
@@ -27,8 +27,8 @@
                     <td v-if="incidenciaVS.mostrar_datos_incidencia.Prioridad=='Alta'" class="TAlta border text-center">@{{incidenciaVS.mostrar_datos_incidencia.Prioridad}}</td>
                     <td v-else-if="incidenciaVS.mostrar_datos_incidencia.Prioridad=='Baja'" class="TBaja border text-center">@{{incidenciaVS.mostrar_datos_incidencia.Prioridad}}</td>
                     <td v-else-if="incidenciaVS.mostrar_datos_incidencia.Prioridad=='Media'" class="TMedio border text-center">@{{incidenciaVS.mostrar_datos_incidencia.Prioridad}}</td>
-                    <td><button class="btn btn-info" v-on:click.prevent="MostrarDetallesTecnico(incidenciaVS)">Ver Detalles</button></td>
-                    <td><button class="btn btn-primary"  v-on:click.prevent="Resultado(incidenciaVS)" id="Resultado">Resolver</button></td>
+                    <td><button class="btn btn-outline-info" v-on:click.prevent="MostrarDetallesTecnico(incidenciaVS)">Ver Detalles</button></td>
+                    <td><button class="btn btn-outline-primary"  v-on:click.prevent="Resultado(incidenciaVS)" id="Resultado">Resolver</button></td>
                 </tr>
             </tbody>
             </table>

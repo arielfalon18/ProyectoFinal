@@ -24,9 +24,9 @@
                                 <td v-if="incidenciaVS.Prioridad=='Alta'" class="TAlta border text-center">@{{incidenciaVS.Prioridad}}</td>
                                 <td v-else-if="incidenciaVS.Prioridad=='Baja'" class="TBaja border text-center">@{{incidenciaVS.Prioridad}}</td>
                                 <td v-else-if="incidenciaVS.Prioridad=='Media'" class="TMedio border text-center">@{{incidenciaVS.Prioridad}}</td>
-                                <td ><button class="btn btn-info" v-on:click.prevent="MostrarDI(incidenciaVS)">Mostrar</button></td>
+                                <td><button class="btn btn-outline-info" v-on:click.prevent="MostrarDI(incidenciaVS)">Mostrar</button></td>
                                 <td>
-                                    <button  class="btn btn-success" id="BotonAs" v-on:click.prevent="datosIncidenccia(incidenciaVS)">Asignar</button>
+                                    <button class="btn btn-outline-success" id="BotonAs" v-on:click.prevent="datosIncidenccia(incidenciaVS)">Asignar</button>
                                  </td>    
                             </tr>
                     </tbody>

@@ -31,7 +31,7 @@ class loginUController extends Controller
            
            if (auth('usuarioL')->user()->rol=='Tecnico') {
             return redirect()->route('tecnico');
-            }else if(auth('usuarioL')->user()->rol=='Personal'){
+            }else if(auth('usuarioL')->user()->rol=='Personal') {
                 return redirect()->route('JefePersonal');
             }else{
                 return redirect()->route('user');
