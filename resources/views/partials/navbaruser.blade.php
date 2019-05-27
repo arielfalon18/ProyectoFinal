@@ -17,7 +17,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content modal-tecnico-detalles">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Datos del Empleado</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Datos de la incidencia</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -32,6 +32,7 @@
             <div v-else>
                 <img class="imagePerfil" id="imagePerfil" name="fotoPerfils" :src="'/media/imagenesPerfil/'+emplead.Foto" alt="" />
             </div>
+<<<<<<< HEAD
             <div class="image-upload">  
                 <label for="file-input"><i for="exampleFormControlFile1" class="fas fa-camera"></i></label>
                 <input id="file-input" type="file" v-on:change="datosFicheroPerfil"/> 
@@ -39,6 +40,11 @@
             <h3 class="nombreP">Nombre : @{{emplead.nombre}}</h3>
             <p class="nombreP"> DNI : @{{emplead.dni}}</p>
             <p class="nombreP"> Tlf : @{{emplead.telefono}}</p> 
+=======
+            <h3 class="nombreP">@{{emplead.nombre}}</h3>
+            <p class="nombreP">@{{emplead.dni}}</p>
+            <p class="nombreP">@{{emplead.telefono}}</p>
+>>>>>>> parent of 6fb817e1... Merge branch 'master' of https://github.com/arielfalon18/ProyectoFinal
           </div>
           <div class="col-6" >
             <form v-on:submit.prevent="ActualizarPerfil"  method="POST">
@@ -51,7 +57,11 @@
                   <input type="password" class="form-control" v-model="passwordNew" id="passwordPerfil" placeholder="Introduce tu nueva Contraseña">
                 </div>
                 <div class="modal-footer">
+<<<<<<< HEAD
                 <button class="btn btn-primary boton-foto" disabled id="GuardarPerfil">Guardar Informacion</button>
+=======
+                <button class="btn btn-primary">Guardar Datos</button>
+>>>>>>> parent of 6fb817e1... Merge branch 'master' of https://github.com/arielfalon18/ProyectoFinal
                 </div>
             </form>
           </div>

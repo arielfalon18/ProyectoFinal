@@ -223,7 +223,7 @@ h1 {
 }
 .title-main{
     color: white;
-    /* margin-top: 35px; */
+    margin-top: 35px;
 }
 .row{
 	padding: 0px;
@@ -235,7 +235,7 @@ h1 {
 	color: white;
 	margin-top: 70px;
 	height: 320px;
-  width: auto;
+    width: auto;
 
 }
 .text2{
@@ -382,10 +382,6 @@ nav .menu li a:hover {
 #main-content header,
 #main-content .content {
 	padding-top: 40px;
-}
-
-.contenidoabajo article	h1{
-	padding-top:40px;
 }
 
 /* Efecto del header */
@@ -736,6 +732,7 @@ input:focus, input[type]:focus {
 	width: 100%;
 }
 
+<<<<<<< HEAD
 .image-upload > input
 {
     display: none;
@@ -874,3 +871,5 @@ input:focus, input[type]:focus {
     padding-top: 40px;
 	}
 } 
+=======
+>>>>>>> parent of 6fb817e1... Merge branch 'master' of https://github.com/arielfalon18/ProyectoFinal

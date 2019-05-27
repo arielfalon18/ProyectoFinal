@@ -1,6 +1,7 @@
 <div class="fakeloader"></div>   
 @extends('layouts.master')
 @section('content')
+<<<<<<< HEAD
 <div class="cointainer">   
    <!--Hasta aqui solo el header -->
    <!-- Contenido que ofrecemos Aqui podemos enviar a cada ruta que queramos  -->
@@ -16,11 +17,27 @@
             <div class="carousel-item">
                <img src="media/prueba/3.jpg" class="d-block w-100 h-100" alt="...">
             </div>
+=======
+<div class="preloader">
+   <div class="cointainer">   
+      <!--Hasta aqui solo el header -->
+      <!-- Contenido que ofrecemos Aqui podemos enviar a cada ruta que queramos  -->
+      <div class="bd-example">
+         <div id="carouselExampleCaptions" class="carousel slide ImagePortada" data-ride="carousel">
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <img src="media/prueba/4.jpg" class="d-block w-100 h-100" alt="">
+               </div>
+               <div class="carousel-item">
+                  <img src="media/prueba/1.jpg" class="d-block w-100 h-100" alt="...">
+               </div>
+>>>>>>> parent of 6fb817e1... Merge branch 'master' of https://github.com/arielfalon18/ProyectoFinal
                <div class="carousel-item">
                <img src="media/prueba/bg.jpg" class="d-block w-100 h-100" alt="...">
             </div>
          </div>   
       </div>
+<<<<<<< HEAD
    </div>
    <!-- <img class="ImagePortada" src="media/prueba/2.jpg" alt="" /> -->
    <div class="text-centrado-home">
@@ -50,6 +67,47 @@
             
                <h1>Servicio al cliente personalizado y simple</h1>
             
+=======
+      <section id="main-content">
+            <article class="article1">
+               <header>
+                  <h1 class="title-main">Informacion</h1>
+               </header>
+               <div class="container-fluid">
+                  <div class="row">
+                     <div class="col-md-6 mt-md-0 mt-3">
+                        <div class="div-img">
+                           <img class="img-1" src="media/tickets.png" alt="">
+                        </div>
+                     </div>
+                     <div class="col-md-6 mt-md-0 mt-3">
+                        <p class="text1">En TheIncidence puedes hacer que el servicio y soporte al cliente a la hora de gestionar las incidencias sea mas facil y productivo</p>
+                     </div>
+                  </div>
+               </div>
+               
+            </article> 
+            <article class="article2">
+               <header>
+                  <h1>Servicio al cliente personalizado y simple</h1>
+               </header>
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-6 mt-md-0 mt-3">
+                        <p class="text2">Ofrecemos un gestor de incidencias adaptable para cualquier empresa que lo desee.</p>
+                     </div>
+                     <div class="col-md-6 col6 mt-md-0 mt-3">
+                        <div class="div-img2">
+                           <img class="img-2 " data-aos="fade-up" src="media/help.png" alt="">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </article>
+            <article class="article3">
+            <header>
+            <h1>¿Sabias Que?</h1></header>
+>>>>>>> parent of 6fb817e1... Merge branch 'master' of https://github.com/arielfalon18/ProyectoFinal
             <div class="container">
                <div class="row">
                   <div class="col-md-6 mt-md-0 mt-3">
@@ -62,6 +120,7 @@
                   </div>
                </div>
             </div>
+<<<<<<< HEAD
          </article>
          <article class="article3">
          
@@ -71,9 +130,23 @@
                   <div class="col-md-12  mt-md-0 mt-3">
                      <div class="text2">
                         <p class="artc3-text">Un sistema de tickets (sistema de tickets de soporte) puede recopila todas las solicitudes de asistencia al cliente.</p>
+=======
+            </article>
+            <article class="article4">
+            <header>
+            <h1>Ha llegado la hora</h1></header>
+            <div class="container">
+                  <div class="row">
+                     <div class="col-md-12  mt-md-0 mt-3">
+                        <div class="text2">
+                           <!-- <p class="artc3-text">Cualquier empresa que no utilice un sistema de tickets de soporte debe comenzar a hacerlo de inmediato. Hasta que eso suceda:</p> -->
+                        </div>
+                        <p class="artc3-text">Las mejores prácticas de actualización de la base de conocimientos y la mejora continua del servicio después de la resolución de los tickets garantizan:</p>
+>>>>>>> parent of 6fb817e1... Merge branch 'master' of https://github.com/arielfalon18/ProyectoFinal
                      </div>
                      <p class="artc3-text">Un sistema de tickets de soporte también permite la recopilación de datos que pueden utilizarse para mejorar el equipo de soporte de una empresa en su conjunto. La razón de esto es que un sistema de tickets de soporte permite un sistema de seguimiento de problemas, que da visibilidad al panorama general de un equipo de soporte</p>
                   </div>
+<<<<<<< HEAD
                </div>
             </div>
          <div class="div-img2">
@@ -104,6 +177,27 @@
          
          </article>
    </section>
+=======
+                  <div class="row ">
+                     <div class="col-4"> <p class="artic4-div-texto">Mejora de la percepción empresarial de las TI y sus servicios</p>
+                     </div>
+                     <div class="col-4 artic4-div-texto">Ahorrando tiempo y recursos, y mejorando la eficiencia general del negocio</div>
+                     <div class="col-4 artic4-div-texto">Satisfacción del usuario final con la calidad de los servicios informáticos.</div>
+                  
+                  </div>
+               </div>
+            </article>
+            <article class="article5">
+            <header>
+            </header>
+            <div class="container">
+               <p class="artc3-text">Registro de problemas y seguimiento del progreso</p>
+               
+            </div>
+            </article>
+      </section>
+   </div>
+>>>>>>> parent of 6fb817e1... Merge branch 'master' of https://github.com/arielfalon18/ProyectoFinal
 </div>
 
 <footer class="page-footer font-small blue pt-4">
