@@ -10,7 +10,6 @@ $( "#mostrar-finalizada" ).click(function() {
 $( "#mostrar-cancelada" ).click(function() {
     $( "#abrir-cancelada" ).toggle( "slow" );    
 });
-<<<<<<< HEAD
 
 $(window).load(function(){
     $('#file-input').change(function(e) {
@@ -41,5 +40,3 @@ $(window).load(function(){
         $('#imagePerfil').attr("src",result);
     }
 });
-=======
->>>>>>> parent of 6fb817e1... Merge branch 'master' of https://github.com/arielfalon18/ProyectoFinal

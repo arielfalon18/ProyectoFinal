@@ -23,16 +23,16 @@
               <div class="card1" v-for="DepartamentosA in DepartamentosT" v-if="IncidenciaA.IdDepartamento==DepartamentosA.id">
               <div class="card1Text">
                 <div>
-                  <p class="informacion">Tecnico: Pendiente de asignar</p>
+                  <p class="informacion"><strong>Tecnico:</strong> Pendiente de asignar</p>
                   <p class="informacion">Close: Pendiente</p>
                 </div>
               </div>
-                <p class="informacion">Usuario: @{{empleadosA.nombre}}</p>
-                <p class="informacion">Departamento: @{{DepartamentosA.Nombre}}</p>
-                <p class="informacion">Prioridad: @{{IncidenciaA.Prioridad}}</p>
-                <p class="informacion">Close: Pendiente</p>
+                <p class="informacion"><strong>Usuario:</strong> @{{empleadosA.nombre}}</p>
+                <p class="informacion"><strong>Departamento:</strong> @{{DepartamentosA.Nombre}}</p>
+                <p class="informacion"><strong>Prioridad:</strong> @{{IncidenciaA.Prioridad}}</p>
+                <p class="informacion"><strong>Close:</strong> Pendiente</p>
                 <hr>
-                <p class="informacion">Descripcion: @{{IncidenciaA.Descripcion}}</p>
+                <p class="informacion"><strong>Descripcion:</strong> @{{IncidenciaA.Descripcion}}</p>
               </div>
             </div>
           </div>
