@@ -614,3 +614,24 @@ nav div {
 	margin-top: -70px;
 	font-size: x-large;
 }
+
+
+@media(max-width: 425px) {
+	.contenidoabajo{
+		width: 100%;
+	}
+.newfadeUp{
+	font-size: 30px;	
+
+}
+.text1{
+	text-align: center;
+	font-size: 30px;
+	color: white;
+	margin-top: 70px;
+	height: auto;
+}
+
+    
+}
+
