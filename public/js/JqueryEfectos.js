@@ -10,3 +10,7 @@ $( "#mostrar-finalizada" ).click(function() {
 $( "#mostrar-cancelada" ).click(function() {
     $( "#abrir-cancelada" ).toggle( "slow" );    
 });
+
+$('input:file').on("change", function() {
+    $('.boton-foto').prop('disabled', !$(this).val()); 
+});

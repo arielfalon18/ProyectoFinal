@@ -2,10 +2,10 @@
 @section('content')
 
 
-<div id="appV" class="usuario">
+<div id="appV" class="usuario1">
   
   <button id="incidencia" class="btn btn-primary" data-toggle="modal" data-target="#crearincidencia">Crear incidencia</button>
-<button type="button" class="btn btn-primary" id="incidenciaa" data-toggle="modal" data-target=".bd-example-modal-sm">Editar User</button>
+<!-- <button type="button" class="btn btn-primary" id="incidenciaa" data-toggle="modal" data-target=".bd-example-modal-sm">Editar User</button> -->
 
   <div class="container-fluid usuario">
     <div class="row">
@@ -157,13 +157,3 @@
         </div>
       </div>
     </div>
-
-<!-- Modal para modificar los datos del user al hacer login -->
-<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content" v-for="IncidenciaB in IncidenciaT">
-
-@{{IncidenciaA.Estado}}
-    </div>
-  </div>
-</div>
