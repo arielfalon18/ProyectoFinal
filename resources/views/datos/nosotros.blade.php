@@ -4,20 +4,21 @@
   
 <div class="row nosotros">
   <div class="col-sm-4">
-  <div class="card nosotroscard" style="width: 18rem;">
-  <img src="media/nosotros/1.png" class="card-img-top" alt="...">
-  <div class="card-body">
-  <p class="text-Nosotros">Ariel</p>
-  <table>
-       <th>Nombre : </th>
-       <td> Ariel</td>
-  </table>
-  <table>
-       <th>Apellido : </th>
-       <td> Falon</td>
-  </table>
-  </div>
-</div>
+    <div class="card nosotroscard" style="width: 18rem;">
+      <img src="media/nosotros/1.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="text-Nosotros">Ariel</p>
+          <table>
+    
+          <th>Nombre : </th>
+              <td> Ariel</td>
+          </table>
+          <table>
+              <th>Apellido : </th>
+              <td> Falon</td>
+          </table>
+      </div>
+    </div>
   </div>
   <div class="col-sm-4">
   <div class="card nosotroscard" style="width: 18rem;">
