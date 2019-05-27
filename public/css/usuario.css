@@ -16,11 +16,15 @@
 	background-color: var(--negro);
 }
 .usuario{
+<<<<<<< HEAD
 
 	margin-top: 20px;
 }
 .usuario1{
 	margin-top:-30px;	
+=======
+	margin-top: 99px;
+>>>>>>> parent of 6fb817e1... Merge branch 'master' of https://github.com/arielfalon18/ProyectoFinal
 }
 .header .menu {
 	margin: 0;
@@ -281,9 +285,8 @@ nav ul li a:hover {
     height: 0;
 }
 #incidencia{
-	margin-top: 43px;
+	margin-top: 33px;
 	margin-left: 45%;
-	margin-bottom: -30px;
 }
 #incidenciaa{    margin-top: 30px !important; float: right;
 }
@@ -501,7 +504,6 @@ padding:10px;
 	text-align: right;
 }
 .ClasseUl {
-	z-index: 2;
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
@@ -527,7 +529,7 @@ padding:10px;
 
 .ClasseUl ul {
 	position: absolute;
-	min-width:253px;
+	min-width: 280px;
 	background: black;
 	display: none;
 }
@@ -536,12 +538,10 @@ padding:10px;
 	display: block;
 	background: #000;
 	color: white;
-	border-radius: 20px;
 }
 
 .ClasseUl li:hover ul {
 	display: block;
-	transition: 3ms;
 }
 
 .ClasseUl li i {
@@ -600,6 +600,7 @@ nav div {
 				background: #e3e3e3;
 	}
 }
+<<<<<<< HEAD
 .image-upload > input
 {
     display: none;
@@ -632,7 +633,7 @@ nav div {
 	margin-top: 70px;
 	height: auto;
 }
+=======
+>>>>>>> parent of 6fb817e1... Merge branch 'master' of https://github.com/arielfalon18/ProyectoFinal
 
-    
-}
 
