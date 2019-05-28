@@ -1,4 +1,10 @@
-<div class="fakeloader"></div>   
+<div class="fakeloader">
+    <?php
+   sleep(20);
+
+?>
+<!-- <img src="media/prueba/1.jpg" alt=""> -->
+</div>   
 @extends('layouts.master')
 @section('content')
 
@@ -6,16 +12,19 @@
    <!--Hasta aqui solo el header -->
    <!-- Contenido que ofrecemos Aqui podemos enviar a cada ruta que queramos  -->
    <div class="bd-example">
+   <!-- <?php
+// sleep(5);
+?> -->
       <div id="carouselExampleCaptions" class="carousel slide ImagePortada" data-ride="carousel">
          <div class="carousel-inner">
             <div class="carousel-item active">
-               <img src="media/prueba/4.jpg" class="d-block w-100 h-100" alt="">
+               <img src="media/prueba/3.jpg" class="d-block w-100 h-100" alt="">
             </div>
             <div class="carousel-item">
                <img src="media/prueba/1.jpg" class="d-block w-100 h-100" alt="...">
             </div>
             <div class="carousel-item">
-               <img src="media/prueba/3.jpg" class="d-block w-100 h-100" alt="...">
+               <img src="media/prueba/4.jpg" class="d-block w-100 h-100" alt="...">
             </div>
                <div class="carousel-item">
                <img src="media/prueba/bg.jpg" class="d-block w-100 h-100" alt="...">
@@ -37,7 +46,7 @@
                <div class="row">
                   <div class="col-md-6 mt-md-0 mt-3">
                      <div class="div-img">
-                        <img class="img-1" src="media/tickets.png" alt="">
+                        <img class="img-1 bounceInUp" src="media/tickets.png" alt="">
                      </div>
                   </div>
                   <div class="col-md-6 mt-md-0 mt-3">
@@ -49,7 +58,7 @@
          </article> 
          <article class="article2">
             
-               <h1 class="text-title-h1">Servicio al cliente personalizado y simple</h1>
+               <h1 >Servicio al cliente personalizado y simple</h1>
             
             <div class="container">
                <div class="row">

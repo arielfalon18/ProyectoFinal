@@ -188,13 +188,13 @@
                 </div>
               </div>
             </div>
-            <form id="Formulario" class="info-form imagenOpinion" >
+            <form id="Formulario" v-on:submit.prevent="NotificarErrores" class="info-form imagenOpinion" >
               <span class="colorLetraForm">¿Notificar Errores?</span>
               <span id="pressionaF" class="PreccionaA">Click aquí</span>
               <span id="close" class="CerrarF">x</span>
               <div id="popup-open">
-                <input class="input input-100 inputFormE" name="email" type="email" placeholder="Tu email">
-                <textarea  class="input input-100 mensajeFB" name="asunto" placeholder="Déjanos tu teléfono y un mensaje"></textarea>
+                <input class="input input-100 inputFormE" name="email" id="emailE" type="email"  disabled value="{{auth()->user()->email}}">
+                <textarea  class="input input-100 mensajeFB" name="asunto" v-model="mensaje" placeholder="Déjanos tu teléfono y un mensaje"></textarea>
                 <input  class="input-submit input input-100 mensajeFB" type="submit" value="Enviar mensaje">
                 <div id="response_2"></div>
             </div>

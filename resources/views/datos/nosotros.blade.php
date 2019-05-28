@@ -1,9 +1,120 @@
 @extends('layouts.master')
 @section('content')
 <div class="container">
-  
+  <div class="row">
+  <div class="col-sm-md-lg-4">
+    <div class="flip-box">
+      <div class="flip-box-inner">
+        <div class="flip-box-front">
+          <img src="media/nosotros/1.png" class="card-img-top" alt="...">
+          <p class="text-Nosotros">Ariel</p>
+        </div>
+        <div class="flip-box-back">
+          <div class="card-body">
+            <p class="text-Nosotros">Ariel</p>
+            <table>
+              <th>Nombre : </th>
+              <td> Ariel</td>
+            </table>
+            <table>
+              <th>Apellido : </th>
+              <td> Falon</td>
+            </table>
+            <table>
+              <th>Edad: </th>
+              <td> 21</td>
+            </table>
+            <table>
+              <th>Email : </th>
+              <td> ariel.falon@iesjoandaustria.org</td>
+            </table>
+            <table>
+              <th>Telefono : </th>
+              <td> 666555444</td>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+    <div class="col-sm-md-lg-4">
+    <div class="flip-box">
+      <div class="flip-box-inner">
+        <div class="flip-box-front">
+          <img src="media/nosotros/1.png" class="card-img-top" alt="...">
+          <p class="text-Nosotros">Zafar</p>
+        </div>
+        <div class="flip-box-back">
+          <div class="card-body">
+            <p class="text-Nosotros">Zafar</p>
+            <table>
+              <th>Nombre : </th>
+              <td> Zafar</td>
+            </table>
+            <table>
+              <th>Apellido : </th>
+              <td> Ahmad</td>
+            </table>
+            <table>
+              <th>Edad: </th>
+              <td> 23</td>
+            </table>
+            <table>
+              <th>Email : </th>
+              <td> Zafar.ahmad@gmail.com</td>
+            </table>
+            <table>
+              <th>Telefono : </th>
+              <td> 666555444</td>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+ <div class="col-sm-md-lg-4">
+    <div class="flip-box">
+      <div class="flip-box-inner">
+        <div class="flip-box-front">
+          <img src="media/nosotros/1.png" class="card-img-top" alt="...">
+          <p class="text-Nosotros">David</p>
+        </div>
+        <div class="flip-box-back">
+          <div class="card-body">
+            <p class="text-Nosotros">David</p>
+            <table>
+              <th>Nombre : </th>
+              <td> David</td>
+            </table>
+            <table>
+              <th>Apellido : </th>
+              <td> Belenguer</td>
+            </table>
+            <table>
+              <th>Edad: </th>
+              <td> 22</td>
+            </table>
+            <table>
+              <th>Email : </th>
+              <td> david.belenguer@gmail.com</td>
+            </table>
+            <table>
+              <th>Telefono : </th>
+              <td> 666555444</td>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--   
 <div class="row nosotros">
-  <div class="col-sm-4">
+  <div class="col-sm-4 Ariel">
     <div class="card nosotroscard" style="width: 18rem;">
       <img src="media/nosotros/1.png" class="card-img-top" alt="...">
         <div class="card-body">
@@ -53,8 +164,8 @@
   </div>
 </div>
   </div>
-</div>
-</div>
+</div> -->
+
 
 
 <!-- <div class="container">

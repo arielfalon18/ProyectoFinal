@@ -7,12 +7,15 @@ Vue.component('app-tablaD', {
 Vue.component('modal', {
     template: '#Mostrar_Incidencia'
 });
+const ComponenteHijo = {
+    template: '<p>Soy el Hijo</p>'
+}
+
   
 new Vue({
     el: '#appV',
-    // render:h=>h(appV),
+    components: { ComponenteHijo },
     
-    // Llamamos ala funcion de la base de datos 
     
     created:function(){
         this.getDepartament();
@@ -161,10 +164,17 @@ new Vue({
         Id_incidencia:'',
         Respuesta:'G',
         IdTecnico:'',
+        aceptarIncidencia:false,
         //mostrar descripcion tecnico
         mostrarDescTec: [],
+        //Propiedades de notificar error a nosotros
+        //Nos enviara un correo cuando este error se produsca
+        emailError:'',
+        mensaje:'',
+        ///------------------------------------------------
     },
     //PAginacion 
+    
     computed:{
         isActived: function(){
             return this.pagination.current_page;
@@ -238,6 +248,8 @@ new Vue({
             }
         },
 
+        //Tablas datatable
+        
         //---------------------CSV-----------------------------------------
         //Funcion para ablir otro menu 
         VerDatos: function(){
@@ -510,10 +522,13 @@ new Vue({
                 this.mostrarTecnicoIm=response.data
             })
         },
+        
         MostramosIncidenciTecnica: function(){
             var urlMostrarTecnicaIn='http://127.0.0.1:8000/MostraIncidenciaTec';
             axios.get(urlMostrarTecnicaIn).then(response =>{
-                this.IncidenciaTecni=response.data
+                this.IncidenciaTecni=response.data;
+                
+
             }) 
         },
         MostrarDescripcionTecnico:function(){
@@ -575,8 +590,6 @@ new Vue({
             var AnyoFecha = hoy.getFullYear();
             var MesFecha = hoy.getMonth();
             var DiaFecha = hoy.getDate();
-            var hora = hoy.getHours();
-            var minutos = hoy.getMinutes();
             var resultafchahoy=DiaFecha+"-"+(MesFecha+1)+"-"+AnyoFecha;
             var DatosIncidencia='http://127.0.0.1:8000/DarResut';
             axios.post(DatosIncidencia,{
@@ -584,12 +597,14 @@ new Vue({
                 DescripcionRespuesta:this.DescripcionRespuesta,
                 Id_incidencia:this.Id_incidencia,
                 IdTecnico:this.IdTecnico,
-                HoraFinal:resultafchahoy
+                HoraFinal:resultafchahoy,
+                aceptarIncidencia:$('#aceptarIn').prop('checked'),
                 // Ntabla:$('#Ntabla').val()
             }).then(response=>{
                 this.errors=[];
                 this.Id_incidencia='G';
                 this.DescripcionRespuesta='';
+                this.aceptarIncidencia=false;
                 $('#DarResultadoT').modal('hide');
                 location.reload();
             }).catch(error => {
@@ -609,8 +624,6 @@ new Vue({
             //         $('#GuardarPerfil').prop('disabled', false);
             //     }
             // };
-
- 
         },
         datosFicheroPerfil(e){
             var output = document.getElementById('imagePerfil');
@@ -648,6 +661,24 @@ new Vue({
                 this.errors = error.response.data.errors;
             }) 
         },
+
+        //Notificar errores a la empresa
+        NotificarErrores: function(){
+            var urlNotificarErrores='http://127.0.0.1:8000/NotificarErrores';
+            axios.post(urlNotificarErrores,{
+                //Enviamos los datos del a laravel
+                emailError:$('#emailE').attr('value'),
+                mensaje:this.mensaje,
+            }).then(response=>{
+                this.errors=[];
+                $('#Formulario').toggle();
+            }).catch(error=>{
+                this.errors = error.response.data.errors;
+            })
+            
+            
+        }
+
 
     },
     mounted() {

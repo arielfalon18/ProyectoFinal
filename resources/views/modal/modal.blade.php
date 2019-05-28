@@ -157,8 +157,8 @@
 
             <div class="form-group">
 
-            <label for="csv_file" class="control-label col-sm-3">CSV ficheASDASro</label>
-                <input type="file"  id="csv_file" name="csv_file" class="form-control-file">
+            <label for="csv_file" class="control-label col-sm-3">CSV fichero</label>
+                <input type="file"  id="csv_file" accept=".csv,.ods" name="csv_file" class="form-control-file">
             </div>  
               <button  class="btn btn-primary">Enviar</button>
             </form>
@@ -204,7 +204,7 @@
             <div class="form-group">
               <img class="img-Ei" src="media/tutorial/EI.png" alt="">
               <label for="csv_fileE" class="control-label col-sm-3">CSV fichero</label>
-                <input type="file"  id="csv_fileE" name="csv_fileE" class="form-control-file">
+                <input type="file"  id="csv_fileE"  accept=".csv,.ods" name="csv_fileE" class="form-control-file">
             </div>  
               <button  class="btn btn-primary">Enviar</button>
             </form>

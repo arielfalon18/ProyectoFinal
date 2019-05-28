@@ -92,3 +92,5 @@ Route::post('DarResut','vistas_de_empleados\tecnicoIncidenciaController@AsignarR
 //Modificar perfil de usuario
 Route::post('actualizarPerfil' ,'vistas_de_empleados\controladorPerfil@actualizarPerfil');
 
+///Notificar error en la base de datos 
+Route::post('NotificarErrores' ,'Auth\ControladorErroresBase@erroresNotificar');
