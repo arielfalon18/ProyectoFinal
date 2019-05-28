@@ -1,9 +1,7 @@
 <div class="fakeloader"></div>   
 @extends('layouts.master')
 @section('content')
-<?php
-sleep(10);
-?>
+
 <div class="cointainer">   
    <!--Hasta aqui solo el header -->
    <!-- Contenido que ofrecemos Aqui podemos enviar a cada ruta que queramos  -->

@@ -647,7 +647,7 @@ new Vue({
             }).catch(error => {
                 this.errors = error.response.data.errors;
             }) 
-        }
+        },
 
     },
     mounted() {
