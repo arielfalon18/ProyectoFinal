@@ -23,7 +23,7 @@
               <div class="card1Text">
                 <div>
                   <p class="informacion"><strong>Tecnico:</strong> Pendiente de asignar</p>
-                  <p class="informacion">Close: Pendiente</p>
+                  <p class="informacion"><strong>Close:</strong> Pendiente</p>
                 </div>
               </div>
                 <p class="informacion"><strong>Usuario:</strong> @{{empleadosA.nombre}}</p>
@@ -53,8 +53,8 @@
             <div class="card2" v-for="DepartamentosB in DepartamentosT" v-if="IncidenciaB.IdDepartamento==DepartamentosB.id">
               <div class="card1Text">
                 <div v-for="TecnicoInc in IncidenciaTecni" v-if="TecnicoInc.Id_Incidencia==IncidenciaB.id">
-                  <p class="informacion">Tecnico: @{{TecnicoInc.mostrar_tecnico.nombre}}</p>
-                  <p class="informacion">Close: Pendiente</p>
+                  <p class="informacion"><strong>Tecnico:</strong> @{{TecnicoInc.mostrar_tecnico.nombre}}</p>
+                  <p class="informacion"><strong>Close:</strong> Pendiente</p>
                 </div>
               </div>
               <p class="informacion">Usuario: @{{empleadosB.nombre}}</p>
