@@ -53,6 +53,7 @@ class empleadosController extends Controller
                     "IdEmpresa"=>$resquest['IdEmpresa'],
                     "IdDepartamento"=>$depart->id,
                     "Rol"=>$resquest['Idrol'],
+                    "Foto"=>"null",
                 ]);
             }
         
