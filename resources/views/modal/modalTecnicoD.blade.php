@@ -34,13 +34,13 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content modal-tecnico-detalles">
       <div class="modal-header">
-        <!-- <h5 class="modal-title" id="exampleModalLabel">Datos de la incidencia</h5> -->
+        <h5 class="modal-title" id="exampleModalLabel">Dar Respuesta</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="container">
-        <form method="POST"  v-on:submit.prevent="DarResultadoIncidencia" >
+        <form method="POST" class="pb-4"  v-on:submit.prevent="DarResultadoIncidencia" >
         <div class="form-group">
           <select  class="form-control" v-model="Respuesta" name="TipoEstado" id="TipoEstado" >
                 <option value="G" disabled selected>Seleccionar motivo</option>
@@ -53,13 +53,13 @@
             <textarea class="form-control" v-model="DescripcionRespuesta" id="DescripcionRespuesta" name="DescripcionRespuesta" rows="3"></textarea>
           </div>
           <div class="form-check" v-model="IdTecnico=DatosPerTecnico.IdTecnico">
-            <input class="form-check-input" type="checkbox" value="" id="aceptar">
+            <input class="form-check-input" type="checkbox" value="" id="aceptarIn">
             <label class="form-check-label" for="defaultCheck1">
               Aceptas ya no lo podras ver
             </label>
             <!-- <h1>@{{DatosPerTecnico.IdTecnico}}</h1> -->
           </div>
-          <button type="submit" class="btn btn-outline-primary">Aceptar</button>
+          <button type="submit" class="btn btn-outline-primary ">Aceptar</button>
         </form>
       </div>
     </div>
