@@ -1,6 +1,12 @@
-$( "#mostrar" ).click(function() {
-    $( "#texto-dentro" ).toggle( "slow" );
-});
+
+$(document).ready(function(){
+ document.getElementById('mostrar').addEventListener("click" , hola);
+
+function hola(){
+    alert("hola");
+}
+
+ });
 $( "#mostrar-progreso" ).click(function() {
     $( "#abrir-progreso" ).toggle( "slow" );    
 });
@@ -10,6 +16,7 @@ $( "#mostrar-finalizada" ).click(function() {
 $( "#mostrar-cancelada" ).click(function() {
     $( "#abrir-cancelada" ).toggle( "slow" );    
 });
+
 
 // $(window).load(function(){
 //     $('#file-input').change(function(e) {

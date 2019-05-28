@@ -1,7 +1,6 @@
 @extends('layouts.user')
 @section('content')
 
-
 <div id="appV" class="usuario">
   <div id="UsuarioNombreTitol" v-for="Empleatt in empleadosNA" v-if="Empleatt.id=={{auth('usuarioL')->user()->Id_empleado}}">
     <h2>Bienvenido/a @{{Empleatt.nombre}}</h2>
@@ -23,17 +22,21 @@
               <div class="estado-color-pendiente"></div>
               <h5 class="card-title">@{{IncidenciaA.Estado}} <p class="cardFecha"> <strong>@{{IncidenciaA.FechaEntrada}} </strong></p></h5>
               <div class="card1" v-for="DepartamentosA in DepartamentosT" v-if="IncidenciaA.IdDepartamento==DepartamentosA.id">
-              <div class="card1Text">
-                <div>
-                  <p class="informacion"><strong>Tecnico:</strong>Pendiente</p>
-                  <p class="informacion"><strong>Close:</strong> Pendiente</p>
+                <div class="card1Text">
+                  <div>
+                    <p class="informacion"><strong>Tecnico:</strong>Pendiente</p>
+                    <p class="informacion"><strong>Close:</strong> Pendiente</p>
+                  </div>
                 </div>
-              </div>
-                <p class="informacion"><strong>Usuario:</strong> @{{empleadosA.nombre}}</p>
-                <p class="informacion"><strong>Departamento:</strong> @{{DepartamentosA.Nombre}}</p>
-                <p class="informacion"><strong>Prioridad:</strong> @{{IncidenciaA.Prioridad}}</p>
-                <hr>
-                <p class="informacion"><strong>Descripcion:</strong> @{{IncidenciaA.Descripcion}}</p>
+                  <p class="informacion"><strong>Usuario:</strong> @{{empleadosA.nombre}}</p>
+                  <p class="informacion"><strong>Departamento:</strong> @{{DepartamentosA.Nombre}}</p>
+                  <p class="informacion"><strong>Prioridad:</strong> @{{IncidenciaA.Prioridad}}</p>
+                  <hr>
+
+                  <div id="mostrar">Click</div>
+                  <div id="abrir">
+                    <p class="informacion"><strong>Descripcion:</strong> @{{IncidenciaA.Descripcion}}</p>
+                  </div>
               </div>
             </div>
           </div>

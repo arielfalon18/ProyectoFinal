@@ -683,3 +683,6 @@ new Vue({
         window.addEventListener('mouseup', this.Volver);
     }
   })
+
+
+  
