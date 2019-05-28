@@ -3,6 +3,9 @@
 
 
 <div id="appV" class="usuario">
+  <div id="UsuarioNombreTitol" v-for="Empleatt in empleadosNA" v-if="Empleatt.id=={{auth('usuarioL')->user()->Id_empleado}}">
+    <h2>Bienvenido/a @{{Empleatt.nombre}}</h2>
+  </div>
   
   <button id="incidencia" class="btn btn-primary" data-toggle="modal" data-target="#crearincidencia">Crear incidencia</button>
 
@@ -10,7 +13,7 @@
     <div class="row">
 
       <!-- MOSTRAMOS LAS INCIDENCIAS QUE ESTAN PENDIENTES -->
-      <div class="col-lg-3 col-md-6 col-xs-12">
+      <div class="col-lg-3 col-md-6 col-xs-12 bodyIncidencia">
         <div class="container_tickets to-do border">
           <!-- <div class="title-estados"><h5 class="text-estado">Pendiente</h5></div> -->
           <div class="main-card-incidencia"></div>
@@ -40,7 +43,7 @@
 
 
       <!-- MOSTRAMOS LAS INCIDENCIAS QUE ESTEN EN PROGRESO -->
-      <div class="col-lg-3 col-md-6 col-xs-12">
+      <div class="col-lg-3 col-md-6 col-xs-12 bodyIncidencia">
       <div class="container_tickets doing border">
       <!-- <div class="title-estados"><h5  class="text-estados">Progreso</h5></div> -->
         <div class="main-card-incidencia"></div>
@@ -69,7 +72,7 @@
       </div>
 
       <!-- MOSTRAMOS LAS INCIDENCIAS QUE ESTEN FINALIZADAS -->
-      <div class="col-lg-3 col-md-6 col-xs-12" >
+      <div class="col-lg-3 col-md-6 col-xs-12 bodyIncidencia">
       <div class="container_tickets finish border">
       <!-- <div class="title-estados"><h5>Finalizada</h5></div> -->
         <div class="main-card-incidencia"></div>
@@ -101,7 +104,7 @@
       </div>
 
       <!-- MOSTRAMOS LAS INCIDENCIAS QUE ESTEN CANCELADAS -->
-      <div class="col-lg-3 col-md-6 col-xs-12">
+      <div class="col-lg-3 col-md-6 col-xs-12 bodyIncidencia">
       <div class="container_tickets cancel border">
 
         <!-- <div class="title-estados"><h5>Cancelada</h5></div> -->

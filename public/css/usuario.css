@@ -172,6 +172,12 @@ header .li .a{
 	top: 120px;
 	/* padding-bottom: 126px; */
 }
+/*id para el titulo con el nombre usuario*/
+#UsuarioNombreTitol{
+	margin-bottom: -85px;
+	padding-left: 22px;
+}
+
 /* nav ul {
 	padding: 0;
 	list-style: none;
@@ -581,34 +587,36 @@ nav div {
 }
 
 @media(max-width: 768px) {
+#incidencia{
+	margin-top: 43px;
+	margin-left: 80%;
+	margin-bottom: -30px;
+
+}
+
+.bodyIncidencia{
+	margin-bottom: 20px;
+}
 	nav div {
-				display: block;
+		display: block;
 	}
-
-	.ClasseUl {
-				display: none;
-				position: static;
-				background: #e3e3e3;
-	}
-
+	
 	.ClasseUl li {
-				display: block;
+		/* display: none; */
 	}
 
 	.ClasseUl ul {
-				position: static;
-				background: #e3e3e3;
+		position: static;
+		background: #e3e3e3;
 	}
 }
-.image-upload > input
-{
-    display: none;
+.image-upload > input{
+  display: none;
 }
 
-.image-upload img
-{
-    width: 80px;
-    cursor: pointer;
+.image-upload img{
+  width: 80px;
+  cursor: pointer;
 }
 
 .fa-camera{
@@ -618,6 +626,18 @@ nav div {
 
 
 @media(max-width: 425px) {
+
+	#incidencia {
+    margin-top: 80px;
+    margin-left: 33%;
+    margin-bottom: -29px;
+	}
+	#UsuarioNombreTitol{
+		text-align: center;
+	}
+	.bodyIncidencia{
+		margin-bottom: 20px;
+	}
 	.contenidoabajo{
 		width: 100%;
 	}
