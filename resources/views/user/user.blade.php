@@ -5,7 +5,6 @@
 <div id="appV" class="usuario">
   
   <button id="incidencia" class="btn btn-primary" data-toggle="modal" data-target="#crearincidencia">Crear incidencia</button>
-<button type="button" class="btn btn-primary" id="incidenciaa" data-toggle="modal" data-target=".bd-example-modal-sm">Editar User</button>
 
   <div class="container-fluid usuario">
     <div class="row">
