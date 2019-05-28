@@ -54,7 +54,7 @@
             <div class="card2" v-for="DepartamentosB in DepartamentosT" v-if="IncidenciaB.IdDepartamento==DepartamentosB.id">
               <div class="card1Text">
                 <div>
-                  <p class="informacion">Tecnico: @{{TecnicoInc.mostrar_tecnico.nombre}}</p>
+                  <!-- <p class="informacion">Tecnico: @{{TecnicoInc.mostrar_tecnico.nombre}}</p> -->
                   <p class="informacion">Close: Pendiente</p>
                 </div>
               </div>

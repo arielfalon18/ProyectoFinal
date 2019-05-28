@@ -28,7 +28,7 @@ Route::post('CreateDepar', 'DB\departamentoController@NEWdepartamento');
 //Mostramos los datos de departamento
 Route::get('DepartamentosGET','DB\departamentoController@GetDepartamento');
 //QUITAR
-Route::post('DepartamentosGET','DB\departamentoController@GetDepartamento');
+Route::post('DepartamentosPOST','DB\departamentoController@GetDepartamento');
 //Mostrar incidencias
 
 //Creamos un Inventario
