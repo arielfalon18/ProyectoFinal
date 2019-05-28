@@ -1,8 +1,5 @@
 <div class="fakeloader">
-    <?php
-   sleep(20);
-
-?>
+ 
 <!-- <img src="media/prueba/1.jpg" alt=""> -->
 </div>   
 @extends('layouts.master')
