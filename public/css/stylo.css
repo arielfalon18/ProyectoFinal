@@ -223,7 +223,7 @@ h1 {
 }
 .title-main{
     color: white;
-    margin-top: 35px;
+    /* margin-top: 0px; */
 }
 .row{
 	padding: 0px;
@@ -524,6 +524,7 @@ margin-left: 10px;
 .article1{
 	background-color: black;
 	width: 100%;
+	padding-top: 60px;
 	height:auto;
 	padding-bottom: 50px;
 }
