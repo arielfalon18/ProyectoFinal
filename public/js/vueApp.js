@@ -130,11 +130,8 @@ new Vue({
             'FechaEntrada':'',
             'Prioridad':'',
         },
-        //Ordenar
-        orderBy:{
-            field:'id',
-            order: 'desc'
-        },
+        sortKey: '',
+        order: 1,
         data:'',
         data2:'',
         //paginacion
@@ -149,8 +146,6 @@ new Vue({
         //Csv No tocar Probando Prueba1
         parse_header: [],
         parse_csv: [],
-        sortOrders:{},
-        sortKey: '',
         SeleccionarTabla:false,
         BottonEnviar:false,
         //Para que lo filtre los indices guardar por si acaso
@@ -533,24 +528,16 @@ new Vue({
 
         //-----------------------
         //OrdenartablaDepartamento
-        orderDepartamento:function(){
-            // this.orderBy.field  =$file;
-            // if (this.orderBy.order == 'desc') {
-            //     this.orderBy.order = 'asc';
-            // }else{
-            //     this.orderBy.order = 'desc';
-            // }
-            const form = new  FormData();
-            // form.set('action' , 'orderbyp');
-            form.set('orderBy' , 'id');
-            form.set('orientation' ,'DESC');
-            
-            //Llamamos al axios que sea por post 
-            var ordenarDepartamento='http://127.0.0.1:8000/DepartamentosGET';
-            axios.post(ordenarDepartamento,{
-                data:form
-             })
-
+        sortBy:function(key){
+            this.sortKey = key;
+            this.order   = this.order * -1;
+            var urlNEWInventario='http://127.0.0.1:8000/DepartamentosPOST';
+            axios.post(urlNEWInventario,{
+                sortKey:this.sortKey,
+                order:this.order,
+            }).then(response=>{
+               
+            })
         },
         //Descrifrar constraseña
         decifrar: function(){
@@ -612,26 +599,41 @@ new Vue({
         modificarPerfil(valor){
             this.nuemeroDeusuario=$("#datosId").text();
             $('#ModificarPerfil').modal('show');
-            document.getElementById('passwordPerfil').onkeypress=function() {
-                if ($(this).val() == '') {
-                    //Check to see if there is any text entered
-                    // If there is no text within the input ten disable the button
-                    $('#GuardarPerfil').prop('disabled', true);
-                } else {
-                    //If there is text in the input, then enable the button
-                    $('#GuardarPerfil').prop('disabled', false);
-                }
-            };
+            // document.getElementById('passwordPerfil').onkeypress=function() {
+            //     if ($(this).val() == '') {
+            //         //Check to see if there is any text entered
+            //         // If there is no text within the input ten disable the button
+            //         $('#GuardarPerfil').prop('disabled', true);
+            //     } else {
+            //         //If there is text in the input, then enable the button
+            //         $('#GuardarPerfil').prop('disabled', false);
+            //     }
+            // };
 
  
         },
         datosFicheroPerfil(e){
+            var output = document.getElementById('imagePerfil');
+            output.src = URL.createObjectURL(e.target.files[0]);
             //console.log(e.target.files[0]);
             var valor = new FileReader()
             valor.readAsDataURL(e.target.files[0]);
             valor.onload=(e) =>{
                 this.fotoPerfil=e.target.result
             }
+            $('#GuardarPerfil').prop('disabled', false);
+            // if ($('#passwordPerfil'.val()>0)) {
+            //     $('#GuardarPerfil').prop('disabled', false);
+            // }else{
+            //     $('#GuardarPerfil').prop('disabled', true);
+            // }
+        },
+        escribir: function(){
+           if(this.passwordNew.length > 4){
+                $('#GuardarPerfil').prop('disabled', false);
+           }else{
+                $('#GuardarPerfil').prop('disabled', true);
+           }
         },
         ActualizarPerfil : function(){
             var UrlActualizarDatos='http://127.0.0.1:8000/actualizarPerfil';

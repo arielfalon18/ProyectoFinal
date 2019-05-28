@@ -12,8 +12,6 @@ class controladorPerfil extends Controller
 {
     //
     public function actualizarPerfil (Request $resquest){
-        
-        
         $empleado=Empleados::find($resquest['idempleado']);
         if (request('fotoPerfil')==true) {
             $exploded=explode(',',$resquest['fotoPerfil']);
@@ -38,8 +36,5 @@ class controladorPerfil extends Controller
                 $login->save();
             }
         }
-            
-        
-        
     }
 }

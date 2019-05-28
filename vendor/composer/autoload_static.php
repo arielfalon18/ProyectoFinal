@@ -154,6 +154,10 @@ class ComposerStaticInit997920de0a81946b49ff04449e94704a
             'League\\Flysystem\\' => 17,
             'Laravel\\Tinker\\' => 15,
         ),
+        'K' => 
+        array (
+            'Kyslik\\ColumnSortable\\' => 22,
+        ),
         'J' => 
         array (
             'JakubOnderka\\PhpConsoleHighlighter\\' => 35,
@@ -355,6 +359,10 @@ class ComposerStaticInit997920de0a81946b49ff04449e94704a
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
         ),
+        'Kyslik\\ColumnSortable\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kyslik/column-sortable/src/ColumnSortable',
+        ),
         'JakubOnderka\\PhpConsoleHighlighter\\' => 
         array (
             0 => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src',
@@ -479,6 +487,7 @@ class ComposerStaticInit997920de0a81946b49ff04449e94704a
         'App\\Http\\Controllers\\UsuarioController' => __DIR__ . '/../..' . '/app/Http/Controllers/UsuarioController.php',
         'App\\Http\\Controllers\\inicio' => __DIR__ . '/../..' . '/app/Http/Controllers/inicio.php',
         'App\\Http\\Controllers\\vistas_de_empleados\\JefePersonalController' => __DIR__ . '/../..' . '/app/Http/Controllers/vistas_de_empleados/JefePersonalController.php',
+        'App\\Http\\Controllers\\vistas_de_empleados\\controladorPerfil' => __DIR__ . '/../..' . '/app/Http/Controllers/vistas_de_empleados/controladorPerfil.php',
         'App\\Http\\Controllers\\vistas_de_empleados\\tecnicoController' => __DIR__ . '/../..' . '/app/Http/Controllers/vistas_de_empleados/tecnicoController.php',
         'App\\Http\\Controllers\\vistas_de_empleados\\tecnicoIncidenciaController' => __DIR__ . '/../..' . '/app/Http/Controllers/vistas_de_empleados/tecnicoIncidenciaController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -490,6 +499,8 @@ class ComposerStaticInit997920de0a81946b49ff04449e94704a
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\UsuarioEmpleado' => __DIR__ . '/../..' . '/app/Http/Middleware/UsuarioEmpleado.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Imports\\ImportDepartamento' => __DIR__ . '/../..' . '/app/Imports/ImportDepartamento.php',
+        'App\\Imports\\ImportEmpleados' => __DIR__ . '/../..' . '/app/Imports/ImportEmpleados.php',
         'App\\Incidencia' => __DIR__ . '/../..' . '/app/Incidencia.php',
         'App\\Inventarios' => __DIR__ . '/../..' . '/app/Inventarios.php',
         'App\\ModeloArielIncidencias' => __DIR__ . '/../..' . '/app/ModeloArielIncidencias.php',
@@ -502,6 +513,7 @@ class ComposerStaticInit997920de0a81946b49ff04449e94704a
         'App\\Tecnico_Incidencia' => __DIR__ . '/../..' . '/app/Tecnico_Incidencia.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\login' => __DIR__ . '/../..' . '/app/login.php',
+        'App\\respuestatecnico' => __DIR__ . '/../..' . '/app/respuestatecnico.php',
         'BeyondCode\\DumpServer\\DumpServerCommand' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerCommand.php',
         'BeyondCode\\DumpServer\\DumpServerServiceProvider' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/DumpServerServiceProvider.php',
         'BeyondCode\\DumpServer\\Dumper' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/src/Dumper.php',
@@ -2156,6 +2168,10 @@ class ComposerStaticInit997920de0a81946b49ff04449e94704a
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/Highlighter.php',
+        'Kyslik\\ColumnSortable\\ColumnSortableServiceProvider' => __DIR__ . '/..' . '/kyslik/column-sortable/src/ColumnSortable/ColumnSortableServiceProvider.php',
+        'Kyslik\\ColumnSortable\\Exceptions\\ColumnSortableException' => __DIR__ . '/..' . '/kyslik/column-sortable/src/ColumnSortable/Exceptions/ColumnSortableException.php',
+        'Kyslik\\ColumnSortable\\Sortable' => __DIR__ . '/..' . '/kyslik/column-sortable/src/ColumnSortable/Sortable.php',
+        'Kyslik\\ColumnSortable\\SortableLink' => __DIR__ . '/..' . '/kyslik/column-sortable/src/ColumnSortable/SortableLink.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',

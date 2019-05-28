@@ -24,7 +24,8 @@ class ImportEmpleados implements ToModel , WithHeadingRow
                 'telefono'  => $row['telefono'],
                 'IdEmpresa' =>auth()->user()->id,
                 'IdDepartamento'=>$depart->id,
-                'Rol'=> $row['rol']
+                'Rol'=> $row['rol'],
+                'Foto'=>'null'
             ]);
         }
         

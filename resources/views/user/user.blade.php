@@ -53,10 +53,10 @@
             <h5 class="card-title">@{{IncidenciaB.Estado}} <p class="cardFecha"><strong> @{{IncidenciaB.FechaEntrada}}</strong></p></h5>
             <div class="card2" v-for="DepartamentosB in DepartamentosT" v-if="IncidenciaB.IdDepartamento==DepartamentosB.id">
               <div class="card1Text">
-                <div>
+                <div v-for="TecnicoInc in IncidenciaTecni" v-if="TecnicoInc.Id_Incidencia==IncidenciaB.id">
                   <p class="informacion">Tecnico: @{{TecnicoInc.mostrar_tecnico.nombre}}</p>
                   <p class="informacion">Close: Pendiente</p>
-                </div>
+                <div>
               </div>
               <p class="informacion">Usuario: @{{empleadosB.nombre}}</p>
               <p class="informacion">Departamento: @{{DepartamentosB.Nombre}}</p>
