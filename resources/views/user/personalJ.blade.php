@@ -1,7 +1,8 @@
 @extends('layouts.user')
 @section('content')
-<div id="appV"  class="registro usuario">
-    <div class="container-fluid">
+<div id="appV" class="registro usuario">
+    <div class="container-fluid" v-for="Empleat in empleadosNA" v-if="Empleat.id=={{auth('usuarioL')->user()->Id_empleado}}">
+    <h2>Bienvenido/a @{{Empleat.nombre}}</h2>
         <div class="row">
             <div class="col-md-6 col-sm-12 col-12" >
                 <p>Tareas pendientes</p>

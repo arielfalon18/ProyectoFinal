@@ -3,8 +3,8 @@
 
 <div id="appV" class="usuario">
     <div class="container-fluid">
-        <div> 
-        <h2 >Bienvenido/a {{auth('usuarioL')->user()->email }}</h2>
+        <div v-for="empleat in empleadosNA" v-if="empleat.id=={{auth('usuarioL')->user()->Id_empleado}}"> 
+        <h2 >Bienvenido/a @{{empleat.nombre}} </h2>
             <table class="table table-striped">
             <thead>
                 <tr>

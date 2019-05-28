@@ -22,7 +22,7 @@
               <div class="card1" v-for="DepartamentosA in DepartamentosT" v-if="IncidenciaA.IdDepartamento==DepartamentosA.id">
               <div class="card1Text">
                 <div>
-                  <p class="informacion"><strong>Tecnico:</strong> Pendiente</p>
+                  <p class="informacion"><strong>Tecnico:</strong>Pendiente</p>
                   <p class="informacion"><strong>Close:</strong> Pendiente</p>
                 </div>
               </div>
