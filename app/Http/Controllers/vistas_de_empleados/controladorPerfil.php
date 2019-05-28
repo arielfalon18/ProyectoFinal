@@ -17,6 +17,7 @@ class controladorPerfil extends Controller
 {
     //
     public function actualizarPerfil (Request $resquest){
+        //dd($resquest);
         $empleado=Empleados::find($resquest['idempleado']);
         if (request('fotoPerfil')==true) {
             $exploded=explode(',',$resquest['fotoPerfil']);
@@ -40,11 +41,12 @@ class controladorPerfil extends Controller
                 $login->password=Hash::make($resquest['passwordNew']);
                 $login->save();
             }
-            // if ($empleado && $login) {
-            //     $empleado->save();
-            //     $login->save();
-            // }
+            
         }
+        // if ($resquest['fotoPerfil'] && $resquest['passwordNew']) {
+        //     $empleado->save();
+        //     $login->save();
+        // }
         
     }
 }

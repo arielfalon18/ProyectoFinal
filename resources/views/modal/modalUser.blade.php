@@ -44,7 +44,7 @@
             <textarea class="form-control"  v-model="Descripcion" name="Descripcion" id="Descripcion" cols="5" rows="5" placeholder="Descripcion"></textarea>
             <span v-if="errors.Descripcion" class="text-danger">@{{errors.Descripcion[0]}}</span>
         </div>
-        <button id="AñadirIncidencia" class="btn btn-primary">Añadir</button>
+        <button id="AñadirIncidencia" class="btn btn-outline-primary">Añadir</button>
         </form>
       </div>
     </div>

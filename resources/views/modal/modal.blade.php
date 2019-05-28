@@ -160,7 +160,7 @@
             <label for="csv_file" class="control-label col-sm-3">CSV fichero</label>
                 <input type="file"  id="csv_file" accept=".csv,.ods" name="csv_file" class="form-control-file">
             </div>  
-              <button  class="btn btn-primary">Enviar</button>
+              <button  class="btn btn-outline-primary">Enviar</button>
             </form>
               <!-- Puedes ver lo que envias quitar luego -->
                   <!-- <table class="table">
@@ -206,7 +206,7 @@
               <label for="csv_fileE" class="control-label col-sm-3">CSV fichero</label>
                 <input type="file"  id="csv_fileE"  accept=".csv,.ods" name="csv_fileE" class="form-control-file">
             </div>  
-              <button  class="btn btn-primary">Enviar</button>
+              <button  class="btn btn-outline-primary">Enviar</button>
             </form>
             <!-- Puedes ver lo que envias quitar luego -->
                   <!-- <table class="table">
