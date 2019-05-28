@@ -24,7 +24,7 @@ class departamentoController extends Controller
         $Departamento->save();
     }
     public function GetDepartamento(Request $resquest){
-        $Departamento=Departamento::NuevoD();
+        $Departamento=Departamento:: get();
         return $Departamento;
     }
 }

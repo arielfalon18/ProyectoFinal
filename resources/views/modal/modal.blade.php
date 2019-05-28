@@ -142,7 +142,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Importar CSV</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Importar CSV o ODF</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -162,6 +162,7 @@
             </div>  
               <button  class="btn btn-primary">Enviar</button>
             </form>
+              <!-- Puedes ver lo que envias quitar luego -->
                   <!-- <table class="table">
                     <thead>
                       <tr>
@@ -189,7 +190,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Importar CSV</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Importar CSV o ODF</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -207,6 +208,7 @@
             </div>  
               <button  class="btn btn-primary">Enviar</button>
             </form>
+            <!-- Puedes ver lo que envias quitar luego -->
                   <!-- <table class="table">
                     <thead>
                       <tr>

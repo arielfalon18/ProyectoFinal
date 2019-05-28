@@ -223,7 +223,7 @@ h1 {
 }
 .title-main{
     color: white;
-    /* margin-top: 35px; */
+    margin-top: 35px;
 }
 .row{
 	padding: 0px;
@@ -235,7 +235,7 @@ h1 {
 	color: white;
 	margin-top: 70px;
 	height: 320px;
-  width: auto;
+    width: auto;
 
 }
 .text2{
@@ -382,10 +382,6 @@ nav .menu li a:hover {
 #main-content header,
 #main-content .content {
 	padding-top: 40px;
-}
-
-.contenidoabajo article	h1{
-	padding-top:40px;
 }
 
 /* Efecto del header */
@@ -683,6 +679,76 @@ input:focus, input[type]:focus {
 	text-transform: uppercase;
 	font-size: 30px;
 }
+
+/* Ariel opiniones */
+.imagenOpinion{
+	position: fixed; 
+	bottom: 10px; 
+	right: 10px; 
+	max-width: 300px; 
+	width: 100%; 
+	display: flex; 
+	flex-wrap: wrap; 
+	align-items: center; 
+	justify-content: center; 
+	background-color: rgba(0, 0, 0, 0.8); 
+	background-size: 42px 42px; 
+	border-radius: 3px; 
+	border: thin solid rgba(255, 255, 255, 0.3); 
+	padding-top: 0px; 
+	z-index: 1;
+}
+.colorLetraForm{
+	color:white;
+	margin:10px 0;
+	font-weight:bold;
+	text-align:center;
+}
+.PreccionaA{
+	color:white;
+	width:100%;
+	text-align:center;
+	cursor:pointer;
+}
+.CerrarF{
+	position:absolute;
+	top:3px;
+	right:3px;
+	color:white;
+	border:thin solid rgba(255,255,255,0.3);
+	text-align:center;
+	display:block;
+	width:25px;
+	height:25px;
+	line-height:20px;
+	cursor:pointer;
+	font-family:'Dosis',  sans-serif;
+}
+#popup-open{
+	display:none;
+}
+.inputFormE{
+	border-radius:5px;
+	padding:0.3em;
+	padding-bottom:5px;
+}
+.mensajeFB{
+	border-radius:5px;padding:0.3em;
+}
+.input{
+	font-weight: 300;
+	background-color: rgba(0, 0, 0, .5);
+	border: thin solid rgba(238, 238, 238, .5);
+	margin-bottom: 10px;
+	width: 100%;
+	-webkit-transition: all ease-in 0.2s;
+	transition: all ease-in 0.2s;
+	font-size: 1rem;
+	color: white;
+	border-radius: 0 !important;
+}
+
+
 /* ------------------------------------- */
 
 
@@ -751,7 +817,12 @@ input:focus, input[type]:focus {
 	margin-top: -70px;
 	font-size: x-large;
 }
-
+.artc5-text{
+	font-size: 30px;
+	text-align: center;
+	color: white;
+	padding-top: 40px;
+}
 @media(max-width: 425px) {
 	body{
 		width: 100%;
@@ -775,6 +846,7 @@ input:focus, input[type]:focus {
 	font-size: 17px;
 	color: #f8fafc;
 	margin-top: 0px;
+	margin-bottom: 0px;		
  }
   .artc5-text{
     text-align: center;
@@ -784,47 +856,87 @@ input:focus, input[type]:focus {
     padding-top: 40px;
     margin-bottom: -10px;
  }
-.text2{
-	margin-top: -30px;
-	text-align: center;
-	font-size: 17px;
+	.text2{
+		margin-top: -30px;
+		text-align: center;
+		font-size: 17px;
+	}
+	.article3{
+		background-color: #586079;
+			width: 100%;
+			height: auto;
+	}
+	.article1{
+		background-color: black;
+		width: 100%;
+		height: auto;
+		padding-bottom: 0;
+	}
+	.img-1{
+		height: 220px;
+		width: auto;
+		margin-top: -30px;
+		border-right: 1px solid #c0c3c7;
+		border-top: 1px solid #c0c3c7;
+		padding-right: 50px;
+	}
+	.artic4-div-texto{
+		font-size: 13px;
+	}
+	.contenidoabajo article	h1 {
+		padding-top: 20px;
+		font-size: 30px;
+	}
+	.article4{
+		background-color: #586166;
+			width: auto;
+			height: auto;
+			padding-bottom: 0;
+	}
+	img#main-header-logo-footer{
+		width: 60px;
+		height: 60px;
+		margin-top: -78px !important;
+	}
+	.header .menu-icon .navicon{
+		background: #333;
+		display: block;
+		height: 2px;
+		position: relative;
+		transition: background .2s ease-out;
+		width: 18px;
+		left: 100px;
+	}
+	.header .li .a{
+		display: block;
+			padding: 9px 20px;
+			border-right: 1px solid #f8fafc;
+			text-decoration: none;
+			text-align: center;
+			color: #3490dc;
+	}
 }
-.article3{
-	background-color: #586079;
-    width: 100%;
-    height: auto;
-}
-.article1{
-	background-color: black;
-	width: 100%;
-	height: auto;
-	padding-bottom: 0;
-}
-.img-1{
-	height: 220px;
-	width: auto;
-	margin-top: -30px;
-	border-right: 1px solid #c0c3c7;
-	border-top: 1px solid #c0c3c7;
-	padding-right: 50px;
-}
-.artic4-div-texto{
-	font-size: 13px;
-}
-.contenidoabajo article	h1 {
-	padding-top: 20px;
-	font-size: 30px;
-}
-.article4{
-	background-color: #586166;
-    width: auto;
-    height: auto;
-    padding-bottom: 0;
-}
-img#main-header-logo-footer{
-	width: 60px;
-	height: 60px;
-	margin-top: -78px !important;
-}
-
-}
+@media(max-width: 1024px){
+	.text1{
+		text-align: center;
+		font-size: 37px;
+		color: white;
+		margin-top: 45px;
+	}
+	p.fadeInUp{
+		animation: animated-text 4s steps(99,end) 1s 1 normal both,
+		animated-cursor 600ms steps(99,end);
+			 font-size: 45px;
+	}
+	.article5{
+		background-color: green;
+		width: 100%;
+		height: 140px;
+	}
+	.artc5-text{
+		font-size: 30px;
+    text-align: center;
+    color: white;
+    padding-top: 40px;
+	}
+} 

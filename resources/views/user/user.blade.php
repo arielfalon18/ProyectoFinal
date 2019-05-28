@@ -2,10 +2,10 @@
 @section('content')
 
 
-<div id="appV" class="usuario1">
+<div id="appV" class="usuario">
   
   <button id="incidencia" class="btn btn-primary" data-toggle="modal" data-target="#crearincidencia">Crear incidencia</button>
-<!-- <button type="button" class="btn btn-primary" id="incidenciaa" data-toggle="modal" data-target=".bd-example-modal-sm">Editar User</button> -->
+<button type="button" class="btn btn-primary" id="incidenciaa" data-toggle="modal" data-target=".bd-example-modal-sm">Editar User</button>
 
   <div class="container-fluid usuario">
     <div class="row">
@@ -23,16 +23,16 @@
               <div class="card1" v-for="DepartamentosA in DepartamentosT" v-if="IncidenciaA.IdDepartamento==DepartamentosA.id">
               <div class="card1Text">
                 <div>
-                  <p class="informacion">Tecnico: Pendiente de asignar</p>
+                  <p class="informacion"><strong>Tecnico:</strong> Pendiente de asignar</p>
                   <p class="informacion">Close: Pendiente</p>
                 </div>
               </div>
-                <p class="informacion">Usuario: @{{empleadosA.nombre}}</p>
-                <p class="informacion">Departamento: @{{DepartamentosA.Nombre}}</p>
-                <p class="informacion">Prioridad: @{{IncidenciaA.Prioridad}}</p>
-                <p class="informacion">Close: Pendiente</p>
+                <p class="informacion"><strong>Usuario:</strong> @{{empleadosA.nombre}}</p>
+                <p class="informacion"><strong>Departamento:</strong> @{{DepartamentosA.Nombre}}</p>
+                <p class="informacion"><strong>Prioridad:</strong> @{{IncidenciaA.Prioridad}}</p>
+                <p class="informacion"><strong>Close:</strong> Pendiente</p>
                 <hr>
-                <p class="informacion">Descripcion: @{{IncidenciaA.Descripcion}}</p>
+                <p class="informacion"><strong>Descripcion:</strong> @{{IncidenciaA.Descripcion}}</p>
               </div>
             </div>
           </div>
@@ -56,7 +56,7 @@
                 <div v-for="TecnicoInc in IncidenciaTecni" v-if="TecnicoInc.Id_Incidencia==IncidenciaB.id">
                   <p class="informacion">Tecnico: @{{TecnicoInc.mostrar_tecnico.nombre}}</p>
                   <p class="informacion">Close: Pendiente</p>
-                </div>
+                <div>
               </div>
               <p class="informacion">Usuario: @{{empleadosB.nombre}}</p>
               <p class="informacion">Departamento: @{{DepartamentosB.Nombre}}</p>
@@ -157,3 +157,13 @@
         </div>
       </div>
     </div>
+
+<!-- Modal para modificar los datos del user al hacer login -->
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content" v-for="IncidenciaB in IncidenciaT">
+
+@{{IncidenciaA.Estado}}
+    </div>
+  </div>
+</div>

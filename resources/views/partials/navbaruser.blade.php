@@ -1,38 +1,3 @@
-<!-- <header class="header">
-  
-  <input class="menu-btn" type="checkbox" id="menu-btn-user" />
-  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-  <ul class="menu">
-    
-    <li class=li><a class="a">{{auth('usuarioL')->user()->email}}</a></li>
-   
-    
-    <li class=li><a class="a">The Incidence</a></li>
-    <li class=li> 
-    <a class="a" href="logoutCA">CerrarSeccion</a></li>
-    </li>
-  </ul>
-</header> -->
-<!-- //De david -->
-<!-- <header class="header">
-  <input class="menu-btn" type="checkbox" id="menu-btn" />
-  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-  <ul class="menu">
-    <li class=li><a class="a">The Incidence</a></li>
-    
-    <button class="li a"  id="btnGroupDropMail" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <a class="a">{{auth('usuarioL')->user()->email}}</a>
-    </button>
-    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-      <a class="dropdown-item" href="#">Editar</a>
-      <a class="dropdown-item" href="logoutCA">Cerrar Seccion</a>
-    </div>
-  </ul> 
-  
-
-</header> -->
-
-<!-- De ariel -->
 <header class="orden">
   <nav>
     <ul class="ClasseUl">
@@ -52,7 +17,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content modal-tecnico-detalles">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Datos del Empleado</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Datos de la incidencia</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -62,16 +27,16 @@
           <div class="col-6 text-center " >
             
             <div v-if="emplead.Foto=='null'">
-                <img class="imagePerfil" name="fotoPerfils" src='/media/imagenesPerfil/ImagenPerfilN.jpg' alt="" />
+                <img class="imagePerfil" id="imagePerfil" name="fotoPerfils" src='/media/imagenesPerfil/ImagenPerfilN.jpg' alt="" />
             </div>
             <div v-else>
-            <img class="imagePerfil" name="fotoPerfils" :src="'/media/imagenesPerfil/'+emplead.Foto" alt="" />
+                <img class="imagePerfil" id="imagePerfil" name="fotoPerfils" :src="'/media/imagenesPerfil/'+emplead.Foto" alt="" />
             </div>
-            <h3 class="nombreP">Nombre : @{{emplead.nombre}}</h3>
             <div class="image-upload">  
                 <label for="file-input"><i for="exampleFormControlFile1" class="fas fa-camera"></i></label>
-                <input id="file-input" type="file"/> 
+                <input id="file-input" type="file" accept="image/*" v-on:change="datosFicheroPerfil"/> 
             </div> 
+            <h3 class="nombreP">Nombre : @{{emplead.nombre}}</h3>
             <p class="nombreP"> DNI : @{{emplead.dni}}</p>
             <p class="nombreP"> Tlf : @{{emplead.telefono}}</p> 
           </div>
@@ -83,14 +48,10 @@
                 </div>
                 <div class="form-group">
                   <label for="inputAddress">Constraseña</label>
-                  <input type="password" class="form-control" v-model="passwordNew" id="password" placeholder="Introduce tu nueva Contraseña">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlFile1">Cambiar Foto de perfil</label>
-                    <input type="file" class="form-control-file" v-on:change="datosFicheroPerfil">
+                  <input type="password" class="form-control" v-model="passwordNew" @keyup="escribir" id="passwordPerfil" placeholder="Introduce tu nueva Contraseña">
                 </div>
                 <div class="modal-footer">
-                <button class="btn btn-primary boton-foto">Guardar Datos</button>
+                  <button class="btn btn-primary boton-foto" disabled id="GuardarPerfil">Guardar Informacion</button>
                 </div>
             </form>
           </div>
