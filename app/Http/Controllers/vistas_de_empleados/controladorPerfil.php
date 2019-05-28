@@ -41,19 +41,19 @@ class controladorPerfil extends Controller
                 $pass==true;
             }
         }
-            if ($img==true && $pass==true ) {
-                $login->save(); 
-                $empleado->save();
-            }
-            if ($pass==true) {
-                $login->save();             
-            }
-            if ($img==true) {
-                $empleado->save();             
-            }
+        if ($img==true && $pass==true ) {
+            $login->save(); 
+            $empleado->save();
+        }
+        if ($pass==true) {
+            $login->save();             
+        }
+        if ($img==true) {
+            $empleado->save();             
         }
     }
 }
+
 
 
 
