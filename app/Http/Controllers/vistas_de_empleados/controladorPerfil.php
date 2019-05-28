@@ -7,11 +7,13 @@ use App\Empleados;
 use App\login;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
-$img == false;
-$pass == false;
+
 class controladorPerfil extends Controller
 {
+    
     public function actualizarPerfil (Request $resquest){
+        $img = false;
+        $pass = false;
 
         $empleado=Empleados::find($resquest['idempleado']);
 
@@ -28,7 +30,7 @@ class controladorPerfil extends Controller
             $path=public_path().'/media/imagenesPerfil/'.$name;
             file_put_contents($path,$decode);
             $empleado->Foto = $name; 
-            $empleado->save(); 
+            // $empleado->save(); 
             $img==true;
 
             //Modificar fecha
@@ -37,17 +39,18 @@ class controladorPerfil extends Controller
             foreach ($loginPassword as $loginP) {
                 $login=login::find($loginP->id);
                 $login->password=Hash::make($resquest['passwordNew']);
-                $login->save();             
+                // $login->save();             
                 $pass==true;
             }
+            if ($pass==true) {
+                $login->save();             
+            }
         }
-        if ($img==true && $pass==true ) {
-            $login->save(); 
-            $empleado->save();
-        }
-        if ($pass==true) {
-            $login->save();             
-        }
+        // if ($img==true && $pass==true ) {
+        //     $login->save(); 
+        //     $empleado->save();
+        // }
+        
         if ($img==true) {
             $empleado->save();             
         }
