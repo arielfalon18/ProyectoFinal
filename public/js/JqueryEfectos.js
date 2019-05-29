@@ -1,24 +1,18 @@
+$(window).load(function(){
+    document.getElementById("myDIV").className = "mystyle";
 
-$(document).ready(function(){
- document.getElementById('mostrar').addEventListener("click" , hola);
-
-function hola(){
-    alert("hola");
-}
-
- });
-$( "#mostrar-progreso" ).click(function() {
-    $( "#abrir-progreso" ).toggle( "slow" );    
-});
-$( "#mostrar-finalizada" ).click(function() {
-    $( "#abrir-finalizada" ).toggle( "slow" );    
-});
-$( "#mostrar-cancelada" ).click(function() {
-    $( "#abrir-cancelada" ).toggle( "slow" );    
+    $( "#mostrar-progreso" ).click(function() {
+        $( "#abrir-progreso" ).toggle( "slow" );    
+    });
+    $( "#mostrar-finalizada" ).click(function() {
+        $( "#abrir-finalizada" ).toggle( "slow" );    
+    });
+    $( "#mostrar-cancelada" ).click(function() {
+        $( "#abrir-cancelada" ).toggle( "slow" );    
+    });
 });
 
-
-// $(window).load(function(){
+// 
 //     $('#file-input').change(function(e) {
 //         addImage(e); 
 //     });
