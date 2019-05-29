@@ -14,7 +14,6 @@
     <title>Usuario</title>
     <link rel="stylesheet" href="/css/usuario.css">
     <link rel="stylesheet" href="/css/app.css">
-    
 
     <script src="/js/vue/vueD.js"></script>
     <script src="/js/axios.js"></script>
@@ -35,6 +34,8 @@
     <script src="/js/abrir.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/js/JqueryEfectos.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
@@ -47,8 +48,5 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
     <script src="/js/vueApp.js"></script>
-    <script>
-      iniciar()
-    </script>
   </body>
 </html>
