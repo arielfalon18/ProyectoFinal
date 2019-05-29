@@ -53,11 +53,11 @@
                         <table class="table" >
                           <thead>
                               <tr>
-                                  <th scope="col">Id <i class="fa fa-sort" v-on:click.prevent="orderDepartamento()" ></i></th>
-                                  <th scope="col">Nombre</th>
-                                  <th scope="col">Planta</th>
-                                  <th scope="col">Edificio</th>
-                                  <th scope="col">IdEmpresa</th>
+                                  <th scope="col">Id <i class="fa fa-sort" @click="orderByDepartamento('id')" ></i></th>
+                                  <th scope="col">Nombre <i class="fa fa-sort" @click="orderByDepartamento('Nombre')" ></i></th>
+                                  <th scope="col">Planta <i class="fa fa-sort" @click="orderByDepartamento('Planta')" ></i></th>
+                                  <th scope="col">Edificio <i class="fa fa-sort" @click="orderByDepartamento('Edificio')" ></i></th>
+                                  <th scope="col">IdEmpresa </th>
                               </tr>
                           </thead>
                           <tbody v-for="DepartamentosA in DepartamentosT">
@@ -188,13 +188,13 @@
                 </div>
               </div>
             </div>
-            <form id="Formulario" class="info-form imagenOpinion" >
+            <form id="Formulario" v-on:submit.prevent="NotificarErrores" class="info-form imagenOpinion" >
               <span class="colorLetraForm">¿Notificar Errores?</span>
               <span id="pressionaF" class="PreccionaA">Click aquí</span>
               <span id="close" class="CerrarF">x</span>
               <div id="popup-open">
-                <input class="input input-100 inputFormE" name="email" type="email" placeholder="Tu email">
-                <textarea  class="input input-100 mensajeFB" name="asunto" placeholder="Déjanos tu teléfono y un mensaje"></textarea>
+                <input class="input input-100 inputFormE" name="email" id="emailE" type="email"  disabled value="{{auth()->user()->email}}">
+                <textarea  class="input input-100 mensajeFB" name="asunto" v-model="mensaje" placeholder="Déjanos tu teléfono y un mensaje"></textarea>
                 <input  class="input-submit input input-100 mensajeFB" type="submit" value="Enviar mensaje">
                 <div id="response_2"></div>
             </div>

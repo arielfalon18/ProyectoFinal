@@ -26,8 +26,7 @@ Route::post('newIncidencia','DB\incidenciaController@store');
 //Creamos un departamento
 Route::post('CreateDepar', 'DB\departamentoController@NEWdepartamento');
 //Mostramos los datos de departamento
-Route::get('DepartamentosGET','DB\departamentoController@GetDepartamento');
-//QUITAR
+//Lo pondemos post porque modificamos cada click
 Route::post('DepartamentosPOST','DB\departamentoController@GetDepartamento');
 //Mostrar incidencias
 
@@ -75,7 +74,7 @@ Route::get('JefePersonal','vistas_de_empleados\JefePersonalController@getIndex')
 //Asignar la incidencia para un tecnico
 Route::post('AsignarIncidencia' , 'DB\IncidenciaTecnico@InsertarAsignatura');
 //MostrarIncidencia del tecnico 
-Route::get('MostraIncidenciaTec','DB\IncidenciaTecnico@MostrarIncidenciAsignadas');
+Route::post('MostraIncidenciaTec','DB\IncidenciaTecnico@MostrarIncidenciAsignadas');
 
 Route::get('MostrarContadorTec','vistas_de_empleados\tecnicoIncidenciaController@mostrarTecnicoIm');
 
@@ -84,6 +83,11 @@ Route::get('mostrarDescTecnico','vistas_de_empleados\tecnicoIncidenciaController
 Route::post('importCSV','CSV\importController@ImportFicheroInsert');
 //Import empleados CSV tambien la tabla modal ya que va todo junto cada vez que se crea un usuario 
 Route::post('importCSVEmpleado','CSV\importController@importCSVEmpleados');
+//Exporta PDF
+Route::get('exporPDFIncidencia' , 'CSV\exportController@exportPDF')->name('exporPDFIncidencia');
+//Export a excel
+Route::get('exporexcelIncidencia','CSV\exportController@exportExcel')->name('exporexcelIncidencia');
+//----------------------------
 
 //Tecnico Rutas tecnico 
 //Cancelar incidencia
@@ -92,3 +96,5 @@ Route::post('DarResut','vistas_de_empleados\tecnicoIncidenciaController@AsignarR
 //Modificar perfil de usuario
 Route::post('actualizarPerfil' ,'vistas_de_empleados\controladorPerfil@actualizarPerfil');
 
+///Notificar error en la base de datos 
+Route::post('NotificarErrores' ,'Auth\ControladorErroresBase@erroresNotificar');

@@ -14,7 +14,7 @@
             <div class="form-group col-md-6">
                 <label>Fecha incidencia</label>
                 <input type="text" class="form-control" id="FechaI" name="FechaI" value="{{ old('scheduled_date',date('d-m-Y')) }}" readonly="readonly">
-                <span v-if="errors.FechaI" class="text-danger">@{{errors.FechaI[0]}}</span>
+                <span v-if="errors.FechaI" class="alert-danger">@{{errors.FechaI[0]}}</span>
             </div>
         </div>
         <div class="form-row">
@@ -23,12 +23,12 @@
                     <option value="D" disabled selected>Selecciona departamento</option>
                     <option v-for="depart in DepartamentosT" v-if="depart.IdEmpresa=={{auth('usuarioL')->user()->Id_Empresa}}">@{{depart.Nombre}}</option>
                 </select>
-                <span v-if="errors.idDeparta" class="text-danger">@{{errors.idDeparta[0]}}</span>
+                <span v-if="errors.idDeparta" class="alert-danger">@{{errors.idDeparta[0]}}</span>
             </div>
         </div>
         <div class="form-row" v-model="idEmpre={{auth('usuarioL')->user()->Id_Empresa}}">
             <div class="form-group" v-model="idEmple={{auth('usuarioL')->user()->Id_empleado}}" >
-                <input type="file" name="Imagen" id="Imagen" v-on:change="fotodeIncidencia">
+                <input type="file" accept="image/*" name="Imagen" id="Imagen" v-on:change="fotodeIncidencia">
             </div>
             <div class="form-group col-md-6" >
                 <select class="form-control" v-model="Prioridad" name="Prioridad" id="Prioridad">
@@ -37,14 +37,14 @@
                     <option>Media</option>
                     <option>Alta</option>
                 </select>
-                <span v-if="errors.Prioridad" class="text-danger">@{{errors.Prioridad[0]}}</span>
+                <span v-if="errors.Prioridad" class="alert-danger">@{{errors.Prioridad[0]}}</span>
             </div>
         </div>
         <div class="form-group">
             <textarea class="form-control"  v-model="Descripcion" name="Descripcion" id="Descripcion" cols="5" rows="5" placeholder="Descripcion"></textarea>
-            <span v-if="errors.Descripcion" class="text-danger">@{{errors.Descripcion[0]}}</span>
+            <span v-if="errors.Descripcion" class="alert-danger">@{{errors.Descripcion[0]}}</span>
         </div>
-        <button id="AñadirIncidencia" class="btn btn-primary">Añadir</button>
+        <button id="AñadirIncidencia" class="btn btn-outline-primary">Añadir</button>
         </form>
       </div>
     </div>

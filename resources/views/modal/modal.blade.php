@@ -15,28 +15,28 @@
             <div class="form-group col-md-7">
             <!-- v-model="nombre" -->
                 <input type="text" class="form-control" id="nombreT"  v-model="nombreT" name="nombreT" placeholder="Introduce su nombre">
-                <span v-if="errors.nombre" class="text-danger">@{{errors.nombre[0]}}</span>
+                <span v-if="errors.nombre" class="alert-danger">@{{errors.nombre[0]}}</span>
             </div>
             <div class="form-group col-md-5">
                 <input type="text" class="form-control" id="dniT" v-model="dniT"   name="dniT" placeholder="DNI">
-                <span v-if="errors.dni" class="text-danger">@{{errors.dni[0]}}</span>
+                <span v-if="errors.dni" class="alert-danger">@{{errors.dni[0]}}</span>
             </div>
         </div>
         <div class="form-group">
             <input type="text" class="form-control" name="emailT" v-model="emailT"  id="emailT" placeholder="Introduce el email">
-            <span v-if="errors.email" class="text-danger">@{{errors.email[0]}}</span>
+            <span v-if="errors.email" class="alert-danger">@{{errors.email[0]}}</span>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="telefonoT" v-model="telefonoT"  name="telefonoT" placeholder="Telefono">
-                <span v-if="errors.telefono" class="text-danger">@{{errors.telefono[0]}}</span>
+                <input type="text" class="form-control" id="telefonoT" v-model="telefonoT"   name="telefonoT" placeholder="Telefono">
+                <span v-if="errors.telefono" class="alert-danger">@{{errors.telefono[0]}}</span>
             </div>
             <div class="form-group col-md-6">
               <select class="form-control" v-model="idRol" name="TDepartamento" id="TDepartamento" >
                   <option value="B" disabled selected>Selecciona departamento</option>
                   <option v-for="dapart in DepartamentosT" v-if="dapart.IdEmpresa=={{auth()->user()->id}}">@{{dapart.Nombre}}</option>
               </select>
-              <span v-if="errors.IdDepartamento" class="text-danger">@{{errors.IdDepartamento[0]}}</span>
+              <span v-if="errors.IdDepartamento" class="alert-danger">@{{errors.IdDepartamento[0]}}</span>
               
             </div>
         </div>
@@ -48,7 +48,7 @@
                 <option >Tecnico</option>
                 
           </select>
-          <span v-if="errors.Idrol" class="text-danger">@{{errors.Idrol[0]}}</span>
+          <span v-if="errors.Idrol" class="alert-danger">@{{errors.Idrol[0]}}</span>
         </div>
         <button id="AñadirEmpleado" class="btn btn-primary">Añadir</button>
         
@@ -74,16 +74,16 @@
         
         <div class="form-group" v-model="id={{auth()->user()->id}}">
             <input type="text" class="form-control" id="nombreD" v-model="nombreD" name="nombreD" placeholder="Departamento">
-            <span v-if="errors.Nombre" class="text-danger">@{{errors.Nombre[0]}}</span>
+            <span v-if="errors.Nombre" class="alert-danger">@{{errors.Nombre[0]}}</span>
         </div>
         <div class="form-row">
             <div class="form-group col-md-7">
                 <input type="text" class="form-control" name="EdificioD" v-model="EdificioD" id="EdificioD" placeholder="Edificio">
-                <span v-if="errors.Edificio" class="text-danger">@{{errors.Edificio[0]}}</span>
+                <span v-if="errors.Edificio" class="alert-danger">@{{errors.Edificio[0]}}</span>
             </div>
             <div class="form-group col-md-5">
                 <input type="text" class="form-control"  id="plantaD" v-model="plantaD" name="plantaD" placeholder="Planta">
-                <span v-if="errors.Planta" class="text-danger">@{{errors.Planta[0]}}</span>
+                <span v-if="errors.Planta" class="alert-danger">@{{errors.Planta[0]}}</span>
                 <span v-else-if="errors.Planta !=1" ></span>
             </div>
         </div>
@@ -157,10 +157,10 @@
 
             <div class="form-group">
 
-            <label for="csv_file" class="control-label col-sm-3">CSV ficheASDASro</label>
-                <input type="file"  id="csv_file" name="csv_file" class="form-control-file">
+            <label for="csv_file" class="control-label col-sm-3">CSV fichero</label>
+                <input type="file"  id="csv_file" accept=".csv,.ods" name="csv_file" class="form-control-file">
             </div>  
-              <button  class="btn btn-primary">Enviar</button>
+              <button  class="btn btn-outline-primary">Enviar</button>
             </form>
               <!-- Puedes ver lo que envias quitar luego -->
                   <!-- <table class="table">
@@ -204,9 +204,9 @@
             <div class="form-group">
               <img class="img-Ei" src="media/tutorial/EI.png" alt="">
               <label for="csv_fileE" class="control-label col-sm-3">CSV fichero</label>
-                <input type="file"  id="csv_fileE" name="csv_fileE" class="form-control-file">
+                <input type="file"  id="csv_fileE"  accept=".csv,.ods" name="csv_fileE" class="form-control-file">
             </div>  
-              <button  class="btn btn-primary">Enviar</button>
+              <button  class="btn btn-outline-primary">Enviar</button>
             </form>
             <!-- Puedes ver lo que envias quitar luego -->
                   <!-- <table class="table">

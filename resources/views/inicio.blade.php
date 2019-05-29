@@ -1,14 +1,12 @@
 <div class="fakeloader">
-
+ 
 <!-- <img src="media/prueba/1.jpg" alt=""> -->
 </div>   
 @extends('layouts.master')
 @section('content')
 
-<div class="cointainer"> 
-
-
-<!--Hasta aqui solo el header -->
+<div class="cointainer">   
+   <!--Hasta aqui solo el header -->
    <!-- Contenido que ofrecemos Aqui podemos enviar a cada ruta que queramos  -->
    <div class="bd-example">
    <!-- <?php

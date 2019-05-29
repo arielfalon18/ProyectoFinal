@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'Estas credenciales no coinciden con nuestros registros.',
+    'failed' => 'Fallo al aceder verificar constraseña o correo.',
     'throttle' => 'Demasiados intentos de inicio de sesión. Por favor, intente de nuevo en: segundos segundos',
 
 ];
