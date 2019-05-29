@@ -78,6 +78,8 @@ new Vue({
         nombreI:'',
         tipoI:'',
         DescripcionI:'',
+        //array inventario
+        InventarioE:[],
         //-------------------
         nombre:'',
         cif:'',

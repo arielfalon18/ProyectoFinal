@@ -12,9 +12,11 @@ class departamentoController extends Controller
         $messages = [
             'Nombre.required' => 'Departamento requerido',
             'Planta.required' =>'Planta requerida',
-            'Edificio.required' => 'Edificio requerido'
+            'Edificio.required' => 'Edificio requerido',
+            'Nombre.unique' => 'Nombre departamento repetido'
         ];
         $resquest->validate([
+
             'Nombre' =>'required|unique:departamento,Nombre',
             'Planta' =>'required',
             'Edificio' =>'required'

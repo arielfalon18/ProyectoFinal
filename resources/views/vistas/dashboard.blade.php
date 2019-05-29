@@ -112,6 +112,29 @@
                     <button class="btn btn-primary" data-toggle="modal" data-target="#añadirinventario">Añadir Inventario</button>
                     <hr>
                     En proceso
+                    <div class="table-responsive">
+                      <table class="table" >
+                        <thead>
+                          <tr>
+                            <th scope="col">Id <span class="arrow" ></th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Descripcion</th>
+                          </tr>
+                        </thead>
+                        <tbody v-for="(empleadoD,key) in empleados">
+                          <tr v-if='empleadoD.IdEmpresa=={{auth()->user()->id}}'>
+                            <th scope="row">@{{empleadoD.id}}</th>
+                            <td>@{{empleadoD.nombre}}</td>
+                            <td>@{{empleadoD.dni}}</td>
+                            <td>@{{empleadoD.email}}</td>
+                            <td>@{{empleadoD.telefono}}</td>
+                            <td>@{{empleadoD.departamentos.Nombre}}</td>
+                            <td>@{{empleadoD.Rol}}</td>
+                            <td><button class="btn btn-primary" v-on:click.prevent="deleteempleado(empleadoD)">Borrar</button><td>                                        
+                          </tr>
+                        <tbody>
+                      </table>
                   </div>
                 </div>
               </div>
