@@ -31,11 +31,16 @@
                   <p class="informacion"><strong>Usuario:</strong> @{{empleadosA.nombre}}</p>
                   <p class="informacion"><strong>Departamento:</strong> @{{DepartamentosA.Nombre}}</p>
                   <p class="informacion"><strong>Prioridad:</strong> @{{IncidenciaA.Prioridad}}</p>
+                  <hr>
+
+                  <!-- <div class="mostrar1" @click='verDatosDescripcion'>Mostrar más..</div> -->
+                  <!-- <div id="abrir">
                   <hr class="hr-class">
                   <div id="mostrar-progreso">Click</div>
                   <div id="abrir-progreso">
                     <p class="informacion"><strong>Descripcion:</strong> @{{IncidenciaA.Descripcion}}</p>
-                  </div>
+                  </div> -->
+                  <p class="informacion"><strong>Descripcion:</strong> @{{IncidenciaA.Descripcion}}</p>
               </div>
             </div>
           </div>
@@ -65,8 +70,18 @@
               <p class="informacion"><strong>Usuario:</strong> @{{empleadosB.nombre}}</p>
               <p class="informacion"><strong>Departamento:</strong> @{{DepartamentosB.Nombre}}</p>
               <p class="informacion"><strong>Prioridad:</strong> @{{IncidenciaB.Prioridad}} </p>
+
+              <hr>
+              <!-- <div class="mostrar1" id="hola" @click='verDatosDescripcion(IncidenciaB.id)'>Mostrar más..</div> -->
+              <p class="informacion"><strong>Descripcion:</strong> @{{IncidenciaB.Descripcion}}</p> 
+              <!-- <div id="more_text_box" value="adios"></div>
+              <div class="abrir">
+                <p class="informacion"><strong>Descripcion:</strong> @{{IncidenciaB.Descripcion}}</p> 
+              </div> -->
+<!-- 
               <hr class="hr-class">
-              <p class="informacion"><strong>Descripcion:</strong> @{{IncidenciaB.Descripcion}}</p>
+              <p class="informacion"><strong>Descripcion:</strong> @{{IncidenciaB.Descripcion}}</p> -->
+
             </div>
           </div>
         </div>
@@ -168,7 +183,7 @@ $(document).ready(function(){
         </div>
       </div>
     </div>
-
+    
 <!-- Modal para modificar los datos del user al hacer login -->
 <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
@@ -178,3 +193,4 @@ $(document).ready(function(){
     </div>
   </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>

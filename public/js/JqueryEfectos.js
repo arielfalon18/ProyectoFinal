@@ -1,6 +1,29 @@
-$( "#mostrar-progreso" ).click(function() {
-    $( "#abrir-progreso" ).toggle( "slow" );
-  });
+// $(document).ready(function(){
+    // $(".abrir").toggle(
+    //     setTimeout(() => {
+    //         alert("HOLA");
+    //     },6000)
+    // );
+
+    
+    
+        
+   
+    
+// });
+    
+
+
+// $( "#mostrar-progreso" ).click(function() {
+//     $( "#abrir-progreso" ).toggle( "slow" );    
+// });
+// $( "#mostrar-finalizada" ).click(function() {
+//     $( "#abrir-finalizada" ).toggle( "slow" );    
+// });
+// $( "#mostrar-cancelada" ).click(function() {
+//     $( "#abrir-cancelada" ).toggle( "slow" );    
+// });
+
 
 // $(window).load(function(){
 //     $('#file-input').change(function(e) {

@@ -430,6 +430,9 @@ nav ul li a:hover {
 .menu{
 	display:none;
 }
+
+
+
 .abrir2{
 	height: 30px;
 }
@@ -441,15 +444,17 @@ nav ul li a:hover {
 	 transition: 0.8ms;
 }
 #abrir-progreso{
+
 	display:none;
+}
+.mostrar{
+	display: none;
+}
+.abrir:hover{
+	height: 30px;
+	transition: 0.8ms;
 }
 
-#abrir-cancelada{
-	display:none;
-}
-#abrir-finalizada{
-	display:none;
-}
 /************/
 .TAlta{
 	background-color: red;

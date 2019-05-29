@@ -735,12 +735,34 @@ new Vue({
             
             
         }
+        
+        // verDatosDescripcion: function(id){
+        //    console.log(id);
+        //    $('#more_text_box').attr('id',id);
+        //    $('#more_text_box').prev('div').prop('id',id);
+
+        //     // alert($('#more_text_box').attr("id"));
+        //     // $('#more_text_box').attr("id",id);
+        //     alert($('#more_text_box').attr("id"));
 
 
+        //     // if (id == $('#more_text_box').attr("id")) {
+        //     //     alert("si");
+        //     // }else{
+        //     //     alert("no");
+        //     // }
+        //     // $('.abrir').toggle();
+        //     //$('.mostrar1').addClass('mostrar');
+            
+        // },
+        
     },
     mounted() {
         window.addEventListener('mouseup', this.Volver);
     }
+    
+    
+
   })
 
 
