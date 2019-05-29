@@ -42,5 +42,11 @@ class InventarioController extends Controller
         $inventarioALL=Inventarios::get();
         return $inventarioALL;
     }
+
+    //eliminar inventario
+    public function EliminarInventario($id){
+        $inventario = Inventarios::where('id',$id);
+        $inventario->delete();
+    }
     
 }

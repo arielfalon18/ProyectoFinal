@@ -464,8 +464,21 @@ new Vue({
         getInventario: function(){
             var urlGetInventario='http://127.0.0.1:8000/InventarioE';
             axios.get(urlGetInventario).then(response =>{
-                this.IGetInventario=response.data
+                this.GetInventario=response.data,
+                this.getInventario()
             })
+        },
+
+        deleteinventario: function(InventarioID){
+            var UrlEliminarInventario='http://127.0.0.1:8000/InventarioE/'+InventarioID.id;
+            axios.get(UrlEliminarInventario).then(response =>{
+                this.getInventario();
+                this.seBorro=true;
+                setTimeout(() => {
+                    this.seBorro=false;
+                }, 4000);
+                
+            }) 
         },
         //Mostrar todos las incidencias
         getIncidencias: function(){
