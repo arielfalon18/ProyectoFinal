@@ -9,8 +9,6 @@
 
 <h2>The Incidence</h2>
 
-<p>Intalación Laravel: </p>
-
 <h3>Instalar composer Windows</h3>
 <p>La forma más sencilla de instalar Composer en tu ordenador Windows consiste en descargar y ejecutar el archivo <a href="https://getcomposer.org/download/">Composer</a>, que instala la versión más reciente de Composer y actualiza el PATH de tu ordenador para que puedas ejecutar Composer simplemente escribiendo el comando composer.</p>
 <p>Una vez se ha instalado, debemos ejecutar este comando en nuestro cmd: composer global require laravel/installer</p>
