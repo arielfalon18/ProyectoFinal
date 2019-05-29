@@ -25,7 +25,7 @@
 <h3>Iniciar Laravel</h3>
 <p>Una vez hemos realizado todos estos pasos ahora vamos a iniciar la aplicación, primero de todo nos debemos descargar todo el proyecto, aqui arriba hay un boton que se va a poder descargar todo el codigo, una vez lo tengamos en loca, abriremos un terminal y nos situaremos dentro de la carpeta del proyecto. Introduciremos un comando y le daremos enter: php artisan serve</p>
 
-
+<hr>
 
 ## About Laravel
 
