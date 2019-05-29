@@ -5,6 +5,7 @@ namespace App\Http\Controllers\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Inventarios;
+use App\Empleados;
 
 
 class InventarioController extends Controller
