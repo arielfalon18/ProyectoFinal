@@ -22,7 +22,11 @@
 <p>4. sudo echo 'PATH=$PATH:~/.composer/vendor/bin' >> ~/.profile</p>
 
 <h5>Base de datos: MySQL</h5>
-<p>Hemos elegido esta base de datos, ya que la hemos estado utilizando todo el curso, deberemos de encerder en el panel de XAMPP y el navegador favorito hemos de poner <a href="http://localhost/phpmyadmin/">localhost</a>crearemos la base de datos llamada projectofinal e importaremos el fichero .sql que habrá en la carpeta del proyecto: ProyectoFinal-Base_De_Datos</p>
+<p>Hemos elegido esta base de datos, ya que la hemos estado utilizando todo el curso, deberemos de encerder en el panel de XAMPP y el navegador favorito hemos de poner <a href="http://localhost/phpmyadmin/">localhost</a> crearemos la base de datos llamada projectofinal e importaremos el fichero .sql que habrá en la carpeta del proyecto: ProyectoFinal-Base_De_Datos. El usuario es root y no tiene contraseña</p>
+
+<h5>Iniciar Laravel</h5>
+<p>Una vez hemos realizado todos estos pasos ahora vamos a iniciar la aplicación, primero de todo nos debemos descargar todo el proyecto, aqui arriba hay un boton que se va a poder descargar todo el codigo, una vez lo tengamos en loca, abriremos un terminal y nos situaremos dentro de la carpeta del proyecto. Introduciremos un comando y le daremos enter: php artisan serve</p>
+
 
 
 ## About Laravel
