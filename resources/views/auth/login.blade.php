@@ -35,8 +35,8 @@
                         </div>
                          <div class="text-right">
                          <button class="btn btn-outline-info textleft"> Acceder</button>
-
-                         <button class="btn btn-secondary" ><a href="/InciarEmpleado">Acceder Usuario</a></button>
+                         <a href="/InciarEmpleado" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Acceder Empleados</a>
+                         <!-- <button class="btn btn-secondary" ><a href="">Acceder Usuario</a></button> -->
 
                     </div>
                     </form>

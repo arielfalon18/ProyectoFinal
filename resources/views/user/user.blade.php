@@ -31,16 +31,11 @@
                   <p class="informacion"><strong>Usuario:</strong> @{{empleadosA.nombre}}</p>
                   <p class="informacion"><strong>Departamento:</strong> @{{DepartamentosA.Nombre}}</p>
                   <p class="informacion"><strong>Prioridad:</strong> @{{IncidenciaA.Prioridad}}</p>
-                  <hr>
-
+                  <hr class="hr-class">                  
                   <!-- <div class="mostrar1" @click='verDatosDescripcion'>Mostrar más..</div> -->
-                  <!-- <div id="abrir">
-                  <hr class="hr-class">
-                  <div id="mostrar-progreso">Click</div>
-                  <div id="abrir-progreso">
+                   <div id="more_text_box">
                     <p class="informacion"><strong>Descripcion:</strong> @{{IncidenciaA.Descripcion}}</p>
-                  </div> -->
-                  <p class="informacion"><strong>Descripcion:</strong> @{{IncidenciaA.Descripcion}}</p>
+                  </div>
               </div>
             </div>
           </div>
@@ -66,18 +61,18 @@
                   <p class="informacion"><strong>Tecnico:</strong> @{{TecnicoInc.mostrar_tecnico.nombre}}</p>
                   <p class="informacion"><strong>Close:</strong> Pendiente</p>
                 </div>
-              </div>
+              </div>  
               <p class="informacion"><strong>Usuario:</strong> @{{empleadosB.nombre}}</p>
               <p class="informacion"><strong>Departamento:</strong> @{{DepartamentosB.Nombre}}</p>
               <p class="informacion"><strong>Prioridad:</strong> @{{IncidenciaB.Prioridad}} </p>
 
               <hr>
-              <!-- <div class="mostrar1" id="hola" @click='verDatosDescripcion(IncidenciaB.id)'>Mostrar más..</div> -->
-              <p class="informacion"><strong>Descripcion:</strong> @{{IncidenciaB.Descripcion}}</p> 
-              <!-- <div id="more_text_box" value="adios"></div>
-              <div class="abrir">
+              <button class="mostrar1" @click="select(IncidenciaB.id)">Mostrar más..</button>
+              <!-- <div id="more_text_box" class="cla sePreba" value="adios"></div> -->
+              <div class="abrir" id="">
                 <p class="informacion"><strong>Descripcion:</strong> @{{IncidenciaB.Descripcion}}</p> 
-              </div> -->
+              </div>
+              
 <!-- 
               <hr class="hr-class">
               <p class="informacion"><strong>Descripcion:</strong> @{{IncidenciaB.Descripcion}}</p> -->

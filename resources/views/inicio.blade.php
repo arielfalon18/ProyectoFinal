@@ -1,6 +1,6 @@
 <div class="fakeloader">
  
-<!-- <img src="media/prueba/1.jpg" alt=""> -->
+<!-- <img srcre="media/prueba/1.jpg" alt=""> -->
 </div>   
 @extends('layouts.master')
 @section('content')
@@ -15,10 +15,10 @@
       <div id="carouselExampleCaptions" class="carousel slide ImagePortada" data-ride="carousel">
          <div class="carousel-inner">
             <div class="carousel-item active">
-               <img src="media/prueba/3.jpg" class="d-block w-100 h-100" alt="">
+               <img src="media/prueba/1.jpg" class="d-block w-100 h-100" alt="">
             </div>
             <div class="carousel-item">
-               <img src="media/prueba/1.jpg" class="d-block w-100 h-100" alt="...">
+               <img src="media/prueba/3.jpg" class="d-block w-100 h-100" alt="...">
             </div>
             <div class="carousel-item">
                <img src="media/prueba/4.jpg" class="d-block w-100 h-100" alt="...">

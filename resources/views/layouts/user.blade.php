@@ -31,6 +31,7 @@
     @yield('content')
     </div>
     <script src="/js/JqueryEfectos.js"></script>
+    <!-- <script src="/js/abrir.js"></script> -->
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
