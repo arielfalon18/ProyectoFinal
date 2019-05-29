@@ -15,16 +15,16 @@
 <p>La forma más sencilla de instalar Composer en tu ordenador Windows consiste en descargar y ejecutar el archivo <a href="https://getcomposer.org/download/">Composer</a>, que instala la versión más reciente de Composer y actualiza el PATH de tu ordenador para que puedas ejecutar Composer simplemente escribiendo el comando composer.</p>
 <p>Una vez se ha instalado, debemos ejecutar este comando en nuestro cmd: composer global require laravel/installer</p>
 
-<h5><strong>Instalar composer Linux</strong></h5>
+<h3>Instalar composer Linux</h3>
 <p>1. sudo apt-get install curl</p>
 <p>2. curl -sS https://getcomposer.org/installer | php</p>
 <p>3. sudo mv composer.phar /usr/local/bin/composer</p>
 <p>4. sudo echo 'PATH=$PATH:~/.composer/vendor/bin' >> ~/.profile</p>
 
-<h5>Base de datos: MySQL</h5>
+<h3>Base de datos: MySQL</h3>
 <p>Hemos elegido esta base de datos, ya que la hemos estado utilizando todo el curso, deberemos de encerder en el panel de XAMPP y el navegador favorito hemos de poner <a href="http://localhost/phpmyadmin/">localhost</a> crearemos la base de datos llamada projectofinal e importaremos el fichero .sql que habrá en la carpeta del proyecto: ProyectoFinal-Base_De_Datos. El usuario es root y no tiene contraseña</p>
 
-<h5>Iniciar Laravel</h5>
+<h3>Iniciar Laravel</h3>
 <p>Una vez hemos realizado todos estos pasos ahora vamos a iniciar la aplicación, primero de todo nos debemos descargar todo el proyecto, aqui arriba hay un boton que se va a poder descargar todo el codigo, una vez lo tengamos en loca, abriremos un terminal y nos situaremos dentro de la carpeta del proyecto. Introduciremos un comando y le daremos enter: php artisan serve</p>
 
 
