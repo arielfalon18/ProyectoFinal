@@ -24,7 +24,7 @@
               <div class="card1" v-for="DepartamentosA in DepartamentosT" v-if="IncidenciaA.IdDepartamento==DepartamentosA.id">
                 <div class="card1Text">
                   <div>
-                    <p class="informacion"><strong>Tecnico:</strong>Pendiente</p>
+                    <p class="informacion"><strong>Tecnico: </strong> Pendiente</p>
                     <p class="informacion"><strong>Close:</strong> Pendiente</p>
                   </div>
                 </div>
@@ -33,10 +33,14 @@
                   <p class="informacion"><strong>Prioridad:</strong> @{{IncidenciaA.Prioridad}}</p>
                   <hr>
 
-                  <div id="mostrar">Click</div>
-                  <div id="abrir">
+                  <!-- <div class="mostrar1" @click='verDatosDescripcion'>Mostrar más..</div> -->
+                  <!-- <div id="abrir">
+                  <hr class="hr-class">
+                  <div id="mostrar-progreso">Click</div>
+                  <div id="abrir-progreso">
                     <p class="informacion"><strong>Descripcion:</strong> @{{IncidenciaA.Descripcion}}</p>
-                  </div>
+                  </div> -->
+                  <p class="informacion"><strong>Descripcion:</strong> @{{IncidenciaA.Descripcion}}</p>
               </div>
             </div>
           </div>
@@ -66,8 +70,18 @@
               <p class="informacion"><strong>Usuario:</strong> @{{empleadosB.nombre}}</p>
               <p class="informacion"><strong>Departamento:</strong> @{{DepartamentosB.Nombre}}</p>
               <p class="informacion"><strong>Prioridad:</strong> @{{IncidenciaB.Prioridad}} </p>
+
               <hr>
-              <p class="informacion"><strong>Descripcion:</strong> @{{IncidenciaB.Descripcion}}</p>
+              <!-- <div class="mostrar1" id="hola" @click='verDatosDescripcion(IncidenciaB.id)'>Mostrar más..</div> -->
+              <p class="informacion"><strong>Descripcion:</strong> @{{IncidenciaB.Descripcion}}</p> 
+              <!-- <div id="more_text_box" value="adios"></div>
+              <div class="abrir">
+                <p class="informacion"><strong>Descripcion:</strong> @{{IncidenciaB.Descripcion}}</p> 
+              </div> -->
+<!-- 
+              <hr class="hr-class">
+              <p class="informacion"><strong>Descripcion:</strong> @{{IncidenciaB.Descripcion}}</p> -->
+
             </div>
           </div>
         </div>
@@ -94,7 +108,7 @@
               <p class="informacion"><strong>Usuario:</strong> @{{empleadosC.nombre}} </p>
               <p class="informacion"><strong>Departamento:</strong> @{{DepartamentosC.Nombre}}</p>
               <p class="informacion"><strong>Prioridad:</strong> @{{IncidenciaC.Prioridad}} </p>
-              <hr>
+              <hr class="hr-class">
               <p class="informacion"><strong>Descripcion usuario:</strong> @{{IncidenciaC.Descripcion}}</p>
               <hr>
               <div v-for="mostrarC in mostrarDescTec" v-if="mostrarC.Id_incidencia==IncidenciaC.id">
@@ -128,7 +142,7 @@
               <p class="informacion"><strong>Usuario:</strong> @{{empleadosD.nombre}} </p>
               <p class="informacion"><strong>Departamento:</strong> @{{DepartamentosD.Nombre}}</p>
               <p class="informacion"><strong>Prioridad:</strong> @{{IncidenciaD.Prioridad}} </p>
-              <hr> 
+              <hr class="hr-class"> 
               <p class="informacion"><strong>Descripcion:</strong> @{{IncidenciaD.Descripcion}}</p>
               <hr>
               <div v-for="mostrarD in mostrarDescTec" v-if="mostrarD.Id_incidencia==IncidenciaD.id">
@@ -141,6 +155,13 @@
       </div>
       @include('modal.modalUser')
     </div>
+    <script>
+$(document).ready(function(){
+    $('#show').click(function() {
+      $('.menu').toggle("slide");
+    });
+});
+</script>
     @stop
 
 
@@ -162,7 +183,7 @@
         </div>
       </div>
     </div>
-
+    
 <!-- Modal para modificar los datos del user al hacer login -->
 <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
@@ -172,3 +193,4 @@
     </div>
   </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>

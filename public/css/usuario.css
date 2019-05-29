@@ -222,6 +222,11 @@ nav ul li a:hover {
 	/* border-style:solid; */
 	border-color: var(--negro);
 }
+.containernew{
+	margin-top: 0px;
+
+}
+
 .to-do{
 	background-color:#d3d4e8;
 	height: fit-content;
@@ -422,23 +427,34 @@ nav ul li a:hover {
 	border-radius: 15px;
 	background-color: red;
 }
-#abrir{
+.menu{
 	display:none;
+}
+
+
+
+.abrir2{
+	height: 30px;
+}
+.hr-class{
+	margin-top: 0px;
 }
 #abrir:hover{
 	height: 30px;
 	 transition: 0.8ms;
 }
 #abrir-progreso{
+
 	display:none;
+}
+.mostrar{
+	display: none;
+}
+.abrir:hover{
+	height: 30px;
+	transition: 0.8ms;
 }
 
-#abrir-cancelada{
-	display:none;
-}
-#abrir-finalizada{
-	display:none;
-}
 /************/
 .TAlta{
 	background-color: red;

@@ -1,16 +1,16 @@
 @extends('layouts.user')
 @section('content')
 <div id="appV" class="registro usuario">
-    <div class="container-fluid" v-for="Empleat in empleadosNA" v-if="Empleat.id=={{auth('usuarioL')->user()->Id_empleado}}">
+    <div class="container-fluid containernew" v-for="Empleat in empleadosNA" v-if="Empleat.id=={{auth('usuarioL')->user()->Id_empleado}}">
     <h2>Bienvenido/a @{{Empleat.nombre}}</h2>
     <hr>
         <div class="row">
         
-            <div class="col-md-6 col-sm-12 col-12" >
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12" >
                 
                 <h5>Tareas Para asignar</h5>
-                    <table class="table" >
-                    <thead class="thead-dark">
+                    <table class="table table-hover" >
+                    <thead class="thead-light">
                         <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Nombre Empleado</th>
@@ -45,10 +45,10 @@
                     </table>
                    
             </div>
-            <div class="col-md-6 col-sm-12  col-12">
+            <div class="col-lg-6 col-md-12  col-sm-12 col-12 ">
                 <h5>Tareas en Progreso</h5>
                 <table class="table">
-                    <thead class="thead-dark">
+                    <thead class="thead-light">
                         <tr>
                             <th scope="col">id</th>
                             <th scope="col">Nombre Tecnico</th>

@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
   <div class="row">
-  <div class="col-sm-md-lg-4">
+  <div class="col-4">
     <div class="flip-box">
       <div class="flip-box-inner">
         <div class="flip-box-front">
@@ -37,7 +37,7 @@
       </div>
     </div>
 </div>
-    <div class="col-sm-md-lg-4">
+    <div class="col-4">
     <div class="flip-box">
       <div class="flip-box-inner">
         <div class="flip-box-front">
@@ -76,7 +76,7 @@
 
 
 
- <div class="col-sm-md-lg-4">
+ <div class="col-4">
     <div class="flip-box">
       <div class="flip-box-inner">
         <div class="flip-box-front">

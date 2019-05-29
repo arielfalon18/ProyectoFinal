@@ -15,11 +15,30 @@ use App\Http\Controllers\Controller;
 
 class controladorPerfil extends Controller
 {
-    //
     public function actualizarPerfil (Request $resquest){
-        //dd($resquest);
         $empleado=Empleados::find($resquest['idempleado']);
-        if (request('fotoPerfil')==true) {
+        if ($resquest['fotoPerfil']==true && $resquest['passwordNew']) {
+            $exploded=explode(',',$resquest['fotoPerfil']);
+            $decode=base64_decode($exploded[1]);
+            if(str_contains($exploded[0],'jpeg')){
+                $extension='jpg';
+            }
+            else{
+                $extension='png';
+            }
+            $name=str_random().'.'.$extension;
+            $path=public_path().'/media/imagenesPerfil/'.$name;
+            file_put_contents($path,$decode);
+            $empleado->Foto = $name;
+            $empleado->save();
+
+            $loginPassword=login::where('Id_empleado',$resquest['idempleado'])->get();
+            foreach ($loginPassword as $loginP) {
+                $login=login::find($loginP->id);
+                $login->password=Hash::make($resquest['passwordNew']);
+                $login->save();
+            } 
+        }elseif (request('fotoPerfil')==true ) {
             $exploded=explode(',',$resquest['fotoPerfil']);
             $decode=base64_decode($exploded[1]);
             if(str_contains($exploded[0],'jpeg')){
@@ -40,14 +59,7 @@ class controladorPerfil extends Controller
                 $login=login::find($loginP->id);
                 $login->password=Hash::make($resquest['passwordNew']);
                 $login->save();
-            }
-            
+            }           
         }
-        // if ($resquest['fotoPerfil'] && $resquest['passwordNew']) {
-        //     $empleado->save();
-        //     $login->save();
-        // }
-        
     }
 }
-

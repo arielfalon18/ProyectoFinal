@@ -29,18 +29,22 @@ class empleadosController extends Controller
         $messages = [
             'nombre.required' => 'El nombre es requerido',
             'dni.required' =>'El DNI es requerido',
+            'dni.unique' => 'El DNI debe de ser unico',
+            'dni.max' => 'El DNI no puede tener mas de 9',
+            'dni.min' => 'No es un DNI',
             'email.required' => 'Edificio requerido',
             'email.email'=>'Tiene que ser un correo',
             'telefono.required' => 'El telefono es requerido',
             'telefono.max'=>'El telefono no puede ser mas de 9',
             'telefono.min'=>'No es formato telefono',
+            'telefono.unique' => 'El telefono debe ser unico',
             'IdDepartamento.required' =>'Seleccione el Id Departamento',
             'Idrol.required' => 'Seleccione un tipo de usuario'
 
         ];
         $resquest->validate([
             'nombre' =>'required',
-            'dni' =>'required|unique:empleados,dni',
+            'dni' =>'required|unique:empleados,dni|max:9|min:9',
             'email' =>'required|unique:empleados,email|email',
             'telefono' =>'required|unique:empleados,telefono|max:9|min:9',
             'IdDepartamento' =>'required',
