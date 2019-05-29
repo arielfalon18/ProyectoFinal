@@ -1,21 +1,28 @@
+// $(document).ready(function(){
+    // $(".abrir").toggle(
+    //     setTimeout(() => {
+    //         alert("HOLA");
+    //     },6000)
+    // );
 
-$(document).ready(function(){
- document.getElementById('mostrar').addEventListener("click" , hola);
+    
+    
+        
+   
+    
+// });
+    
 
-function hola(){
-    alert("hola");
-}
 
- });
-$( "#mostrar-progreso" ).click(function() {
-    $( "#abrir-progreso" ).toggle( "slow" );    
-});
-$( "#mostrar-finalizada" ).click(function() {
-    $( "#abrir-finalizada" ).toggle( "slow" );    
-});
-$( "#mostrar-cancelada" ).click(function() {
-    $( "#abrir-cancelada" ).toggle( "slow" );    
-});
+// $( "#mostrar-progreso" ).click(function() {
+//     $( "#abrir-progreso" ).toggle( "slow" );    
+// });
+// $( "#mostrar-finalizada" ).click(function() {
+//     $( "#abrir-finalizada" ).toggle( "slow" );    
+// });
+// $( "#mostrar-cancelada" ).click(function() {
+//     $( "#abrir-cancelada" ).toggle( "slow" );    
+// });
 
 
 // $(window).load(function(){

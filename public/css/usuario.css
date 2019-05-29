@@ -425,20 +425,17 @@ nav ul li a:hover {
 #abrir{
 	display:none;
 }
-#abrir:hover{
-	height: 30px;
-	 transition: 0.8ms;
-}
-#abrir-progreso{
+.abrir{
 	display:none;
+}
+.mostrar{
+	display: none;
+}
+.abrir:hover{
+	height: 30px;
+	transition: 0.8ms;
 }
 
-#abrir-cancelada{
-	display:none;
-}
-#abrir-finalizada{
-	display:none;
-}
 /************/
 .TAlta{
 	background-color: red;
