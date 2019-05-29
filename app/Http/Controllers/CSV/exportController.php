@@ -6,12 +6,10 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Barryvdh\DomPDF\Facade as PDF;
 use App\historial;
-use Maatwebsite\Excel\Facades\Excel;
+use Excel;
 use App\Exports\HistorialExport;
 class exportController extends Controller
 {
-    //
-    
     public function exportPDF(){
         $historial = historial::get();
         $pdf = PDF::loadView('export.pdfHistorial', compact('historial'));
