@@ -7,6 +7,16 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+<h2>The Incidence</h2>
+
+<p>Intalación Laravel: </p>
+
+<p>Instalar composer Windows</p>
+<p>La forma más sencilla de instalar Composer en tu ordenador Windows consiste en descargar y ejecutar el archivo <a href="https://getcomposer.org/download/">Composer</a>, que instala la versión más reciente de Composer y actualiza el PATH de tu ordenador para que puedas ejecutar Composer simplemente escribiendo el comando composer.</p>
+
+
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
