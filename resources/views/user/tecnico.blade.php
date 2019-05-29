@@ -6,6 +6,7 @@
         Incidencia Resuelta
     </div>
     <div class="container-fluid">
+        
         <div v-for="empleat in empleadosNA" v-if="empleat.id=={{auth('usuarioL')->user()->Id_empleado}}"> 
         <h2 >Bienvenido/a @{{empleat.nombre}} </h2>
             <table id="TecnicoTable" class="table table-striped">
