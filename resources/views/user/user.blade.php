@@ -78,9 +78,9 @@
               <div class="abrir">
                 <p class="informacion"><strong>Descripcion:</strong> @{{IncidenciaB.Descripcion}}</p> 
               </div> -->
-
+<!-- 
               <hr class="hr-class">
-              <p class="informacion"><strong>Descripcion:</strong> @{{IncidenciaB.Descripcion}}</p>
+              <p class="informacion"><strong>Descripcion:</strong> @{{IncidenciaB.Descripcion}}</p> -->
 
             </div>
           </div>
