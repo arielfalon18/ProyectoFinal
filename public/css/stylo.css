@@ -448,7 +448,7 @@ height: 54px;
 	width: 100% !important;
 }
 .row{
-	margin-top: 50px;
+	/* margin-top: 50px; */
     display: flex;
     flex-wrap: wrap;
     margin-right: -15px;

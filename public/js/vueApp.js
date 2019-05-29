@@ -736,24 +736,41 @@ new Vue({
             })
             
             
+        },
+        select: function(event) {
+            alert(event);
+        $('.abrir').attr('id',event);
+         var pos = $(this).attr("id");
+            // targetId = event.currentTarget.id;
+            console.log(pos); // returns 'foo'
+
+
+            if ($('.abrir').attr('id')== event) {
+                $('.abrir').addClass('.abrir2');
+                
+            }
         }
-        
         // verDatosDescripcion: function(id){
-        //    console.log(id);
-        //    $('#more_text_box').attr('id',id);
-        //    $('#more_text_box').prev('div').prop('id',id);
+        //     alert(id);
+        // //    $('.clasePreba').attr('id',id);
+        // //    $('.abrir').prev('div').prop('id',id);
+        //     // if ($('.clasePreba').attr('id')==id) {
+        //     //     $('.abrir').toggle();
+        //     // }
+        //     $('.abrir').attr('id',id)
+        //     // alert($(this).attr('id'));
 
-        //     // alert($('#more_text_box').attr("id"));
-        //     // $('#more_text_box').attr("id",id);
-        //     alert($('#more_text_box').attr("id"));
+        //     // $(".abrir").click(function(evt){
+        //     //     alert($(this).attr("id"));
+        //     //     $('.abrir').toggle();
+                
+        //     // });
 
-
-        //     // if (id == $('#more_text_box').attr("id")) {
-        //     //     alert("si");
+        //     // if ($(this).attr('id') ==  id) {
+        //     //     $('.abrir').toggle();
         //     // }else{
         //     //     alert("no");
         //     // }
-        //     // $('.abrir').toggle();
         //     //$('.mostrar1').addClass('mostrar');
             
         // },
