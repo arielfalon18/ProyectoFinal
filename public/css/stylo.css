@@ -303,12 +303,16 @@ width: 200px;
 	width: 100%;
 	height: 100vh;
 }
-
+.registr-text{
+	text-align: center;
+}	
 .IMg {
 	max-width: 100%;
     height: auto;
 }
-
+.textleft{
+	float: left;
+}
 
 /* Logo diseño */
 #logo-header {

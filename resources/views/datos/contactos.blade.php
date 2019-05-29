@@ -18,10 +18,8 @@
         
             <div class="form-row">
                 <div class="form-group col-md-6">
+
                     <input type="text" class="form-control" v-model="nombre" id="nombre" name="nombre" placeholder="Nombre empresa">
-                    <!-- <span v-if="errors.nombre" class="alert alert-danger" >
-                        @{{errors.nombre[0]}}
-                    </span> -->
                     <span v-if="errors.cif" class="alert-danger">@{{errors.nombre[0]}}</span>
                 </div>
                 <div class="form-group col-md-6">
@@ -59,12 +57,40 @@
             </div>
             <div class="form-group form-check">
                 <input type="checkbox" v-model="AceptarCoockies" class="form-check-input" id="botonAceptarCo">
-                <label class="form-check-label" for="exampleCheck1">He leido y acepto la <a href="inicio">política de privacidad y protección de datos</a> </label>
+                <label class="form-check-label" for="exampleCheck1">He leido y acepto la política de privacidad y protección de dato <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalLong">
+  <strong>Ver..</strong>
+</button> </label> 
                 <span v-if="errors.AceptarCoockies" class="alert-danger">@{{errors.AceptarCoockies[0]}}</span>
             </div>
             <button type="submit" class="btn btn-primary">Registrarse</button>
-        </form>     
+        </form>
     </div>
+</div>
+
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Cookie</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      Lo primero que debes saber es que la Ley, en España y Europa, obliga a todas las páginas webs a informar a los usuarios sobre la utilización y tratamiento de cookies.
+
+Por este motivo habrás notado, y cada vez más, que cuando accedes a una página web, aparece un aviso sobre cookies.
+
+El artículo 22.2 de la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico (LSSI)
+  establece que el usuario debe recibir información clara y completa sobre la utilización y tratamiento de datos, y a su vez,
+   el usuario debe dar su consentimiento para que los sitios webs puedan utilizar dichos datos.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+  </div>
 </div>
     
 @stop

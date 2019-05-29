@@ -3,19 +3,18 @@
 
 
 <div class="registro">
-    <div class="row "> 
-        <div class="col-md-2"></div>
-        <div class="col-md-8 col-md-offset-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+<div class="panel-heading">
                     <h1 class="panel-title">Acceso a la aplicacion</h1>
                     <h1>Bienvenido </h1>
-                    <p>Para registrarse porfavor rellene sus datos correspondientes</p>
+                    <p class="registr-text">Para registrarse porfavor rellene sus datos correspondientes</p>
                 </div>
+    <div class="row "> 
+        <div class="col-md-3"></div>
+        <div class="col-md-6 col-md-offset-4">
+            <div class="panel panel-default">
+               
                 <div class="panel-body">
-                    <div class="text-right">
-                        <button class="btn btn-outline-info" ><a href="/InciarEmpleado">Acceder Usuario</a></button>
-                    </div>
+                   
                     
                     <form action="{{route('login')}}" method="POST">
                         {{csrf_field()}}
@@ -34,13 +33,18 @@
                             type="password" name="password" placeholder="Introduce tu password ">
                             {!! $errors->first('password','<span class="help-block">:message</span>')!!}
                         </div>
-                        <button class="btn btn-outline-info"> Acceder</button>
+                         <div class="text-right">
+                         <button class="btn btn-outline-info textleft"> Acceder</button>
+
+                         <button class="btn btn-secondary" ><a href="/InciarEmpleado">Acceder Usuario</a></button>
+
+                    </div>
                     </form>
                         
                 </div>
             </div>
         </div>
-        <div class="col-md-2"></div>
+        <div class="col-md-3"></div>
     </div>
 </div>
 @stop

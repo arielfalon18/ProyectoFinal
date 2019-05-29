@@ -222,6 +222,11 @@ nav ul li a:hover {
 	/* border-style:solid; */
 	border-color: var(--negro);
 }
+.containernew{
+	margin-top: 0px;
+
+}
+
 .to-do{
 	background-color:#d3d4e8;
 	height: fit-content;
