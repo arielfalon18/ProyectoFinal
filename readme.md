@@ -25,7 +25,7 @@
 <h3>Iniciar Laravel</h3>
 <p>Una vez hemos realizado todos estos pasos ahora vamos a iniciar la aplicación, primero de todo nos debemos descargar todo el proyecto, aqui arriba hay un boton que se va a poder descargar todo el codigo, una vez lo tengamos en loca, abriremos un terminal y nos situaremos dentro de la carpeta del proyecto. Introduciremos un comando y le daremos enter: php artisan serve</p>
 
-<p>Una vez ejecutado saldra Laravel development server started: <http://127.0.0.1:8000> La ip es la que se debera poner en el navegador y ya tendremos acceso a la aplicación</p>
+<p>Una vez ejecutado saldra Laravel development server started: http://127.0.0.1:8000 La ip es la que se debera poner en el navegador y ya tendremos acceso a la aplicación</p>
 
 <hr>
 
