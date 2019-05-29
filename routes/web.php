@@ -40,7 +40,7 @@ Route::get('empleadosAll','DB\empleadosController@empleadoAll');
 
 //Inventarios 
 Route::post('CreateInventario' , 'DB\InventarioController@NewInvenatario');
-Route::get('InventarioGET','DB\InventarioController@GetInventario');
+Route::get('InventarioE','DB\InventarioController@GetInventario');
 
 
 //Mostrar los ROl de empresa 

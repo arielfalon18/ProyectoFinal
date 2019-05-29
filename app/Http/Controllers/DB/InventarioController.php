@@ -36,7 +36,8 @@ class InventarioController extends Controller
         $inventario->save();
     }
 
-    public function inventarioAll(){
+    //mostrar todos los inventarios
+    public function GetInventario(){
         $inventarioALL=Inventarios::get();
         return $inventarioALL;
     }

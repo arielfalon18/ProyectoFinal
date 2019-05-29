@@ -21,6 +21,7 @@ new Vue({
         this.MostramosIncidenciTecnica();
         this.mostrartodoslosTecnico();
         this.MostrarDescripcionTecnico();
+        this.getInventario();
     },
     data: {
     //Departamento:Departamento,7
@@ -79,7 +80,7 @@ new Vue({
         tipoI:'',
         DescripcionI:'',
         //array inventario
-        InventarioE:[],
+        GetInventario:[],
         //-------------------
         nombre:'',
         cif:'',
@@ -439,7 +440,7 @@ new Vue({
             this.pagination.current_page = page;
             this.getEmpleados(page);
         },
-
+        //Agregar nuevo inventario
         NuevoInvenatario: function(){
             var urlNEWInventario='http://127.0.0.1:8000/CreateInventario';
             axios.post(urlNEWInventario,{
@@ -458,6 +459,13 @@ new Vue({
             }).catch(error => {
                 this.errors = error.response.data.errors;
             })           
+        },
+        //Mostrar todos los inventarios
+        getInventario: function(){
+            var urlGetInventario='http://127.0.0.1:8000/InventarioE';
+            axios.get(urlGetInventario).then(response =>{
+                this.IGetInventario=response.data
+            })
         },
         //Mostrar todos las incidencias
         getIncidencias: function(){
