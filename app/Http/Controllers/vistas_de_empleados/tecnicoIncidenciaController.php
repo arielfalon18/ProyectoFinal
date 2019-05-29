@@ -30,11 +30,16 @@ class tecnicoIncidenciaController extends Controller
 
     //Cancelar incidencia 
     public function AsignarRespuesta(Request $resquest){
+        $mesajes=[
+            'DescripcionRespuesta.required'=> 'Porfavor escriba una respuesta',
+            'Respuesta.required'=> 'Seleccione un estado',
+            'aceptarIncidencia.accepted'=> 'Acepte la condicion'
+        ];
         $resquest->validate([
             'DescripcionRespuesta'=>'required',
             'Respuesta'=>'required',
             'aceptarIncidencia'=>'accepted',
-        ]);
+        ],$mesajes);
         if($resquest['Respuesta']=='Cancelada'){
             $CrearRespuesta= respuestatecnico::create([
                 "Descripcion"=>$resquest['DescripcionRespuesta'],

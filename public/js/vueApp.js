@@ -7,14 +7,10 @@ Vue.component('app-tablaD', {
 Vue.component('modal', {
     template: '#Mostrar_Incidencia'
 });
-const ComponenteHijo = {
-    template: '<p>Soy el Hijo</p>'
-}
 
   
 new Vue({
     el: '#appV',
-    components: { ComponenteHijo },
     
     
     created:function(){
@@ -70,6 +66,7 @@ new Vue({
         
         //Asignamos un tecnico de su departamento para que pueda resolver la incidencia
         ITecnico:'F',
+        ITecnicos:'',
         IDepartamento:'',
         IIncidencia:'',
         iD_empleado:'',
@@ -133,8 +130,10 @@ new Vue({
             'FechaEntrada':'',
             'Prioridad':'',
         },
-        sortKey: '',
-        order: 1,
+        orderBy: {
+            field: 'id',
+            order: 'desc'
+        },
         data:'',
         data2:'',
         //paginacion
@@ -164,6 +163,7 @@ new Vue({
         Id_incidencia:'',
         Respuesta:'G',
         IdTecnico:'',
+        mensajeRealizado:false,
         aceptarIncidencia:false,
         //mostrar descripcion tecnico
         mostrarDescTec: [],
@@ -281,8 +281,9 @@ new Vue({
                 this.Descripcion='';
                 this.Prioridad='E';
                 this.idDeparta='D';
+                this.getIncidencias();
                 $('#crearincidencia').modal('hide');
-                location.reload();
+                
             }).catch(error=>{
                 this.errors = error.response.data.errors
             })
@@ -297,19 +298,35 @@ new Vue({
                 Edificio:this.EdificioD,
                 IdEmpresa:this.id
             }).then(response=>{
+                this.nombreD='';
+                this.plantaD='';
+                this.EdificioD='';
+
+                this.getDepartament();
                 $('#añadirdepartamento').modal('hide');
-                location.reload();
+               
                 
             }).catch(error => {
-                this.errors = error.response.data.errors
+                if (error.response.status == 422){
+                    this.errors = error.response.data.errors
+                    setTimeout(() => {
+                        this.errors=[];
+                    }, 2000);
+                }
             })
         },
         // Mostrar Departamentos 
         getDepartament: function(){
-            var urldepartamento='http://127.0.0.1:8000/DepartamentosGET';
-            axios.get(urldepartamento).then(response =>{
+            let formData = new FormData();
+            formData.set('action', 'basicFilter');
+            let url = `http://127.0.0.1:8000/DepartamentosPOST`;
+            axios({
+                url,
+                method: 'post',
+                data: formData
+            }).then( response => {
                 this.DepartamentosT=response.data
-            }) 
+            });
         },
         //Añadimos los datos enpresariales
         NuevaContratacion: function(){
@@ -343,10 +360,6 @@ new Vue({
                     this.respuestaEmpresa=false;
                 }, 4000);
             }).catch(error => {
-                // // Errores
-                // console.log("efecto shake");
-                // $('#añadirusuario').effect('shake');
-                // this.errors = error.response.data.errors
                 if (error.response.status == 422){
                     this.errors = error.response.data.errors
                     setTimeout(() => {
@@ -410,14 +423,15 @@ new Vue({
                 this.selected='A';
                 this.idRol='B';
             }).catch(error => {
-                // Errores
-                // console.log("efecto shake");
-                // $('#añadirusuario').effect('shake');
-                this.errors = error.response.data.errors;
+                if (error.response.status == 422){
+                    this.errors = error.response.data.errors
+                    setTimeout(() => {
+                        this.errors=[];
+                    }, 2000);
+                }
+                
             })           
-            // console.log($('#TDepartamento').val());
-            // console.log($('#TipoEmpleado').val());
-            
+         
         },
         cambiodePagina: function(page){
             this.pagination.current_page = page;
@@ -451,16 +465,6 @@ new Vue({
             }) 
         },
         
-        
-        
-        //Funcion de contador aleatorio
-        funcionContadir(value){
-            for(i=0;i<value.length;i++){
-                for(x=0; x<value[i].length;x++){
-                    return i;
-                }
-            }
-        },
         MostrarDI(valor){
             this.MostrarInci.id=valor.id;
             this.MostrarInci.Descripcion=valor.Descripcion;
@@ -491,19 +495,26 @@ new Vue({
             var solo=soltexto[0]
             var urlAsignarIncidencia='http://127.0.0.1:8000/AsignarIncidencia';
             axios.post(urlAsignarIncidencia,{
-                
                //Pasamos la variable que queremos pasar para rellenar en formulario
-                ITecnico:solo,
+                ITecnicos:solo,
                 iD_empleado:this.iD_empleado,
                 IDepartamento:this.IDepartamento,
                 IIncidencia:this.IIncidencia,
-                
             }).then(response=>{
+                this.errors=[];
+                this.getIncidencias();
+                this.MostramosIncidenciTecnica();
                 this.ITecnico='F',
                 $('#AñadirUnaIncidencia').modal('hide');
-                location.reload();
+                
             }).catch(error => {
-                this.errors = error.response.data.errors;
+                // if (error.response.status == 422){
+                //     this.errors = error.response.data.errors
+                //     setTimeout(() => {
+                //         this.errors=[];
+                //     }, 2000);
+                // }
+                this.errors=error.response.data;
             })
             
             
@@ -524,12 +535,40 @@ new Vue({
         },
         
         MostramosIncidenciTecnica: function(){
-            var urlMostrarTecnicaIn='http://127.0.0.1:8000/MostraIncidenciaTec';
-            axios.get(urlMostrarTecnicaIn).then(response =>{
+            let formData = new FormData();
+            formData.set('action', 'basicoFiltro');
+            let url = `http://127.0.0.1:8000/MostraIncidenciaTec`;
+            axios({
+                url,
+                method: 'post',
+                data: formData
+            }).then( response => {
                 this.IncidenciaTecni=response.data;
-                
+            });
+            // var urlTecnicaContador='http://127.0.0.1:8000/MostraIncidenciaTec';
+            // axios.get(urlTecnicaContador).then(response=>{
+            //     this.IncidenciaTecni=response.data;
+            // })
+        },
+        //Boton para ordenar segun lo que precciones en que tabla 
+        orderByIncidenciaTecnico(key){
+            if(this.orderBy.order == 'desc'){
+                this.orderBy.order = 'asc';
+            }else{
+                this.orderBy.order = 'desc';
+            }
+            const data = new FormData();
+            data.set('action', 'orderbyIncidencia');
+            data.set('field', this.orderBy.field);
+            data.set('orientation', this.orderBy.order);
+            axios({
+                url: `http://127.0.0.1:8000/MostraIncidenciaTec`,
+                method: 'post',
+                data
+            }).then(({data}) => {
+                this.IncidenciaTecni = data;
+            })
 
-            }) 
         },
         MostrarDescripcionTecnico:function(){
             var urlMostrarDescTec='http://127.0.0.1:8000/mostrarDescTecnico';
@@ -543,16 +582,24 @@ new Vue({
 
         //-----------------------
         //OrdenartablaDepartamento
-        sortBy:function(key){
-            this.sortKey = key;
-            this.order   = this.order * -1;
-            var urlNEWInventario='http://127.0.0.1:8000/DepartamentosPOST';
-            axios.post(urlNEWInventario,{
-                sortKey:this.sortKey,
-                order:this.order,
-            }).then(response=>{
-               
+        orderByDepartamento(key){
+            if(this.orderBy.order == 'desc'){
+                this.orderBy.order = 'asc';
+            }else{
+                this.orderBy.order = 'desc';
+            }
+            const data = new FormData();
+            data.set('action', 'orderbyb');
+            data.set('field', this.orderBy.field);
+            data.set('orientation', this.orderBy.order);
+            axios({
+                url: `http://127.0.0.1:8000/DepartamentosPOST`,
+                method: 'post',
+                data
+            }).then(({data}) => {
+                this.DepartamentosT = data;
             })
+
         },
         //Descrifrar constraseña
         decifrar: function(){
@@ -605,10 +652,20 @@ new Vue({
                 this.Id_incidencia='G';
                 this.DescripcionRespuesta='';
                 this.aceptarIncidencia=false;
+                this.MostramosIncidenciTecnica();
                 $('#DarResultadoT').modal('hide');
-                location.reload();
+                this.mensajeRealizado=true;
+                setTimeout(() => {
+                    this.mensajeRealizado=false;
+                }, 3000);
             }).catch(error => {
-                this.errors = error.response.data.errors;
+                if (error.response.status == 422){
+                    this.errors = error.response.data.errors
+                    setTimeout(() => {
+                        this.errors=[];
+                    }, 2000);
+                }
+                
             })
         },
         modificarPerfil(valor){

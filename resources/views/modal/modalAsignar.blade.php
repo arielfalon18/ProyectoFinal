@@ -15,6 +15,7 @@
                     <option value="F" v-model="IIncidencia=MostrarInci.id" disabled selected>Seleciona el tecnico</option>
                     <option v-for="emplea in mostrarTecnicoIm" v-if="emplea.Rol=='Tecnico' && emplea.IdDepartamento==MostrarInci.IdDepartamento">@{{emplea.nombre}}(@{{emplea.Contador}})</option>
                 </select>
+                <span v-for="error in errors" class="alert-danger">@{{error}}</span>
           </div>
           
         <button id="incidenciaTecnica" class="btn btn-outline-primary">Aceptar</button>

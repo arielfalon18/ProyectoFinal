@@ -30,7 +30,10 @@ class empleadosController extends Controller
             'nombre.required' => 'El nombre es requerido',
             'dni.required' =>'El DNI es requerido',
             'email.required' => 'Edificio requerido',
+            'email.email'=>'Tiene que ser un correo',
             'telefono.required' => 'El telefono es requerido',
+            'telefono.max'=>'El telefono no puede ser mas de 9',
+            'telefono.min'=>'No es formato telefono',
             'IdDepartamento.required' =>'Seleccione el Id Departamento',
             'Idrol.required' => 'Seleccione un tipo de usuario'
 
@@ -38,8 +41,8 @@ class empleadosController extends Controller
         $resquest->validate([
             'nombre' =>'required',
             'dni' =>'required|unique:empleados,dni',
-            'email' =>'required|unique:empleados,email',
-            'telefono' =>'required|unique:empleados,telefono',
+            'email' =>'required|unique:empleados,email|email',
+            'telefono' =>'required|unique:empleados,telefono|max:9|min:9',
             'IdDepartamento' =>'required',
             'Idrol' =>'required'
         ],$messages);

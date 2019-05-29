@@ -8,6 +8,6 @@ class historial extends Model
 {
     //
     protected $table = 'historial';
-    protected $fillable = ['id', 'id_incidencia','id_Usuario'];
+    protected $fillable = ['id','id_incidencia','id_Usuario'];
     public $timestamps = false;
 }

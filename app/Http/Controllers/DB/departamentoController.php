@@ -24,7 +24,15 @@ class departamentoController extends Controller
         $Departamento->save();
     }
     public function GetDepartamento(Request $resquest){
-        $Departamento=Departamento:: get();
-        return $Departamento;
+        if(isset($resquest['action'])){
+            if($resquest['action'] == 'orderbyb'){
+                $Departamento=Departamento::modificar($resquest['field'], $resquest['orientation']);
+                return $Departamento;
+            }else if($resquest['action'] =='basicFilter'){
+                $Departamento=Departamento::get();
+                return $Departamento;
+            }
+        }
     }
+    
 }

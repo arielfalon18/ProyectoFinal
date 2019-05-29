@@ -53,11 +53,11 @@
                         <table class="table" >
                           <thead>
                               <tr>
-                                  <th scope="col">Id <i class="fa fa-sort" v-on:click.prevent="orderDepartamento()" ></i></th>
-                                  <th scope="col">Nombre</th>
-                                  <th scope="col">Planta</th>
-                                  <th scope="col">Edificio</th>
-                                  <th scope="col">IdEmpresa</th>
+                                  <th scope="col">Id <i class="fa fa-sort" @click="orderByDepartamento('id')" ></i></th>
+                                  <th scope="col">Nombre <i class="fa fa-sort" @click="orderByDepartamento('Nombre')" ></i></th>
+                                  <th scope="col">Planta <i class="fa fa-sort" @click="orderByDepartamento('Planta')" ></i></th>
+                                  <th scope="col">Edificio <i class="fa fa-sort" @click="orderByDepartamento('Edificio')" ></i></th>
+                                  <th scope="col">IdEmpresa </th>
                               </tr>
                           </thead>
                           <tbody v-for="DepartamentosA in DepartamentosT">

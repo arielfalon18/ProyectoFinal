@@ -47,16 +47,19 @@
                 <option >Cancelada</option>
                 <option >Finalizada</option>
           </select>
+          <span v-if="errors.Respuesta" class="alert-danger">@{{errors.Respuesta[0]}}</span>
         </div>
           <div class="form-group" v-model="Id_incidencia=DatosPerTecnico.idIncidencia">
             <label  for="exampleFormControlTextarea1">Descripcion de la incidencia</label>
             <textarea class="form-control" v-model="DescripcionRespuesta" id="DescripcionRespuesta" name="DescripcionRespuesta" rows="3"></textarea>
+            <span v-if="errors.DescripcionRespuesta" class="alert-danger">@{{errors.DescripcionRespuesta[0]}}</span>
           </div>
           <div class="form-check" v-model="IdTecnico=DatosPerTecnico.IdTecnico">
             <input class="form-check-input" type="checkbox" value="" id="aceptarIn">
             <label class="form-check-label" for="defaultCheck1">
-              Aceptas ya no lo podras ver
+              Ya no podras resolver
             </label>
+            <span v-if="errors.aceptarIncidencia" class="alert-danger">@{{errors.aceptarIncidencia[0]}}</span>
             <!-- <h1>@{{DatosPerTecnico.IdTecnico}}</h1> -->
           </div>
           <button type="submit" class="btn btn-outline-primary ">Aceptar</button>
