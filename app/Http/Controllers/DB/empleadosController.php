@@ -92,7 +92,7 @@ class empleadosController extends Controller
     
 
     public function empleadoAll(){
-        $EmpleadosALl=Empleados::get();
+        $EmpleadosALl=Empleados::with('Departamentos')->get();
         return $EmpleadosALl;
     }
 }

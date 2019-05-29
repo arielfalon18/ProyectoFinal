@@ -5,6 +5,7 @@ namespace App\Http\Controllers\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Inventarios;
+use App\Empleados;
 
 
 class InventarioController extends Controller
@@ -36,9 +37,16 @@ class InventarioController extends Controller
         $inventario->save();
     }
 
-    public function inventarioAll(){
+    //mostrar todos los inventarios
+    public function GetInventario(){
         $inventarioALL=Inventarios::get();
         return $inventarioALL;
+    }
+
+    //eliminar inventario
+    public function EliminarInventario($id){
+        $inventario = Inventarios::where('id',$id);
+        $inventario->delete();
     }
     
 }
