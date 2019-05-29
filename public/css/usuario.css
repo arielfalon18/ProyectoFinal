@@ -422,8 +422,14 @@ nav ul li a:hover {
 	border-radius: 15px;
 	background-color: red;
 }
-#abrir{
+.menu{
 	display:none;
+}
+.abrir2{
+	height: 30px;
+}
+.hr-class{
+	margin-top: 0px;
 }
 #abrir:hover{
 	height: 30px;

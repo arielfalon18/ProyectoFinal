@@ -1,18 +1,8 @@
-$(window).load(function(){
-    document.getElementById("myDIV").className = "mystyle";
+$( "#mostrar-progreso" ).click(function() {
+    $( "#abrir-progreso" ).toggle( "slow" );
+  });
 
-    $( "#mostrar-progreso" ).click(function() {
-        $( "#abrir-progreso" ).toggle( "slow" );    
-    });
-    $( "#mostrar-finalizada" ).click(function() {
-        $( "#abrir-finalizada" ).toggle( "slow" );    
-    });
-    $( "#mostrar-cancelada" ).click(function() {
-        $( "#abrir-cancelada" ).toggle( "slow" );    
-    });
-});
-
-// 
+// $(window).load(function(){
 //     $('#file-input').change(function(e) {
 //         addImage(e); 
 //     });
