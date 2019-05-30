@@ -7,6 +7,7 @@
     <th scope="col">Nombre_Tecnico</th>
     <th scope="col">Descripcion_Tecnico</th>
     <th scope="col">Prioridad_Incidencia</th>
+    <th scope="col">Id_Departamento</th>
 
     </tr>
 </thead>
@@ -19,6 +20,7 @@
         <td> {{$historia->nombreTecnico}}</td>
         <th>{{$historia->descripcionTecnico}}</th>
         <td> {{$historia->Prioridad}}</td>
+        <td> {{$historia->IdDepartamento}}</td>
     </tr>
     @endforeach
 </tbody>

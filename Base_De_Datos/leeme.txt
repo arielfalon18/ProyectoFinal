@@ -1,5 +1,0 @@
-Nota de instalacion
-Paso 1 inica el Xammp
-Paso 2 Crea una base de datos que se llame proyectofinal
-Paso 3 importa el sql proyectofinal a tu base de datos 
-

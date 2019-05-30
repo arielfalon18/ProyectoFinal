@@ -203,7 +203,9 @@
           {{csrf_field()}}
             <div class="form-group">
               <img class="img-Ei" src="media/tutorial/EI.png" alt="">
-              <label for="csv_fileE" class="control-label col-sm-3">CSV fichero</label>
+              <p>Nota:Solo puedes tener Rol:Usuario,Personal,Tecnico</p>
+              <p>Nota:Los departamentos tienes que estar bien escrito</p>
+              <label for="csv_fileE" class="control-label col-sm-3">CSV fichero </label>
                 <input type="file"  id="csv_fileE"  accept=".csv,.ods" name="csv_fileE" class="form-control-file">
             </div>  
               <button  class="btn btn-outline-primary">Enviar</button>
