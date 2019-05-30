@@ -70,7 +70,9 @@
             </div>
         </div>
         <hr>
+        <h5 class="text-center">Descargar historial de las incidencias resueltas solo de tu departamento</h5>
         <div class="row">
+            
             <div class="col-6 text-right">
                 <button class="btn btn-outline-info" ><a href="{{route('exporPDFIncidencia')}}">Descargar PDF</a> </button>
             </div>

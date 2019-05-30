@@ -14,18 +14,18 @@
         <th scope="col">NombreUsuario</th>
         <th scope="col">NombreTecnico</th>
         <th scope="col">DescripcionTecnico</th>
-        <th scope="col">PrioridadIncidencia</th>
+        <th scope="col">id_Departamento</th>
         </tr>
     </thead>
     <tbody>
-        @foreach($historial as  $variable)
+        @foreach($historialE as  $variable)
         <tr>
             <th scope="row">{{$variable->id}}</th>
             <td>{{$variable->descripcionIncidencia}}</td>
             <td>{{$variable->nombre_usuario}}</td>
             <td>{{$variable->nombreTecnico}}</td>
             <td>{{$variable->descripcionTecnico}}</td>
-            <td>{{$variable->Prioridad}}</td>
+            <td>{{$variable->IdDepartamento}}</td>
         
         </tr>
         @endforeach

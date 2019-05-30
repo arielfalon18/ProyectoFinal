@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-05-2019 a las 18:23:37
+-- Tiempo de generación: 30-05-2019 a las 10:20:47
 -- Versión del servidor: 10.1.35-MariaDB
 -- Versión de PHP: 7.2.9
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `projectoFinal`
+-- Base de datos: `projectofinal`
 --
 
 -- --------------------------------------------------------
@@ -55,15 +55,6 @@ CREATE TABLE `datos_empresa` (
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Volcado de datos para la tabla `datos_empresa`
---
-
-INSERT INTO `datos_empresa` (`id`, `nombre`, `cif`, `direccion`, `ciudad`, `pais`, `codigoP`, `telefono`, `email`, `password`) VALUES
-(1, 'Empresa', '12345678A', 'C/Rogent', 'Barcelona', 'España', '08026', 12345678, 'correo@gmail.com', '$2y$10$Z2ptghocrZDNlnyKPIN.G.5jDkyvZoyVgalEX/o79u21tElirdT26'),
-(2, 'EmpresaANA', '213123', 'C/Rogent', 'Barcelona', 'España', '08026', 12345678, 'correo2@gmail.com', '$2y$10$T06X3/FpBvYRX8qG629y/OgPrr116mjo3GnNvhHb705zgvqxC6/SG'),
-(3, 'DAW2 LOS MEJORES  S.L', 'B-5678902', 'c/ La Gloria Bendita', 'Los Angeles', 'del Nunca Jamás', '000000', 666555444, 'anna.huertas@iesjoandaustria.org', '$2y$10$TXhZ2fhuR9s.3FmKMyVSRei2c.XhU2n2/5ZrMuK1kQpO9CEBya.Dm');
-
 -- --------------------------------------------------------
 
 --
@@ -77,16 +68,6 @@ CREATE TABLE `departamento` (
   `Edificio` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `IdEmpresa` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `departamento`
---
-
-INSERT INTO `departamento` (`id`, `Nombre`, `Planta`, `Edificio`, `IdEmpresa`) VALUES
-(5, 'Departamento1', 'Planta1', 'Edifico1', 1),
-(6, 'Departamento2', 'Planta2', 'Edificio2', 1),
-(7, 'Departamento6', 'Planta6', 'Edificio6', 2),
-(8, 'Informática', 'Planta5', 'Edificio2', 3);
 
 -- --------------------------------------------------------
 
@@ -102,25 +83,34 @@ CREATE TABLE `empleados` (
   `telefono` int(11) NOT NULL,
   `IdEmpresa` int(10) NOT NULL,
   `IdDepartamento` int(10) UNSIGNED NOT NULL,
-  `Rol` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL
+  `Rol` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Foto` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- --------------------------------------------------------
+
 --
--- Volcado de datos para la tabla `empleados`
+-- Estructura de tabla para la tabla `erroresbase`
 --
 
-INSERT INTO `empleados` (`id`, `nombre`, `dni`, `email`, `telefono`, `IdEmpresa`, `IdDepartamento`, `Rol`) VALUES
-(22, 'Empleado1', '1122346688D', 'empleado1@gmail.com', 12345678, 1, 5, 'Usuario'),
-(23, 'Empleado2', '12345648A', 'Empleado2@gmail.com', 12345678, 1, 5, 'Tecnico'),
-(24, 'Jefe_De_Departamento', '12321A', 'Jefe_Departamento_1@gmail.com', 12345648, 1, 5, 'Personal'),
-(25, 'EmpleadoJefeProye', '12345648A', 'EmpleadoJefePrueba@gmail.com', 12345648, 2, 7, 'Personal'),
-(26, 'Empleado3', '2312321A', 'Empleado3@gmail.com', 12312321, 1, 6, 'Usuario'),
-(27, 'Empleado4', '123123A', 'Empleado4@gmail.com', 123213213, 1, 6, 'Tecnico'),
-(28, 'JefePersonal_Dep2', '123123A', 'JefePersonal_Dep2@gmail.com', 12345678, 1, 6, 'Personal'),
-(29, 'EmpleadoNuevo', '12323123S', 'EmpleadoNuevo@gmail.com', 13123213, 1, 6, 'Usuario'),
-(30, 'dasdas', '12345678A', 'as@gmail.com', 12312321, 3, 8, 'Usuario'),
-(31, 'EmpleadoN', '12312312A', 'EmpleadoN@gmail.com', 123123123, 1, 6, 'Tecnico'),
-(32, 'EmpleadoTecnico2', '123123A', 'EmpleadoTecni@gmail.com', 12312312, 1, 5, 'Tecnico');
+CREATE TABLE `erroresbase` (
+  `id` int(11) NOT NULL,
+  `Motivo` varchar(400) NOT NULL,
+  `CorreoCliente` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `historial`
+--
+
+CREATE TABLE `historial` (
+  `id` int(11) NOT NULL,
+  `id_Incidencia` int(11) NOT NULL,
+  `id_Tecnico` int(11) NOT NULL,
+  `ID_usuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -141,15 +131,6 @@ CREATE TABLE `incidencia` (
   `Id_Empresa` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Volcado de datos para la tabla `incidencia`
---
-
-INSERT INTO `incidencia` (`id`, `FechaEntrada`, `FechaCierre`, `IdDepartamento`, `Descripcion`, `Imagenes`, `Id_Empleado_usuario`, `Estado`, `Prioridad`, `Id_Empresa`) VALUES
-(2, '16-05-2019', '28/01/2012', 5, '            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti quod id numquam tempore dignissimos deleniti minima saepe consectetur officiis nisi. Nesciunt, ex officia. Mollit', 'CapturaI.JPG', 22, 'Progreso', 'Baja', 1),
-(6, '16-05-2019', '28/01/2012', 5, 'dasdasdasd', 'asdas', 22, 'Pendiente', 'Baja', 1),
-(7, '21/05/2019', '21/05/2019', 6, 'Esto es una prueba', NULL, 26, 'Progreso', 'Baja', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -164,13 +145,6 @@ CREATE TABLE `inventarios` (
   `idEmpresa` int(10) NOT NULL,
   `idEmpleado` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `inventarios`
---
-
-INSERT INTO `inventarios` (`id`, `nombre`, `tipo`, `descripcion`, `idEmpresa`, `idEmpleado`) VALUES
-(4, 'UnInventario', 'TipoInventario', 'UnaDescripcion', 1, 22);
 
 -- --------------------------------------------------------
 
@@ -188,23 +162,6 @@ CREATE TABLE `login` (
   `Id_Departamento` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Volcado de datos para la tabla `login`
---
-
-INSERT INTO `login` (`id`, `email`, `password`, `rol`, `Id_empleado`, `Id_Empresa`, `Id_Departamento`) VALUES
-(12, 'empleado1@gmail.com', '$2y$10$Y8E5dQ/qTgcGGOc9O.nqmerNdFC6Ae2GyIF.kP8WOdXG4vFK6/hxy', 'Usuario', 22, 1, 5),
-(13, 'Empleado2@gmail.com', '$2y$10$pm/08pzbQOXR99xSwS.67eULTk9KAnxuQkYlknYGk7QhK/s/en4AC', 'Tecnico', 23, 1, 5),
-(14, 'Jefe_Departamento_1@gmail.com', '$2y$10$zqp9Q3RbQQFrk/Z2nc6HcOUhk5e3E4UVEucS.2SsIyJN2STw7D1nK', 'Personal', 24, 1, 5),
-(15, 'EmpleadoJefePrueba@gmail.com', '$2y$10$QkiO4i87tdDC46MS2vCc7.oAP9C9wpSMmuhMl14zn9MSGrNC5wASm', 'Personal', 25, 2, 7),
-(16, 'Empleado3@gmail.com', '$2y$10$mjNwdrIfZ6GRHrndnAjWsu8/I51kCUxjTtYPSMp1gV73guUCv2sMG', 'Usuario', 26, 1, 6),
-(17, 'Empleado4@gmail.com', '$2y$10$ZD8gJpAmAeg49oOm2jhREeFhHJJfs3uic/5q8lwsBzd0OorEu.OuW', 'Tecnico', 27, 1, 6),
-(18, 'JefePersonal_Dep2@gmail.com', '$2y$10$8p5mzE.Fs8no.jK4.ZPs6uhiBnLk/Jl9uiIa/bXeZMgZlmHene44q', 'Personal', 28, 1, 6),
-(19, 'EmpleadoNuevo@gmail.com', '$2y$10$jgjQmQdu0aAHYlsbzdvoP.l4CTNOpnpMQ5E2mYEyvDw0AgR1Qd28W', 'Usuario', 29, 1, 6),
-(20, 'as@gmail.com', '$2y$10$gSffiRUKj67UxtWBnLQ96.93KKQ1G4i2e4.aJzQ4R7cuxWVmTupiO', 'Usuario', 30, 3, 8),
-(21, 'EmpleadoN@gmail.com', '$2y$10$ijvvI2hRQ6dQGn0K.Dh8t.QgoI7E09WaDx7KvzYrntwtODYW/Y2ze', 'Tecnico', 31, 1, 6),
-(22, 'EmpleadoTecni@gmail.com', '$2y$10$.fJ/MOsThy0SdWFSAs4An.FDqCPNj3DZQ9Jfn29VLKoRqd5yibD.y', 'Tecnico', 32, 1, 5);
-
 -- --------------------------------------------------------
 
 --
@@ -216,6 +173,23 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `mostrarhistorialt`
+-- (Véase abajo para la vista actual)
+--
+CREATE TABLE `mostrarhistorialt` (
+`id` int(10)
+,`descripcionIncidencia` varchar(191)
+,`nombre_usuario` varchar(191)
+,`nombreTecnico` varchar(191)
+,`descripcionTecnico` varchar(255)
+,`Prioridad` varchar(191)
+,`idEmpresa` int(10)
+,`IdDepartamento` int(10) unsigned
+);
 
 -- --------------------------------------------------------
 
@@ -253,6 +227,19 @@ CREATE TABLE `mostrartecnico` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `respuestatecnico`
+--
+
+CREATE TABLE `respuestatecnico` (
+  `id` int(11) NOT NULL,
+  `Descripcion` varchar(255) NOT NULL,
+  `Id_incidencia` int(11) NOT NULL,
+  `id_tecnico` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `tecnico_incidencia`
 --
 
@@ -264,14 +251,6 @@ CREATE TABLE `tecnico_incidencia` (
   `Id_Departamento` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `tecnico_incidencia`
---
-
-INSERT INTO `tecnico_incidencia` (`Id`, `id_Tecnico`, `iD_empleado`, `Id_Incidencia`, `Id_Departamento`) VALUES
-(24, 32, 22, 2, 5),
-(25, 27, 26, 7, 6);
-
 -- --------------------------------------------------------
 
 --
@@ -280,6 +259,15 @@ INSERT INTO `tecnico_incidencia` (`Id`, `id_Tecnico`, `iD_empleado`, `Id_Inciden
 DROP TABLE IF EXISTS `contadortecnico`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `contadortecnico`  AS  select `c`.`id` AS `id`,`c`.`nombre` AS `nombre`,`c`.`Rol` AS `Rol`,`c`.`IdDepartamento` AS `IdDepartamento`,count(`r`.`Id`) AS `Contador` from (`empleados` `c` left join `tecnico_incidencia` `r` on((`c`.`id` = `r`.`id_Tecnico`))) where (`c`.`Rol` = 'Tecnico') group by `c`.`id`,`c`.`nombre`,`c`.`Rol`,`c`.`IdDepartamento` ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `mostrarhistorialt`
+--
+DROP TABLE IF EXISTS `mostrarhistorialt`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `mostrarhistorialt`  AS  select `incidencia`.`id` AS `id`,`incidencia`.`Descripcion` AS `descripcionIncidencia`,`empleados`.`nombre` AS `nombre_usuario`,`tec`.`nombre` AS `nombreTecnico`,`respuestatecnico`.`Descripcion` AS `descripcionTecnico`,`incidencia`.`Prioridad` AS `Prioridad`,`datos_empresa`.`id` AS `idEmpresa`,`incidencia`.`IdDepartamento` AS `IdDepartamento` from ((((`incidencia` join `empleados`) join `datos_empresa`) join `respuestatecnico`) join (`historial` join `empleados` `tec` on((`historial`.`id_Tecnico` = `tec`.`id`)))) where ((`incidencia`.`id` = `historial`.`id_Incidencia`) and (`empleados`.`id` = `incidencia`.`Id_Empleado_usuario`) and (`datos_empresa`.`id` = `empleados`.`IdEmpresa`) and (`respuestatecnico`.`Id_incidencia` = `incidencia`.`id`)) ;
 
 -- --------------------------------------------------------
 
@@ -325,6 +313,18 @@ ALTER TABLE `empleados`
   ADD KEY `IdDepartamento` (`IdDepartamento`);
 
 --
+-- Indices de la tabla `erroresbase`
+--
+ALTER TABLE `erroresbase`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `historial`
+--
+ALTER TABLE `historial`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `incidencia`
 --
 ALTER TABLE `incidencia`
@@ -348,6 +348,12 @@ ALTER TABLE `login`
   ADD KEY `Id_Departamento` (`Id_Departamento`);
 
 --
+-- Indices de la tabla `respuestatecnico`
+--
+ALTER TABLE `respuestatecnico`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `tecnico_incidencia`
 --
 ALTER TABLE `tecnico_incidencia`
@@ -364,43 +370,61 @@ ALTER TABLE `tecnico_incidencia`
 -- AUTO_INCREMENT de la tabla `datos_empresa`
 --
 ALTER TABLE `datos_empresa`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `departamento`
 --
 ALTER TABLE `departamento`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+
+--
+-- AUTO_INCREMENT de la tabla `erroresbase`
+--
+ALTER TABLE `erroresbase`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT de la tabla `historial`
+--
+ALTER TABLE `historial`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `incidencia`
 --
 ALTER TABLE `incidencia`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `inventarios`
 --
 ALTER TABLE `inventarios`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+
+--
+-- AUTO_INCREMENT de la tabla `respuestatecnico`
+--
+ALTER TABLE `respuestatecnico`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `tecnico_incidencia`
 --
 ALTER TABLE `tecnico_incidencia`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- Restricciones para tablas volcadas

@@ -174,6 +174,7 @@ new Vue({
         //Nos enviara un correo cuando este error se produsca
         emailError:'',
         mensaje:'',
+        consultaNosotros:false,
         ///------------------------------------------------
     },
     //PAginacion 
@@ -464,8 +465,7 @@ new Vue({
         getInventario: function(){
             var urlGetInventario='http://127.0.0.1:8000/InventarioE';
             axios.get(urlGetInventario).then(response =>{
-                this.GetInventario=response.data,
-                this.getInventario()
+                this.GetInventario=response.data
             })
         },
 
@@ -529,6 +529,7 @@ new Vue({
                 this.MostramosIncidenciTecnica();
                 this.ITecnico='F',
                 $('#AñadirUnaIncidencia').modal('hide');
+                this.mostrartodoslosTecnico();
                 
             }).catch(error => {
                 // if (error.response.status == 422){
@@ -736,7 +737,8 @@ new Vue({
                 passwordNew:this.passwordNew,
             }).then(response=>{
                 this.errors=[];
-                location.reload();
+                $('#ModificarPerfil').modal('hide');
+                this.passwordNew='';
             }).catch(error => {
                 this.errors = error.response.data.errors;
             }) 
@@ -752,8 +754,15 @@ new Vue({
             }).then(response=>{
                 this.errors=[];
                 $('#Formulario').toggle();
+                this.consultaNosotros=true;
+                setTimeout(() => {
+                    this.consultaNosotros=false;
+                }, 6000);
             }).catch(error=>{
-                this.errors = error.response.data.errors;
+                if (error.response.status == 422){
+                    this.errors = error.response.data.errors
+    
+                }
             })
             
             

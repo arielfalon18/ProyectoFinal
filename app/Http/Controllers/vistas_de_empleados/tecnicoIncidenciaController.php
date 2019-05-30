@@ -53,8 +53,9 @@ class tecnicoIncidenciaController extends Controller
             $modificarEstado->save();
             //Crear historial
             $historial=historial::create([
-                "id_incidencia"=> $resquest['Id_incidencia'],
-                "id_Usuario"=>$resquest['IdTecnico']
+                "id_Incidencia"=> $resquest['Id_incidencia'],
+                "id_Tecnico"=>$resquest['IdTecnico'],
+                "ID_usuario"=>$modificarEstado->Id_Empleado_usuario
             ]);
             $historial->save();
 
@@ -70,9 +71,10 @@ class tecnicoIncidenciaController extends Controller
             $modificarEstado->FechaCierre=$resquest['HoraFinal'];
             $modificarEstado->save();
             //Crear historial
-            $historial= historial::create([
-                "id_incidencia"=> $resquest['Id_incidencia'],
-                "id_Usuario"=>$resquest['IdTecnico']
+            $historial=historial::create([
+                "id_Incidencia"=> $resquest['Id_incidencia'],
+                "id_Tecnico"=>$resquest['IdTecnico'],
+                "ID_usuario"=>$modificarEstado->Id_Empleado_usuario
             ]);
             $historial->save();
         }

@@ -55,7 +55,7 @@
             <span v-if="errors.DescripcionRespuesta" class="alert-danger">@{{errors.DescripcionRespuesta[0]}}</span>
           </div>
           <div class="form-check" v-model="IdTecnico=DatosPerTecnico.IdTecnico">
-            <input class="form-check-input" type="checkbox" value="" id="aceptarIn">
+            <input class="form-check-input" type="checkbox" value="" id="aceptarIn" v-model="aceptarIncidencia">
             <label class="form-check-label" for="defaultCheck1">
               Ya no podras resolver
             </label>

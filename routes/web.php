@@ -87,8 +87,12 @@ Route::post('importCSV','CSV\importController@ImportFicheroInsert');
 Route::post('importCSVEmpleado','CSV\importController@importCSVEmpleados');
 //Exporta PDF
 Route::get('exporPDFIncidencia' , 'CSV\exportController@exportPDF')->name('exporPDFIncidencia');
+//Para empresa
+Route::get('exporPDFIncidenciaEmpresa' , 'CSV\exportController@exportPDFEmpresa')->name('exporPDFIncidenciaEmpresa');
 //Export a excel
 Route::get('exporexcelIncidencia','CSV\exportController@exportExcel')->name('exporexcelIncidencia');
+//Export empresa Todos
+Route::get('exporexcelIncidenciaEmpresa','CSV\exportController@exportExcelEmpresa')->name('exporexcelIncidenciaEmpresa');
 //----------------------------
 
 //Tecnico Rutas tecnico 

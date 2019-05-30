@@ -2,21 +2,19 @@
 
 namespace App\Exports;
 
-use App\historial;
+use App\mostrarhistorialt;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Illuminate\Contracts\View\View;
+use Maatwebsite\Excel\Concerns\FromView;
 
-class HistorialExport implements FromCollection
+class HistorialExport implements FromView
 {
-    /**
-    * @return \Illuminate\Support\Collection
-    */
-    public function collection()
+    public function view(): View
     {
-        //Usar la variable select para que puedas exportar mejor que todo 
-        return historial::with('incidenciaId')->select('id','id_Incidencia')->get();
-//         select ins.id,ins.Descripcion, empl.nombre, tec.nombre as tecnicoN, resp.Descripcion
-// from incidencia ins, empleados empl,respuestatecnico resp,historial his 
-// INNER join empleados tec ON his.id_Usuario=tec.id
-// WHERE ins.id=his.id_Incidencia and empl.id=ins.Id_Empleado_usuario and resp.id_tecnico=his.id_Usuario
+        return view('export.export-calc', [
+            'mostrarHistorial' => mostrarhistorialt::where('idEmpresa',auth('usuarioL')->user()->Id_Empresa)
+                                        ->where('IdDepartamento',auth('usuarioL')->user()->Id_Departamento)
+                                        ->get()
+        ]);
     }
 }

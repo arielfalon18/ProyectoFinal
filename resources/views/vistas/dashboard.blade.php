@@ -9,6 +9,9 @@
         <div class="alert alert-success" v-if="seBorro" role="alert">
             Se elimino correctamente 
         </div>
+        <div class="alert alert-success" v-if="consultaNosotros" role="alert">
+            Gracias por notificar te responderemos lo mas rapido posible :)
+        </div>
         <div class="panel panel-default">
           <div class="panel-heading">
               <h1>Bienvenido {{auth()->user()->nombre}}</h1>
@@ -203,10 +206,23 @@
                           <span >No hay nada </span>
                       </div>
                     </template>
+                   
                     <!-- Cierre de template -->
                   </div>
                 </div>
+                
               </div>
+              
+            </div>
+            <hr>
+            <h5 class="text-center">Descargar historial de las incidencias resueltas</h5>
+            <div class="row">
+                <div class="col-6 text-right">
+                    <button class="btn btn-outline-info" ><a href="{{route('exporPDFIncidenciaEmpresa')}}">Descargar PDF</a> </button>
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-outline-info"><a href="{{route('exporexcelIncidenciaEmpresa')}}">Descargar Excel</a></button>
+                </div>
             </div>
             <form id="Formulario" v-on:submit.prevent="NotificarErrores" class="info-form imagenOpinion" >
               <span class="colorLetraForm">¿Notificar Errores?</span>
@@ -214,7 +230,7 @@
               <span id="close" class="CerrarF">x</span>
               <div id="popup-open">
                 <input class="input input-100 inputFormE" name="email" id="emailE" type="email"  disabled value="{{auth()->user()->email}}">
-                <textarea  class="input input-100 mensajeFB" name="asunto" v-model="mensaje" placeholder="Déjanos tu teléfono y un mensaje"></textarea>
+                <textarea  class="input input-100 mensajeFB" id="asunto" name="asunto" v-model="mensaje" placeholder="Déjanos tu teléfono y un mensaje"></textarea>
                 <input  class="input-submit input input-100 mensajeFB" type="submit" value="Enviar mensaje">
                 <div id="response_2"></div>
             </div>

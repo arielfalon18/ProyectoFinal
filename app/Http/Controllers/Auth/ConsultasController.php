@@ -56,7 +56,7 @@ class ConsultasController extends Controller
         Mail::send('email.contactos',$datos, function($msj) use ($correoEnviar){
             $msj->to($correoEnviar,"theincidence");
             $msj->subject("Envio de datos cuenta");
-            $msj->from('heincidence.19@gmail.com',"theinciden");
+            $msj->from('theincidence.19@gmail.com',"theinciden");
         });
         return;
     }
